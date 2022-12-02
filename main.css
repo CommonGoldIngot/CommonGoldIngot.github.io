@@ -1,0 +1,6 @@
+body{background-image: url("../bg1.png");
+  background-size: cover;
+  background-position: center; }
+p{font-family: 'Unifont'; font-size: 16px;}
+h1{font-family: 'Unifont'; font-size: 16px;}
+h2{font-family: 'Unifont'; font-size: 16px;}
