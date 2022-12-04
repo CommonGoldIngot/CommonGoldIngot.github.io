@@ -2,5 +2,5 @@ body{background-image: url("assets/bg1.png");
   background-size: cover;
   background-position: top; }
 h1{text-align: center; font-size: 36px;}
-h2{font-family: 'Unifont'; font-size: 32px;}
-p{font-family: 'Unifont'; font-size: 28px;}
+h2{text-align: center; font-size: 32px;}
+p{text-align: center; font-size: 28px;}
