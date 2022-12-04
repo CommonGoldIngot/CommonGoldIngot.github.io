@@ -1,9 +1,0 @@
-body{background-image: url("assets/bg1.png");
-  background-size: cover;
-  background-position: top; }
-h1@font-face {
-	font-family:Unifont;
-	src: url('assets/fonts/Unifont.ttf');}
-  {text-align: center; font-size: 36px;}
-h2{font-family: 'Unifont'; font-size: 32px;}
-p{font-family: 'Unifont'; font-size: 28px;}
