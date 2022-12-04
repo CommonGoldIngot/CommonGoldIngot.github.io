@@ -4,7 +4,6 @@ body{background-image: url("assets/bg1.png");
 h1@font-face {
 	font-family:Unifont;
 	src: url('assets/fonts/Unifont.ttf');}
-	<span style="font-family:'Unifont'"></span>
   {text-align: center; font-size: 36px;}
 h2{font-family: 'Unifont'; font-size: 32px;}
 p{font-family: 'Unifont'; font-size: 28px;}
