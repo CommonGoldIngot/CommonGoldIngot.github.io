@@ -24,8 +24,7 @@ a:link,
 a:visited {
   border-color: #F0F8FF;
   color: white;
-  padding: 14px 25px;
-  border-radius: 12px;
+  border-radius: 25px;
   border-width: 2px;
   text-align: center;
   display: inline-block; }
@@ -33,7 +32,7 @@ a:hover,
 a:active {
   background-color: #F0F8FF;
   border-color: #F0F8FF;
-  border-radius: 12px;
+  border-radius: 25px;
   border-width: 2px;
   text-align: center;
   display: inline-block; }
