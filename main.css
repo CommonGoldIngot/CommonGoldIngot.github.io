@@ -12,7 +12,12 @@ p {
   text-align: center;
   font-size: 20px; }
 div {
-  border-color: #F0F8FF}
+  margin: 20px 0px 20px 0px;
+  padding: 8px 30px 8px 30px;
+  border-radius: 8px;
+  border: solid;
+  border-width:2px;
+  border-color: #F0F8FF; }
 a {
   text-decoration: none; }
 a:link,
