@@ -23,16 +23,17 @@ a {
 a:link,
 a:visited {
   border-color: #F0F8FF;
-  color: white;
-  border-radius: 25px;
-  border-width: 2px;
+  border-radius: 15px;
+  border-width: 3px;
+  color: black;
   text-align: center;
   display: inline-block; }
 a:hover,
 a:active {
   background-color: #F0F8FF;
   border-color: #F0F8FF;
-  border-radius: 25px;
-  border-width: 2px;
+  border-radius: 15px;
+  border-width: 3px;
+  color: black;
   text-align: center;
   display: inline-block; }
