@@ -19,7 +19,8 @@ div {
   border-width: 3px;
   border-color: #F0F8FF; }
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: blue; }
 button {
   padding: 6px 14px 6px 14px;
   border-color: #F0F8FF;
