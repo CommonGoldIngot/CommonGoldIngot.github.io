@@ -23,7 +23,7 @@ a {
 a:link,
 a:visited {
   border-color: #F0F8FF;
-  border-radius: 25px;
+  border-radius: 32px;
   border-width: 4px;
   color: blue;
   text-align: center;
@@ -37,11 +37,15 @@ a:active {
   color: blue;
   text-align: center;
   display: inline-block; }
-button,
-button:hover {
-  background-color: #F0F8FF;
-  padding: 6px 14px 6px 14px;
-  border: none;
-  border-radius: 32px; }
+button {
+  border-color: #F0F8FF;
+  border-width: 2px;
+  border-radius: 32px;
+  padding: 6px 14px 6px 14px; }
+button:hover,
 button:active {
-  background-color: #F0F8FF; }
+  border-color: #F0F8FF;
+  border-width: 2px;
+  border-radius: 32px;
+  background-color: #F0F8FF;
+  padding: 6px 14px 6px 14px; }
