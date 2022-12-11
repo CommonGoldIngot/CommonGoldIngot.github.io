@@ -38,14 +38,20 @@ a:active {
   text-align: center;
   display: inline-block; }
 button {
+  padding: 6px 14px 6px 14px;
   border-color: #F0F8FF;
   border-width: 2px;
   border-radius: 32px;
-  padding: 6px 14px 6px 14px; }
+  color: blue;
+  text-align: center;
+  display: inline-block; }
 button:hover,
 button:active {
+  padding: 6px 14px 6px 14px;
   border-color: #F0F8FF;
   border-width: 2px;
   border-radius: 32px;
   background-color: #F0F8FF;
-  padding: 6px 14px 6px 14px; }
+  color: blue;
+  text-align: center;
+  display: inline-block; }
