@@ -43,6 +43,7 @@ button {
   border-width: 2px;
   border-radius: 32px;
   color: blue;
+  font-size: 20px;
   text-align: center;
   display: inline-block; }
 button:hover,
@@ -53,5 +54,6 @@ button:active {
   border-radius: 32px;
   background-color: #F0F8FF;
   color: blue;
+  font-size: 20px;
   text-align: center;
   display: inline-block; }
