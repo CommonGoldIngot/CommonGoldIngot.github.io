@@ -13,8 +13,8 @@ p {
   padding: 40px;
   border-radius: 25px;
   border: solid;
-  border-width: 16px;
-  border-color: white; }
+  border-width: 64px;
+  border-color: blue; }
 a {
   text-decoration: none;
   color: blue; }
