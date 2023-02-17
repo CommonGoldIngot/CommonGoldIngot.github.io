@@ -10,11 +10,11 @@ p {
   font-size: 20px; }
 .main {
   margin: 8px;
-  padding: 20px;
-  border-radius: 40px;
+  padding: 40px;
+  border-radius: 120px;
   border: solid;
-  border-width: 3px;
-  border-color: #000000; }
+  border-width: 16px;
+  border-color: white; }
 a {
   text-decoration: none;
   color: blue; }
