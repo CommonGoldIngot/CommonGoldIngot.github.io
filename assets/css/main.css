@@ -9,9 +9,9 @@ h2 {
 p {
   font-size: 20px; }
 .main {
-  margin: 8px;
+  margin: 10px 60px 20px 40px;
   padding: 40px;
-  border-radius: 120px;
+  border-radius: 25px;
   border: solid;
   border-width: 16px;
   border-color: white; }
