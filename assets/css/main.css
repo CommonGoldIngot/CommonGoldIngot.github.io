@@ -8,16 +8,6 @@ h2 {
   font-size: 24px; }
 p {
   font-size: 20px; }
-hr {
-  color: white; }
-#main {
-  margin: 10px 60px 20px 40px;
-  padding: 40px;
-  background-color: white;
-  border-radius: 25px;
-  border: solid;
-  border-width: 4px;
-  border-color: white; }
 a {
   text-decoration: none;
   color: blue; }
@@ -41,3 +31,12 @@ button:active {
   font-size: 20px;
   text-align: center;
   display: inline-block; }
+/* ================ id and class ================ */
+#main {
+  margin: 10px 60px 20px 40px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 25px;
+  border: solid;
+  border-width: 4px;
+  border-color: white; }
