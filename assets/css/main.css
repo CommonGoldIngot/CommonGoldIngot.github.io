@@ -1,7 +1,11 @@
-body {
-  background-image: url("https://i.328888.xyz/2022/12/10/fqpwZ.jpeg");
-  background-size: cover;
-  background-position: top; }
+/* ================ background ================ */
+@media (orenation){
+  body {
+    background-image: url("https://i.328888.xyz/2022/12/10/fqpwZ.jpeg");
+    background-size: cover;
+    background-position: top; }
+    }
+/* ================ main ================ */
 h1 {
   font-size: 36px; }
 h2 {
@@ -33,7 +37,7 @@ button:active {
   display: inline-block; }
 /* ================ id and class ================ */
 #main {
-  margin: 10px 60px 20px 40px;
+  margin: 25px 60px 25px 120px;
   padding: 40px;
   background-color: white;
   border-radius: 25px;
