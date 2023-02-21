@@ -43,8 +43,8 @@ button:active {
   display: inline-block; }
 /* ================ id and class ================ */
 #main {
-  margin: 25px 60px 25px 120px;
-  padding: 40px;
+  margin: 20px 0px 30px 240px;
+  padding: 40px 0px 0px 40px;
   background-color: white;
   border-radius: 25px;
   border: solid;
