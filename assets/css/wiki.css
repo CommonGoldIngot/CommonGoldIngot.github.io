@@ -23,8 +23,8 @@ a {
   color: blue; }
 /* ================ id and class ================ */
 #main {
-  margin: 20px 8px 30px 180px;
-  padding: 40px;
+  margin: 20px 0px 30px 240px;
+  padding: 40px 0px 0px 40px;
   background-color: white;
   border-radius: 25px;
   border: solid;
