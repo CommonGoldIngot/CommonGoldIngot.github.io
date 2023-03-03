@@ -22,7 +22,7 @@ a {
   text-decoration: none;
   color: blue; }
 /* ================ id and class ================ */
-div.main {
+#main {
   margin: 20px 8px 30px 180px;
   padding: 40px;
   background-color: white;
@@ -30,6 +30,6 @@ div.main {
   border: solid;
   border-width: 4px;
   border-color: white; }
-a.icons {
+#icons {
   text-decoration: none;
   color: black; }
