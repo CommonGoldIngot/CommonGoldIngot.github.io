@@ -26,24 +26,24 @@
       <p>欢迎来到CommonGoldIngot的网站!</p>
     </div>
     <script>
-      var time = new Date();
-      var year = time.getFullYear();
-      var month = time.getMonth()+1;
-      var date = time.getDate();
-      var hour = time.getHours();
-      var minute = time.getMinutes();
-      var second = time.getSeconds();
-      var day = year + "年" + month + "月" + date + "日"
-      var time = hour + ":" + minute + ":" + second
-      if(hour >= 0 && hour <= 9)
-           hour = "0" + hour;
-      if(minute >= 0 && minute <= 9)
-           minute = "0" + minute;
-      if(second >= 0 && second <= 9)
-           second = "0" + second;
       setInterval(function () {
-           document.getElementById("time").innerHTML = day + " " + time
-           }, 10)
+          var time = new Date();
+          var year = time.getFullYear();
+          var month = time.getMonth()+1;
+          var date = time.getDate();
+          var hour = time.getHours();
+          var minute = time.getMinutes();
+          var second = time.getSeconds();
+          var day = year + "年" + month + "月" + date + "日"
+          var time = hour + ":" + minute + ":" + second
+          if(hour >= 0 && hour <= 9)
+                hour = "0" + hour;
+          if(minute >= 0 && minute <= 9)
+                minute = "0" + minute;
+          if(second >= 0 && second <= 9)
+                second = "0" + second;
+          document.getElementById("time").innerHTML = day + " " + time
+          }, 10)
     </script>
   </body>
 </html>
