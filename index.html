@@ -20,20 +20,22 @@
         <a id="icons" href="../about.html"><i class="material-icons">account_box</i>关于</a>
     </div>
     <div id="main">
-      <p>
-        现在是
-        <br/>
-        <p id="year"></p>年<p id="month"></p>月<p id="date"></p>日
-        欢迎来到CommonGoldIngot的网站!
-      </p>
+      <p>现在是</p>
+      <p id="time"></p>
+      <br/>
+      <p>欢迎来到CommonGoldIngot的网站!</p>
     </div>
     <script>
-      var year = new Date();
-      var month = new Date();
-      var date = new Date();
-      document.getElementById("year").innerHTML = year.getFullYear();
-      document.getElementById("month").innerHTML = month.getMonth();
-      document.getElementById("date").innerHTML = date.getDate();
+      var time = new Date();
+      var year = time.getFullYear();
+      var month = time.getMonth()+1;
+      var date = time.getDate();
+      var hour = time.getHours();
+      var minute = time.getMinutes();
+      var second = time.getSeconds();
+      var day = year + "年" + month + "月" + date + "日"
+      var time = hour + ":" + minute + ":" + second
+      document.getElementById("time").innerHTML = day + " " + time
     </script>
   </body>
 </html>
