@@ -13,11 +13,11 @@
   <body>
     <style>@import"../assets/css/main.css";</style>
     <script>
-      var year = new Date();
+      var year = new year();
       document.getElementById("year").innerHTML = year.getFullYear();
-      var month = new Date();
+      var month = new month();
       document.getElementById("month").innerHTML = month.getMonth();
-      var month = new Date();
+      var date = new date();
       document.getElementById("date").innerHTML = date.getDate();
     </script>
     <div>
@@ -31,12 +31,7 @@
       <p>
         现在是
         <br/>
-        <p id="year"></p>
-        <p>-</p>
-        <p id="month"></p>
-        <p>-</p>
-        <p id="date"></p>
-        </div>
+        <p id="year"></p><p>年</p><p id="month"></p><p>月</p><p id="date"></p>
         你好，这里是CommonGoldIngot!
       </p>
     </div>
