@@ -41,7 +41,9 @@
            minute = "0" + minute;
       if(second >= 0 && second <= 9)
            second = "0" + second;
-      document.getElementById("time").innerHTML = day + " " + time
+      setInterval(function () {
+           document.getElementById("time").innerHTML = day + " " + time
+           }, 10)
     </script>
   </body>
 </html>
