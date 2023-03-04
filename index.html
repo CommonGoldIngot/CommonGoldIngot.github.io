@@ -12,14 +12,6 @@
   </head>
   <body>
     <style>@import"../assets/css/main.css";</style>
-    <script>
-      var year = new Date();
-      document.getElementById("year").innerHTML = year.getFullYear();
-      var month = new Date();
-      document.getElementById("month").innerHTML = month.getMonth();
-      var date = new Date();
-      document.getElementById("date").innerHTML = date.getDate();
-    </script>
     <div>
         <a href="../index.html"><img id="logo" width="297" height="24" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
         <br/>
@@ -31,9 +23,17 @@
       <p>
         现在是
         <br/>
-        <p id="year"></p><p>年</p><p id="month"></p><p>月</p><p id="date"></p><p>日</p>
-        <p>欢迎来到CommonGoldIngot的网站!</p>
+        <p id="year"></p>年<p id="month"></p>月<p id="date"></p>日
+        欢迎来到CommonGoldIngot的网站!
       </p>
     </div>
+    <script>
+      var year = new Date();
+      var month = new Date();
+      var date = new Date();
+      document.getElementById("year").innerHTML = year.getFullYear();
+      document.getElementById("month").innerHTML = month.getMonth();
+      document.getElementById("date").innerHTML = date.getDate();
+    </script>
   </body>
 </html>
