@@ -12,6 +12,14 @@
   </head>
   <body>
     <style>@import"../assets/css/main.css";</style>
+    <script>
+      var year = new Date();
+      document.getElementById("year").innerHTML = year.getFullYear();
+      var month = new Date();
+      document.getElementById("month").innerHTML = month.getMonth();
+      var month = new Date();
+      document.getElementById("date").innerHTML = date.getDate();
+    </script>
     <div>
         <a href="../index.html"><img id="logo" width="297" height="24" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
         <br/>
@@ -21,6 +29,14 @@
     </div>
     <div id="main">
       <p>
+        现在是
+        <br/>
+        <p id="year"></p>
+        <p>-</p>
+        <p id="month"></p>
+        <p>-</p>
+        <p id="date"></p>
+        </div>
         你好，这里是CommonGoldIngot!
       </p>
     </div>
