@@ -21,9 +21,9 @@ p {
 a {
   text-decoration: none;
   color: blue; }
-/* ================ id and class ================ */
+/* ================ special ================ */
 #main {
-  margin: 20px 8px 30px 180px;
+  margin: 20px 8px 30px 160px;
   padding: 40px;
   background-color: white;
   border-radius: 25px;
@@ -35,4 +35,4 @@ a {
   color: black; }
 #time {
   font-size: 28px;
-  color: blue; }
+  color: #00FA9A }
