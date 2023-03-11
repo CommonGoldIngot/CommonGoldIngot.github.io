@@ -31,8 +31,15 @@ a {
   border-width: 4px;
   border-color: white; }
 #icons {
+  font-size: 20px;
   text-decoration: none;
   color: black; }
+.bi bi-house-fill {
+  background-size: 20px; }
+.bi bi-person-fill {
+  background-size: 20px; }
+.bi bi-wikipedia {
+  background-size: 20px; }
 #time {
   font-size: 28px;
   color: #00FA9A }
