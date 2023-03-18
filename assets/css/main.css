@@ -21,8 +21,18 @@ p {
 a {
   text-decoration: none;
   color: blue; }
+span {
+  font-size: 18px;
+  text-decoration: none;
+  color: black; }
 /* ================ special ================ */
-#main {
+.bi bi-house-fill {
+  background-size: 20px; }
+.bi bi-person-fill {
+  background-size: 20px; }
+.bi bi-wikipedia {
+  background-size: 20px; }
+div.main {
   margin: 20px 8px 30px 130px;
   padding: 40px;
   background-color: white;
@@ -30,16 +40,6 @@ a {
   border: solid;
   border-width: 4px;
   border-color: white; }
-#icons {
-  font-size: 18px;
-  text-decoration: none;
-  color: black; }
-.bi bi-house-fill {
-  background-size: 20px; }
-.bi bi-person-fill {
-  background-size: 20px; }
-.bi bi-wikipedia {
-  background-size: 20px; }
 #time {
   font-size: 28px;
   color: #00FA9A }
