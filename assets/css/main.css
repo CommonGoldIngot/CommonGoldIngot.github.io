@@ -36,6 +36,8 @@ a.nav-item-link {
   color: black; }
 ul.nav, ul.nav-subnav {
   list-style-type: none; }
+ul.nav-subnav {
+  display: none; }
 div.main {
   margin: 20px 8px 30px 130px;
   padding: 40px;
