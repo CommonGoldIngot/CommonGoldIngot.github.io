@@ -11,23 +11,46 @@
     <title>CommonGoldIngot的网站</title>
   </head>
   <body>
-    <style>@import"../../../../../assets/css/main.css";</style>
-    <div>
-        <a href="../../../../../"><img id="logo" width="297" height="24" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
-        <br/>
-        <br/>
-        <a id="icons" href="../../../../../"><i class="bi bi-house-fill"></i>&nbsp;主页</a>
-        <br/>
-        <a id="icons" href="../../../../../about.html"><i class="bi bi-person-fill"></i>&nbsp;关于</a>
-        <br/>
-        <a id="icons" href="../../../../../wiki.html"><i class="bi bi-wikipedia"></i>&nbsp;wiki</a>
-    </div>
-    <div id="main">
+    <style>@import"/assets/css/main.css";</style>
+    <!-- 左侧导航 -->
+    <aside>
+      <div>
+        <nav>
+          <!-- logo -->
+          <div>
+            <a href="/"><img width="297" height="24" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
+          </div>
+          <br/>
+          <br/>
+          <div>
+            <ul class="nav-drawer">
+              <li class="nav-item">
+                <a href="/"><i class="bi bi-house-fill"></i><span>&nbsp;主页</span></a>
+              </li>
+              <li class="nav-item">
+                <a href="/about.html"><i class="bi bi-person-fill"></i><span>&nbsp;关于</span></a>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascipt:void(0)"><i class="bi bi-wikipedia"></i><span>&nbsp;wiki</span></a>
+                <ul class="nav nav-subnav">
+                  <li>七三班wiki</li>
+                  <li></li>
+                <ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+    <!-- end 左侧导航 -->
+    <!-- 页面主要内容 -->
+    <div class="main">
       <p>现在是</p>
       <p id="time"></p>
       <br/>
       <p>欢迎来到CommonGoldIngot的网站!</p>
     </div>
+    <!-- end 页面主要内容 -->
     <script>
       setInterval(function () {
           var time = new Date();
@@ -46,7 +69,7 @@
           var day = year + "年" + month + "月" + date + "日"
           var time = hour + ":" + minute + ":" + second
           document.getElementById("time").innerHTML = day + " " + time
-      }, 10)
+      }, 100)
     </script>
   </body>
 </html>
