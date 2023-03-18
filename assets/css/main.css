@@ -21,6 +21,8 @@ p {
 a {
   text-decoration: none;
   color: blue; }
+i {
+  color: black; }
 span {
   font-size: 18px;
   text-decoration: none;
@@ -32,6 +34,8 @@ span {
   background-size: 20px; }
 .bi bi-wikipedia {
   background-size: 20px; }
+.nav-subnav {
+  display: none; }
 div.main {
   margin: 20px 8px 30px 130px;
   padding: 40px;
