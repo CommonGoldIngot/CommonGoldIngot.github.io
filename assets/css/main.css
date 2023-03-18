@@ -28,13 +28,15 @@ span {
 /* ================ special ================ */
 .bi bi-house-fill {
   background-size: 20px;
-  background-color: black; }
+  color: black; }
 .bi bi-person-fill {
   background-size: 20px;
-  background-color: black; }
+  color: black; }
 .bi bi-wikipedia {
   background-size: 20px;
-  background-color: black; }
+  color: black; }
+ul.nav, ul.nav-subnav {
+  list-style-type: none; }
 div.main {
   margin: 20px 8px 30px 130px;
   padding: 40px;
