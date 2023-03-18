@@ -21,19 +21,20 @@ p {
 a {
   text-decoration: none;
   color: blue; }
-i {
-  color: black; }
 span {
   font-size: 18px;
   text-decoration: none;
   color: black; }
 /* ================ special ================ */
 .bi bi-house-fill {
-  background-size: 20px; }
+  background-size: 20px;
+  background-color: black; }
 .bi bi-person-fill {
-  background-size: 20px; }
+  background-size: 20px;
+  background-color: black; }
 .bi bi-wikipedia {
-  background-size: 20px; }
+  background-size: 20px;
+  background-color: black; }
 .nav-subnav {
   display: none; }
 div.main {
@@ -46,4 +47,4 @@ div.main {
   border-color: white; }
 #time {
   font-size: 28px;
-  color: #00FA9A }
+  color: #00FA9A; }
