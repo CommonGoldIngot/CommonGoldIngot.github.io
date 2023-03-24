@@ -32,7 +32,9 @@ span {
   background-size: 18px; }
 .bi bi-wikipedia {
   background-size: 18px; }
-a.nav-item-link {
+div.sidebar {
+  display: none; }
+a.sidebar-item-link {
   color: black; }
 ul.nav, ul.subnav {
   list-style-type: none; }
