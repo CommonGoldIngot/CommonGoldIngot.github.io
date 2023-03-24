@@ -1,6 +1,9 @@
 $(document).ready(function(){
-  //左侧导航
-  $(".nav-item-has-subnav").click(function(){
-    $(".subnav").slideToggle("slow");
+  //子页面
+  $("li.sidebar-item-has-subnav").click(function(){
+    $("ul.subnav").slideToggle("fast");
+  });
+  $("button.open-sidebar").click(function(){
+    $("div.sidebar").show();
   });
 });
