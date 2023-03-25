@@ -32,7 +32,8 @@ button.unfold-sidebar {
   text-align: center;
   display: inline-block; }
 .bi bi-list {
-  background-color: white; }
+  background-color: white;
+  background-size: 24px; }
 div.sidebar {
   display: none;
   float: left; }
