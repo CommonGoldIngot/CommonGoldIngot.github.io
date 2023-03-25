@@ -3,7 +3,7 @@ $(document).ready(function(){
   $("li.sidebar-item-has-subnav").click(function(){
     $("ul.subnav").slideToggle("fast");
   });
-  $("button.open-sidebar").click(function(){
+  $("button.unfold-sidebar").click(function(){
     $("div.sidebar").show();
   });
 });
