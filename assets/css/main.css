@@ -23,8 +23,8 @@ body {
 div.topbar {
   background-color: rgba(60,179,113,0.1);
   border: solid;
-  border-width: 1px;
-  border-color: rgb(60,179,113);
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(60,179,113);
   position: fixed; }
 div.sidebar {
   display: none;
