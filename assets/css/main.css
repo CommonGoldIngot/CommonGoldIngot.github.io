@@ -18,6 +18,12 @@
   background-size: 18px; }
 .bi bi-wikipedia {
   background-size: 18px; }
+div.topbar {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: blue;
+  position: fixed; }
 div.sidebar {
   display: none;
   float: left; }
