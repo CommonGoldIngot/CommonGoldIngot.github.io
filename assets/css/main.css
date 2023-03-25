@@ -34,6 +34,8 @@ button.unfold-sidebar {
 .bi bi-list {
   background-color: white;
   background-size: 24px; }
+div.style {
+  float: right; }
 div.sidebar {
   display: none;
   float: left; }
