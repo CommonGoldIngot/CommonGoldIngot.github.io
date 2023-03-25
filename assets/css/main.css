@@ -16,12 +16,6 @@ body {
     background-attachment: fixed; }
     }
 /* ================ nav ================ */
-.bi bi-house-fill {
-  background-size: 18px; }
-.bi bi-person-fill {
-  background-size: 18px; }
-.bi bi-wikipedia {
-  background-size: 18px; }
 div.topbar {
   background-color: rgba(60,179,113,0.4);
   border-bottom-style: solid;
@@ -29,15 +23,16 @@ div.topbar {
   border-bottom-color: rgb(60,179,113);
   padding: 5px;
   position: fixed; }
-.bi bi-list {
-  background-color: white; }
 button.unfold-sidebar {
   background-color: rgba(60,179,113,0.5);
   border-style: solid;
   border-width: 1px;
   border-color: rgb(60,179,113);
   border-radius: 2px;
+  text-align: center;
   display: inline-block; }
+.bi bi-list {
+  background-color: white; }
 div.sidebar {
   display: none;
   float: left; }
@@ -47,6 +42,12 @@ ul.nav, ul.subnav {
   list-style-type: none; }
 ul.subnav {
   display: none; }
+.bi bi-house-fill {
+  background-size: 18px; }
+.bi bi-person-fill {
+  background-size: 18px; }
+.bi bi-wikipedia {
+  background-size: 18px; }
 /* ================ main ================ */
 div.main {
   margin: 20px 8px 30px 140px;
