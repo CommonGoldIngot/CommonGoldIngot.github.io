@@ -1,3 +1,5 @@
+body {
+  margin: 0px; }
 /* ================ background ================ */
 @media (orientation: portrait) {
   body {
@@ -19,10 +21,7 @@
 .bi bi-wikipedia {
   background-size: 18px; }
 div.topbar {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  background-color: blue;
+  background-color: MediumSeaGreen;
   position: fixed; }
 div.sidebar {
   display: none;
