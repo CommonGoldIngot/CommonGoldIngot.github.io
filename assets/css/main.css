@@ -21,7 +21,10 @@ body {
 .bi bi-wikipedia {
   background-size: 18px; }
 div.topbar {
-  background-color: MediumSeaGreen;
+  background-color: rgba(60,179,113,0.1);
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(60,179,113);
   position: fixed; }
 div.sidebar {
   display: none;
@@ -57,4 +60,4 @@ span {
   color: black; }
 #time {
   font-size: 28px;
-  color: MediumSeaGreen; }
+  color: rgb(60,179,113); }
