@@ -22,7 +22,9 @@ div.topbar {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgb(60,179,113);
-  padding: 5px;
+  height: 100%;
+  width: 68px;
+  padding: 8px;
   position: fixed; }
 button.unfold-sidebar {
   margin: 8px;
