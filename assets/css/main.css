@@ -24,6 +24,7 @@ div.topbar {
   padding: 5px;
   position: fixed; }
 button.unfold-sidebar {
+  margin: 8px;
   background-color: rgba(60,179,113,0.8);
   background-size: 30px 30px;
   border-style: solid;
@@ -35,8 +36,8 @@ button.unfold-sidebar {
 .bi-list {
   color: white;
   font-size: 24px; }
-div.style {
-  float: right; }
+img {
+  display: inline-block;}
 div.sidebar {
   display: none;
   float: left; }
