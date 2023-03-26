@@ -47,11 +47,11 @@ ul.nav, ul.subnav {
 ul.subnav {
   display: none; }
 .bi-house-fill {
-  background-size: 22px; }
+  font-size: 22px; }
 .bi-person-fill {
-  background-size: 22px; }
+  font-size: 22px; }
 .bi-wikipedia {
-  background-size: 22px; }
+  font-size: 22px; }
 /* ================ main ================ */
 div.main {
   margin: 20px 8px 30px 140px;
@@ -72,7 +72,7 @@ a {
   text-decoration: none;
   color: blue; }
 span {
-  font-size: 16px;
+  font-size: 20px;
   text-decoration: none;
   color: black; }
 #time {
