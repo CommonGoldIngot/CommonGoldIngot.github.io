@@ -18,6 +18,7 @@ body {
 /* ================ nav ================ */
 div.topbar {
   background-color: rgba(60,179,113,0.4);
+  background-size: 100% 48px
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgb(60,179,113);
