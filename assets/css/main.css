@@ -21,12 +21,12 @@ div.topbar {
   height: 48px;
   padding: 4px;
   background-color: rgba(60,179,113,0.4);
-  background-size: 100% 48px;
   border-bottom: 1px solid rgb(60,179,113);
   position: fixed; }
 button.unfold-sidebar {
   width: 40px;
   height: 40px;
+  padding: 2px
   background-color: rgba(60,179,113,0.8);
   border: 1px solid rgb(60,179,113);
   border-radius: 4px;
@@ -34,12 +34,15 @@ button.unfold-sidebar {
   display: inline-block; }
 .bi-list {
   color: white;
-  font-size: 32px; }
+  font-size: 36px; }
 img {
-  display: inline-block;}
+  display: inline-block; }
 div.sidebar {
   display: none;
-  float: left; }
+  float: left;
+  width: 128px;
+  height: 100%;
+  background}
 a.sidebar-item-link {
   color: black; }
 ul.nav, ul.subnav {
