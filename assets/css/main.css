@@ -42,14 +42,19 @@ div.sidebar {
   float: left;
   width: 128px;
   height: 100%;
-  background}
+  background-color: rgba(60,179,113,0.4);
+  border-right: 1px solid rgb(60,179,113);
+  position: fixed; }
 a.sidebar-item-link {
-  color: black; }
+  color: white; }
 ul.nav, ul.subnav {
   list-style-type: none; }
 ul.subnav {
   display: none; }
-.bi {
+.bi-house-fill,
+.bi-person-fill,
+.bi-wikipedia {
+  color: white;
   font-size: 22px; }
 /* ================ main ================ */
 div.main {
@@ -69,9 +74,9 @@ a {
   text-decoration: none;
   color: blue; }
 span {
+  color: black;
   font-size: 20px;
-  text-decoration: none;
-  color: black; }
+  text-decoration: none; }
 #time {
-  font-size: 28px;
-  color: rgb(60,179,113); }
+  color: rgb(60,179,113);
+  font-size: 28px; }
