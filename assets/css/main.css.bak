@@ -1,0 +1,74 @@
+body {
+  margin: 0px; }
+/* ================ background ================ */
+@media (orientation: portrait) {
+  body {
+    background-image: url("https://i.328888.xyz/2023/02/18/BvDBt.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top; }
+  }
+@media (orientation: landscape) {
+  body {
+    background-image: url("https://i.328888.xyz/2022/12/10/fqpwZ.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top; }
+  }
+/* ================ nav ================ */
+div.topbar {
+  width: 100%;
+  height: 48px;
+  padding: 4px;
+  background-color: rgba(60,179,113,0.4);
+  background-size: 100% 48px;
+  border-bottom: 1px solid rgb(60,179,113);
+  position: fixed; }
+button.unfold-sidebar {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(60,179,113,0.8);
+  border: 1px solid rgb(60,179,113);
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block; }
+.bi-list {
+  color: white;
+  font-size: 32px; }
+img {
+  display: inline-block;}
+div.sidebar {
+  display: none;
+  float: left; }
+a.sidebar-item-link {
+  color: black; }
+ul.nav, ul.subnav {
+  list-style-type: none; }
+ul.subnav {
+  display: none; }
+.bi {
+  font-size: 22px; }
+/* ================ main ================ */
+div.main {
+  margin: 20px 8px 30px 140px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 25px;
+  border: 4px solid white;
+  float: left; }
+h1 {
+  font-size: 36px; }
+h2 {
+  font-size: 24px; }
+p {
+  font-size: 20px; }
+a {
+  text-decoration: none;
+  color: blue; }
+span {
+  font-size: 20px;
+  text-decoration: none;
+  color: black; }
+#time {
+  font-size: 28px;
+  color: rgb(60,179,113); }
