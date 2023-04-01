@@ -76,9 +76,6 @@ ul.subnav {
   font-size: 22px;
 }
 /* ================ main ================ */
-p.br-main > br {
-  font-size: 64px;
-}
 div.main {
   padding: 40px;
   background-color: white;
