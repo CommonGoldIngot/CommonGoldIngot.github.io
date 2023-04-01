@@ -1,20 +1,23 @@
 body {
-  margin: 0px; }
+  margin: 0px;
+}
 /* ================ background ================ */
 @media (orientation: portrait) {
   body {
     background-image: url("https://i.328888.xyz/2023/02/18/BvDBt.png");
     background-size: cover;
     background-attachment: fixed;
-    background-position: top; }
+    background-position: top;
   }
+}
 @media (orientation: landscape) {
   body {
     background-image: url("https://i.328888.xyz/2022/12/10/fqpwZ.jpeg");
     background-size: cover;
     background-attachment: fixed;
-    background-position: top; }
+    background-position: top;
   }
+}
 /* ================ nav ================ */
 div.topbar {
   width: 100%;
@@ -22,7 +25,8 @@ div.topbar {
   padding: 8px;
   background-color: rgba(60,179,113,0.4);
   border-bottom: 1px solid rgb(60,179,113);
-  position: fixed; }
+  position: fixed;
+}
 button.unfold-sidebar {
   width: 40px;
   height: 40px;
@@ -30,12 +34,23 @@ button.unfold-sidebar {
   border: 1px solid rgb(60,179,113);
   border-radius: 4px;
   text-align: center;
-  display: inline-block; }
+  display: inline-block;
+}
 .bi-list {
   color: white;
-  font-size: 32px; }
+  font-size: 32px;
+}
 img {
-  display: inline-block; }
+  display: inline-block;
+}
+div.mask {
+  display: none;
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46,139,87,0.3);
+  position: fixed;
+}
 div.sidebar {
   display: none;
   float: left;
@@ -43,38 +58,53 @@ div.sidebar {
   height: 100%;
   background-color: rgba(60,179,113,0.4);
   border-right: 1px solid rgb(60,179,113);
-  position: fixed; }
+  position: fixed;
+}
 a.sidebar-item-link {
-  color: white; }
+  color: white;
+}
 ul.nav, ul.subnav {
-  list-style-type: none; }
+  list-style-type: none;
+}
 ul.subnav {
-  display: none; }
+  display: none;
+}
 .bi-house-fill,
 .bi-person-fill,
 .bi-wikipedia {
   color: white;
-  font-size: 22px; }
+  font-size: 22px;
+}
 /* ================ main ================ */
+p.br-main > br {
+  font-size: 64px;
+}
 div.main {
   padding: 40px;
   background-color: white;
   border-radius: 25px;
   border: 4px solid white;
-  float: left; }
+  float: left;
+}
 h1 {
-  font-size: 36px; }
+  font-size: 36px;
+}
 h2 {
-  font-size: 24px; }
+  font-size: 24px;
+}
 p {
-  font-size: 20px; }
+  font-size: 20px;
+}
 a {
   text-decoration: none;
-  color: rgb(60,179,113); }
+  color: rgb(60,179,113);
+}
 span {
   color: white;
   font-size: 20px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 #time {
   color: rgb(60,179,113);
-  font-size: 28px; }
+  font-size: 28px;
+}
