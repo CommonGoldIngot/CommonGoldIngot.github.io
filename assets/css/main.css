@@ -34,7 +34,7 @@ button.unfold-sidebar {
   display: inline-block; }
 .bi-list {
   color: white;
-  font-size: 32px; }
+  font-size: 3px; }
 img {
   display: inline-block; }
 div.sidebar {
@@ -58,7 +58,6 @@ ul.subnav {
   font-size: 22px; }
 /* ================ main ================ */
 div.main {
-  margin: 20px 8px 30px 140px;
   padding: 40px;
   background-color: white;
   border-radius: 25px;
@@ -72,9 +71,9 @@ p {
   font-size: 20px; }
 a {
   text-decoration: none;
-  color: blue; }
+  color: rgb(60,179,113); }
 span {
-  color: black;
+  color: white;
   font-size: 20px;
   text-decoration: none; }
 #time {
