@@ -80,6 +80,10 @@ ul.subnav {
   color: white;
   font-size: 18px;
 }
+.bi-chevron-right {
+  color: white;
+  font-size: 6px;
+}
 /* ================ main ================ */
 div.main {
   padding: 40px;
