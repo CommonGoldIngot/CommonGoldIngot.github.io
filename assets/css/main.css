@@ -100,7 +100,7 @@ a.sidebar-item-link {
   color: white;
   font-size: 6px;
   margin: 0 32px;
-  animation-name: chevron-rotate;
+  animation-name: none;
   animation-duration: 0.5s;
   animation-direction: normal;
 }
