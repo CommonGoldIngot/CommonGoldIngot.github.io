@@ -32,8 +32,8 @@ button.unfold-sidebar {
   width: 40px;
   height: 40px;
   margin: 4px;
-  background-color: none;
-  border: none;
+  background-color: transparent;
+  border-style: none;
   text-align: center;
 }
 .bi-list {
