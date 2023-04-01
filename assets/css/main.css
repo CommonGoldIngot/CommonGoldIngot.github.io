@@ -81,8 +81,11 @@ ul.subnav {
   font-size: 18px;
 }
 .bi-chevron-right {
+  display: inline-block;
+  float: right;
   color: white;
   font-size: 6px;
+  margin: 0 8px;
 }
 /* ================ main ================ */
 div.main {
