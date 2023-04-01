@@ -1,2 +1,2 @@
 # CommonGoldIngot.github.io
-Welcome to CommonGoldIngot's website!
+The source code of *commongoldingot.github.io*
