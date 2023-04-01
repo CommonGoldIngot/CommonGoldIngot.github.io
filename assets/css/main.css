@@ -30,6 +30,7 @@ button.unfold-sidebar {
   float: left;
   width: 40px;
   height: 40px;
+  margin: 4px;
   background-color: rgba(60,179,113,0.8);
   border: 1px solid rgb(60,179,113);
   border-radius: 4px;
