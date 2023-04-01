@@ -22,7 +22,7 @@ body {
 div.topbar {
   width: 100%;
   height: 48px;
-  background-color: rgba(60,179,113,0.4);
+  background-color: rgba(60,179,113,0.3);
   border-bottom: 1px solid rgb(60,179,113);
   position: fixed;
 }
@@ -50,15 +50,15 @@ div.mask {
   float: left;
   width: 100%;
   height: 100%;
-  background-color: rgba(46,139,87,0.3);
+  background-color: rgba(46,139,87,0.1);
   position: fixed;
 }
 div.sidebar {
   display: none;
   float: left;
-  width: 256px;
+  width: 300px;
   height: 100%;
-  background-color: rgba(60,179,113,0.4);
+  background-color: rgba(60,179,113,0.3);
   border-right: 1px solid rgb(60,179,113);
   position: fixed;
 }
