@@ -96,6 +96,7 @@ a.sidebar-item-link {
   color: white;
   font-size: 6px;
   margin: 0 32px;
+  transform: rotate(90deg);
 }
 /* ================ main ================ */
 div.main {
