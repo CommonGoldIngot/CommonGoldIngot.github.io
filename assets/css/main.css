@@ -44,14 +44,6 @@ button.unfold-sidebar {
 img.logo {
   margin: 14px 4px;
 }
-div.mask {
-  display: none;
-  float: left;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(22,65,40,0.2);
-  position: fixed;
-}
 div.sidebar {
   display: none;
   float: left;
@@ -61,10 +53,22 @@ div.sidebar {
   border-right: 1px solid rgb(60,179,113);
   position: fixed;
 }
+div.mask {
+  display: none;
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22,65,40,0.2);
+  position: fixed;
+}
 a.sidebar-item-link {
   color: white;
 }
-ul.nav, ul.subnav {
+ul.nav {
+  line-height: 36px;
+}
+ul.nav,
+ul.subnav {
   list-style-type: none;
 }
 ul.subnav {
@@ -74,7 +78,7 @@ ul.subnav {
 .bi-person-fill,
 .bi-wikipedia {
   color: white;
-  font-size: 22px;
+  font-size: 18px;
 }
 /* ================ main ================ */
 div.main {
@@ -82,7 +86,7 @@ div.main {
   background-color: white;
   border-radius: 25px;
   border: 4px solid white;
-  float: left;
+  float: right;
 }
 h1 {
   font-size: 36px;
@@ -99,7 +103,7 @@ a {
 }
 span {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
 }
 #time {
