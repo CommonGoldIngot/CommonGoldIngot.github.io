@@ -4,6 +4,6 @@ $(document).ready(function(){
     $("ul.subnav").slideToggle("fast");
   });
   $("button.unfold-sidebar").click(function(){
-    $("div.sidebar").show();
+    $("div.sidebar, div.mask").show();
   });
 });
