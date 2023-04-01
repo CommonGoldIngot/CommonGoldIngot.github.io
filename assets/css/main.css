@@ -90,12 +90,19 @@ a.sidebar-item-link {
   color: white;
   font-size: 18px;
 }
+@keyframes chevron-rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(90deg);}
+}
 .bi-chevron-right {
   display: inline-block;
   float: right;
   color: white;
   font-size: 6px;
   margin: 0 32px;
+  animation-name: chevron-rotate;
+  animation-duration: 0.5s;
+  animation-direction: normal;
 }
 /* ================ main ================ */
 div.main {
