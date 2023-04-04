@@ -1,9 +1,10 @@
 $(document).ready(function () {
     //加载界面淡出
     setTimeout(function () {
-        $("div.aside-loading").fadeOut(1000);
-    }, 800)
-    $("div.aside-loading").remove();
+        $("div.aside-loading").fadeOut(500, function () {
+            $("div.aside-loading").remove();
+        });
+    }, 500)
     //侧边栏
     $("button.unfold-sidebar").click(function () {
         $("div.sidebar, div.mask").show();
