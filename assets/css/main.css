@@ -1,7 +1,17 @@
+/*************************************************************
+************************ 在这里定义配色 ************************
+*************************************************************/
+:root {
+  --main-green: 60,179,113;
+  --main-dark-green: 22,65,40;
+}
+/*************************************************************
+**************************************************************
+*************************************************************/
 body {
   margin: 0;
 }
-/* ================ background ================ */
+/***************** 背景图片 *****************/
 @media (orientation: portrait) {
   body {
     background-image: url("https://i.328888.xyz/2023/02/18/BvDBt.png");
@@ -18,16 +28,26 @@ body {
     background-position: top;
   }
 }
-/* ================ nav ================ */
-div.topbar {
+/***************** 加载动画 *****************/
+div.aside-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+}
+p.aside-loading-speed-up {
+  visibility: hidden;
+}
+/***************** 导航栏-顶栏 *****************/
+div.aside-topbar {
   position: fixed;
   width: 100%;
   height: 48px;
-  background-color: rgba(22,65,40,0.2);
-  border-bottom: 1px solid rgb(60,179,113);
-  position: fixed;
+  background-color: rgba(var(--main-dark-green),0.2);
+  border-bottom: 1px solid rgb(var(--main-green));
 }
-button.unfold-sidebar {
+button.aside-unfold-sidebar {
   display: inline-block;
   float: left;
   width: 40px;
@@ -42,46 +62,47 @@ button.unfold-sidebar {
   font-size: 32px;
   line-height: 40px;
 }
-img.logo {
+img.aside-logo {
   margin: 14px 4px;
 }
-div.sidebar {
+/***************** 导航栏-侧边栏 *****************/
+div.aside-sidebar {
   display: none;
   float: left;
   position: fixed;
   width: 300px;
   height: 100%;
-  background-color: rgba(22,65,40,0.2);
-  border-right: 1px solid rgb(60,179,113);
+  background-color: rgba(var(--main-dark-green),0.2);
+  border-right: 1px solid rgb(var(--main-green));
 }
-div.sidebar-header {
+div.aside-sidebar-header {
   position: relative;
   z-index: 114514; /*这么臭的z-index还有必要留着吗(恼 [doge]*/
   width: 100%;
   height: 48px;
   background-color: transparent;
-  border-right: 1px solid rgb(60,179,113);
-  border-bottom: 1px solid rgb(60,179,113);
+  border-right: 1px solid rgb(var(--main-green));
+  border-bottom: 1px solid rgb(var(--main-green));
 }
-div.mask {
+div.aside-mask {
   display: none;
   float: left;
   width: 100%;
   height: 100%;
-  background-color: rgba(22,65,40,0.2);
+  background-color: rgba(var(--main-dark-green),0.1);
   position: fixed;
 }
-ul.nav {
+ul.aside-nav {
   line-height: 36px;
 }
-ul.nav,
-ul.subnav {
+ul.aside-nav,
+ul.aside-subnav {
   list-style-type: none;
 }
-ul.subnav {
+ul.aside-subnav {
   display: none;
 }
-a.sidebar-item-link {
+a.aside-sidebar-item-link {
   color: white;
 }
 .bi-house-fill,
@@ -104,7 +125,7 @@ a.sidebar-item-link {
   animation-duration: 0.5s;
   animation-direction: normal;
 }
-/* ================ main ================ */
+/***************** 页面主要内容 *****************/
 div.main {
   padding: 40px;
   background-color: white;
@@ -122,8 +143,7 @@ p {
   font-size: 20px;
 }
 a {
-  color: rgb(60,179,113);
-  text-decoration: none;
+  color: rgb(var(--main-green));
 }
 span {
   color: white;
@@ -131,6 +151,6 @@ span {
   text-decoration: none;
 }
 #time {
-  color: rgb(60,179,113);
+  color: rgb(var(--main-green));
   font-size: 28px;
 }
