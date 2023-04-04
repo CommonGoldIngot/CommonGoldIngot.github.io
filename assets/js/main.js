@@ -6,17 +6,14 @@ $(document).ready(function () {
         });
     }, 800)
     //侧边栏
-    $("button.unfold-sidebar").click(function () {
-        $("div.sidebar, div.mask").show();
+    $("button.aside-unfold-sidebar").click(function () {
+        $("div.aside-sidebar, div.aside-mask").show();
     });
-    $("div.mask").click(function () {
-        $("div.sidebar, div.mask").hide();
+    $("div.aside-mask").click(function () {
+        $("div.aside-sidebar, div.aside-mask").hide();
     });
         //侧边栏子页面
-        $("li.sidebar-item-has-subnav").click(function () {
-            $("ul.subnav").slideToggle("fast");
-        });
-        $("a.sidebar-item-link").click(function () {
-            
+        $("li.aside-sidebar-item-has-subnav").click(function () {
+            $("ul.aside-subnav").slideToggle("fast");
         });
 });
