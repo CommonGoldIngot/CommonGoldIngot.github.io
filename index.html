@@ -15,10 +15,12 @@
   <body>
     <!-- 加载界面 -->
     <div class="aside-loading">
-      <!-- 加载界面logo -->
-      <img class="aside-loading-logo" src="https://i.328888.xyz/2023/04/02/iH8Nd5.png"/>
-      <p class="aside-loading-text">加载中</p>
-      <p class="aside-loading-speed-up">加载速度太慢?使用<a href="https://steampp.net/">Watt Toolkit</a>进行加速!</p>
+      <div class="aside-loading-items">
+        <!-- 加载界面logo -->
+        <img class="aside-loading-logo" width="80" height="80" src="https://i.328888.xyz/2023/04/02/iH8Nd5.png"/>
+        <p class="aside-loading-text">加载中...</p>
+        <p class="aside-loading-speed-up">加载速度太慢?使用<a href="https://steampp.net/">Watt Toolkit</a>进行加速!</p>
+      </div>
     </div>
     <!-- end 加载界面 -->
     <aside>
@@ -64,7 +66,7 @@
     <br/>
     <div class="main">
       <p>现在是</p>
-      <p class="time"></p>
+      <p id="time"></p>
       <br/>
       <p>欢迎来到CommonGoldIngot的网站!</p>
     </div>
@@ -88,7 +90,7 @@
               second = "0" + second;
           var day = year + "年" + month + "月" + date + "日"
           var time = hour + ":" + minute + ":" + second
-          document.getElementByClassName("time").innerHTML = day + " " + time
+          document.getElementById("time").innerHTML = day + " " + time
       }, 100)
     </script>
   </body>
