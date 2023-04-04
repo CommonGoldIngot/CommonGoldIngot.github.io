@@ -41,9 +41,6 @@ div.aside-loading {
 div.aside-loading-items {
   display: inline-block;
 }
-p.aside-loading-speed-up {
-  visibility: hidden;
-}
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
   position: fixed;
