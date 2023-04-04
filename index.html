@@ -13,34 +13,42 @@
     <title>CommonGoldIngot的网站</title>
   </head>
   <body>
+    <!-- 加载界面 -->
+    <div class="aside-loading">
+      <!-- 加载界面logo -->
+      <img class="aside-loading-logo" src="https://i.328888.xyz/2023/04/02/iH8Nd5.png"/>
+      <p class="aside-loading-text">加载中</p>
+      <p class="aside-loading-speed-up">加载速度太慢?使用<a href="https://steampp.net/">Watt Toolkit</a>进行加速!</p>
+    </div>
+    <!-- end 加载界面 -->
     <aside>
-      <!-- 左侧导航 -->
+      <!-- 导航 -->
       <!-- 顶栏 -->
-      <div class="topbar">
-        <button type="button" class="unfold-sidebar"><i class="bi bi-list"></i></button>
+      <div class="aside-topbar">
+        <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
         <!-- logo -->
-        <a href="/"><img class="logo" width="248" height="20" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
+        <a href="/"><img class="aside-logo" width="248" height="20" src="https://i.328888.xyz/2023/02/18/B96nz.png" alt="CommonGoldIngot" border="0"/></a>
       </div>
       <!-- 遮罩层 -->
-      <div class="mask">
+      <div class="aside-mask">
       </div>
       <!-- 侧边栏 -->
       <nav>
-        <div class="sidebar">
-          <div class="sidebar-header">
+        <div class="aside-sidebar">
+          <div class="aside-sidebar-header">
           </div>
           <div>
-            <ul class="nav">
-              <li class="sidebar-item">
-                <a class="sidebar-item-link" href="/"><i class="bi bi-house-fill"></i><span>&nbsp;主页</span><i class="bi bi-chevron-right"></i></a>
+            <ul class="aside-nav">
+              <li class="aside-sidebar-item">
+                <a class="aside-sidebar-item-link" href="/"><i class="bi bi-house-fill"></i><span>&nbsp;主页</span><i class="bi bi-chevron-right"></i></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span>&nbsp;关于</span><i class="bi bi-chevron-right"></i></a>
+              <li class="aside-sidebar-item">
+                <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span>&nbsp;关于</span><i class="bi bi-chevron-right"></i></a>
               </li>
-              <li class="sidebar-item-has-subnav">
-                <a class="sidebar-item-link" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span>&nbsp;wiki</span><i class="bi bi-chevron-right"></i></a>
-                <ul class="subnav">
-                  <li><a class="sidebar-item-link" href="/wiki/七三班wiki/"><span>七三班wiki</span></a></li>
+              <li class="aside-sidebar-item-has-subnav">
+                <a class="aside-sidebar-item-link" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span>&nbsp;wiki</span><i class="bi bi-chevron-right"></i></a>
+                <ul class="aside-subnav">
+                  <li><a class="aside-sidebar-item-link" href="/wiki/七三班wiki/"><span>七三班wiki</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -48,7 +56,7 @@
         </div>
       </nav>
     </aside>
-    <!-- end 左侧导航 -->
+    <!-- end 导航 -->
     <!-- 页面主要内容 -->
     <br/>
     <br/>
@@ -56,7 +64,7 @@
     <br/>
     <div class="main">
       <p>现在是</p>
-      <p id="time"></p>
+      <p class="time"></p>
       <br/>
       <p>欢迎来到CommonGoldIngot的网站!</p>
     </div>
@@ -80,7 +88,7 @@
               second = "0" + second;
           var day = year + "年" + month + "月" + date + "日"
           var time = hour + ":" + minute + ":" + second
-          document.getElementById("time").innerHTML = day + " " + time
+          document.getElementByClassName("time").innerHTML = day + " " + time
       }, 100)
     </script>
   </body>
