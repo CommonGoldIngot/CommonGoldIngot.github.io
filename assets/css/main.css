@@ -36,6 +36,10 @@ div.aside-loading {
   height: 100%;
   background-color: white;
   text-align: center;
+  line-height: 100%;
+}
+div.aside-loading-items {
+  display: inline-block;
 }
 p.aside-loading-speed-up {
   visibility: hidden;
