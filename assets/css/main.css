@@ -106,6 +106,7 @@ ul.aside-subnav {
 }
 a.aside-sidebar-item-link {
   color: white;
+  text-decoration: none;
 }
 .bi-house-fill,
 .bi-person-fill,
@@ -113,19 +114,12 @@ a.aside-sidebar-item-link {
   color: white;
   font-size: 18px;
 }
-@keyframes chevron-rotate {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(90deg);}
-}
 .bi-chevron-right {
   display: inline-block;
   float: right;
   color: white;
   font-size: 6px;
   margin: 0 32px;
-  animation-name: none;
-  animation-duration: 0.5s;
-  animation-direction: normal;
 }
 /***************** 页面主要内容 *****************/
 div.main {
