@@ -1,8 +1,8 @@
 $(document).ready(function () {
     //加载界面淡出
     setTimeout(function () {
-        $("div.aside-loading").fadeOut(400);
-    }, 500)
+        $("div.aside-loading").fadeOut(1000);
+    }, 800)
     $("div.aside-loading").remove();
     //侧边栏
     $("button.unfold-sidebar").click(function () {
@@ -16,6 +16,6 @@ $(document).ready(function () {
             $("ul.subnav").slideToggle("fast");
         });
         $("a.sidebar-item-link").click(function () {
-            $(".bi-chevron-right").css({"animation-name":"chevron-rotate"});
+            
         });
 });
