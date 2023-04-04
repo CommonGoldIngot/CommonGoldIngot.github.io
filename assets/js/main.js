@@ -4,7 +4,7 @@ $(document).ready(function () {
         $("div.aside-loading").fadeOut(500, function () {
             $("div.aside-loading").remove();
         });
-    }, 500)
+    }, 800)
     //侧边栏
     $("button.unfold-sidebar").click(function () {
         $("div.sidebar, div.mask").show();
