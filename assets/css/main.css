@@ -30,14 +30,14 @@ body {
 }
 /***************** 加载动画 *****************/
 div.loading {
+  display: flex;
   position: fixed;
   z-index: 114514; /*这么臭的z-index还有必要留着吗(恼 [doge]*/
   width: 100%;
   height: 100%;
   background-color: white;
-}
-div.loading-item {
-  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
