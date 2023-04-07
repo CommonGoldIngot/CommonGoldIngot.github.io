@@ -1,8 +1,8 @@
 $(document).ready(function () {
     //加载界面淡出
     setTimeout(function () {
-        $("div.aside-loading").fadeOut(500, function () {
-            $("div.aside-loading").remove();
+        $("div.loading").fadeOut(500, function () {
+            $("div.loading").remove();
         });
     }, 800)
     //侧边栏
@@ -16,4 +16,17 @@ $(document).ready(function () {
         $("li.aside-sidebar-item-has-subnav").click(function () {
             $("ul.aside-subnav").slideToggle("fast");
         });
+        var chevron, degree = 0;
+        function startRotate() {
+            degree = degree + 1;
+            chevron.style.transform = "rotate(degree + "deg")"
+            if (degree == 180) {
+                clearInterval
+            }
+            
+        }
+        function rotateChevron() {
+            chevron = document.getElementsByClassName("bi-chevron-right")
+            
+        }
 });
