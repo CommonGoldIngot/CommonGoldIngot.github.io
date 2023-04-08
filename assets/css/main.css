@@ -39,6 +39,9 @@ div.loading {
   justify-content: center;
   align-items: center;
 }
+div.loading-items {
+  text-align: center;
+}
 p.loading-speed-up {
   visibility: hidden;
 }
