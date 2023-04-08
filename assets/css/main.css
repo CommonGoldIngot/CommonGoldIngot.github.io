@@ -39,6 +39,9 @@ div.loading {
   justify-content: center;
   align-items: center;
 }
+p.loading-speed-up {
+  visibility: hidden;
+}
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
   position: fixed;
