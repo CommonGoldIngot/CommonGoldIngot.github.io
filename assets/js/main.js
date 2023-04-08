@@ -5,7 +5,6 @@ function loaded() {
     });
 }
 $(document).ready(function () {
-    setTimeout(, 800)
     //侧边栏
     $("button.aside-unfold-sidebar").click(function () {
         $("div.aside-sidebar, div.aside-mask").show();
