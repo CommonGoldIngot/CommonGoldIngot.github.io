@@ -1,3 +1,6 @@
+setTimeout(function () {
+    $("p.loading-speed-up").css("visibility","visible");
+}, 5000);
 //加载界面淡出
 function loaded() {
     $("div.loading").fadeOut(500, function () {
