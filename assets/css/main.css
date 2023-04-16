@@ -139,12 +139,22 @@ a.aside-sidebar-item-link {
 i.chevron-rotate {
   position: relative;
   animation-name: ;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
 }
 @keyframes chevron-rotate {
   from {transform: rotate(0deg);}
   to {transform: rotate(90deg);}
+}
+i.chevron-rotate-back {
+  position: relative;
+  animation-name: ;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes chevron-rotate-back {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-90deg);}
 }
 /***************** 页面主要内容 *****************/
 div.main {
