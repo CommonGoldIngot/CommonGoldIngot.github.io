@@ -17,7 +17,8 @@ $(document).ready(function () {
     });
         //侧边栏子页面
         $("li.aside-sidebar-item-has-subnav").click(function () {
-            $("ul.aside-subnav").slideToggle("fast");
-            $("i.chevron-rotate").css("animation-name","chevron-rotate");
+            $("ul.aside-subnav").slideToggle("fast", function () {
+                $("i.chevron-rotate").css("animation-name","chevron-rotate");
+            });
         });
 });
