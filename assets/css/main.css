@@ -39,6 +39,12 @@ div.loading {
   justify-content: center;
   align-items: center;
 }
+div.loading-round-spinner {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-radius: 100%;
+}
 div.loading-items {
   text-align: center;
 }
@@ -124,6 +130,14 @@ a.aside-sidebar-item-link {
   color: white;
   font-size: 6px;
   margin: 0 32px;
+  position: relative;
+  animation-name: chevron-rotate;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes chevron-rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(90deg);}
 }
 /***************** 页面主要内容 *****************/
 div.main {
