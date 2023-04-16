@@ -131,7 +131,7 @@ a.aside-sidebar-item-link {
   font-size: 6px;
   margin: 0 32px;
   position: relative;
-  animation-name: chevron-rotate;
+  animation-name: ;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
