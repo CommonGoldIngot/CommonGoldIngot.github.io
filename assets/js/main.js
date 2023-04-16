@@ -18,6 +18,6 @@ $(document).ready(function () {
         //侧边栏子页面
         $("li.aside-sidebar-item-has-subnav").click(function () {
             $("ul.aside-subnav").slideToggle("fast");
-            $(".bi-chevron-right").css("animation-name","chevron-rotate");
+            $("i.chevron-rotate").css("animation-name","chevron-rotate");
         });
 });
