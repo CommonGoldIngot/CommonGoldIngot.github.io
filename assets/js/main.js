@@ -3,7 +3,7 @@ setTimeout(function () {
 }, 5000);
 //加载界面淡出
 function loaded() {
-    $("div.loading").fadeOut(500, function () {
+    $("div.loading").fadeOut(1500, function () {
         $("div.loading").remove();
     });
 }
@@ -18,5 +18,6 @@ $(document).ready(function () {
         //侧边栏子页面
         $("li.aside-sidebar-item-has-subnav").click(function () {
             $("ul.aside-subnav").slideToggle("fast");
+            $(".bi-chevron-right").css("animation-name","chevron-rotate");
         });
 });
