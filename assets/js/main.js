@@ -18,7 +18,12 @@ $(document).ready(function () {
         //侧边栏子页面
         $("li.aside-sidebar-item-has-subnav").click(function () {
             $("ul.aside-subnav").slideToggle("fast", function () {
-                $("i.chevron-rotate").css("animation-name","chevron-rotate");
+                $("i.chevron-rotate").css("animation-name","chevron-rotate").removeClass("bi-chevron-right chevron-rotate").addClass("bi-chevron-down chevron-rotate-back");
+                $("li.aside-sidebar-item-has-subnav").addClass("aside-sidebar-item-has-subnav-clicked");
             });
+        });
+        $("li.aside-sidebar-item-has-subnav-clicked").click(function () {
+            $("i.chevron-rotate-back").css("animation-name","chevron-rotate-back").removeClass("bi-chevron-down chevron-rotate-back").addClass("bi-chevron-right chevron-rotate");
+            $("li.aside-sidebar-item-has-subnav").removeClass("aside-sidebar-item-has-subnav-clicked");
         });
 });
