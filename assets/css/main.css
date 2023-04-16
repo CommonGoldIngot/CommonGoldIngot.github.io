@@ -42,7 +42,7 @@ div.loading {
 div.loading-items {
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 div.loading-round-spinner {
   display: flex;
