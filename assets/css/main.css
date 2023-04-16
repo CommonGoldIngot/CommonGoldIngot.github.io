@@ -130,6 +130,8 @@ a.aside-sidebar-item-link {
   color: white;
   font-size: 6px;
   margin: 0 32px;
+}
+i.chevron-rotate {
   position: relative;
   animation-name: ;
   animation-duration: 1s;
