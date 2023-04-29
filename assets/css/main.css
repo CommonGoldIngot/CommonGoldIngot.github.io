@@ -128,33 +128,12 @@ a.aside-sidebar-item-link {
   color: white;
   font-size: 18px;
 }
-.bi-chevron-right,
-.bi-chevron-down {
+.mdi-chevron-right {
   display: inline-block;
   float: right;
   color: white;
   font-size: 6px;
   margin: 0 32px;
-}
-i.chevron-rotate {
-  position: relative;
-  animation-name: ;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-}
-@keyframes chevron-rotate {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(90deg);}
-}
-i.chevron-rotate-back {
-  position: relative;
-  animation-name: ;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-}
-@keyframes chevron-rotate-back {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(-90deg);}
 }
 /***************** 页面主要内容 *****************/
 div.main {
