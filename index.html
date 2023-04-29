@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <title>CommonGoldIngot的网站</title>
   </head>
-  <body onload="loaded()">
+  <body onload="loadingIcons()">
     <!-- 加载界面 -->
     <div class="loading">
       <div class="loading-logo-round-border">
@@ -42,14 +42,14 @@
           <div>
             <ul class="aside-nav">
               <li class="aside-sidebar-item">
-                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span>&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
+                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home" onload="loaded()"></i><span>&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
               </li>
               <li class="aside-sidebar-item">
                 <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span>&nbsp;关于</span><i class="mdi mdi-chevron-right"></i></a>
               </li>
-              <li class="aside-sidebar-item-has-subnav">
-                <a class="aside-sidebar-item-link -wiki-" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span>&nbsp;wiki</span><i class="mdi mdi-chevron-right"></i></a>
-                <ul class="aside-subnav">
+              <li class="aside-sidebar-item-has-subnav --wiki">
+                <a class="aside-sidebar-item-link" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span>&nbsp;wiki</span><i class="mdi mdi-chevron-right --wiki"></i></a>
+                <ul class="aside-subnav --wiki">
                   <li><a class="aside-sidebar-item-link" href="/wiki/七三班wiki/"><span>七三班wiki</span></a></li>
                 </ul>
               </li>
@@ -78,7 +78,7 @@
       setInterval(function () {
           var time = new Date();
           var year = time.getFullYear();
-          var month = time.getMonth()+1;
+          var month = time.getMonth() + 1;
           var date = time.getDate();
           var hour = time.getHours();
           var minute = time.getMinutes();
