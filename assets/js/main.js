@@ -1,6 +1,6 @@
 //加载界面淡出
 function loaded() {
-    document.getElementsByClassName("loading-text").innerHTML = "加载完成！";
+    $("p.loading-text").text("加载完成！");
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
     });
@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
     $("div.aside-mask").click(function () {
         $("div.aside-mask").hide();
-        $("div.aside-sidebar").animate({left: "-300"}).hide();
+        $("div.aside-sidebar").animate({left: "-300"});
     });
     //侧边栏子页面
     $("li.--wiki").rotate({
