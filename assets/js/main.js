@@ -14,6 +14,7 @@ $(document).ready(function () {
     $("div.aside-mask").click(function () {
         $("div.aside-mask").hide();
         $("div.aside-sidebar").animate({left: "-300"});
+        $("div.aside-sidebar").hide();
     });
     //侧边栏子页面
     $("li.--wiki").rotate({
