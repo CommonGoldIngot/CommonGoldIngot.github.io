@@ -1,5 +1,5 @@
 //加载界面淡出
-document.addEventListener("load", function () {
+window.onload = function () {
     $("p.loading-text").text("加载完成！");
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
