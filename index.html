@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="cn" onload="loaded()">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,7 @@
           <div>
             <ul class="aside-nav">
               <li class="aside-sidebar-item">
-                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home" onload="loaded()"></i><span>&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
+                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span>&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
               </li>
               <li class="aside-sidebar-item">
                 <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span>&nbsp;关于</span><i class="mdi mdi-chevron-right"></i></a>
@@ -89,9 +89,9 @@
               minute = "0" + minute;
           if (second < 10)
               second = "0" + second;
-          var day = year + "年" + month + "月" + date + "日"
-          var time = hour + ":" + minute + ":" + second
-          document.getElementById("time").innerHTML = day + " " + time
+          var day = year + "年" + month + "月" + date + "日";
+          var time = hour + ":" + minute + ":" + second;
+          document.getElementById("time").innerHTML = day + " " + time;
       }, 100)
     </script>
   </body>
