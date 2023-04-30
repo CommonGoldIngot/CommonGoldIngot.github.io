@@ -1,9 +1,5 @@
-setTimeout(function () {
-    $("p.loading-speed-up").css("visibility","visible");
-}, 5000);
 //加载界面淡出
 function loaded() {
-    $("p.loading-speed-up").css("visibility","hidden");
     document.getElementsByClassName("loading-text").innerHTML = "加载完成！";
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
