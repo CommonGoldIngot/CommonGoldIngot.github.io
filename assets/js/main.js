@@ -2,9 +2,6 @@ setTimeout(function () {
     $("p.loading-speed-up").css("visibility","visible");
 }, 5000);
 //加载界面淡出
-function loadingIcons() {
-    document.getElementsByClassName("loading-text").innerHTML = "正在加载图标...";
-}
 function loaded() {
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
