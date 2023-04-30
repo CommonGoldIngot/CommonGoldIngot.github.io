@@ -1,10 +1,10 @@
 //加载界面淡出
-function loaded() {
+document.addEventListener("load", function () {
     $("p.loading-text").text("加载完成！");
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
     });
-}
+});
 $(document).ready(function () {
     //侧边栏
     $("button.aside-unfold-sidebar").click(function () {
