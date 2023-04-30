@@ -4,7 +4,7 @@ function loaded() {
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
     });
-});
+}
 $(document).ready(function () {
     //侧边栏
     $("button.aside-unfold-sidebar").click(function () {
