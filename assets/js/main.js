@@ -30,7 +30,7 @@ $(document).ready(function () {
             $("i.--wiki").toggle(
                 function () {
                     $(this).rotate({animateTo: 90});
-                }
+                },
                 function () {
                     $(this).rotate({animateTo: 0});
                 }
