@@ -19,20 +19,66 @@ $(document).ready(function () {
     });
     //侧边栏子页面
     $("li.--wiki").bind({
+    
+    $('#img').rotate({
+    bind:{
+    click: function(){
+            $(this).rotate({
+                angle: 0,
+                animateTo:180
+            });
+        }
+    }
         mouseover: function () {
-            $("i.--wiki").rotate({animateTo: 90});
+            $("i.--wiki").rotate({
+                bind: {
+                    click: function () {
+                        $(this).rotate({
+                            duration: 500,
+                            animateTo: 90
+                        });
+                    }
+                }
+            });
         },
         mouseout: function () {
-            $("i.--wiki").rotate({animateTo: 0});
+            $("i.--wiki").rotate({
+                bind: {
+                    click: function () {
+                        $(this).rotate({
+                            duration: 500,
+                            animateTo: 0
+                        });
+                    }
+                }
+            });
         },
         click: function () {
             $("ul.--wiki").slideToggle("fast");
             $("i.--wiki").toggle(
                 function () {
-                    $(this).rotate({animateTo: 90});
+                    $("i.--wiki").rotate({
+                        bind: {
+                            click: function () {
+                                $(this).rotate({
+                                    duration: 500,
+                                    animateTo: 90
+                                });
+                            }
+                        }
+                    });
                 },
                 function () {
-                    $(this).rotate({animateTo: 0});
+                    $("i.--wiki").rotate({
+                        bind: {
+                            click: function () {
+                                $(this).rotate({
+                                    duration: 500,
+                                    animateTo: 0
+                                });
+                            }
+                        }
+                    });
                 }
             );
         }
