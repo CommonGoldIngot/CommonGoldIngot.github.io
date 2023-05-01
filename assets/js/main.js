@@ -18,18 +18,23 @@ $(document).ready(function () {
         });
     });
     //侧边栏子页面
-    $("li.--wiki").rotate({
-        bind:
-        {
-            mouseover: function () {
-                $("i.--wiki").rotate({animateTo: 90})
-            },
-            mouseout : function () {
-                $("i.--wiki").rotate({animateTo: 0})
-            }
+    $("li.--wiki").bind({
+        mouseover: function () {
+            $("i.--wiki").rotate({animateTo: 90});
+        },
+        mouseout: function () {
+            $("i.--wiki").rotate({animateTo: 0});
+        },
+        click: function () {
+            $("ul.--wiki").slideToggle("fast");
+            $("i.--wiki").toggle(
+                function () {
+                    $(this).rotate({animateTo: 90});
+                }
+                function () {
+                    $(this).rotate({animateTo: 0});
+                }
+            );
         }
-    });
-    $("li.--wiki").click(function () {
-        $("ul.--wiki").slideToggle("fast");
     });
 });
