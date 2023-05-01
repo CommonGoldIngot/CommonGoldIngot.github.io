@@ -3,7 +3,7 @@ function loaded() {
     $("p.loading-text").text("加载完成！");
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
-    });
+    });o
 }
 $(document).ready(function () {
     //侧边栏
@@ -19,16 +19,6 @@ $(document).ready(function () {
     });
     //侧边栏子页面
     $("li.--wiki").bind({
-    
-    $('#img').rotate({
-    bind:{
-    click: function(){
-            $(this).rotate({
-                angle: 0,
-                animateTo:180
-            });
-        }
-    }
         mouseover: function () {
             $("i.--wiki").rotate({
                 bind: {
