@@ -3,7 +3,7 @@ function loaded() {
     $("p.loading-text").text("加载完成！");
     $("div.loading").fadeOut(500, function () {
         $("div.loading").remove();
-    });o
+    });
 }
 $(document).ready(function () {
     //侧边栏
