@@ -20,57 +20,18 @@ $(document).ready(function () {
     //侧边栏子页面
     $("li.--wiki").bind({
         mouseover: function () {
-            $("i.--wiki").rotate({
-                bind: {
-                    click: function () {
-                        $(this).rotate({
-                            duration: 500,
-                            animateTo: 90
-                        });
-                    }
-                }
-            });
+            $("i.--wiki").rotate({animateTo: 90});
         },
         mouseout: function () {
-            $("i.--wiki").rotate({
-                bind: {
-                    click: function () {
-                        $(this).rotate({
-                            duration: 500,
-                            animateTo: 0
-                        });
-                    }
-                }
-            });
-        },
-        click: function () {
-            $("ul.--wiki").slideToggle("fast");
-            $("i.--wiki").toggle(
-                function () {
-                    $("i.--wiki").rotate({
-                        bind: {
-                            click: function () {
-                                $(this).rotate({
-                                    duration: 500,
-                                    animateTo: 90
-                                });
-                            }
-                        }
-                    });
-                },
-                function () {
-                    $("i.--wiki").rotate({
-                        bind: {
-                            click: function () {
-                                $(this).rotate({
-                                    duration: 500,
-                                    animateTo: 0
-                                });
-                            }
-                        }
-                    });
-                }
-            );
+            $("i.--wiki").rotate({animateTo: 0});
         }
     });
+    $("li.--wiki").toggle(
+        function () {
+            $("i.--wiki").rotate({animateTo: 90});
+        },
+        function () {
+            $("i.--wiki").rotate({animateTo: 0});
+        }
+    );
 });
