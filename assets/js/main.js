@@ -18,6 +18,9 @@ $(document).ready(function () {
         });
     });
     //侧边栏子页面
+    $("li.--wiki").click(function () {
+        $("ul.--wiki").slideToggle("fast");
+    });
     $("li.--wiki").bind({
         mouseover: function () {
             $("i.--wiki").rotate({animateTo: 90});
