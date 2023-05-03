@@ -35,6 +35,6 @@ $(document).ready(function () {
         },
         function () {
             $("i.--wiki").rotate({animateTo: 0});
-        }}
+        }
     );
 });
