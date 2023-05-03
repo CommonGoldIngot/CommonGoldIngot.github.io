@@ -35,6 +35,12 @@ $(document).ready(function () {
         },
         function () {
             $("i.--wiki").rotate({animateTo: 0});
+        },
+        function () {
+            $("i.--wiki").rotate({animateTo: 90});
+        },
+        function () {
+            $("i.--wiki").rotate({animateTo: 0});
         }
     );
 });
