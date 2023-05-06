@@ -7,7 +7,7 @@ function loaded() {
 }
 $(document).ready(function () {
     //侧边栏
-    $("button.aside-unfold-sidebar").click(function () {
+    $("button.aside-unfold-sidebar").on("click", function () {
         $("div.aside-mask").show();
         $("div.aside-sidebar").show().animate({left: "0"}, "fast");
     });
@@ -18,17 +18,22 @@ $(document).ready(function () {
         });
     });
     //侧边栏子页面
-    function wikiR1() {
-        $("i.--wiki").rotate({animateTo: 90});
-    }
-    function wikiR2() {
-        $("i.--wiki").rotate({animateTo: 0});
-    }
-    $("li.--wiki").click(function () {
-        $("ul.--wiki").slideToggle("fast");
+    var wiki = 0;
+    var wikiR1 = function () { $("i.--wiki").rotate({animateTo: 90}); };
+    var wikiR2 = function () { $("i.--wiki").rotate({animateTo: 0}); };
+    var wikiS = function () { $("ul.--wiki").slideToggle("fast"); };
+    $("li.--wiki").on({
+        click: wikiS,
+        mouseover: wikiR1,
+        mouseout: wikiR2
     });
-    $("li.--wiki").bind({
-        mouseover: wikiR1(),
-        mouseout: wikiR2()
+    $("li.--wiki").on("click", function () {
+        if (wiki == 0) {
+            wikiR1;
+            wiki = 1;
+        } else {
+            wikiR2;
+            wiki = 0;
+        }
     });
 });
