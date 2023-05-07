@@ -25,6 +25,7 @@ $(document).ready(function () {
     $("li.--wiki").on({
         mouseover: wikiR1,
         click: function () {
+            wikiS;
             if (wiki == 0) {
                 wikiR1;
                 wiki = 1;
@@ -32,7 +33,6 @@ $(document).ready(function () {
                 wikiR2;
                 wiki = 0;
             }
-            wikiS;
         },
         mouseout: function () {
             if (wiki == 1) {
