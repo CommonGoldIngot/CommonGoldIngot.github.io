@@ -1,3 +1,9 @@
+//加载动画
+var angle = 0;
+setInterval(function () {
+    angle += 1;
+    $("div.loading-round-spinner").rotate(angle);
+}, 10)
 //加载界面淡出
 function loaded() {
     $("p.loading-text").text("加载完成！");
