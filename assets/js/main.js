@@ -18,10 +18,10 @@ $(document).ready(function () {
         });
     });
     //侧边栏子页面
-    var wiki = 0;
-    var wikiS = function () { $("ul.--wiki").slideToggle(300); };
-    var wikiR1 = function () { $("i.--wiki").rotate({duration: 300, animateTo: 90}); };
-    var wikiR2 = function () { $("i.--wiki").rotate({duration: 300, animateTo: 0}); };
+    var wikiUH = $("ul.--wiki").height();
+    var wikiS = (function () { $("ul.--wiki").slideToggle(300); })();
+    var wikiR1 = (function () { $("i.--wiki").rotate({duration: 300, animateTo: 90}); })();
+    var wikiR2 = (function () { $("i.--wiki").rotate({duration: 300, animateTo: 0}); })();
     $("li.--wiki").on({
         mouseover: wikiR1,
         click: function () {
