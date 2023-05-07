@@ -19,20 +19,21 @@ $(document).ready(function () {
     });
     //侧边栏子页面
     $("li.--wiki").on("click", function () {
-        $("ul.--wiki").slideToggle(200);
-        var wiki = 0;
-        if (wiki == 0) {
-            $("i.--wiki").rotate({
-                duration: 300,
-                animateTo: 90
-            });
-            wiki = 1;
-        } else {
-            $("i.--wiki").rotate({
-                duration: 300,
-                animateTo: 0
-            });
-            wiki = 0;
-        }
+        $("ul.--wiki").slideToggle(200, function () {
+            var wiki = 0;
+            if (wiki == 0) {
+                $("i.--wiki").rotate({
+                    duration: 300,
+                    animateTo: 90
+                });
+                wiki = 1;
+            } else {
+                $("i.--wiki").rotate({
+                    duration: 300,
+                    animateTo: 0
+                });
+                wiki = 0;
+            }
+        });
     });
 });
