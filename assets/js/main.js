@@ -9,18 +9,18 @@ $(document).ready(function () {
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
         $("div.aside-mask").show();
-        $("div.aside-sidebar").show().animate({left: "0"}, 300);
+        $("div.aside-sidebar").show().animate({left: "0"}, 200);
     });
     $("div.aside-mask").click(function () {
         $("div.aside-mask").hide();
-        $("div.aside-sidebar").animate({left: "-302"}, 300, function () {
+        $("div.aside-sidebar").animate({left: "-302"}, 200, function () {
             $("div.aside-sidebar").hide();
         });
     });
     //侧边栏子页面
+    var wiki = 0;
     $("li.--wiki").on("click", function () {
         $("ul.--wiki").slideToggle(200, function () {
-            var wiki = 0;
             if (wiki == 0) {
                 $("i.--wiki").rotate({
                     duration: 300,
