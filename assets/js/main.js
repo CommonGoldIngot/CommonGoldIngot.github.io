@@ -2,7 +2,7 @@
 var angleS = 0;
 var angleI = 0;
 setInterval(function () {
-    angleS += 1;
+    angleS += 2;
     $("div.loading-spinner").rotate(angleS);
 }, 4)
 setInterval(function () {
