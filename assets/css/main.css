@@ -47,17 +47,12 @@ div.loading-round-border {
   height: 100px;
   background-color: white;
   border: 3px solid rgb(var(--main-green));
+  border-top: 3px solid rgb(var(--main-light-green));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-div.loading-spinner {
-  width: 100px;
-  height: 100px;
-  border-top: 3px solid rgb(var(--main-light-green));
-  border-radius: 50%;
 }
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
