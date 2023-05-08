@@ -1,9 +1,14 @@
 //加载动画
-var angle = 0;
+var angleS = 0;
+var angleI = 0;
 setInterval(function () {
-    angle += 1;
-    $("div.loading-spinner").rotate(angle);
-}, 10)
+    angleS += 1;
+    $("div.loading-spinner").rotate(angleS);
+}, 4)
+setInterval(function () {
+    angleI -= 1;
+    $("img.loading-logo").rotate(angleI);
+}, 4)
 //加载界面淡出
 function loaded() {
     $("p.loading-text").text("加载完成！");
