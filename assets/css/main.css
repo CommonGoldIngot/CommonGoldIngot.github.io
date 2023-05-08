@@ -57,6 +57,7 @@ div.loading-spinner {
   width: 100px;
   height: 100px;
   border-top: 3px solid rgb(var(--main-light-green));
+  border-radius: 50%;
 }
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
