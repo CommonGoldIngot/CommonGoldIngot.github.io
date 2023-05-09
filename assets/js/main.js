@@ -1,20 +1,30 @@
 //加载动画
-var angleS = 0;
-var angleI = 0;
-setInterval(function () {
-    angleS += 1;
-    $("div.loading-round-border").rotate(angleS);
-}, 4)
-setInterval(function () {
-    angleI -= 1;
-    $("img.loading-logo").rotate(angleI);
-}, 4)
+var rotationB = function () {
+  $("div.loading-round-border").rotate({
+    duration: 1000,
+    angle: 0,
+    animateTo: 360,
+    callback: rotationB
+  });
+};
+var rotationI = function () {
+  $("img.loading-logo").rotate({
+    duration: 1000,
+    angle: 0,
+    animateTo: -360,
+    callback: rotationI
+  });
+};
+rotationB;
+rotationI;
 //加载界面淡出
 function loaded() {
-    $("p.loading-text").text("加载完成！");
-    $("div.loading").fadeOut(500, function () {
-        $("div.loading").remove();
-    });
+    setTimeout(function () { 
+        $("p.loading-text").text("加载完成！");
+        $("div.loading").fadeOut(500, function () {
+            $("div.loading").remove();
+        });
+    }, 800)
 }
 $(document).ready(function () {
     //侧边栏
