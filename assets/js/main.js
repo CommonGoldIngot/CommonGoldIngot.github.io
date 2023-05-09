@@ -15,8 +15,8 @@ var rotationI = function () {
     callback: rotationI
   });
 };
-rotationB;
-rotationI;
+rotationB();
+rotationI();
 //加载界面淡出
 function loaded() {
     setTimeout(function () { 
