@@ -1,22 +1,12 @@
 //加载动画
-var rotationB = function () {
-  $("div.loading-round-border").rotate({
-    duration: 1000,
-    angle: 0,
-    animateTo: 360,
-    callback: rotationB
-  });
-};
-var rotationI = function () {
-  $("img.loading-logo").rotate({
-    duration: 1000,
-    angle: 0,
-    animateTo: -360,
-    callback: rotationI
-  });
-};
-rotationB();
-rotationI();
+var angleB = 0;
+var angleL = 0;
+setInterval(function () {
+    angleB += 1;
+    angleL += 1;
+    $("div.loading-round-border").rotate(angleB);
+    $("img.loading-logo").rotate(angleL);
+}, 5);
 //加载界面淡出
 function loaded() {
     setTimeout(function () { 
@@ -24,7 +14,7 @@ function loaded() {
         $("div.loading").fadeOut(500, function () {
             $("div.loading").remove();
         });
-    }, 800)
+    }, 900)
 }
 $(document).ready(function () {
     //侧边栏
