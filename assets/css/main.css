@@ -46,8 +46,8 @@ div.loading-round-border {
   width: 100px;
   height: 100px;
   background-color: white;
-  border: 3px solid rgb(var(--main-green));
-  border-top: 3px solid rgb(var(--main-light-green));
+  border: 5px solid rgb(var(--main-green));
+  border-top: 5px solid rgb(var(--main-light-green));
   border-radius: 50%;
   display: flex;
   align-items: center;
