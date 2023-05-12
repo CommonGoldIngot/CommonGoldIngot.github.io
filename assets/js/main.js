@@ -3,7 +3,7 @@ var angleB = 0;
 var angleL = 0;
 setInterval(function () {
     angleB += 1;
-    angleL += 1;
+    angleL -= 1;
     $("div.loading-round-border").rotate(angleB);
     $("img.loading-logo").rotate(angleL);
 }, 5);
