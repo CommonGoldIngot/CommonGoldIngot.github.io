@@ -146,9 +146,9 @@ span.aside-text {
 div.main {
   margin: 16px;
   padding: 24px;
-  background-color: rgba(var(--main-white),0.2);
+  background-color: rgba(var(--main-white),0.1);
   border-radius: 20px;
-  border: 4px solid rgba(var(--main-white),0.2);
+  border: 4px solid rgba(var(--main-white),0.1);
 }
 h1 {
   font-size: 36px;
