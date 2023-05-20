@@ -16,7 +16,7 @@ body {
 /***************** 背景图片 *****************/
 @media (orientation: portrait) {
   body {
-    background-image: url("https://i.328888.xyz/2023/02/18/BvDBt.png");
+    background-image: url("https://i.imgloc.com/2023/02/18/BvDBt.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
@@ -24,7 +24,7 @@ body {
 }
 @media (orientation: landscape) {
   body {
-    background-image: url("https://i.328888.xyz/2022/12/10/fqpwZ.jpeg");
+    background-image: url("https://i.imgloc.com/2022/12/10/fqpwZ.jpeg");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
