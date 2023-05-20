@@ -20,7 +20,7 @@
     <!-- 加载界面 -->
     <div class="loading">
       <div class="loading-round-border">
-        <img class="loading-logo" width="80" height="80" src="https://i.328888.xyz/2023/04/02/iH8Nd5.png" alt="CommonGoldIngot"/>
+        <img class="loading-logo" width="80" height="80" src="https://i.328888.xyz/2023/04/02/iH8Nd5.png" alt=""/>
       </div>
       <p class="loading-text">加载中...</p>
     </div>
@@ -68,13 +68,13 @@
     <!-- 页面主要内容 -->
     <div class="main">
       <div class="main-card">
+        <p>欢迎来到CommonGoldIngot的网站!</p>
+      </div>
+      <div class="main-card ">
         <div class="main-card-title">
           <h3>现在是</h3>
         </div>
         <p id="time"></p>
-      </div>
-      <div class="main-card">
-        <p>欢迎来到CommonGoldIngot的网站!</p>
       </div>
     </div>
     <!-- 页面主要内容 end -->
@@ -96,9 +96,7 @@
           if (second < 10) {
               second = "0" + second;
           }
-          var day = year + "年" + month + "月" + date + "日";
-          var time = hour + ":" + minute + ":" + second;
-          document.getElementById("time").innerHTML = day + " " + time;
+          document.getElementById("time").innerHTML = year + "年" + month + "月" + date + "日" + " " + hour + ":" + minute + ":" + second;
       }, 100)
     </script>
   </body>
