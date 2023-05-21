@@ -144,23 +144,20 @@ span.aside-text {
 }
 /***************** 页面主要内容 *****************/
 div.main {
-  margin: 32px;
-  padding: 24px;
+  margin: 74px 24px 24px 24px;
+  padding: 20px;
   background-color: rgba(var(--main-white),0.7);
   border: 4px solid rgba(var(--main-white),0);
-  border-radius: 20px;
+  border-radius: 16px;
 }
 div.main-card {
-  padding: 10px;
-  background-color: rgba(var(--main-green),0.3);
-  border: 1px solid rgb(var(--main-green));
-  border-radius: 10px;
+  margin: 20px;
+  padding: 8px;
+  border-style: none;
+  border-radius: 6px;
 }
-div.main-card-title {
-  padding: 4px;
-  background-color: rgba(var(--main-green),0.3);
-  border: 1px solid rgb(var(--main-green));
-  border-radius: 4px;
+div.color-green {
+  background-color: var(--main-green);
 }
 h1 {
   font-size: 36px;
