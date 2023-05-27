@@ -2,8 +2,6 @@
 *************************** 定义区 ****************************
 *************************************************************/
 :root {
-  --main-transparent: 0,0,0,0
-
   --main-black: 0,0,0;
   --main-white: 255,255,255;
   --main-light-green: 214,241,226;
@@ -157,7 +155,7 @@ div.main {
   margin: 74px 24px 24px 24px;
   padding: 24px;
   background-color: rgba(var(--main-white),0.8);
-  border: 1px solid rgba(var(--main-transparent);
+  border: 1px solid transparent;
   border-radius: 16px;
 }
 div.main-title {
@@ -177,14 +175,14 @@ div.main-card-header {
   top: 0;
   width: 100%;
   padding: 12px;
-  border: 1px solid rgba(var(--main-transparent));
+  border: 1px solid transparent;
   border-radius: 8px;
 }
 div.main-card-body {
   bottom: 0;
   width: 100%;
   padding: 12px;
-  border: 1px solid rgba(var(--main-transparent));
+  border: 1px solid transparent;
   border-radius: 8px;
   background-color: rgba(var(--main-black),0.6);
 }
