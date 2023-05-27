@@ -158,6 +158,7 @@ div.main {
   border-radius: 16px;
 }
 div.main-card {
+  width: 25%;
   padding: 8px;
   background-color: rgb(var(--main-green));
   border: 1px solid rgb(var(--main-green));
@@ -179,6 +180,5 @@ a {
   color: rgb(var(--main-green));
 }
 #time {
-  color: rgb(var(--main-green));
   font-size: 28px;
 }
