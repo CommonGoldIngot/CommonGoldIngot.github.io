@@ -2,6 +2,9 @@
 *************************** 定义区 ****************************
 *************************************************************/
 :root {
+  --main-transparent: 0,0,0,0
+
+  --main-black: 0,0,0;
   --main-white: 255,255,255;
   --main-light-green: 214,241,226;
   --main-green: 60,179,113;
@@ -154,16 +157,36 @@ div.main {
   margin: 74px 24px 24px 24px;
   padding: 24px;
   background-color: rgba(var(--main-white),0.8);
-  border: 1px solid rgba(var(--main-white),0);
+  border: 1px solid rgba(var(--main-transparent);
   border-radius: 16px;
+}
+div.main-title {
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+  background-color: rgba(var(--main-green),0.4);
+  border: 1px solid rgb(var(--main-green));
+  border-radius: 8px;
 }
 div.main-card {
   width: 25%;
-  margin: 12px;
-  padding: 8px;
-  background-color: rgb(var(--main-green));
-  border: 1px solid rgb(var(--main-green));
-  border-radius: 6px;
+  margin: 16px;
+  padding: 0px;
+}
+div.main-card-header {
+  top: 0;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(var(--main-transparent));
+  border-radius: 8px;
+}
+div.main-card-body {
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(var(--main-transparent));
+  border-radius: 8px;
+  background-color: rgba(var(--main-black),0.6);
 }
 h1 {
   font-size: 36px;
