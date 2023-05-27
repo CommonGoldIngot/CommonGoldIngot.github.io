@@ -159,11 +159,9 @@ div.main {
 }
 div.main-card {
   padding: 8px;
-  border-style: none;
-  border-radius: 6px;
-}
-div.color-green {
   background-color: rgb(var(--main-green));
+  border: 1px solid rgb(var(--main-green));
+  border-radius: 6px;
 }
 h1 {
   font-size: 36px;
@@ -174,14 +172,11 @@ h2 {
 h3 {
   font-size: 22px;
 }
-p {
+p, span {
   font-size: 20px;
 }
 a {
   color: rgb(var(--main-green));
-}
-span {
-  font-size: 20px;
 }
 #time {
   color: rgb(var(--main-green));
