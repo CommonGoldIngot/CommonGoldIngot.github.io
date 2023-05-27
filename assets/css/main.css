@@ -159,6 +159,7 @@ div.main {
 }
 div.main-card {
   width: 25%;
+  margin: 12px;
   padding: 8px;
   background-color: rgb(var(--main-green));
   border: 1px solid rgb(var(--main-green));
