@@ -179,8 +179,8 @@ div.main-card-header {
   width: 100%;
   padding: 12px;
   border: 1px solid transparent;
-  border-radius-top-right: 6px;
-  border-radius-top-left: 6px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
   background-color: green; /*test*/
 }
 div.main-card-body {
@@ -188,8 +188,8 @@ div.main-card-body {
   width: 100%;
   padding: 12px;
   border: 1px solid transparent;
-  border-radius-bottom-right: 6px;
-  border-radius-bottom-left: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   background-color: rgba(var(--main-black),0.3);
 }
 h1 {
