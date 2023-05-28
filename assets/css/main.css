@@ -4,10 +4,12 @@
 :root {
   --main-black: 0,0,0;
   --main-white: 255,255,255;
-  --main-white-green: 245,250,245;
   --main-light-green: 214,241,226;
   --main-green: 60,179,113;
   --main-dark-green: 22,65,40;
+
+  --background-light-green: 245,250,245;
+  --font-grey: 77,82,89;
 }
 /*************************************************************
 **************************************************************
@@ -155,7 +157,7 @@ span.aside-text {
 div.main {
   margin: 74px 24px 24px 24px;
   padding: 24px;
-  background-color: rgba(var(--main-white-green),0.8);
+  background-color: rgba(var(--background-light-green),0.9);
   border: 1px solid transparent;
   border-radius: 16px;
 }
@@ -166,7 +168,7 @@ div.main-title {
   background-color: rgb(var(--main-light-green));
   border: 1px solid rgb(var(--main-green));
   border-radius: 6px;
-  box-shadow: 2px 2px 4px rgba(var(--main-black),0.4);
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
 p.main-title-text {
   font-size: 26px;
@@ -175,14 +177,14 @@ div.main-card {
   width: 50%;
   margin: 16px;
   border-radius: 6px;
-  box-shadow: 2px 2px 4px rgba(var(--main-black),0.4);
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
 div.main-card-header {
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-  padding: 8px;
+  padding: 4px 8px;
   border: 1px solid transparent;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
@@ -210,6 +212,7 @@ h3 {
 }
 p, span {
   font-size: 20px;
+  color: rgb(var(--font-grey));
 }
 a {
   color: rgb(var(--main-green));
