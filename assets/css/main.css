@@ -153,7 +153,6 @@ span.aside-text {
 }
 /***************** 页面主要内容 *****************/
 div.main {
-  display: table;
   margin: 74px 24px 24px 24px;
   padding: 24px;
   background-color: rgba(var(--main-white-green),0.8);
@@ -167,20 +166,22 @@ div.main-title {
   background-color: rgb(var(--main-light-green));
   border: 1px solid rgb(var(--main-green));
   border-radius: 6px;
-  box-shadow: 4px 4px 8px rgba(var(--main-black),0.4);
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.4);
 }
 p.main-title-text {
   font-size: 26px;
 }
 div.main-card {
-  display: table-cell;
   width: 50%;
   margin: 16px;
   border-radius: 6px;
-  box-shadow: 4px 4px 8px rgba(var(--main-black),0.4);
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.4);
 }
 div.main-card-header {
-  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 8px;
   border: 1px solid transparent;
   border-top-right-radius: 6px;
@@ -188,8 +189,11 @@ div.main-card-header {
   background-color: green; /*test*/
 }
 div.main-card-body {
-  width: 100%;
-  padding: 12px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
   border: 1px solid transparent;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
