@@ -175,9 +175,10 @@ div.main-title {
 }
 p.main-title-text {
   font-size: 26px;
+  color: rgb(var(--main-black));
 }
 div.main-card {
-  width: 50%;
+  width: 48%;
   margin: 16px;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
