@@ -208,6 +208,7 @@ div.main-card-header {
   }
 /*****************/
 p.main-card-title-text {
+  margin: 0px;
   color: rgb(var(--main-white));
 }
 div.main-card-body {
