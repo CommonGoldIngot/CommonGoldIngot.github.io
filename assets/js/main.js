@@ -47,9 +47,4 @@ $(document).ready(function () {
             }
         });
     });
-    //卡片css操作
-    (function () {
-        $("div.main-card:nth-child(3)").css("width", $("div.main-card:nth-child(2)").css("width"));
-        $("div.main-card:nth-child(3)").css("height", $("div.main-card:nth-child(2)").css("height"));
-    })()
 });
