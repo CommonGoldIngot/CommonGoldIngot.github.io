@@ -179,7 +179,7 @@ p.main-title-text {
 }
 div.main-card {
   display: inline-block;
-  width: calc(50% - 34.13px);
+  width: calc(50% - 34.15px);
   margin: 16px;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
