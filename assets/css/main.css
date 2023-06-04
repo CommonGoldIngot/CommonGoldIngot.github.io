@@ -149,19 +149,13 @@ span.aside-text {
   font-size: 18px;
   text-decoration: none;
 }
-.mdi-chevron-right {
+.mdi-chevron-right,
+.mdi-star {
   display: inline-block;
   float: right;
   margin: 0 32px;
   color: rgb(var(--main-white));
   font-size: 10px;
-}
-.mdi-circle {
-  display: inline-block;
-  float: right;
-  margin: 0 32px;
-  color: rgb(var(--main-white));
-  font-size: 4px;
 }
 /***************** 页面主要内容 *****************/
 div.main {
