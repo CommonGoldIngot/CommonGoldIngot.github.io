@@ -149,7 +149,8 @@ span.aside-text {
   font-size: 18px;
   text-decoration: none;
 }
-.mdi-chevron-right {
+.mdi-chevron-right,
+.mdi-circle {
   display: inline-block;
   float: right;
   margin: 0 32px;
