@@ -161,7 +161,7 @@ span.aside-text {
   float: right;
   margin: 0 32px;
   color: rgb(var(--main-white));
-  font-size: 6px;
+  font-size: 4px;
 }
 /***************** 页面主要内容 *****************/
 div.main {
