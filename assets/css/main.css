@@ -241,3 +241,6 @@ a {
 #time {
   font-size: 24px;
 }
+p.clear {
+  clear: both;
+}
