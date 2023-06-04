@@ -15,8 +15,12 @@
     <script src="/assets/js/jQueryRotateCompressed.js"></script>
     <script src="/assets/js/main.js"></script>
     <style>
-      li.--about {
-        background-color: rgb(var(--main-green))
+      div.--about {
+        display: inline-block;
+        float: right;
+        height: 100%;
+        width: 8px;
+        background-color: rgb(var(--main-green));
       }
     </style>
     <title>关于作者</title>
@@ -51,8 +55,8 @@
               <li class="aside-sidebar-item">
                 <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span class="aside-text">&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
               </li>
-              <li class="aside-sidebar-item --about">
-                <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span class="aside-text">&nbsp;关于</span><i class="mdi mdi-chevron-right"></i></a>
+              <li class="aside-sidebar-item">
+                <i class="bi bi-person-fill"></i><span class="aside-text">&nbsp;关于</span><i class="mdi mdi-chevron-right"></i><div class="--about"></div>
               </li>
               <li class="aside-sidebar-item-has-subnav --wiki">
                 <a class="aside-sidebar-item-link" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span class="aside-text">&nbsp;wiki</span><i class="mdi mdi-chevron-right --wiki"></i></a>

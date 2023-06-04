@@ -15,8 +15,12 @@
     <script src="/assets/js/jQueryRotateCompressed.js"></script>
     <script src="/assets/js/main.js"></script>
     <style>
-      li.--index {
-        background-color: rgb(var(--main-green))
+      div.--index {
+        display: inline-block;
+        float: right;
+        height: 100%;
+        width: 8px;
+        background-color: rgb(var(--main-green));
       }
     </style>
     <title>CommonGoldIngot的网站</title>
@@ -48,8 +52,8 @@
           </div>
           <div>
             <ul class="aside-nav">
-              <li class="aside-sidebar-item --index">
-                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span class="aside-text">&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
+              <li class="aside-sidebar-item">
+                <i class="mdi mdi-home"></i><span class="aside-text">&nbsp;主页</span><i class="mdi mdi-chevron-right"></i><div class="--index"></div>
               </li>
               <li class="aside-sidebar-item">
                 <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span class="aside-text">&nbsp;关于</span><i class="mdi mdi-chevron-right"></i></a>
