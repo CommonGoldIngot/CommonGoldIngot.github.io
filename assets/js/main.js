@@ -47,4 +47,38 @@ $(document).ready(function () {
             }
         });
     });
+    //卡片尺寸操作
+    var mainW = $("div.main").width();
+    var cardH1 = $("div.main-card:nth-child(2)").outerHeight();
+    var cardW1 = $("div.main-card:nth-child(2)").outerWidth();
+    var cardH2 = $("div.main-card:nth-child(3)").outerHeight();
+    var cardW2 = $("div.main-card:nth-child(3)").outerWidth();
+    var cardH3 = $("div.main-card:nth-child(4)").outerHeight();
+    var cardW3 = $("div.main-card:nth-child(4)").outerWidth();
+    var cardH4 = $("div.main-card:nth-child(5)").outerHeight();
+    var cardW4 = $("div.main-card:nth-child(5)").outerWidth();
+    var card = 2;
+    if (cardH2 > cardH1) {
+        $("div.main-card:nth-child(2)").outerHeight(cardHeight2nd);
+    }
+    if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
+        $("div.main-card:nth-child(3)").after("<p></p>");
+        $("p:nth-child(4)").addClass("clear");
+    } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 -cardW3 < cardW4) {
+        $("div.main-card:nth-child(4)").after("<p></p>");
+        $("p:nth-child(5)").addClass("clear");
+    }
 });
+
+//                     ＯＯ
+//                ＯＯＯＩＩＯ
+//           ＯＯＯＩＡＩＩＩＩＯ
+//      ＯＯＯＩＡＡＩＩＩＩＩＩＩＯ
+//    ＯＯＡＡＡＩＩＩＩＩＩＯＯＯＯＯ
+//    ＯＡＯＩＩＩＩＩＯＯＯＩＩＩＩＯ          by CommonGoldIngot
+//    ＯＡＩＯＩＯＯＯＩＩＩＩＩＩＩＯ
+//    ＯＩＩＩＯＩＩＩＩＩＩＩＩＩＥＯ
+//    ＯＩＩＩＯＩＩＩＩＩＩＥＯＯＯ
+//      ＯＩＩＯＩＩＩＥＯＯＯ
+//        ＯＩＯＥＯＯＯ
+//          ＯＯＯ
