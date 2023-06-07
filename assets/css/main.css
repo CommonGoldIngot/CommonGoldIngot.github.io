@@ -242,6 +242,7 @@ a {
 #time {
   font-size: 24px;
 }
-p.clear {
+samp.clear {
+  display: block;
   clear: both;
 }
