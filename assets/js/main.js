@@ -48,21 +48,19 @@ $(document).ready(function () {
         });
     });
     //卡片尺寸操作
-    if (screen.height < screen.width) {
-        var mainW = $("div.main").width();
-        var cardH1 = $("div.card-1").outerHeight();
-        var cardW1 = $("div.card-1").outerWidth();
-        var cardH2 = $("div.card-2").outerHeight();
-        var cardW2 = $("div.card-2").outerWidth();
-        var cardH3 = $("div.card-3").outerHeight();
-        var cardW3 = $("div.card-3").outerWidth();
-        var cardH4 = $("div.card-4").outerHeight();
-        var cardW4 = $("div.card-4").outerWidth();
-        if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
-            $("div.card-2").after("<samp></samp>");
-        } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
-            $("div.card-3").after("<samp></samp>");
-        }
+    var mainW = $("div.main").width();
+    var cardH1 = $("div.card-1").outerHeight();
+    var cardW1 = $("div.card-1").outerWidth();
+    var cardH2 = $("div.card-2").outerHeight();
+    var cardW2 = $("div.card-2").outerWidth();
+    var cardH3 = $("div.card-3").outerHeight();
+    var cardW3 = $("div.card-3").outerWidth();
+    var cardH4 = $("div.card-4").outerHeight();
+    var cardW4 = $("div.card-4").outerWidth();
+    if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
+        $("div.card-2").after("<samp></samp>");
+    } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
+        $("div.card-3").after("<samp></samp>");
     }
 });
 
