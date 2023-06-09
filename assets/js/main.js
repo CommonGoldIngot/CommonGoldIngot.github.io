@@ -57,9 +57,6 @@ $(document).ready(function () {
     var cardW3 = $("div.card-3").outerWidth();
     var cardH4 = $("div.card-4").outerHeight();
     var cardW4 = $("div.card-4").outerWidth();
-    if (cardH2 > cardH1) {
-        $("div.card-1").outerHeight(cardH2);
-    }
     if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
         $("div.card-2").after("<samp></samp>");
         $("div.card-1").css({"position":"relative", "z-index":"6"});
