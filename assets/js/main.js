@@ -61,11 +61,11 @@ $(document).ready(function () {
         $("div.card-1").outerHeight(cardH2);
     }
     if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
-        $("div.card-2").after("<br/><samp></samp>");
-        $("samp").addClass("clear");
-    } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
-        $("div.card-3").after("<br/><samp></samp>");
-        $("samp").addClass("clear");
+        $("div.card-2").after("<samp></samp>");
+        $("div.card-1").css({"position":"relative", "z-index":"6"});
+    } else if (cardH1 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
+        $("div.card-3").after("<samp></samp>");
+        $("div.card-1").css({"position":"relative", "z-index":"6"});
     }
 });
 
