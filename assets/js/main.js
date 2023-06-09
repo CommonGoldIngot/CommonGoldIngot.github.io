@@ -59,10 +59,8 @@ $(document).ready(function () {
     var cardW4 = $("div.card-4").outerWidth();
     if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
         $("div.card-2").after("<samp></samp>");
-        $("div.card-1").css({"position":"relative", "z-index":"6"});
     } else if (cardH1 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
         $("div.card-3").after("<samp></samp>");
-        $("div.card-1").css({"position":"relative", "z-index":"6"});
     }
 });
 
