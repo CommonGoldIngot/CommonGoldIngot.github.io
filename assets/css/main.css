@@ -236,6 +236,7 @@ div.main-card-body {
 div.card-bottom-1 {
   display: inline-block;
   float: none;
+  position: relative;
   width: calc(50% - 32px);
   height: 400px;
 }
@@ -243,7 +244,8 @@ div.card-bottom-2,
 div.card-bottom-3 {
   display: inline-block;
   float: none;
-  width: calc(25% - 16px);
+  position: relative;
+  width: calc(25% - 32px);
   height: 400px;
 }
 samp {
