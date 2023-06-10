@@ -233,21 +233,6 @@ div.main-card-body {
   border-bottom-left-radius: 6px;
   background-color: rgb(var(--main-white));
 }
-div.card-bottom-1 {
-  display: inline-block;
-  float: none;
-  position: relative;
-  width: calc(50% - 32px);
-  height: 400px;
-}
-div.card-bottom-2,
-div.card-bottom-3 {
-  display: inline-block;
-  float: none;
-  position: relative;
-  width: calc(25% - 32px);
-  height: 400px;
-}
 samp {
   display: block;
   clear: both;
