@@ -233,6 +233,17 @@ div.main-card-body {
   border-bottom-left-radius: 6px;
   background-color: rgb(var(--main-white));
 }
+div.card-bottom-1 {
+  width: 50%;
+}
+div.card-bottom-2,
+div.card-bottom-3 {
+  width: 25%;
+}
+samp {
+  display: block;
+  clear: both;
+}
 h1 {
   font-size: 36px;
 }
@@ -251,8 +262,4 @@ a {
 }
 #time {
   font-size: 24px;
-}
-samp {
-  display: block;
-  clear: both;
 }
