@@ -57,9 +57,9 @@ $(document).ready(function () {
     var cardW3 = $("div.card-3").outerWidth();
     var cardH4 = $("div.card-4").outerHeight();
     var cardW4 = $("div.card-4").outerWidth();
-    if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
+    if ($("div.card-1").outerHeight() - $("div.card-2").outerHeight() < $("div.card-3").outerHeight() && $("div.main").width() - $("div.card-1").outerWidth() - $("div.card-2").outerWidth() < $("div.card-3").outerWidth()) {
         $("div.card-2").after("<samp></samp>");
-    } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
+    } else if ($("div.card-2").outerHeight() - $("div.card-3").outerHeight() < $("div.card-4").outerHeight() && $("div.main").width() - $("div.card-1").outerWidth() - $("div.card-2").outerWidth() - $("div.card-3").outerWidth() < $("div.card-4").outerWidth()) {
         $("div.card-3").after("<samp></samp>");
     }
 });
