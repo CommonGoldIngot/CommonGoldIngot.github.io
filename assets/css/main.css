@@ -263,6 +263,7 @@ a {
   font-size: 22px;
 }
 #greeting-night {
-  font-size: 10px;
+  visibility: hidden;
   color: rgb(0.100.0);
+  font-size: 10px;
 }
