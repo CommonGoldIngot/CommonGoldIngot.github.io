@@ -73,7 +73,7 @@
         <div class="main-card-body">
           <p class="main-card-text" id="time"></p>
           <p class="main-card-text" id="greeting"></p>
-          <p class="main-card-text" id="greeting-night"></p>
+          <p class="main-card-text" id="greeting-night">熬夜伤身，注意休息～～～</p>
         </div>
       </div>
       <div class="main-card card-2">
@@ -122,19 +122,7 @@
           if (second < 10) {
               second = "0" + second;
           }
-          document.getElementById("time").innerHTML = year + "年" + month + "月" + date + "日" + " " + hour + ":" + minute + ":" + second;
-          if (hour < 5 || hour > 21) {
-              document.getElementById("greeting").innerHTML = "晚上好！";
-              document.getElementById("greeting-night").innerHTML = "熬夜伤身，注意休息～～～"
-          }  else if (hour < 8) {
-              document.getElementById("greeting").innerHTML = "早上好！";
-          }  else if (hour < 12) {
-              document.getElementById("greeting").innerHTML = "上午好！";
-          }  else if (hour < 19) {
-              document.getElementById("greeting").innerHTML = "下午好！";
-          }  else {
-              document.getElementById("greeting").innerHTML = "晚上好！";
-          }
+          document.getElementById("time").innerHTML = year + "年" + month + "月" + date + "日" + "<br/>" + hour + ":" + minute + ":" + second;
       }, 100)
     </script>
   </body>
