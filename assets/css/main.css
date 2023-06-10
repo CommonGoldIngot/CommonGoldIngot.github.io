@@ -189,6 +189,7 @@ p.main-title-text {
 @media (orientation: landscape) {
   div.main-card {
     float: left;
+    position: relative;
     margin: 16px;
     border-radius: 6px;
     box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
