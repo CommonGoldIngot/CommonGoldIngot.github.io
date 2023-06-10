@@ -233,7 +233,7 @@ div.main-card-body {
   border-bottom-left-radius: 6px;
   background-color: rgb(var(--main-white));
 }
-p.main-title-text {
+p.main-card-text {
   margin: 0px;
 }
 samp {
