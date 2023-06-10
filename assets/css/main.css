@@ -234,7 +234,7 @@ div.main-card-body {
   background-color: rgb(var(--main-white));
 }
 p.main-card-text {
-  margin: 0px;
+  margin: 6px 0px;
 }
 samp {
   display: block;
