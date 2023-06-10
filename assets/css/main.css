@@ -234,11 +234,17 @@ div.main-card-body {
   background-color: rgb(var(--main-white));
 }
 div.card-bottom-1 {
-  width: 50%;
+  display: inline-block;
+  float: none;
+  width: calc(50% - 32px);
+  height: 400px;
 }
 div.card-bottom-2,
 div.card-bottom-3 {
-  width: 25%;
+  display: inline-block;
+  float: none;
+  width: calc(25% - 16px);
+  height: 400px;
 }
 samp {
   display: block;
