@@ -257,13 +257,5 @@ a {
   color: rgb(var(--main-green));
 }
 #time {
-  font-size: 30px;
-}
-#greeting {
-  font-size: 22px;
-}
-#greeting-night {
-  visibility: hidden;
-  color: rgb(0.100.0);
-  font-size: 10px;
+  font-size: 24px;
 }
