@@ -7,6 +7,12 @@ setInterval(function () {
     $("div.loading-round-border").rotate(angleB);
     $("img.loading-logo").rotate(angleL);
 }, 5);
+setTimeout(function () {
+    $("p.loading-text").text("正在加载背景图片...");
+}, 3000)
+setTimeout(function () {
+    $("p.loading-text").text("加载背景图片可能需要较长时间，请耐心等待...");
+}, 5000)
 //加载界面淡出
 function loaded() {
     setTimeout(function () { 
