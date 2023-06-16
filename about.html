@@ -7,7 +7,7 @@
     <meta name="author" content="CommonGoldIngot"/>
     <meta name="keywords" content="CommonGoldIngot"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="https://i.imgloc.com/2023/03/26/iD3VQy.png"/>
+    <link rel="shortcut icon" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
@@ -16,11 +16,11 @@
     <script src="/assets/js/main.js"></script>
     <title>关于作者</title>
   </head>
-  <body onload="loaded()">
+  <body>
     <!-- 加载界面 -->
     <div class="loading">
       <div class="loading-round-border">
-        <img class="loading-logo" width="80" height="80" src="https://i.imgloc.com/2023/04/02/iH8Nd5.png" alt=""/>
+        <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt=""/>
       </div>
       <p class="loading-text">加载中...</p>
     </div>
@@ -31,7 +31,7 @@
       <div class="aside-topbar">
         <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
         <!-- logo -->
-        <a href="/"><img class="aside-logo" width="248" height="20" src="https://i.imgloc.com/2023/02/18/B96nz.png" alt="CommonGoldIngot"/></a>
+        <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"/></a>
       </div>
       <!-- 遮罩层 -->
       <div class="aside-mask">
@@ -41,13 +41,13 @@
         <div class="aside-sidebar">
           <div class="aside-sidebar-header">
           </div>
-          <div>
+          <div class="aside-sidebar-body">
             <ul class="aside-nav">
               <li class="aside-sidebar-item">
-                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span class="aside-text">&nbsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
+                <i class="mdi mdi-home"></i><span class="aside-text">&nbsp;主页</span><i class="mdi mdi-star"></i>
               </li>
               <li class="aside-sidebar-item">
-                <i class="bi bi-person-fill"></i><span class="aside-text">&nbsp;关于</span><i class="mdi mdi-star"></i>
+                <a class="aside-sidebar-item-link" href="/about.html"><i class="bi bi-person-fill"></i><span class="aside-text">&nbsp;关于</span><i class="mdi mdi-chevron-right"></i></a>
               </li>
               <li class="aside-sidebar-item-has-subnav --wiki">
                 <a class="aside-sidebar-item-link" href="javascript:void(0)"><i class="bi bi-wikipedia"></i><span class="aside-text">&nbsp;wiki</span><i class="mdi mdi-chevron-right --wiki"></i></a>
@@ -56,6 +56,13 @@
                 </ul>
               </li>
             </ul>
+          </div>
+          <div class="aside-sidebar-footer">
+            <p class="aside-text">Copyright  2023. CommonGoldIngot</p>
+            <p class="aside-text">All rights reserved.</p>
+            <p class="aside-text">网站版本：1.0-pre</p>
+            <a class="aside-link" href="/changelog.html">网站更新日志</a>
+            <a class="aside-link" href="/about.html">关于作者</a>
           </div>
         </div>
       </nav>
