@@ -22,43 +22,43 @@
 /** 横屏 **/
 @media (orientation: landscape) {
   /* 800x600 4:3 */
-  @media (width <= 800px) and (height <= 600px) {
+  @media (max-width: 800px) and (max-height: 600px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-800x600.png");
     }
   }
   /* 1024x768 4:3 */
-  @media (801px <= width <= 1024px) and (height <= 768px), (width <= 1024px) and (601px <= height <= 768px) {
+  @media (min-width: 801px) and (max-width: 1024px) and (max-height: 768px), (max-width: 1024px) and (min-height: 601px) and (max-height: 768px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-1024x768.png");
     }
   }
   /* 1280x960 4:3 */
-  @media (1025px <= width <= 1280px) and (height <= 960px), (width <= 1280px) and (769px <= height <= 960px) {
+  @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 960px), (max-width: 1280px) and (min-height: 769px) and (max-height: 960px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-1280x960.png");
     }
   }
   /* 1920x1080 16:9 */
-  @media (1281px <= width <= 1920px) and (height <= 1080px), (width <= 1920px) and (961px <= height <= 1080px) {
+  @media (min-width: 1281px) and (max-width: 1920px) and (max-height: 1080px), (max-width: 1920px) and (min-height: 961px) and (max-height: 1080px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-1920x1080.png");
     }
   }
   /* 1920x1440 4:3 */
-  @media (1281px <= width <= 1920px) and (1080px <= height <= 1440px), (width <= 1920px) and (1080px <= height <= 1440px) {
+  @media (min-width: 1281px) and (max-width: 1920px) and (min-height: 1080px) and (max-height: 1440px), (max-width: 1920px) and (min-height: 1080px) and (max-height: 1440px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-1920x1440.png");
     }
   }
   /* 2560x1440 16:9 */
-  @media (1921px <= width <= 2560px) and (height <= 1440px), (1920px <= width <= 2560px) and (1080px <= height <= 1440px) {
+  @media (min-width: 1921px) and (max-width: 2560px) and (max-height: 1440px), (min-width: 1921px) and (max-width: 2560px) and (min-height: 1081px) and (max-height: 1440px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-2560x1440.png");
     }
   }
   /* 2560x1600 8:5, ++ */
-  @media (1921px <= width <= 2560px) and (height <= 1600px), (width <= 2560px) and (1440px <= height <= 1600px), (width >= 2561px), (height >= 1601px) {
+  @media (min-width: 1921px) and (max-width: 2560px) and (max-height: 1600px), (max-width: 2560px) and (min-height: 1441px) and (max-height: 1600px), (min-width: 2561px), (min-height: 1601px) {
     body {
       background-image: url("/assets/images/bg-light-landscape-2560x1600.png");
     }
@@ -67,25 +67,25 @@
 /** 竖屏 **/
 @media (orientation: portrait) {
   /* 854x480, 16:9 */
-  @media (width <= 480px) and (height <= 854px) {
+  @media (max-width: 480px) and (max-height: 854px) {
     body {
       background-image: url("/assets/images/bg-light-portrait-854x480.png");
     }
   }
   /* 1920x1080, 16:9 */
-  @media (481px <= width <= 1080px) and (height <= 1920px), (width <= 1080px) and (855px <= height <= 1920px) {
+  @media (min-width: 481px) and (max-width: 1080px) and (max-height: 1920px), (max-width: 1080px) and (min-height: 855px) and (max-height: 1920px) {
     body {
       background-image: url("/assets/images/bg-light-portrait-1920x1080.png");
     }
   }
   /* 2560x1440, 16:9 */
-  @media (1081px <= width <= 1440px) and (height <= 2560px), (width <= 1440px) and (1921px <= height <= 2560px) {
+  @media (min-width: 1081px) and (max-width: 1440px) and (max-height: 2560px), (max-width: 1440px) and (min-height: 1921px) and (max-height: 2560px) {
     body {
       background-image: url("/assets/images/bg-light-portrait-2560x1440.png");
     }
   }
   /* 2560x1600, 16:9 */
-  @media (1441px <= width <= 1600px) and (height <= 2560px), (1441px <= width <= 1600px) and (1921px <= height <= 2560px), (width >= 1601px), (height >= 2561px) {
+  @media (min-width: 1441px) and (max-width: 1600px) and (max-height: 2560px), (min-width: 1441px) and (max-width: 1600px) and (min-height: 1921px) and (max-height: 2560px), (min-width: 1601px), (min-height: 2561px) {
     body {
       background-image: url("/assets/images/bg-light-portrait-2560x1600.png");
     }
@@ -297,6 +297,7 @@ div.main-card-body {
 }
 p.main-card-text {
   margin: 8px 0px;
+  font-size: 18px;
 }
 samp {
   display: block;
@@ -318,6 +319,6 @@ p, span {
 a {
   color: rgb(var(--main-green));
 }
-#time {
-  font-size: 24px;
+#time, #news {
+  font-size: 26px;
 }
