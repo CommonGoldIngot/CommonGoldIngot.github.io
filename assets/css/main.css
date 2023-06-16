@@ -96,7 +96,7 @@ body {
   margin: 0;
   background-size: cover;
   background-attachment: fixed;
-  background-position: top;
+  background-position: bottom;
 }
 /***************** 加载动画 *****************/
 div.loading {
@@ -205,8 +205,14 @@ a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   font-size: 18px;
 }
-span.aside-text {
+span.aside-text,
+p.aside-text {
   color: rgb(var(--main-white));
+  font-size: 18px;
+  text-decoration: none;
+}
+a.aside-link {
+  color: rgb(var(--main-green));
   font-size: 18px;
   text-decoration: none;
 }
