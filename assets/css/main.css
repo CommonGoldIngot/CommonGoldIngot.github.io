@@ -197,9 +197,7 @@ div.aside-sidebar-body {
   width: calc(100% - 32px);
   padding: 16px;
   background-color: transparent;
-  border-top: 1px solid rgb(var(--main-green));
   border-right: 1px solid rgb(var(--main-green));
-  border-bottom: 1px solid rgb(var(--main-green));
 }
 ul.aside-nav {
   line-height: 34px;
@@ -208,7 +206,8 @@ ul.aside-subnav {
   display: none;
 }
 li.aside-sidebar-item,
-li.aside-sidebar-item-has-subnav {
+li.aside-sidebar-item-has-subnav,
+li.aside-sidebar-subnav-item {
   display: block;
 }
 a.aside-sidebar-item-link {
@@ -239,16 +238,19 @@ div.aside-sidebar-footer {
   position: relative;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 32px);
+  padding: 16px;
   background-color: transparent;
   border-top: 1px solid rgb(var(--main-green));
   border-right: 1px solid rgb(var(--main-green));
 }
 p.aside-sidebar-footer-text {
+  line-height: 26px;
   color: rgb(var(--main-white));
   font-size: 14px;
 }
 a.aside-sidebar-footer-link {
+  line-height: 26px;
   color: rgb(var(--main-green));
   font-size: 14px;
 }
