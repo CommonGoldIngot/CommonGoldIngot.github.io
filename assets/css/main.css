@@ -158,8 +158,8 @@ div.aside-sidebar {
   float: left;
   position: fixed;
   z-index: 99;
-  left: -300px;
   top: 0;
+  left: -302px;
   width: 300px;
   height: 100%;
   background-color: rgba(var(--main-dark-green),0.2);
@@ -185,6 +185,17 @@ div.aside-mask {
   height: 100%;
   background-color: rgba(var(--main-dark-green),0.1);
 }
+div.aside-sidebar-body {
+  position: relative;
+  z-index: 999;
+  top: 48px;
+  width: 100%;
+  padding: 16px;
+  background-color: transparent;
+  border-top: 1px solid rgb(var(--main-green));
+  border-right: 1px solid rgb(var(--main-green));
+  border-bottom: 1px solid rgb(var(--main-green));
+}
 ul.aside-nav {
   line-height: 36px;
 }
@@ -205,15 +216,9 @@ a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   font-size: 18px;
 }
-span.aside-text,
-p.aside-text {
+span.aside-text {
   color: rgb(var(--main-white));
-  font-size: 18px;
-  text-decoration: none;
-}
-a.aside-link {
-  color: rgb(var(--main-green));
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
 }
 .mdi-chevron-right,
@@ -223,6 +228,23 @@ a.aside-link {
   margin: 0 32px;
   color: rgb(var(--main-white));
   font-size: 10px;
+}
+div.aside-sidebar-footer {
+  position: relative;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  border-top: 1px solid rgb(var(--main-green));
+  border-right: 1px solid rgb(var(--main-green));
+}
+p.aside-sidebar-footer-text {
+  color: rgb(var(--main-white));
+  font-size: 14px;
+}
+a.aside-sidebar-footer-link {
+  color: rgb(var(--main-green));
+  font-size: 14px;
 }
 /***************** 页面主要内容 *****************/
 div.main {
