@@ -124,6 +124,10 @@ div.loading-round-border {
   justify-content: center;
   text-align: center;
 }
+p.loading-text {
+  color: rgb(var(--font-black));
+  font-size: 20px;
+}
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
   position: fixed;
@@ -165,6 +169,7 @@ div.aside-sidebar {
   background-color: rgba(var(--main-dark-green),0.2);
   border-right: 1px solid rgb(var(--main-green));
 }
+/**** 侧边栏头部 ****/
 div.aside-sidebar-header {
   position: relative;
   z-index: 999;
@@ -185,11 +190,11 @@ div.aside-mask {
   height: 100%;
   background-color: rgba(var(--main-dark-green),0.1);
 }
+/**** 侧边栏主要内容 ****/
 div.aside-sidebar-body {
   position: relative;
   z-index: 999;
-  top: 48px;
-  width: 100%;
+  width: calc(100% - 32px);
   padding: 16px;
   background-color: transparent;
   border-top: 1px solid rgb(var(--main-green));
@@ -197,14 +202,14 @@ div.aside-sidebar-body {
   border-bottom: 1px solid rgb(var(--main-green));
 }
 ul.aside-nav {
-  line-height: 36px;
-}
-ul.aside-nav,
-ul.aside-subnav {
-  list-style-type: none;
+  line-height: 34px;
 }
 ul.aside-subnav {
   display: none;
+}
+li.aside-sidebar-item,
+li.aside-sidebar-item-has-subnav {
+  display: block;
 }
 a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
@@ -229,6 +234,7 @@ span.aside-text {
   color: rgb(var(--main-white));
   font-size: 10px;
 }
+/**** 侧边栏底部信息 ****/
 div.aside-sidebar-footer {
   position: relative;
   z-index: 999;
@@ -325,27 +331,16 @@ div.main-card-body {
 }
 p.main-card-text {
   margin: 8px 0px;
+  color: rgb(var(--font-black));
+  font-size: 18px;
+}
+a.main-card-link {
+  color: rgb(var(--main-green));
   font-size: 18px;
 }
 samp {
   display: block;
   clear: both;
-}
-h1 {
-  font-size: 36px;
-}
-h2 {
-  font-size: 24px;
-}
-h3 {
-  font-size: 22px;
-}
-p, span {
-  color: rgb(var(--font-black));
-  font-size: 20px;
-}
-a {
-  color: rgb(var(--main-green));
 }
 #time, #news {
   font-size: 26px;
