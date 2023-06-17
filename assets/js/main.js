@@ -14,7 +14,7 @@ setTimeout(function () {
     $("p.loading-text").text("加载背景图片可能需要较长时间，请耐心等待...");
 }, 7000)
 setTimeout(function () {
-    $("p.loading-text").text("就快好了，在等我一会儿...");
+    $("p.loading-text").text("就快好了，再等我一会儿...");
 }, 12000)
 //加载界面淡出
 window.onload = function () {
