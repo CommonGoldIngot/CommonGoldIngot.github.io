@@ -194,19 +194,15 @@ div.aside-mask {
 div.aside-sidebar-body {
   position: relative;
   z-index: 999;
-  width: calc(100% - 4px);
-  padding: 2px;
+  width: calc(100% - 32px);
+  padding: 16px;
   background-color: transparent;
   border-right: 1px solid rgb(var(--main-green));
 }
-@counter-style sidebar-list {
-  system: fixed;
-  symbols: "\F02DC" "\f42b" "\f8cc";
-  suffix: " ";
-}
 ul.aside-nav,
 ul.aside-subnav {
-  list-style: sidebar-list;
+  list-style-type: none;
+  padding-left: 0;
 }
 ul.aside-nav {
   line-height: 34px;
