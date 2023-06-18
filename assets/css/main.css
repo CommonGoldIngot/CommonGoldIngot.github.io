@@ -194,8 +194,8 @@ div.aside-mask {
 div.aside-sidebar-body {
   position: relative;
   z-index: 999;
-  width: calc(100% - 40px);
-  padding: 20px;
+  width: calc(100% - 16px);
+  padding: 8px;
   background-color: transparent;
   border-right: 1px solid rgb(var(--main-green));
 }
@@ -242,8 +242,8 @@ div.aside-sidebar-footer {
   position: relative;
   z-index: 999;
   bottom: 0;
-  width: calc(100% - 40px);
-  padding: 20px;
+  width: calc(100% - 44px);
+  padding: 22px;
   background-color: transparent;
   border-top: 1px solid rgb(var(--main-green));
   border-right: 1px solid rgb(var(--main-green));
