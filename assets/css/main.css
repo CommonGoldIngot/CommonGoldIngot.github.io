@@ -194,14 +194,14 @@ div.aside-mask {
 div.aside-sidebar-body {
   position: relative;
   z-index: 999;
-  width: calc(100% - 16px);
-  padding: 8px;
+  width: calc(100% - 4px);
+  padding: 2px;
   background-color: transparent;
   border-right: 1px solid rgb(var(--main-green));
 }
 @counter-style sidebar-list {
   system: fixed;
-  symbols: A B C D;
+  symbols: "\F02DC" "\f42b" "\f8cc";
   suffix: " ";
 }
 ul.aside-nav,
