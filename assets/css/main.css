@@ -96,7 +96,7 @@ body {
   margin: 0;
   background-size: cover;
   background-attachment: fixed;
-  background-position: bottom;
+  background-position: center center;
 }
 /***************** 加载动画 *****************/
 div.loading {
@@ -194,10 +194,19 @@ div.aside-mask {
 div.aside-sidebar-body {
   position: relative;
   z-index: 999;
-  width: calc(100% - 32px);
-  padding: 16px;
+  width: calc(100% - 40px);
+  padding: 20px;
   background-color: transparent;
   border-right: 1px solid rgb(var(--main-green));
+}
+@counter-style sidebar-list {
+  system: fixed;
+  symbols: A B C D;
+  suffix: " ";
+}
+ul.aside-nav,
+ul.aside-subnav {
+  list-style: sidebar-list;
 }
 ul.aside-nav {
   line-height: 34px;
@@ -205,17 +214,12 @@ ul.aside-nav {
 ul.aside-subnav {
   display: none;
 }
-li.aside-sidebar-item,
-li.aside-sidebar-item-has-subnav,
-li.aside-sidebar-subnav-item {
-  display: block;
-}
 a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   text-decoration: none;
 }
 .mdi-home,
-.bi-person-fill,
+.bi-images,
 .bi-wikipedia {
   color: rgb(var(--main-white));
   font-size: 18px;
@@ -238,8 +242,8 @@ div.aside-sidebar-footer {
   position: relative;
   z-index: 999;
   bottom: 0;
-  width: calc(100% - 32px);
-  padding: 16px;
+  width: calc(100% - 40px);
+  padding: 20px;
   background-color: transparent;
   border-top: 1px solid rgb(var(--main-green));
   border-right: 1px solid rgb(var(--main-green));
@@ -345,5 +349,5 @@ samp {
   clear: both;
 }
 #time, #news {
-  font-size: 26px;
+  font-size: 24px;
 }
