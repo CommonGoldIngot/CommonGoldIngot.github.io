@@ -161,7 +161,7 @@ button.aside-theme-control {
   float: right;
   width: 32px;
   height: 32px;
-  margin: 8px;
+  margin: 8px 10px 8px 8px;
   background-color: transparent;
   border-style: none;
   text-align: center;
