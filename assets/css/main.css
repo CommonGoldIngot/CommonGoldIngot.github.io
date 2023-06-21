@@ -159,17 +159,17 @@ img.aside-logo {
 button.aside-theme-control {
   display: inline-block;
   float: right;
-  width: 28px;
-  height: 28px;
-  margin: 10px;
+  width: 32px;
+  height: 32px;
+  margin: 8px;
   background-color: transparent;
   border-style: none;
   text-align: center;
 }
 .mdi-brightness-6 {
   color: rgb(var(--main-white));
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 32px;
 }
 /***************** 导航栏-侧边栏 *****************/
 div.aside-sidebar {
