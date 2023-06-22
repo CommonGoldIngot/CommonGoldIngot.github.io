@@ -137,6 +137,7 @@ div.aside-topbar {
   height: 48px;
   background-color: rgba(var(--main-dark-green),0.2);
   border-bottom: 1px solid rgb(var(--main-green));
+  overflow: visible;
 }
 button.aside-unfold-sidebar {
   display: inline-block;
@@ -170,6 +171,22 @@ button.aside-theme-control {
   color: rgb(var(--main-white));
   font-size: 24px;
   line-height: 32px;
+}
+div.aside-theme-control-tip {
+  position: relative;
+  display: none;
+  width: 64px;
+  background-color: rgb(var(--main-white));
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+div.aside-theme-control-tip::after {
+  content: " ";
+  position: absolute;
+  right: 16px;
+  bottom: 100%;
+  border: 6px solid transparent;
+  border-bottom-color: white;
 }
 /***************** 导航栏-侧边栏 *****************/
 div.aside-sidebar {
