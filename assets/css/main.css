@@ -174,7 +174,6 @@ button.aside-theme-control {
 }
 div.aside-theme-control-tip {
   position: relative;
-  display: none;
   width: 64px;
   background-color: rgb(var(--main-white));
   border: 1px solid transparent;
