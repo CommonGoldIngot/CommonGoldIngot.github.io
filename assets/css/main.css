@@ -177,7 +177,7 @@ div.aside-theme-control-tip {
   float: right;
   position: relative;
   top: 48px;
-  right: 0;
+  right: -32px;
   z-index: 99;
   width: 38px;
   margin: 10px;
