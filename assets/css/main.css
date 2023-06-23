@@ -176,8 +176,10 @@ div.aside-theme-control-tip {
   display: block;
   float: right;
   position: relative;
+  top: 48px;
+  right: 0;
   z-index: 99;
-  width: 62px;
+  width: 38px;
   margin: 10px;
   padding: 10px;
   background-color: rgb(var(--main-white));
