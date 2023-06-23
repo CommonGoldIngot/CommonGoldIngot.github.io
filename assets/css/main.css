@@ -177,8 +177,9 @@ div.aside-theme-control-tip {
   float: right;
   position: relative;
   z-index: 99;
-  width: 64px;
-  margin: 8px;
+  width: 62px;
+  margin: 10px;
+  padding: 10px;
   background-color: rgb(var(--main-white));
   border: 1px solid transparent;
   border-radius: 4px;
@@ -186,14 +187,13 @@ div.aside-theme-control-tip {
 div.aside-theme-control-tip::after {
   content: " ";
   position: absolute;
-  right: 16px;
+  right: 10px;
   bottom: 100%;
   border: 6px solid transparent;
   border-bottom-color: white;
 }
 span.aside-theme-control-tip-text {
-  margin: 6px;
-  font-size: 14px;
+  font-size: 12px;
 }
 /***************** 导航栏-侧边栏 *****************/
 div.aside-sidebar {
