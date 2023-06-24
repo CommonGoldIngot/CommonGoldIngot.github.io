@@ -1,11 +1,11 @@
 //加载动画
-var angleB = 0;
-var angleL = 0;
+var borderRotateAngle = 0;
+var logoRotateAngle = 0;
 setInterval(function () {
-    angleB += 1;
-    angleL -= 1;
-    $("div.loading-round-border").rotate(angleB);
-    $("img.loading-logo").rotate(angleL);
+    borderRotateAngle += 1;
+    logoRotateAngle -= 1;
+    $("div.loading-round-border").rotate(borderRotateAngle);
+    $("img.loading-logo").rotate(logoRotateAngle);
 }, 5);
 setTimeout(function () {
     $("p.loading-text").text("正在加载背景图片...");
@@ -29,6 +29,17 @@ window.onload = function () {
     }, 900)
 }
 $(document).ready(function () {
+    //顶栏主题切换
+    $("button.aside-theme-control")
+    var timeForThemeControl = new Date();
+    var hourForThemeControl = timeForThemeControl.getHours();
+    if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
+        $("div.aside-theme-control-tip").fadeIn(1000);
+    }
+    if () {
+        $("span.aside-theme-control-tip-text").html("检测到您的浏览器已设置为暗色主题<br/>已自动同步~<br/>您可以在此处切换主题↑");
+        $("div.aside-theme-control-tip").fadeIn(1000);
+    }
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
         $("div.aside-mask").show();
@@ -59,23 +70,6 @@ $(document).ready(function () {
             }
         });
     });
-    //卡片尺寸操作
-    if (screen.height < screen.width) {
-        var mainW = $("div.main").width();
-        var cardH1 = $("div.card-1").outerHeight();
-        var cardW1 = $("div.card-1").outerWidth();
-        var cardH2 = $("div.card-2").outerHeight();
-        var cardW2 = $("div.card-2").outerWidth();
-        var cardH3 = $("div.card-3").outerHeight();
-        var cardW3 = $("div.card-3").outerWidth();
-        var cardH4 = $("div.card-4").outerHeight();
-        var cardW4 = $("div.card-4").outerWidth();
-        if (cardH1 - cardH2 < cardH3 && mainW - cardW1 - cardW2 < cardW3) {
-            $("div.card-2").after("<samp></samp>");
-        } else if (cardH2 - cardH3 < cardH4 && mainW - cardW1 - cardW2 - cardW3 < cardW4) {
-            $("div.card-3").after("<samp></samp>");
-        }
-    }
 });
 
 //                     ＯＯ
