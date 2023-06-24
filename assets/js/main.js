@@ -19,29 +19,33 @@ setTimeout(function () {
 setTimeout(function () {
     $("p.loading-speed-up").show();
 }, 18000)
-//加载界面淡出
+//加载界面淡出 & 主题切换提示
 window.onload = function () {
     setTimeout(function () { 
         $("p.loading-text").text("加载完成！");
         $("div.loading").fadeOut(500, function () {
             $("div.loading").remove();
+            var timeForThemeControl = new Date();
+            var hourForThemeControl = timeForThemeControl.getHours();
+            if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
+                setTimeout(function () {
+                    $("div.aside-theme-control-tip").fadeIn(1000);
+                }, 600)
+            }
         });
     }, 900)
 }
 $(document).ready(function () {
-    //顶栏主题切换
-    $("button.aside-theme-control")
-    var timeForThemeControl = new Date();
-    var hourForThemeControl = timeForThemeControl.getHours();
-    if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
-        $("div.aside-theme-control-tip").fadeIn(1000);
-    }
+    //主题切换
+    $("button.aside-theme-control").on("click", function () {
+        //test
+    });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
         $("div.aside-mask").show();
         $("div.aside-sidebar").show().animate({left: "0"}, 200);
     });
-    $("div.aside-mask").click(function () {
+    $("div.aside-mask").on("click", function () {
         $("div.aside-mask").hide();
         $("div.aside-sidebar").animate({left: "-302"}, 200, function () {
             $("div.aside-sidebar").hide();
