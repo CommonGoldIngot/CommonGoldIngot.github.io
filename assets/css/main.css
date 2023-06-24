@@ -129,6 +129,9 @@ p.loading-speed-up {
   color: rgb(var(--font-black));
   font-size: 20px;
 }
+p.loading-speed-up {
+  visibility: hidden;
+}
 a.loading-speed-up-link {
   color: rgb(var(--main-green));
   font-size: 20px;
@@ -182,15 +185,15 @@ div.aside-theme-control-tip {
   float: right;
   position: relative;
   top: 48px;
-  right: -40px;
+  right: -60px;
   z-index: 99;
-  width: 74px;
+  width: 182px;
   margin: 10px;
   padding: 10px;
   background-color: rgb(var(--main-white));
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 1px 1px 2px rgba(var(--main-black),0.3);
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }                                
 div.aside-theme-control-tip::after {
   content: " ";
@@ -201,7 +204,7 @@ div.aside-theme-control-tip::after {
   border-bottom-color: white;
 }
 span.aside-theme-control-tip-text {
-  font-size: 12px;
+  font-size: 14px;
 }
 /***************** 导航栏-侧边栏 *****************/
 div.aside-sidebar {
@@ -392,5 +395,5 @@ samp {
   clear: both;
 }
 #time, #news {
-  font-size: 24px;
+  font-size: 22px;
 }
