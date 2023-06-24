@@ -177,7 +177,7 @@ button.aside-theme-control {
 }
 .mdi-brightness-6 {
   color: rgb(var(--main-white));
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px;
 }
 div.aside-theme-control-tip {
@@ -185,7 +185,7 @@ div.aside-theme-control-tip {
   float: right;
   position: relative;
   top: 48px;
-  right: -60px;
+  right: -54px;
   z-index: 99;
   width: 182px;
   margin: 10px;
