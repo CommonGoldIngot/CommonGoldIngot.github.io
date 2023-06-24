@@ -17,8 +17,8 @@ setTimeout(function () {
     $("p.loading-text").text("就快好了，再等我一会儿...");
 }, 12000)
 setTimeout(function () {
-    $("p.loading-text").text("加载太慢？使用<a>Watt Toolkit</a>加速访问！");
-}, 20000)
+    $("p.loading-speed-up").show();
+}, 18000)
 //加载界面淡出
 window.onload = function () {
     setTimeout(function () { 
