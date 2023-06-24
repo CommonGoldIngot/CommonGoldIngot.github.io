@@ -36,10 +36,6 @@ $(document).ready(function () {
     if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
         $("div.aside-theme-control-tip").fadeIn(1000);
     }
-    if () {
-        $("span.aside-theme-control-tip-text").html("检测到您的浏览器已设置为暗色主题<br/>已自动同步~<br/>您可以在此处切换主题↑");
-        $("div.aside-theme-control-tip").fadeIn(1000);
-    }
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
         $("div.aside-mask").show();
