@@ -31,6 +31,11 @@ window.onload = function () {
                 setTimeout(function () {
                     $("div.aside-theme-control-tip").fadeIn(3500);
                 }, 1600)
+                setTimeout(function () {
+                    $("div.aside-theme-control-tip").fadeOut(3500, function () {
+                        $("div.aside-theme-control-tip").remove();
+                    });
+                }, 3600)
             }
         });
     }, 900)
@@ -38,7 +43,9 @@ window.onload = function () {
 $(document).ready(function () {
     //主题切换
     $("button.aside-theme-control").on("click", function () {
-        //test
+        $("div.aside-theme-control-tip").remove();
+        $("div.aside-theme-select").slideToggle(500);
+        //easeInOutElastic
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
@@ -51,20 +58,22 @@ $(document).ready(function () {
             $("div.aside-sidebar").hide();
         });
     });
-    //侧边栏子页面
+    //侧边栏子页面操作
     var wiki = 0;
     $("li.--wiki").on("click", function () {
         $("ul.--wiki").slideToggle(200, function () {
             if (wiki == 0) {
                 $("i.--wiki").rotate({
                     duration: 300,
-                    animateTo: 90
+                    animateTo: 90,
+                    easing: easeInOutElastic
                 });
                 wiki = 1;
             } else {
                 $("i.--wiki").rotate({
                     duration: 300,
-                    animateTo: 0
+                    animateTo: 0,
+                    easing: easeInOutElastic
                 });
                 wiki = 0;
             }
