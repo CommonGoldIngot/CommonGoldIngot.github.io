@@ -184,8 +184,8 @@ div.aside-theme-control-tip {
   display: none;
   float: right;
   position: relative;
-  top: 38px;
-  right: 12px;
+  top: 0px;
+  right: 0px;
   z-index: 99;
   width: 182px;
   margin: 10px;
