@@ -61,7 +61,7 @@ $(document).ready(function () {
     //侧边栏子页面操作
     var wiki = 0;
     $("li.--wiki").on("click", function () {
-        $("ul.--wiki").slideToggle(200, function () {
+        $("ul.--wiki").slideToggle(600, easeInOutElastic, function () {
             if (wiki == 0) {
                 $("i.--wiki").rotate({
                     duration: 300,
