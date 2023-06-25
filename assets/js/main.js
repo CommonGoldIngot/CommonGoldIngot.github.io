@@ -17,7 +17,7 @@ setTimeout(function () {
     $("p.loading-text").text("就快好了，再等我一会儿...");
 }, 12000)
 setTimeout(function () {
-    $("p.loading-speed-up").show();
+    $("p.loading-speed-up").css("visibility","visible");
 }, 18000)
 //加载界面淡出 & 主题切换提示
 window.onload = function () {
@@ -29,8 +29,8 @@ window.onload = function () {
             var hourForThemeControl = timeForThemeControl.getHours();
             if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
                 setTimeout(function () {
-                    $("div.aside-theme-control-tip").fadeIn(1000);
-                }, 600)
+                    $("div.aside-theme-control-tip").fadeIn(3500);
+                }, 1600)
             }
         });
     }, 900)
