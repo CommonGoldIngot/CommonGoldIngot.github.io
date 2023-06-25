@@ -61,19 +61,19 @@ $(document).ready(function () {
     //侧边栏子页面操作
     var wiki = 0;
     $("li.--wiki").on("click", function () {
-        $("ul.--wiki").slideToggle(600, easeInOutElastic, function () {
+        $("ul.--wiki").slideToggle({600, $.easing.easeInOutElastic, function () {
             if (wiki == 0) {
                 $("i.--wiki").rotate({
                     duration: 300,
                     animateTo: 90,
-                    easing: easeInOutElastic
+                    easing: $.easing.easeInOutElastic
                 });
                 wiki = 1;
             } else {
                 $("i.--wiki").rotate({
                     duration: 300,
                     animateTo: 0,
-                    easing: easeInOutElastic
+                    easing: $.easing.easeInOutElastic
                 });
                 wiki = 0;
             }
