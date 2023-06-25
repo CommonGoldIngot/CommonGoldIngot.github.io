@@ -1,2 +1,2 @@
 # CommonGoldIngot.github.io
-The source code of *commongoldingot.github.io*
+The source code of <https://commongoldingot.github.io/>
