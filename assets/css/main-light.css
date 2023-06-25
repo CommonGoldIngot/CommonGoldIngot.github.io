@@ -181,7 +181,7 @@ button.aside-theme-control {
   line-height: 32px;
 }
 div.aside-theme-control-tip {
-  display: block;
+  display: none;
   float: right;
   position: relative;
   top: 48px;
@@ -395,5 +395,10 @@ samp {
   clear: both;
 }
 #time, #news {
-  font-size: 22px;
+  font-size: 20px;
+}
+#sleep-tip {
+  visibility: hidden;
+  font-size: 12px;
+  color: rgb(var(--main-green));
 }
