@@ -397,12 +397,9 @@ samp {
 #time, #news {
   font-size: 20px;
 }
-#know {
-  margin: 22px 0px 0px 0px;
-}
 #sleep-tip {
   visibility: hidden;
-  margin: 8px 0px;
+  margin: 0px 0px 8px 0px;
   font-size: 12px;
   color: rgb(var(--main-green));
 }
