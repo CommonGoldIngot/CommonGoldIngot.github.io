@@ -64,7 +64,7 @@ $(document).ready(function () {
         $("ul.--wiki").slideToggle({
             duration: 600,
             easing: $.easing.easeInOutElastic,
-            callback: function () {
+            complete: function () {
                 if (wiki == 0) {
                     $("i.--wiki").rotate({
                         duration: 300,
