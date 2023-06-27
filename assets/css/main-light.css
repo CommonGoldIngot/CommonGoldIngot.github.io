@@ -17,7 +17,6 @@
 /*************************************************************
 **************************************************************
 *************************************************************/
-
 /***************** 背景图片 *****************/
 /** 横屏 **/
 @media (orientation: landscape) {
@@ -98,6 +97,7 @@ body {
   background-attachment: fixed;
   background-position: center center;
 }
+/* @media (min-width: 1920px) and (min-height: 1080px) */
 /***************** 加载动画 *****************/
 div.loading {
   position: fixed;
@@ -181,7 +181,7 @@ button.aside-theme-control {
   line-height: 32px;
 }
 div.aside-theme-select {
-  /* display: none; */
+  display: none;
   float: right;
   position: relative;
   top: 48px;
@@ -207,6 +207,11 @@ ul.aside-theme-select-list {
   margin: 0px;
   padding-left: 0px;
   line-height: 34px;
+}
+li.--theme-auto {
+  background-color: rgb(var(--main-white));
+  box-shadow: 8px 0px rgb(var(--main-white)),
+             -8px 0px rgb(var(--main-green));
 }
 .bi-circle-half,
 .bi-sun-fill,
