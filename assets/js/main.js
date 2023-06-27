@@ -62,12 +62,12 @@ $(document).ready(function () {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto").css("color", "rgb(var(--main-green))");
         $("span.--theme-auto").css("color", "rgb(var(--main-green))");
-        window.onload = function () {
+        /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").remove();
             }
-        }
+        } */
     });
     $("li.--theme-light").on("click", function () {
         $("p.loading-text").text("正在切换主题...");
@@ -75,12 +75,12 @@ $(document).ready(function () {
         $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-light").css("color", "rgb(var(--main-green))");
         $("span.--theme-light").css("color", "rgb(var(--main-green))");
-        window.onload = function () {
+        /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").remove();
             }
-        }
+        } */
     });
     $("li.--theme-dark").on("click", function () {
         $("p.loading-text").text("正在切换主题...");
@@ -88,12 +88,12 @@ $(document).ready(function () {
         $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-dark").css("color", "rgb(var(--main-green))");
         $("span.--theme-dark").css("color", "rgb(var(--main-green))");
-        window.onload = function () {
+        /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").remove();
             }
-        }
+        } */
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
