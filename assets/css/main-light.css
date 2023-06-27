@@ -208,11 +208,6 @@ ul.aside-theme-select-list {
   padding-left: 0px;
   line-height: 34px;
 }
-li.--theme-auto {
-  background-color: rgb(var(--main-green));
-  box-shadow: 9px 0px rgb(var(--main-white)),
-              -9px 0px rgb(var(--main-white));
-}
 .bi-circle-half,
 .bi-sun-fill,
 .bi-moon-fill {
@@ -222,6 +217,15 @@ li.--theme-auto {
 span.aside-theme-select-text {
   color: rgb(var(--main-white));
   font-size: 14px;
+}
+li.--theme-auto {
+  background-color: rgb(var(--main-white));
+  box-shadow: 9px 0px rgb(var(--main-white)),
+              -9px 0px rgb(var(--main-white));
+}
+i.--theme-auto,
+span.--theme-auto {
+  color: rgb(var(--main-green));
 }
 div.aside-theme-control-tip {
   display: none;
