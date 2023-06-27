@@ -45,7 +45,6 @@ $(document).ready(function () {
     $("button.aside-theme-control").on("click", function () {
         $("div.aside-theme-control-tip").remove();
         $("div.aside-theme-select").slideToggle(500);
-        //easeInOutElastic
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
@@ -61,25 +60,19 @@ $(document).ready(function () {
     //侧边栏子页面操作
     var wiki = 0;
     $("li.--wiki").on("click", function () {
-        $("ul.--wiki").slideToggle({
-            duration: 600,
-            easing: $.easing.easeInOutElastic,
-            complete: function () {
-                if (wiki == 0) {
-                    $("i.--wiki").rotate({
-                        duration: 300,
-                        animateTo: 90,
-                        easing: $.easing.easeInOutElastic
-                    });
-                    wiki = 1;
-                } else {
-                    $("i.--wiki").rotate({
-                        duration: 300,
-                        animateTo: 0,
-                        easing: $.easing.easeInOutElastic
-                    });
-                    wiki = 0;
-                }
+        $("ul.--wiki").slideToggle(200, function () {
+            if (wiki == 0) {
+                $("i.--wiki").rotate({
+                    duration: 300,
+                    animateTo: 90
+                });
+                wiki = 1;
+            } else {
+                $("i.--wiki").rotate({
+                    duration: 300,
+                    animateTo: 0
+                });
+                wiki = 0;
             }
         });
     });
