@@ -212,7 +212,7 @@ ul.aside-theme-select-list {
 .bi-sun-fill,
 .bi-moon-fill {
   color: rgb(var(--main-white));
-  font-size: 18px;
+  font-size: 16px;
 }
 span.aside-theme-select-text {
   color: rgb(var(--main-white));
@@ -307,7 +307,7 @@ a.aside-sidebar-item-link {
 .bi-images,
 .bi-wikipedia {
   color: rgb(var(--main-white));
-  font-size: 18px;
+  font-size: 16px;
 }
 span.aside-text {
   color: rgb(var(--main-white));
