@@ -180,6 +180,34 @@ button.aside-theme-control {
   font-size: 22px;
   line-height: 32px;
 }
+div.aside-theme-select {
+  /* display: none; */
+  float: right;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  z-index: 99;
+  width: 86px;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(var(--main-green));
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+}
+div.aside-theme-select::after {
+  content: " ";
+  position: absolute;
+  right: 8px;
+  bottom: 100%;
+  border: 6px solid transparent;
+  border-bottom-color: rgb(var(--main-green));
+}
+ul.aside-theme-select-list {
+  list-style-type: none;
+  padding-left: 0px;
+  line-height: 34px;
+}
 div.aside-theme-control-tip {
   display: none;
   float: right;
@@ -194,7 +222,7 @@ div.aside-theme-control-tip {
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-}                                
+}
 div.aside-theme-control-tip::after {
   content: " ";
   position: absolute;
