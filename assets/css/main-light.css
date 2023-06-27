@@ -185,7 +185,7 @@ div.aside-theme-select {
   float: right;
   position: relative;
   top: 48px;
-  right: -52px;
+  right: -50px;
   z-index: 100;
   margin: 10px;
   padding: 8px;
@@ -198,7 +198,7 @@ div.aside-theme-select::after {
   content: " ";
   position: absolute;
   right: 8px;
-  bottom: 100%;
+  bottom: calc(100% + 1px);
   border: 6px solid transparent;
   border-bottom-color: rgba(var(--main-green),0.8);
 }
@@ -210,7 +210,7 @@ ul.aside-theme-select-list {
 }
 span.aside-theme-select-text {
   color: rgb(var(--main-white));
-  font-size: 16px;
+  font-size: 14px;
 }
 div.aside-theme-control-tip {
   display: none;
@@ -231,7 +231,7 @@ div.aside-theme-control-tip::after {
   content: " ";
   position: absolute;
   right: 8px;
-  bottom: 100%;
+  bottom: calc(100% + 1px);
   border: 6px solid transparent;
   border-bottom-color: white;
 }
