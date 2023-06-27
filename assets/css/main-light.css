@@ -185,7 +185,7 @@ div.aside-theme-select {
   float: right;
   position: relative;
   top: 48px;
-  right: -56px;
+  right: -52px;
   z-index: 100;
   margin: 10px;
   padding: 8px;
@@ -200,7 +200,7 @@ div.aside-theme-select::after {
   right: 8px;
   bottom: 100%;
   border: 6px solid transparent;
-  border-bottom-color: rgb(var(--main-green));
+  border-bottom-color: rgba(var(--main-green),0.8);
 }
 ul.aside-theme-select-list {
   list-style-type: none;
