@@ -209,9 +209,9 @@ ul.aside-theme-select-list {
   line-height: 34px;
 }
 li.--theme-auto {
-  background-color: rgb(var(--main-white));
-  box-shadow: 8px 0px rgb(var(--main-white)),
-             -8px 0px rgb(var(--main-green));
+  background-color: rgb(var(--main-green));
+  box-shadow: 9px 0px rgb(var(--main-white)),
+              -9px 0px rgb(var(--main-white));
 }
 .bi-circle-half,
 .bi-sun-fill,
