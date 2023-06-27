@@ -208,6 +208,12 @@ ul.aside-theme-select-list {
   padding-left: 0px;
   line-height: 34px;
 }
+.bi-circle-half,
+.bi-sun-fill,
+.bi-moon-fill {
+  color: rgb(var(--main-white));
+  font-size: 18px;
+}
 span.aside-theme-select-text {
   color: rgb(var(--main-white));
   font-size: 14px;
