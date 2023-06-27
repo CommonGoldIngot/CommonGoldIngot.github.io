@@ -52,16 +52,49 @@ window.onload = function () {
 }
 $(document).ready(function () {
     //主题切换
+    var showLoadScreen = function () {
+        $("p.loading-text").text("正在切换主题...");
+        $("div.loading").show();
+    };
+    var autoThemeSelected = function () {
+        $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-auto").css("color", "rgb(var(--main-green))");
+        $("span.--theme-auto").css("color", "rgb(var(--main-green))");
+    };
+    var lightThemeSelected = function () {
+        $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-light").css("color", "rgb(var(--main-green))");
+        $("span.--theme-light").css("color", "rgb(var(--main-green))");
+    };
+    var darkThemeSelected = function () {
+        $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-dark").css("color", "rgb(var(--main-green))");
+        $("span.--theme-dark").css("color", "rgb(var(--main-green))");
+    };
+    var autoThemeUnselected = function () {
+        $("li.--theme-auto").css({"background-color": "transparent"});
+        $("i.--theme-auto").css("color", "rgb(var(--main-white))");
+        $("span.--theme-auto").css("color", "rgb(var(--main-white))");
+    };
+    var lightThemeUnselected = function () {
+        $("li.--theme-light").css({"background-color": "transparent"});
+        $("i.--theme-light").css("color", "rgb(var(--main-white))");
+        $("span.--theme-light").css("color", "rgb(var(--main-white))");
+    };
+    var darkThemeUnselected = function () {
+        $("li.--theme-dark").css({"background-color": "transparent"});
+        $("i.--theme-dark").css("color", "rgb(var(--main-white))");
+        $("span.--theme-dark").css("color", "rgb(var(--main-white))");
+    };
     $("button.aside-theme-control").on("click", function () {
         $("div.aside-theme-control-tip").remove();
         $("div.aside-theme-select").slideToggle(400);
     });
     $("li.--theme-auto").on("click", function () {
-        $("p.loading-text").text("正在切换主题...");
-        $("div.loading").show();
-        $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-auto").css("color", "rgb(var(--main-green))");
-        $("span.--theme-auto").css("color", "rgb(var(--main-green))");
+        showLoadScreen;
+        autoThemeSelected;
+        lightThemeUnselected;
+        darkThemeUnselected;
         /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
@@ -70,11 +103,10 @@ $(document).ready(function () {
         } */
     });
     $("li.--theme-light").on("click", function () {
-        $("p.loading-text").text("正在切换主题...");
-        $("div.loading").show();
-        $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-light").css("color", "rgb(var(--main-green))");
-        $("span.--theme-light").css("color", "rgb(var(--main-green))");
+        showLoadScreen;
+        autoThemeUnselected;
+        lightThemeSelected;
+        darkThemeUnselected;
         /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
@@ -83,11 +115,10 @@ $(document).ready(function () {
         } */
     });
     $("li.--theme-dark").on("click", function () {
-        $("p.loading-text").text("正在切换主题...");
-        $("div.loading").show();
-        $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-dark").css("color", "rgb(var(--main-green))");
-        $("span.--theme-dark").css("color", "rgb(var(--main-green))");
+        showLoadScreen;
+        autoThemeUnselected;
+        lightThemeUnselected;
+        darkThemeSelected;
         /* window.onload = function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
