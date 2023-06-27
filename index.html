@@ -42,9 +42,15 @@
         <!-- logo -->
         <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"/></a>
         <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
-        <div class="aside-theme-select"></div>
+        <div class="aside-theme-select">
+          <ul class="aside-theme-select-list">
+            <li class="aside-theme-select-list-item"><span class="aside-theme-select-text">自动</span></li>
+            <li class="aside-theme-select-list-item"><span class="aside-theme-select-text">浅色主题</span></li>
+            <li class="aside-theme-select-list-item"><span class="aside-theme-select-text">深色主题</span></li>
+          </ul>
+        </div>
         <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为暗色主题~<br/>您可以在此处切换主题~<br/>熬夜伤身，注意休息哦~</span></div>
-                                                                                   <!-- 检测到您的浏览器已设置为暗色主题，<br/>已自动同步~<br/>您可以在此处切换主题↑ -->
+                                                                                   <!-- 检测到您的浏览器已设置为暗色主题，<br/>已自动同步~<br/>您可以在此处切换主题~ -->
       </div>
       <!-- 遮罩层 -->
       <div class="aside-mask">
@@ -131,7 +137,7 @@
     </div>
     <!-- 页面主要内容 end -->
     <script>
-      //时间显示
+      //当前时间
       setInterval(function () {
           var time = new Date();
           var year = time.getFullYear();
@@ -172,6 +178,8 @@
               $("#know").html("这么晚还没睡的人一定还没睡。");
           }
       } else {
+          $("#sleep-tip").remove();
+          $("#know").css("margin", "12px 0px");
           if (date1.includes(date)) {
               $("#know").html("吃面不吃蒜，等于没吃蒜。");
           } else if (date2.includes(date)) {
