@@ -37,7 +37,7 @@ window.onload = function () {
                     });
                 }, 3600)
             } else if (window.matchMedia("(prefer-color-scheme: dark)").matches) {
-                $("span.aside-theme-control-tip-text").html("检测到您的浏览器已设置为<br/>深色主题，已自动同步~<br/>您可以在此处切换主题~");
+                $("span.aside-theme-control-tip-text").html("检测到您的浏览器设置为<br/>深色主题，已自动同步~<br/>您可以在此处切换主题~");
                 setTimeout(function () {
                     $("div.aside-theme-control-tip").fadeIn(3500);
                 }, 1400)
@@ -61,7 +61,7 @@ $(document).ready(function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").remove();
-            }
+            });
         }, 2500)
     }
     function autoThemeSelected() {
