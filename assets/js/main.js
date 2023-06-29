@@ -56,6 +56,14 @@ $(document).ready(function () {
         $("p.loading-text").text("正在切换主题...");
         $("div.loading").show();
     };
+    function closeLoadScreen() {
+        setTimeout(function () {
+            $("p.loading-text").text("加载完成！");
+            $("div.loading").fadeOut(500, function () {
+                $("div.loading").remove();
+            }
+        }, 2500)
+    }
     function autoThemeSelected() {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto").css("color", "rgb(var(--main-green))");
@@ -72,17 +80,17 @@ $(document).ready(function () {
         $("span.--theme-dark").css("color", "rgb(var(--main-green))");
     };
     function autoThemeUnselected() {
-        $("li.--theme-auto").css({"background-color": "transparent"});
+        $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
         $("i.--theme-auto").css("color", "rgb(var(--main-white))");
         $("span.--theme-auto").css("color", "rgb(var(--main-white))");
     };
     function lightThemeUnselected() {
-        $("li.--theme-light").css({"background-color": "transparent"});
+        $("li.--theme-light").css({"background-color": "transparent", "box-shadow": "none"});
         $("i.--theme-light").css("color", "rgb(var(--main-white))");
         $("span.--theme-light").css("color", "rgb(var(--main-white))");
     };
     function darkThemeUnselected() {
-        $("li.--theme-dark").css({"background-color": "transparent"});
+        $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
         $("i.--theme-dark").css("color", "rgb(var(--main-white))");
         $("span.--theme-dark").css("color", "rgb(var(--main-white))");
     };
@@ -95,36 +103,21 @@ $(document).ready(function () {
         autoThemeSelected();
         lightThemeUnselected();
         darkThemeUnselected();
-        /* window.onload = function () {
-            $("p.loading-text").text("加载完成！");
-            $("div.loading").fadeOut(500, function () {
-                $("div.loading").remove();
-            }
-        } */
+        closeLoadScreen();
     });
     $("li.--theme-light").on("click", function () {
         showLoadScreen();
         autoThemeUnselected();
         lightThemeSelected();
         darkThemeUnselected();
-        /* window.onload = function () {
-            $("p.loading-text").text("加载完成！");
-            $("div.loading").fadeOut(500, function () {
-                $("div.loading").remove();
-            }
-        } */
+        closeLoadScreen();
     });
     $("li.--theme-dark").on("click", function () {
         showLoadScreen();
         autoThemeUnselected();
         lightThemeUnselected();
         darkThemeSelected();
-        /* window.onload = function () {
-            $("p.loading-text").text("加载完成！");
-            $("div.loading").fadeOut(500, function () {
-                $("div.loading").remove();
-            }
-        } */
+        closeLoadScreen();
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
