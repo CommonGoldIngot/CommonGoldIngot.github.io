@@ -228,21 +228,6 @@ i.--theme-auto,
 span.--theme-auto {
   color: rgb(var(--main-green));
 }
-li.--theme-auto:hover,
-li.--theme-light:hover,
-li.--theme-dark:hover {
-  background-color: rgb(var(--main-white));
-  box-shadow: 9px 0px rgb(var(--main-white)),
-              -9px 0px rgb(var(--main-white));
-}
-li.--theme-auto:hover i.--theme-auto,
-li.--theme-auto:hover span.--theme-auto,
-li.--theme-light:hover i.--theme-light,
-li.--theme-light:hover span.--theme-light,
-li.--theme-dark:hover i.--theme-dark,
-li.--theme-dark:hover span.--theme-dark {
-  color: rgb(var(--main-green));
-}
 div.aside-theme-control-tip {
   display: none;
   float: right;
