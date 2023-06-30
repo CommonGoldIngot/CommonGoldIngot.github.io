@@ -57,7 +57,7 @@ $(document).ready(function () {
         $("p.loading-speed-up").hide();
         setTimeout(function () {
             $("div.loading").show();
-        }, 750)
+        }, 250)
     }
     function closeLoadScreen() {
         setTimeout(function () {
