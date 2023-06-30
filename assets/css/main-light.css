@@ -133,6 +133,7 @@ p.loading-speed-up {
   visibility: hidden;
 }
 a.loading-speed-up-link {
+  margin: 0px;
   color: rgb(var(--main-green));
   font-size: 20px;
 }
