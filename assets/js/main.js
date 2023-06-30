@@ -24,7 +24,7 @@ window.onload = function () {
     setTimeout(function () {
         $("p.loading-text").text("加载完成！");
         $("div.loading").fadeOut(500, function () {
-            $("div.loading").remove();
+            $("div.loading").hide();
             var timeForThemeControl = new Date();
             var hourForThemeControl = timeForThemeControl.getHours();
             if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
@@ -54,13 +54,15 @@ $(document).ready(function () {
     //主题切换
     function showLoadScreen() {
         $("p.loading-text").text("正在切换主题...");
-        $("div.loading").show();
+        setTimeout(function () {
+            $("div.loading").show();
+        }, 150)
     }
     function closeLoadScreen() {
+        $("p.loading-text").text("加载完成！");
         setTimeout(function () {
-            $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
-                $("div.loading").remove();
+                $("div.loading").hide();
             });
         }, 2500)
     }
