@@ -66,7 +66,6 @@ $(document).ready(function () {
                 $("div.loading").hide();
             });
         }, 2100)
-        
     }
     function autoThemeSelected() {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
@@ -102,6 +101,9 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeUnselected();
         closeLoadScreen();
+        setTimeout(function () {
+            $(".--theme-auto").removeClass("--theme-auto").addClass("--theme-auto");
+        }, 2099)
     });
     $("li.--theme-light").on("click", function () {
         showLoadScreen();
@@ -109,6 +111,9 @@ $(document).ready(function () {
         lightThemeSelected();
         darkThemeUnselected();
         closeLoadScreen();
+        setTimeout(function () {
+            $(".--theme-light").removeClass("--theme-light").addClass("--theme-light");
+        }, 2099)
     });
     $("li.--theme-dark").on("click", function () {
         showLoadScreen();
@@ -116,6 +121,9 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeSelected();
         closeLoadScreen();
+        setTimeout(function () {
+            $(".--theme-dark").removeClass("--theme-dark").addClass("--theme-dark");
+        }, 2099)
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
