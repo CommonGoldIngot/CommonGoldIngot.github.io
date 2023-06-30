@@ -52,6 +52,11 @@ window.onload = function () {
 }
 $(document).ready(function () {
     //主题切换
+    $("button.aside-theme-control").on("click", function () {
+        $("div.aside-theme-control-tip").remove();
+        $("div.aside-theme-select").slideToggle(400);
+    });
+    var currentTheme = 1;
     function showLoadScreen() {
         $("p.loading-text").text("正在切换主题...");
         $("p.loading-speed-up").hide();
@@ -91,19 +96,13 @@ $(document).ready(function () {
         $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
         $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
     }
-    $("button.aside-theme-control").on("click", function () {
-        $("div.aside-theme-control-tip").remove();
-        $("div.aside-theme-select").slideToggle(400);
-    });
     $("li.--theme-auto").on("click", function () {
         showLoadScreen();
         autoThemeSelected();
         lightThemeUnselected();
         darkThemeUnselected();
         closeLoadScreen();
-        setTimeout(function () {
-            $(".--theme-auto").removeClass("--theme-auto").addClass("--theme-auto");
-        }, 2099)
+        currentTheme = 1;
     });
     $("li.--theme-light").on("click", function () {
         showLoadScreen();
@@ -111,9 +110,7 @@ $(document).ready(function () {
         lightThemeSelected();
         darkThemeUnselected();
         closeLoadScreen();
-        setTimeout(function () {
-            $(".--theme-light").removeClass("--theme-light").addClass("--theme-light");
-        }, 2099)
+        currentTheme = 2;
     });
     $("li.--theme-dark").on("click", function () {
         showLoadScreen();
@@ -121,9 +118,34 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeSelected();
         closeLoadScreen();
-        setTimeout(function () {
-            $(".--theme-dark").removeClass("--theme-dark").addClass("--theme-dark");
-        }, 2099)
+        currentTheme = 3;
+    });
+    $("li.--theme-auto").on("mouseenter", function () {
+        $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
+    }).on("mouseleave", function () {
+        if (currentTheme != 1) {
+            $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
+            $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-white))");
+        }
+    });
+    $("li.--theme-light").on("mouseenter", function () {
+        $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-green))");
+    }).on("mouseleave", function () {
+        if (currentTheme != 2) {
+            $("li.--theme-light").css({"background-color": "transparent", "box-shadow": "none"});
+            $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-white))");
+        }
+    });
+    $("li.--theme-dark").on("mouseenter", function () {
+        $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
+        $("i.--theme-dark, span.--theme-auto").css("color", "rgb(var(--main-green))");
+    }).on("mouseleave", function () {
+        if (currentTheme != 3) {
+            $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
+            $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
+        }
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
