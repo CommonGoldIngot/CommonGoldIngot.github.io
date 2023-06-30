@@ -54,13 +54,14 @@ $(document).ready(function () {
     //主题切换
     function showLoadScreen() {
         $("p.loading-text").text("正在切换主题...");
+        $("p.loading-speed-up").hide();
         setTimeout(function () {
             $("div.loading").show();
-        }, 150)
+        }, 750)
     }
     function closeLoadScreen() {
-        $("p.loading-text").text("加载完成！");
         setTimeout(function () {
+            $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").hide();
             });
