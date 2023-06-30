@@ -140,7 +140,7 @@ $(document).ready(function () {
     });
     $("li.--theme-dark").on("mouseenter", function () {
         $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-dark, span.--theme-auto").css("color", "rgb(var(--main-green))");
+        $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-green))");
     }).on("mouseleave", function () {
         if (currentTheme != 3) {
             $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
