@@ -228,19 +228,13 @@ i.--theme-auto,
 span.--theme-auto {
   color: rgb(var(--main-green));
 }
-li.--theme-auto:hover,
-li.--theme-light:hover,
-li.--theme-dark:hover {
+li.aside-theme-select-list-item:hover {
   background-color: rgb(var(--main-white));
   box-shadow: 9px 0px rgb(var(--main-white)),
               -9px 0px rgb(var(--main-white));
 }
-li.--theme-auto:hover i.--theme-auto,
-li.--theme-auto:hover span.--theme-auto,
-li.--theme-light:hover i.--theme-light,
-li.--theme-light:hover span.--theme-light,
-li.--theme-dark:hover i.--theme-dark,
-li.--theme-dark:hover span.--theme-dark {
+li.aside-theme-select-list-item:hover i.aside-theme-select-icon,
+li.aside-theme-select-list-item:hover span.aside-theme-select-text {
   color: rgb(var(--main-green));
 }
 div.aside-theme-control-tip {
