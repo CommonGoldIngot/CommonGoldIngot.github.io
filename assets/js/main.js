@@ -64,10 +64,9 @@ $(document).ready(function () {
             $("p.loading-text").text("加载完成！");
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").hide();
-                $("li.--theme-auto:hover, li.--theme-light:hover, li.--theme-dark:hover").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-                $("li.--theme-auto:hover i.--theme-auto, li.--theme-auto:hover span.--theme-auto, li.--theme-light:hover i.--theme-light, li.--theme-light:hover span.--theme-light, li.--theme-dark:hover i.--theme-dark, li.--theme-dark:hover span.--theme-dark").css("color", "rgb(var(--main-green))");
             });
         }, 2100)
+        
     }
     function autoThemeSelected() {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
