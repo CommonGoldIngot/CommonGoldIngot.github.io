@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="description" content="About"/>
+    <meta name="description" content="CommonGoldIngot's website"/>
     <meta name="author" content="CommonGoldIngot"/>
     <meta name="keywords" content="CommonGoldIngot"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>
-    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/assets/css/main-light.css"/>
     <script src="/assets/js/jquery-3.6.4.min.js"></script>
     <script src="/assets/js/jQueryRotateCompressed.js"></script>
+    <script src="/assets/js/jquery.easing.min.js"></script>
     <script src="/assets/js/main.js"></script>
-    <title>关于作者</title>
+    <title>关于此网站</title>
   </head>
   <body>
     <!-- 加载界面 -->
@@ -23,6 +24,7 @@
         <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt=""/>
       </div>
       <p class="loading-text">加载中...</p>
+      <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
     </div>
     <!-- 加载界面 end -->
     <!-- 页面导航 -->
@@ -32,6 +34,21 @@
         <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
         <!-- logo -->
         <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"/></a>
+        <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
+        <div class="aside-theme-select">
+          <ul class="aside-theme-select-list">
+            <li class="aside-theme-select-list-item --theme-auto">
+              <i class="bi bi-circle-half aside-theme-select-icon --theme-auto"></i><span class="aside-theme-select-text --theme-auto">&ensp;自动</span>
+            </li>
+            <li class="aside-theme-select-list-item --theme-light">
+              <i class="bi bi-sun-fill aside-theme-select-icon --theme-light"></i><span class="aside-theme-select-text --theme-light">&ensp;浅色主题</span>
+            </li>
+            <li class="aside-theme-select-list-item --theme-dark">
+              <i class="bi bi-moon-fill aside-theme-select-icon --theme-dark"></i><span class="aside-theme-select-text --theme-dark">&ensp;深色主题</span>
+            </li>
+          </ul>
+        </div>
+        <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br/>您可以在此处切换主题~<br/>熬夜伤身，注意休息哦~</span></div>
       </div>
       <!-- 遮罩层 -->
       <div class="aside-mask">
@@ -43,8 +60,8 @@
           </div>
           <div class="aside-sidebar-body">
             <ul class="aside-nav">
-              <li class="aside-sidebar-item">
-                <a class="aside-sidebar-item-link" href="javascript:void(0)"><i class="mdi mdi-home"></i><span class="aside-text">&emsp;主页</span><i class="mdi mdi-star"></i></a>
+              <li class="aside-sidebar-item --index">
+                <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home"></i><span class="aside-text">&emsp;主页</span></a>
               </li>
               <li class="aside-sidebar-item">
                 <a class="aside-sidebar-item-link" href="/pictures.html"><i class="bi bi-images"></i><span class="aside-text">&emsp;画廊</span><i class="mdi mdi-chevron-right"></i></a>
@@ -63,10 +80,10 @@
             <p class="aside-sidebar-footer-text">
               Copyright &copy; 2023. CommonGoldIngot<br/>
               All rights reserved.<br/>
-              网站版本：1.0-alpha
+              网站版本：1.0.0-alpha
             </p>
             <a class="aside-sidebar-footer-link" href="/changelog.html">网站更新日志</a><br/>
-            <a class="aside-sidebar-footer-link" href="javascript:void(0)">关于作者</a>
+            <a class="aside-sidebar-footer-link" href="javascript:void(0)">关于此网站</a>
           </div>
         </div>
       </nav>

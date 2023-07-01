@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="/assets/css/main-light.css"/>
+    <script src="/assets/js/jquery-3.6.4.min.js"></script>
+    <script src="/assets/js/jQueryRotateCompressed.js"></script>
+    <script src="/assets/js/jquery.easing.min.js"></script>
+    <script src="/assets/js/main.js"></script>
     <style>
       li.--index {
         background-color: rgb(var(--main-green));
@@ -18,10 +22,6 @@
                     -30px 0px rgb(var(--main-green));
       }
     </style>
-    <script src="/assets/js/jquery-3.6.4.min.js"></script>
-    <script src="/assets/js/jQueryRotateCompressed.js"></script>
-    <script src="/assets/js/jquery.easing.min.js"></script>
-    <script src="/assets/js/main.js"></script>
     <title>CommonGoldIngot的网站</title>
   </head>
   <body>
@@ -87,7 +87,7 @@
             <p class="aside-sidebar-footer-text">
               Copyright &copy; 2023. CommonGoldIngot<br/>
               All rights reserved.<br/>
-              网站版本：1.0-alpha
+              网站版本：1.0.0-alpha
             </p>
             <a class="aside-sidebar-footer-link" href="/changelog.html">网站更新日志</a><br/>
             <a class="aside-sidebar-footer-link" href="/about.html">关于作者</a>
@@ -106,7 +106,8 @@
           <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
         </div>
         <div class="main-card-body">
-          <p class="main-card-text"></p>
+          <p class="main-card-text" id="news-title">新闻：</p>
+          <p class="main-card-text" id="news">如果您发现图标未成功加载，<br/>请自行使用工具访问！<!-- 啥也没有~ --></p>
           <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
         </div>
       </div>
@@ -117,8 +118,7 @@
         <div class="main-card-body">
           <p class="main-card-text">现在是：</p>
           <p class="main-card-text" id="time"></p>
-          <p class="main-card-text">新闻：</p>
-          <p class="main-card-text" id="news">如果您发现图标未成功加载，<br/>请自行使用工具访问！<!-- 啥也没有~ --></p>
+          <p class="main-card-text">CommonGoldIngot的网站v1.0.0正在建设中...</p>
         </div>
       </div>
       <div class="main-card">
