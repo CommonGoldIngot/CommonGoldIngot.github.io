@@ -443,11 +443,17 @@ samp {
   display: block;
   clear: both;
 }
+#news-title {
+  font-size: 22px;
+}
+#news {
+  font-size: 46px;
+}
 #music {
   font-size: 14px;
   color: rgb(var(--main-green));
 }
-#time, #news {
+#time {
   font-size: 20px;
 }
 #sleep-tip {
