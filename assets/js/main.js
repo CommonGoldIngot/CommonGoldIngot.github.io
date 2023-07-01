@@ -75,20 +75,14 @@ $(document).ready(function () {
     function autoThemeSelected() {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
-        var currentTheme = 1;
-        return currentTheme;
     }
     function lightThemeSelected() {
         $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-green))");
-        var currentTheme = 1;
-        return currentTheme;
     }
     function darkThemeSelected() {
         $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-green))");
-        var currentTheme = 1;
-        return currentTheme;
     }
     function autoThemeUnselected() {
         $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
@@ -123,39 +117,26 @@ $(document).ready(function () {
         darkThemeSelected();
         closeLoadScreen();
     });
-    if (autoThemeSelected() == 1) {
-        $("li.--theme-auto").off("click");
-    } else if (lightThemeSelected() == 1) {
-        $("li.--theme-light").off("click");
-    } else if (darkThemeSelected() == 1) {
-        $("li.--theme-dark").off("click");
-    }
     $("li.--theme-auto").on("mouseenter", function () {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
     }).on("mouseleave", function () {
-        if (autoThemeSelected() != 1) {
-            $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-white))");
-        }
+        $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
+        $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-white))");
     });
     $("li.--theme-light").on("mouseenter", function () {
         $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-green))");
     }).on("mouseleave", function () {
-        if (lightThemeSelected() != 1) {
-            $("li.--theme-light").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-white))");
-        }
+        $("li.--theme-light").css({"background-color": "transparent", "box-shadow": "none"});
+        $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-white))");
     });
     $("li.--theme-dark").on("mouseenter", function () {
         $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-green))");
     }).on("mouseleave", function () {
-        if (darkThemeSelected() != 1) {
-            $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
-        }
+        $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
+        $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
