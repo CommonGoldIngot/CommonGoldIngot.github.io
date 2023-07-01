@@ -97,36 +97,41 @@ $(document).ready(function () {
     }
     var currentTheme = 0;
     $("li.--theme-auto").on("click", function () {
-        showLoadScreen();
-        autoThemeSelected();
-        lightThemeUnselected();
-        darkThemeUnselected();
-        closeLoadScreen();
-        currentTheme = 0;
+        if (currentTheme != 0) {
+            showLoadScreen();
+            autoThemeSelected();
+            lightThemeUnselected();
+            darkThemeUnselected();
+            closeLoadScreen();
+            currentTheme = 0;
+        } else {
+            return;
+        }
     });
     $("li.--theme-light").on("click", function () {
-        showLoadScreen();
-        autoThemeUnselected();
-        lightThemeSelected();
-        darkThemeUnselected();
-        closeLoadScreen();
-        currentTheme = 1;
+        if (currentTheme != 1) {
+            showLoadScreen();
+            autoThemeUnselected();
+            lightThemeSelected();
+            darkThemeUnselected();
+            closeLoadScreen();
+            currentTheme = 1;
+        } else {
+            return;
+        }
     });
     $("li.--theme-dark").on("click", function () {
-        showLoadScreen();
-        autoThemeUnselected();
-        lightThemeUnselected();
-        darkThemeSelected();
-        closeLoadScreen();
-        currentTheme = 2;
+        if (currentTheme != 2) {
+            showLoadScreen();
+            autoThemeUnselected();
+            lightThemeUnselected();
+            darkThemeSelected();
+            closeLoadScreen();
+            currentTheme = 2;
+        } else {
+            return;
+        }
     });
-    if (currentTheme == 0) {
-        $("li.--theme-auto").off("click");
-    } else if (currentTheme == 1) {
-        $("li.--theme-light").off("click");
-    } else {
-        $("li.--theme-dark").off("click");
-    }
     $("li.--theme-auto").on("mouseenter", function () {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
