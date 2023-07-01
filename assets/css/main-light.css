@@ -228,6 +228,15 @@ i.--theme-auto,
 span.--theme-auto {
   color: rgb(var(--main-green));
 }
+li.aside-theme-select-list-item:hover {
+  background-color: rgb(var(--main-white));
+  box-shadow: 9px 0px rgb(var(--main-white)),
+              -9px 0px rgb(var(--main-white));
+}
+li.aside-theme-select-list-item:hover i.aside-theme-select-icon,
+li.aside-theme-select-list-item:hover span.aside-theme-select-text {
+  color: rgb(var(--main-green));
+}
 div.aside-theme-control-tip {
   display: none;
   float: right;
@@ -442,6 +451,10 @@ a.main-card-link {
 samp {
   display: block;
   clear: both;
+}
+#music {
+  font-size: 14px;
+  color: rgb(var(--main-green));
 }
 #time, #news {
   font-size: 20px;
