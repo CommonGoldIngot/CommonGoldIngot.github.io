@@ -101,7 +101,6 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeUnselected();
         closeLoadScreen();
-        currentTheme = 0;
     });
     $("li.--theme-light").on("click", function () {
         showLoadScreen();
@@ -109,7 +108,6 @@ $(document).ready(function () {
         lightThemeSelected();
         darkThemeUnselected();
         closeLoadScreen();
-        currentTheme = 1;
     });
     $("li.--theme-dark").on("click", function () {
         showLoadScreen();
@@ -117,34 +115,6 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeSelected();
         closeLoadScreen();
-        currentTheme = 2;
-    });
-    $("li.--theme-auto").on("mouseenter", function () {
-        $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
-    }).on("mouseleave", function () {
-        if (currentTheme != 1) {
-            $("li.--theme-auto").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-white))");
-        }
-    });
-    $("li.--theme-light").on("mouseenter", function () {
-        $("li.--theme-light").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-green))");
-    }).on("mouseleave", function () {
-        if (currentTheme != 2) {
-            $("li.--theme-light").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-light, span.--theme-light").css("color", "rgb(var(--main-white))");
-        }
-    });
-    $("li.--theme-dark").on("mouseenter", function () {
-        $("li.--theme-dark").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
-        $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-green))");
-    }).on("mouseleave", function () {
-        if (currentTheme != 3) {
-            $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
-            $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
-        }
     });
     //侧边栏
     $("button.aside-unfold-sidebar").on("click", function () {
