@@ -120,6 +120,13 @@ $(document).ready(function () {
         closeLoadScreen();
         currentTheme = 2;
     });
+    if (currentTheme == 0) {
+        $("li.--theme-auto").off("click");
+    } else if (currentTheme == 1) {
+        $("li.--theme-light").off("click");
+    } else {
+        $("li.--theme-dark").off("click");
+    }
     $("li.--theme-auto").on("mouseenter", function () {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
         $("i.--theme-auto, span.--theme-auto").css("color", "rgb(var(--main-green))");
