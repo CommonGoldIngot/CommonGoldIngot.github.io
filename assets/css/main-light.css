@@ -425,7 +425,7 @@ div.main-card-body {
 }
 p.main-card-text {
   margin: 8px 0px;
-  line-height: 26px;
+  line-height: 1.4em;
   color: rgb(var(--font-black));
   font-size: 18px;
 }
@@ -446,7 +446,7 @@ samp {
   font-size: 20px;
 }
 #news {
-  line-height: 32px;
+  line-height: 1.4em;
   font-size: 24px;
 }
 #music {
