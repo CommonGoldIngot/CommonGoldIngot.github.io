@@ -109,6 +109,7 @@
           <p class="main-card-text" id="news-title">新闻：</p>
           <p class="main-card-text" id="news">如果您发现图标未成功加载，<br/>请尝试刷新页面，若无效则试<br/>试使用工具访问！<!-- 啥也没有~ --></p>
           <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
+          <div id="aplayer"></div>
         </div>
       </div>
       <div class="main-card">
@@ -134,6 +135,20 @@
       <samp></samp>
     </div>
     <!-- 页面主要内容 end -->
+    <!-- APlayer -->
+    <link rel="stylesheet" href="/assets/css/APlayer.min.css"/>
+    <script src="/assets/js/APlayer.min.js"></script>
+    <script>
+      const ap = new APlayer({
+          container: document.getElementById("aplayer"),
+          audio: [{
+              name: "Never Gonna Give You Up",
+              artist: "Rick Astley",
+              url: "https://m801.music.126.net/20230702000207/b16afeae3025302303ca899589c80d05/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/15329915329/bc02/e040/7bd5/656ff818284815611f32d57e0f5ba1cb.m4a",
+              cover: "https://y.qq.com/music/photo_new/T002R300x300M000001fVJ394Hs8Gq_4.jpg?max_age=2592000"
+          }]
+      });
+    </script>
     <script>
       //当前时间
       setInterval(function () {
