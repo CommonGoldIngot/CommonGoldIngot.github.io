@@ -95,15 +95,13 @@ $(document).ready(function () {
         $("li.--theme-dark").css({"background-color": "transparent", "box-shadow": "none"});
         $("i.--theme-dark, span.--theme-dark").css("color", "rgb(var(--main-white))");
     }
-    var currentTheme = 0;
     $("li.--theme-auto").on("click", function () {
         showLoadScreen();
         autoThemeSelected();
         lightThemeUnselected();
         darkThemeUnselected();
         closeLoadScreen();
-        var currentTheme = 0;
-        window.currentTheme = currentTheme;
+        currentTheme = 0;
     });
     $("li.--theme-light").on("click", function () {
         showLoadScreen();
@@ -111,8 +109,7 @@ $(document).ready(function () {
         lightThemeSelected();
         darkThemeUnselected();
         closeLoadScreen();
-        var currentTheme = 1;
-        window.currentTheme = currentTheme;
+        currentTheme = 1;
     });
     $("li.--theme-dark").on("click", function () {
         showLoadScreen();
@@ -120,8 +117,7 @@ $(document).ready(function () {
         lightThemeUnselected();
         darkThemeSelected();
         closeLoadScreen();
-        var currentTheme = 2;
-        window.currentTheme = currentTheme;
+        currentTheme = 2;
     });
     $("li.--theme-auto").on("mouseenter", function () {
         $("li.--theme-auto").css({"background-color": "rgb(var(--main-white))", "box-shadow": "9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))"});
