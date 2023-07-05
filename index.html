@@ -58,8 +58,7 @@
         <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br/>您可以在此处切换主题~<br/>熬夜伤身，注意休息哦~</span></div>
       </div>
       <!-- 遮罩层 -->
-      <div class="aside-mask">
-      </div>
+      <div class="aside-mask"></div>
       <!-- 侧边栏 -->
       <nav>
         <div class="aside-sidebar">
@@ -106,6 +105,7 @@
           <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
         </div>
         <div class="main-card-body">
+          <p class="main-card-text" id="saying"></p>
           <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
           <br/>
           <div id="aplayer"></div>
@@ -118,7 +118,7 @@
         <div class="main-card-body">
           <p class="main-card-text">现在是：</p>
           <p class="main-card-text" id="time"></p>
-          <p class="main-card-text" id="news-title">新闻：</p>
+          <p class="main-card-text">新闻：</p>
           <p class="main-card-text" id="news">啥也没有~</p>
         </div>
       </div>
@@ -141,13 +141,16 @@
     <script>
       const ap = new APlayer({
           container: document.getElementById("aplayer"),
-          audio: [{
-              name: "Never Gonna Give You Up",
-              artist: "Rick Astley",
-              url: "/assets/music/music1.m4a",
-              cover: "/assets/music/cover/cover1.jpg",
-              lrc: "/assets/music/lrc/lyrics1.lrc"
-          }]
+          lrcType: 3,
+          audio: [
+              {
+                  name: "Never Gonna Give You Up",
+                  artist: "Rick Astley",
+                  url: "/assets/music/music1.m4a",
+                  cover: "/assets/music/cover/cover1.jpg",
+                  lrc: "/assets/music/lrc/lyrics1.lrc"
+              }
+          ]
       });
     </script>
     <script>
@@ -171,8 +174,25 @@
           }
           $("#time").html(year + "年" + month + "月" + date + "日" + " " + hour + ":" + minute + ":" + second);
       }, 100)
-      //废话文学随机
+      //名人名言
       var time = new Date();
+      var day = time.getDay();
+      if (day == 0) {
+          $("#saying").html("海内存知己，<br/>天涯若比邻。");
+      } else if (day == 1) {
+          $("#saying").html("山重水复疑无路，<br/>柳暗花明又一村。");
+      } else if (day == 2) {
+          $("#saying").html("路漫漫其修远兮，<br/>吾将上下而求索。");
+      } else if (day == 3) {
+          $("#saying").html("会当凌绝顶，<br/>一览众山小。");
+      } else if (day == 4) {
+          $("#saying").html("不畏浮云遮望眼，<br/>自缘身在最高层。");
+      } else if (day == 5) {
+          $("#saying").html("天生我材必有用，<br/>千金散尽还复来。");
+      } else {
+          $("#saying").html("黑发不知勤学早，<br/>白首方悔读书迟。");
+      }
+      //废话文学
       var hour = time.getHours();
       var date = time.getDate();
       const date1 = [1, 6, 9, 18];
