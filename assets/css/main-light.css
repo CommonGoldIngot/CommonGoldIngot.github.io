@@ -384,7 +384,6 @@ p.main-title-text {
 }
 @media (orientation: landscape) {
   div.main-card {
-    position: relative;
     float: left;
     margin: 16px;
     border-radius: 6px;
@@ -392,10 +391,18 @@ p.main-title-text {
   } 
 }
 /**** 卡片颜色 ****/
-div.color-green {background-color: rgb(var(--main-green));}
-div.color-blue {background-color: rgb(var(--main-blue));}
-div.color-orange {background-color: rgb(var(--main-orange));}
-div.color-purple {background-color: rgb(var(--main-purple));}
+div.color-green {
+  background-color: rgb(var(--main-green));
+}
+div.color-blue {
+  background-color: rgb(var(--main-blue));
+}
+div.color-orange {
+  background-color: rgb(var(--main-orange));
+}
+div.color-purple {
+  background-color: rgb(var(--main-purple));
+}
 /*****************/
 div.main-card-header {
   position: relative;
@@ -434,26 +441,30 @@ a.main-card-link {
   font-size: 18px;
 }
 /**** index.html卡片尺寸 ****/
-div.--card-index {width: 418px;}
-div.--card-today {width: 286px;}
-div.--card-know {width: 286px;}
+@media (orientation: landscape) {
+  div.--card-index {
+    width: 418px;
+  }
+  div.--card-today {
+    width: 300px;
+  }
+  div.--card-know {
+    width: 300px;
+  }
+}
 /***************************/
 samp {
   display: block;
   clear: both;
 }
-#news-title {
-  font-size: 20px;
-}
-#news {
-  line-height: 1.4em;
+#saying {
   font-size: 24px;
 }
 #music {
   font-size: 14px;
   color: rgb(var(--main-green));
 }
-#time {
+#time, #news {
   font-size: 20px;
 }
 #sleep-tip {
