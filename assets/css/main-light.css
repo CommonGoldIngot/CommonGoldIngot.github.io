@@ -315,6 +315,7 @@ a.aside-sidebar-item-link {
 }
 .mdi-home,
 .bi-images,
+.bi-music-note-beamed,
 .bi-wikipedia {
   color: rgb(var(--main-white));
   font-size: 16px;
@@ -440,13 +441,14 @@ a.main-card-link {
   color: rgb(var(--main-green));
   font-size: 18px;
 }
-/**** index.html卡片尺寸 ****/
+/**** index.html卡片相关 ****/
 @media (orientation: landscape) {
   div.--card-index {
     width: 418px;
   }
   div.--card-today {
     width: 300px;
+    clear: right;
   }
   div.--card-know {
     width: 300px;
