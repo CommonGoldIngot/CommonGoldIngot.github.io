@@ -448,10 +448,10 @@ a.main-card-link {
   }
   div.--card-today {
     width: 300px;
-    clear: right;
   }
   div.--card-know {
     width: 300px;
+    clear: left;
   }
 }
 /***************************/
