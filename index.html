@@ -157,21 +157,19 @@
     <link rel="stylesheet" href="/assets/css/APlayer.min.css"/>
     <script src="/assets/js/APlayer.min.js"></script>
     <script>
-      setInterval(function () {
-          const ap = new APlayer({
-              container: document.getElementById("aplayer"),
-              lrcType: 3,
-              audio: [
-                  {
-                      name: "Never Gonna Give You Up",
-                      artist: "Rick Astley",
-                      url: "/assets/audio/music1.m4a",
-                      cover: "/assets/audio/cover1.jpg",
-                      lrc: "/assets/audio/lyrics1.lrc"
-                  }
-              ]
-          });
-      }, 100)
+      const ap = new APlayer({
+          container: document.getElementById("aplayer"),
+          lrcType: 3,
+          audio: [
+              {
+                  name: "Never Gonna Give You Up",
+                  artist: "Rick Astley",
+                  url: "/assets/audio/music1.m4a",
+                  cover: "/assets/audio/cover1.jpg",
+                  lrc: "/assets/audio/lyrics1.lrc"
+              }
+          ]
+      });
     </script>
     <script>
       setInterval(function () {
@@ -256,6 +254,19 @@
     <script>
       if (window.matchMedia("(orientation: portrait)").matches) {
         $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><p class="main-card-text"><br></p><br><br><br><br><p class="main-card-text" id="saying"></p><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
+          const ap = new APlayer({
+              container: document.getElementById("aplayer"),
+              lrcType: 3,
+              audio: [
+                  {
+                      name: "Never Gonna Give You Up",
+                      artist: "Rick Astley",
+                      url: "/assets/audio/music1.m4a",
+                      cover: "/assets/audio/cover1.jpg",
+                      lrc: "/assets/audio/lyrics1.lrc"
+                  }
+              ]
+          });
       }
     </script>
   </body>
