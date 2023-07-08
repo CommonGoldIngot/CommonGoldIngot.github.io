@@ -157,19 +157,21 @@
     <link rel="stylesheet" href="/assets/css/APlayer.min.css"/>
     <script src="/assets/js/APlayer.min.js"></script>
     <script>
-      const ap = new APlayer({
-          container: document.getElementById("aplayer"),
-          lrcType: 3,
-          audio: [
-              {
-                  name: "Never Gonna Give You Up",
-                  artist: "Rick Astley",
-                  url: "/assets/audio/music1.m4a",
-                  cover: "/assets/audio/cover1.jpg",
-                  lrc: "/assets/audio/lyrics1.lrc"
-              }
-          ]
-      });
+      setInterval(function () {
+          const ap = new APlayer({
+              container: document.getElementById("aplayer"),
+              lrcType: 3,
+              audio: [
+                  {
+                      name: "Never Gonna Give You Up",
+                      artist: "Rick Astley",
+                      url: "/assets/audio/music1.m4a",
+                      cover: "/assets/audio/cover1.jpg",
+                      lrc: "/assets/audio/lyrics1.lrc"
+                  }
+              ]
+          });
+      }, 100)
     </script>
     <script>
       setInterval(function () {
