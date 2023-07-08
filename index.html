@@ -21,21 +21,10 @@
         box-shadow: 21px 0px rgb(var(--main-green)),
                     -30px 0px rgb(var(--main-green));
       }
-    </style>
-    <style>
-      @media (orientation: landscape) {
-        div.-index-card-top-table- {
-          display: table;
-        }
-        div.-index-card-top-tr- {
-          display: table-row;
-        }
-      }
       @media (orientation: portrait) {
-        div.-index-card-top-table- {
-          display: block;
-        }
-        div.-index-card-top-tr- {
+        table.-index-card-top-table-,
+        tr.-index-card-top-tr-,
+        td.-index-card-top-td- {
           display: block;
         }
       }
@@ -122,9 +111,9 @@
         <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
       </div>
       <!-- 页面顶部卡片 -->
-      <div class="-index-card-top-table-">
-        <div class="-index-card-top-tr-">
-          <td rowspan="2" valign="top">
+      <table class="-index-card-top-table-">
+        <tr class="-index-card-top-tr-">
+          <td class="-index-card-top-td-" rowspan="2" valign="top">
             <div class="main-card --card-index">
               <div class="main-card-header color-green">
                 <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
@@ -137,7 +126,7 @@
               </div>
             </div>
           </td>
-          <td valign="top">
+          <td class="-index-card-top-td-" valign="top">
             <div class="main-card --card-today">
               <div class="main-card-header color-blue">
                 <p class="main-card-title-text">在今天...</p>
@@ -150,9 +139,9 @@
               </div>
             </div>
           </td>
-        </div>
-        <div class="-index-card-top-tr-">
-          <td valign="top">
+        </tr>
+        <tr class="-index-card-top-tr-">
+          <td class="-index-card-top-td-" valign="top">
             <div class="main-card --card-know">
               <div class="main-card-header color-orange">
                 <p class="main-card-title-text">你知道吗？</p>
@@ -163,11 +152,10 @@
               </div>
             </div>
           </td>
-        </div>
-      </div>
+        </tr>
+      </table>
       <!-- 清除浮动 -->
       <samp></samp>
-      
     </div>
     <!-- 页面主要内容 end -->
     <!-- APlayer -->
