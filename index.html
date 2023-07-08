@@ -21,13 +21,9 @@
         box-shadow: 21px 0px rgb(var(--main-green)),
                     -30px 0px rgb(var(--main-green));
       }
-      @media (orientation: portrait) {
-        table.-index-card-top-table-,
-        tr.-index-card-top-tr-,
-        td.-index-card-top-td- {
-          display: block;
-          margin: 0px !important;
-        }
+      div.card-float {
+        float: left;
+        width: calc(100% - 800px);
       }
     </style>
     <title>CommonGoldIngot的网站</title>
@@ -112,9 +108,6 @@
         <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
       </div>
       <!-- 页面顶部卡片 -->
-      <table class="-index-card-top-table-">
-        <tr class="-index-card-top-tr-">
-          <td class="-index-card-top-td-" rowspan="2" valign="top">
             <div class="main-card --card-index">
               <div class="main-card-header color-green">
                 <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
@@ -126,8 +119,6 @@
                 <div id="aplayer"></div>
               </div>
             </div>
-          </td>
-          <td class="-index-card-top-td-" valign="top">
             <div class="main-card --card-today">
               <div class="main-card-header color-blue">
                 <p class="main-card-title-text">在今天...</p>
@@ -139,10 +130,7 @@
                 <p class="main-card-text" id="news">啥也没有~</p>
               </div>
             </div>
-          </td>
-        </tr>
-        <tr class="-index-card-top-tr-">
-          <td class="-index-card-top-td-" valign="top">
+            <div class="card-float"></div>
             <div class="main-card --card-know">
               <div class="main-card-header color-orange">
                 <p class="main-card-title-text">你知道吗？</p>
@@ -152,9 +140,6 @@
                 <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
               </div>
             </div>
-          </td>
-        </tr>
-      </table>
       <!-- 清除浮动 -->
       <samp></samp>
     </div>
