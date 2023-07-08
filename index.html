@@ -21,11 +21,6 @@
         box-shadow: 21px 0px rgb(var(--main-green)),
                     -30px 0px rgb(var(--main-green));
       }
-      div.card-float {
-        float: left;
-        width: calc(100% - 800px);
-        height: 300px;
-      }
     </style>
     <title>CommonGoldIngot的网站</title>
   </head>
@@ -109,38 +104,51 @@
         <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
       </div>
       <!-- 页面顶部卡片 -->
-            <div class="main-card --card-index">
-              <div class="main-card-header color-green">
-                <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
+      <div class="-index-card-top-">
+        <table class="-index-card-top-table-">
+          <tr class="-index-card-top-tr-">
+            <td class="-index-card-top-td-" rowspan="2" valign="top">
+              <div class="main-card --card-index">
+                <div class="main-card-header color-green">
+                  <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
+                </div>
+                <div class="main-card-body">
+                  <p class="main-card-text"><br></p><br><br><br><br>
+                  <p class="main-card-text" id="saying"></p>
+                  <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
+                  <div id="aplayer"></div>
+                </div>
               </div>
-              <div class="main-card-body">
-                <p class="main-card-text"><br></p><br><br><br><br>
-                <p class="main-card-text" id="saying"></p>
-                <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
-                <div id="aplayer"></div>
+            </td>
+            <td class="-index-card-top-td-" valign="top">
+              <div class="main-card --card-today">
+                <div class="main-card-header color-blue">
+                  <p class="main-card-title-text">在今天...</p>
+                </div>
+                <div class="main-card-body">
+                  <p class="main-card-text">现在是：</p>
+                  <p class="main-card-text" id="time"></p>
+                  <p class="main-card-text">新闻：</p>
+                  <p class="main-card-text" id="news">啥也没有~</p>
+                </div>
               </div>
-            </div>
-            <div class="main-card --card-today">
-              <div class="main-card-header color-blue">
-                <p class="main-card-title-text">在今天...</p>
+            </td>
+          </tr>
+          <tr class="-index-card-top-tr-">
+            <td class="-index-card-top-td-" valign="top">
+              <div class="main-card --card-know">
+                <div class="main-card-header color-orange">
+                  <p class="main-card-title-text">你知道吗？</p>
+                </div>
+                <div class="main-card-body">
+                  <p class="main-card-text" id="know"></p>
+                  <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
+                </div>
               </div>
-              <div class="main-card-body">
-                <p class="main-card-text">现在是：</p>
-                <p class="main-card-text" id="time"></p>
-                <p class="main-card-text">新闻：</p>
-                <p class="main-card-text" id="news">啥也没有~</p>
-              </div>
-            </div>
-            <div class="card-float"></div>
-            <div class="main-card --card-know">
-              <div class="main-card-header color-orange">
-                <p class="main-card-title-text">你知道吗？</p>
-              </div>
-              <div class="main-card-body">
-                <p class="main-card-text" id="know"></p>
-                <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
-              </div>
-            </div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <!-- 清除浮动 -->
       <samp></samp>
     </div>
@@ -243,6 +251,12 @@
           } else {
               $("#know").html("研究发现：当你的左脸被打时，<br/>你的右脸就不会痛。");
           }
+      }
+    </script>
+    <!-- 页面顶部卡片操作 -->
+    <script>
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><p class="main-card-text"><br></p><br><br><br><br><p class="main-card-text" id="saying"></p><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
       }
     </script>
   </body>
