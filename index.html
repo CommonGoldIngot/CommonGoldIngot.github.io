@@ -103,38 +103,50 @@
       <div class="main-title">
         <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
       </div>
-      <div class="main-card --card-index">
-        <div class="main-card-header color-green">
-          <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
-        </div>
-        <div class="main-card-body">
-          <p class="main-card-text">有朋自远方来，<del>虽远必诛</del>。</p>
-          <p class="main-card-text" id="saying"></p>
-          <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
-          <div id="aplayer"></div>
-        </div>
-      </div>
-      <div class="main-card --card-today">
-        <div class="main-card-header color-blue">
-          <p class="main-card-title-text">在今天...</p>
-        </div>
-        <div class="main-card-body">
-          <p class="main-card-text">现在是：</p>
-          <p class="main-card-text" id="time"></p>
-          <p class="main-card-text">新闻：</p>
-          <p class="main-card-text" id="news">啥也没有~</p>
-        </div>
-      </div>
-      <br/>
-      <div class="main-card --card-know">
-        <div class="main-card-header color-orange">
-          <p class="main-card-title-text">你知道吗？</p>
-        </div>
-        <div class="main-card-body">
-          <p class="main-card-text" id="know"></p>
-          <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
-        </div>
-      </div>
+      <!-- 页面顶部卡片 -->
+      <table>
+        <tr>
+          <td rowspan="2">
+            <div class="main-card --card-index">
+              <div class="main-card-header color-green">
+                <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
+              </div>
+              <div class="main-card-body">
+                <p class="main-card-text">有朋自远方来，<del>虽远必诛</del>。</p>
+                <p class="main-card-text" id="saying"></p>
+                <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
+                <div id="aplayer"></div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="main-card --card-today">
+              <div class="main-card-header color-blue">
+                <p class="main-card-title-text">在今天...</p>
+              </div>
+              <div class="main-card-body">
+                <p class="main-card-text">现在是：</p>
+                <p class="main-card-text" id="time"></p>
+                <p class="main-card-text">新闻：</p>
+                <p class="main-card-text" id="news">啥也没有~</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          </td>
+            <div class="main-card --card-know">
+              <div class="main-card-header color-orange">
+                <p class="main-card-title-text">你知道吗？</p>
+              </div>
+              <div class="main-card-body">
+                <p class="main-card-text" id="know"></p>
+                <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
       <!-- 清除浮动 -->
       <samp></samp>
     </div>
