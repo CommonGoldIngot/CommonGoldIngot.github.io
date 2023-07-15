@@ -376,20 +376,20 @@ p.main-title-text {
   font-size: 26px;
 }
 /***************** 卡片 *****************/
-@media (orientation: portrait) {
-  div.main-card {
-    margin: 16px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-  }
-}
 @media (orientation: landscape) {
   div.main-card {
     float: left;
     margin: 16px;
     border-radius: 6px;
     box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-  } 
+  }
+}
+@media (orientation: portrait) {
+  div.main-card {
+    margin: 16px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+  }
 }
 /**** 卡片颜色 ****/
 div.color-green {
@@ -462,6 +462,7 @@ samp {
   font-size: 28px;
 }
 #music {
+  margin: 12px 0px;
   font-size: 14px;
   color: rgb(var(--main-green));
 }
