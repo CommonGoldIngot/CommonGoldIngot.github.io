@@ -175,14 +175,15 @@
     <script src="http://whois.pconline.com.cn/ip.js"></script>
     <script>
       labelIp('ip', '');
-      $("#ip").prepend('来自').append('的访客，<br/>您好！');
-      var ipText = $("#ip").text();
+      var ipText = document.getElementById('ip').innerHTML;
       if (ipText.includes('联通')) {
           ipText = ipText.replace('联通', '');
       }
       if (ipText.includes('移动')) {
           ipText = ipText.replace('移动', '');
       }
+      document.getElementById('ip').innerHTML = ipText;
+      $("#ip").prepend('来自').append('的访客，<br/>您好！');
     </script>
     <!-- 页面顶部卡片操作 -->
     <script>
