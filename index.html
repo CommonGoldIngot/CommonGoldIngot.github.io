@@ -180,18 +180,16 @@
       }
     </script>
     <!-- IP属地获取 (Powered by PConline) -->
-    <script src="http://whois.pconline.com.cn/ip.js"></script>
     <script>
-      var ipContent = document.getElementById('ip').innerHTML;
-      labelIp('ip', '');
-      if (ipContent.includes('联通')) {
-          ipContent = ipContent.replace('联通', '');
+      function getIP(IPobj) {
+          if (IPobj.city != "") {
+              $("#ip").html(IPobj.city);
+          } else {
+              $("#ip").html(IPobj.addr);
+          }
       }
-      if (ipContent.includes('移动')) {
-          ipContent = ipContent.replace('移动', '');
-      }
-      $("#ip").html(ipContent);
     </script>
+    <script src="http://whois.pconline.com.cn/ipJson.jsp?callback=getIP"></script>
     <!-- 页面其它js -->
     <script>
       setInterval(function () {
