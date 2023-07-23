@@ -22,6 +22,30 @@
                     -30px 0px rgb(var(--main-green));
       }
     </style>
+    <style>
+      #ip,
+      #ip-before,
+      #ip-after {
+        font-size: 30px;
+      }
+      #saying {
+        font-size: 28px;
+      }
+      #music {
+        margin: 12px 0px;
+        font-size: 14px;
+        color: rgb(var(--main-green));
+      }
+      #time, #news {
+        font-size: 20px;
+      }
+      #sleep-tip {
+        visibility: hidden;
+        margin: 0px 0px 8px 0px;
+        font-size: 12px;
+        color: rgb(var(--main-green));
+      }
+    </style>
     <title>CommonGoldIngot的网站</title>
   </head>
   <body>
@@ -173,10 +197,11 @@
     </script>
     <!-- 页面顶部卡片操作 -->
     <script>
-      //（此处内容精简为一行，具体内容参照页面主要内容中的“页面顶部卡片”及APlayer js）
+      //（此处内容精简为一行，具体内容参照页面主要内容中的“页面顶部卡片”及下方js）
       if (window.matchMedia("(orientation: portrait)").matches) {
           $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><p class="main-card-text" id="ip"></p><p class="main-card-text" id="saying"></p><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
           const ap = new APlayer({container:document.getElementById("aplayer"),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/assets/audio/music1.m4a",cover:"/assets/audio/cover1.jpg",lrc:"/assets/audio/lyrics1.lrc"}]});
+          function getIP(IPobj){if(IPobj.city!=""){$("#ip").html(IPobj.city);}else{$("#ip").html(IPobj.addr);}}
       }
     </script>
     <!-- IP属地获取 (Powered by PConline) -->
