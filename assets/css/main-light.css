@@ -431,7 +431,8 @@ div.main-card-body {
   border-bottom-left-radius: 6px;
   background-color: rgb(var(--main-white));
 }
-p.main-card-text {
+p.main-card-text,
+span.main-card-inline-text {
   margin: 8px 0px;
   line-height: 1.4em;
   color: rgb(var(--font-black));
@@ -457,21 +458,4 @@ a.main-card-link {
 samp {
   display: block;
   clear: both;
-}
-#saying {
-  font-size: 28px;
-}
-#music {
-  margin: 12px 0px;
-  font-size: 14px;
-  color: rgb(var(--main-green));
-}
-#time, #news {
-  font-size: 20px;
-}
-#sleep-tip {
-  visibility: hidden;
-  margin: 0px 0px 8px 0px;
-  font-size: 12px;
-  color: rgb(var(--main-green));
 }
