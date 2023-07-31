@@ -37,7 +37,7 @@ window.onload = function () {
                     });
                 }, 3600)
             } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
-                $("span.aside-theme-control-tip-text").html('检测到您的浏览器设置为<br/>深色主题，已自动同步~<br/>您可以在此处切换主题~');
+                $("span.aside-theme-control-tip-text").html('检测到您的浏览器设置为<br />深色主题，已自动同步~<br />您可以在此处切换主题~');
                 setTimeout(function () {
                     $("div.aside-theme-control-tip").fadeIn(3500);
                 }, 1400)
@@ -74,14 +74,21 @@ $(document).ready(function () {
     function autoThemeSelected() {
         $("li.--theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-auto, span.--theme-auto").css('color', 'rgb(var(--main-green))');
+        if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+            document.getElementById("stylesheet-main").href = "/assets/css/main-dark.css";
+        } else {
+            document.getElementById("stylesheet-main").href = "/assets/css/main-light.css";
+        }
     }
     function lightThemeSelected() {
         $("li.--theme-light").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-light, span.--theme-light").css('color', 'rgb(var(--main-green))');
+        document.getElementById("stylesheet-main").href = "/assets/css/main-light.css";
     }
     function darkThemeSelected() {
         $("li.--theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-dark, span.--theme-dark").css('color', 'rgb(var(--main-green))');
+        document.getElementById("stylesheet-main").href = "/assets/css/main-dark.css";
     }
     function autoThemeUnselected() {
         $("li.--theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
@@ -96,6 +103,7 @@ $(document).ready(function () {
         $("i.--theme-dark, span.--theme-dark").css('color', 'rgb(var(--main-white))');
     }
     var currentTheme = 0;
+    autoThemeSelected();
     $("li.--theme-auto").on('click', function () {
         if (currentTheme != 0) {
             showLoadScreen();
