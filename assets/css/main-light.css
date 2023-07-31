@@ -442,19 +442,9 @@ a.main-card-link {
   color: rgb(var(--main-green));
   font-size: 18px;
 }
-/**** index.html卡片相关 ****/
-@media (orientation: landscape) {
-  div.--card-index {
-    width: 418px;
-  }
-  div.--card-today {
-    width: 300px;
-  }
-  div.--card-know {
-    width: 300px;
-  }
+hr.main-line-dashed {
+  border-style: dashed;
 }
-/***************************/
 samp {
   display: block;
   clear: both;
