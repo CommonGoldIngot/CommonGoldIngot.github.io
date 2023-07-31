@@ -443,6 +443,7 @@ a.main-card-link {
   font-size: 18px;
 }
 hr.main-line-dashed {
+  margin: 0.8em 0px;
   border-style: dashed;
 }
 samp {
