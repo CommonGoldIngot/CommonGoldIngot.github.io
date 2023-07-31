@@ -74,21 +74,21 @@ $(document).ready(function () {
     function autoThemeSelected() {
         $("li.--theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-auto, span.--theme-auto").css('color', 'rgb(var(--main-green))');
-        if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+        /*if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
             document.getElementById("stylesheet-main").href = "/assets/css/main-dark.css";
         } else {
             document.getElementById("stylesheet-main").href = "/assets/css/main-light.css";
-        }
+        }*/
     }
     function lightThemeSelected() {
         $("li.--theme-light").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-light, span.--theme-light").css('color', 'rgb(var(--main-green))');
-        document.getElementById("stylesheet-main").href = "/assets/css/main-light.css";
+        //document.getElementById("stylesheet-main").href = "/assets/css/main-light.css";
     }
     function darkThemeSelected() {
         $("li.--theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.--theme-dark, span.--theme-dark").css('color', 'rgb(var(--main-green))');
-        document.getElementById("stylesheet-main").href = "/assets/css/main-dark.css";
+        //document.getElementById("stylesheet-main").href = "/assets/css/main-dark.css";
     }
     function autoThemeUnselected() {
         $("li.--theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
