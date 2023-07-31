@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="description" content="CommonGoldIngot's website"/>
-    <meta name="author" content="CommonGoldIngot"/>
-    <meta name="keywords" content="CommonGoldIngot"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="/assets/images/favicon.png"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>
-    <link rel="stylesheet" href="/assets/css/main-light.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="CommonGoldIngot's website" />
+    <meta name="author" content="CommonGoldIngot" />
+    <meta name="keywords" content="CommonGoldIngot" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/assets/css/main-light.css" />
     <script src="/assets/js/jquery-3.6.4.min.js"></script>
     <script src="/assets/js/jQueryRotateCompressed.js"></script>
     <script src="/assets/js/jquery.easing.min.js"></script>
@@ -20,6 +20,13 @@
         background-color: rgb(var(--main-green));
         box-shadow: 21px 0px rgb(var(--main-green)),
                     -30px 0px rgb(var(--main-green));
+      }
+    </style>
+    <style>
+      @media (orientation: landscape) {
+        div.--card-index {width: 418px;}
+        div.--card-today {width: 300px;}
+        div.--card-know {width: 300px;}
       }
     </style>
     <style>
@@ -53,7 +60,7 @@
     <!-- 加载界面 -->
     <div class="loading">
       <div class="loading-round-border">
-        <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt=""/>
+        <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="" />
       </div>
       <p class="loading-text">加载中...</p>
       <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
@@ -65,7 +72,7 @@
       <div class="aside-topbar">
         <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
         <!-- logo -->
-        <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"/></a>
+        <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot" /></a>
         <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
         <div class="aside-theme-select">
           <ul class="aside-theme-select-list">
@@ -80,7 +87,7 @@
             </li>
           </ul>
         </div>
-        <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br/>您可以在此处切换主题~<br/>熬夜伤身，注意休息哦~</span></div>
+        <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br />您可以在此处切换主题~<br />熬夜伤身，注意休息哦~</span></div>
       </div>
       <!-- 遮罩层 -->
       <div class="aside-mask"></div>
@@ -112,11 +119,11 @@
           </div>
           <div class="aside-sidebar-footer">
             <p class="aside-sidebar-footer-text">
-              Copyright &copy; 2023. CommonGoldIngot<br/>
-              All rights reserved.<br/>
+              Copyright &copy; 2023. CommonGoldIngot<br />
+              All rights reserved.<br />
               网站版本：1.0.0-alpha
             </p>
-            <a class="aside-sidebar-footer-link" href="/changelog.html">网站更新日志</a><br/>
+            <a class="aside-sidebar-footer-link" href="/changelog.html">网站更新日志</a><br />
             <a class="aside-sidebar-footer-link" href="/about.html">关于作者</a>
           </div>
         </div>
@@ -138,10 +145,10 @@
                   <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
                 </div>
                 <div class="main-card-body">
-                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br/>您好！</span>
-                  <hr/>
+                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span>
+                  <hr class="main-line-dashed" />
                   <p class="main-card-text" id="saying"></p>
-                  <p class="main-card-text" id="poems"></p>
+                  <hr class="main-line-dashed" />
                   <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
                   <div id="aplayer"></div>
                 </div>
@@ -181,7 +188,7 @@
     </div>
     <!-- 页面主要内容 end -->
     <!-- APlayer -->
-    <link rel="stylesheet" href="/assets/css/APlayer.min.css"/>
+    <link rel="stylesheet" href="/assets/css/APlayer.min.css" />
     <script src="/assets/js/APlayer.min.js"></script>
     <script>
       const ap = new APlayer({
@@ -202,7 +209,7 @@
     <script>
       //（此处内容精简为一行，具体内容参照页面主要内容中的“页面顶部卡片”及下方js）
       if (window.matchMedia("(orientation: portrait)").matches) {
-          $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br/>您好！</span><hr/><p class="main-card-text" id="saying"></p><p class="main-card-text" id="poems"></p><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
+          $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span><hr /><p class="main-card-text" id="saying"></p><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
           const ap = new APlayer({container:document.getElementById("aplayer"),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/assets/audio/music1.m4a",cover:"/assets/audio/cover1.jpg",lrc:"/assets/audio/lyrics1.lrc"}]});
           function getIP(IPobj){if(IPobj.city!=""){$("#ip").html(IPobj.city);}else{$("#ip").html(IPobj.addr);}}
       }
@@ -246,25 +253,18 @@
           //名人名言
           if (day == 0) {
               $("#saying").html('海内存知己，天涯若比邻。');
-              $("#poems").html('小荷才露尖尖角，<br/>早有蜻蜓立上头。');              
           } else if (day == 1) {
-              $("#saying").html('山重水复疑无路，<br/>柳暗花明又一村。');
-              $("#poems").html('停车坐爱枫林晚，<br/>霜叶红于二月花。');
+              $("#saying").html('山重水复疑无路，<br />柳暗花明又一村。');
           } else if (day == 2) {
-              $("#saying").html('路漫漫其修远兮，<br/>吾将上下而求索。');
-              $("#poems").html('明月松间照，清泉石上流。');
+              $("#saying").html('路漫漫其修远兮，<br />吾将上下而求索。');
           } else if (day == 3) {
               $("#saying").html('会当凌绝顶，一览众山小。');
-              $("#poems").html('落霞与孤鹜齐飞，<br/>秋水共长天一色。');
           } else if (day == 4) {
-              $("#saying").html('不畏浮云遮望眼，<br/>自缘身在最高层。');
-              $("#poems").html('银烛秋光冷画屏，<br/>轻罗小扇扑流萤。');
+              $("#saying").html('不畏浮云遮望眼，<br />自缘身在最高层。');
           } else if (day == 5) {
-              $("#saying").html('天生我材必有用，<br/>千金散尽还复来。');
-              $("#poems").html('黄梅时节家家雨，<br/>青草池塘处处蛙。');
+              $("#saying").html('天生我材必有用，<br />千金散尽还复来。');
           } else {
-              $("#saying").html('黑发不知勤学早，<br/>白首方悔读书迟。');
-              $("#poems").html('水光潋滟晴方好，<br/>山色空蒙雨亦奇。');
+              $("#saying").html('黑发不知勤学早，<br />白首方悔读书迟。');
           }
           //废话文学
           const date1 = [1, 6, 9, 18];
@@ -279,7 +279,7 @@
           if (21 <= hour || hour <= 5) {
               $("#sleep-tip").css('visibility', 'visible');
               if (dateNight.includes(date)) {
-                  $("#know").html('睡觉的时候一定要闭上眼，<br/>不然会睡不着。');
+                  $("#know").html('睡觉的时候一定要闭上眼，<br />不然会睡不着。');
               } else {
                   $("#know").html('这么晚还没睡的人一定还没睡。');
               }
@@ -299,11 +299,11 @@
               } else if (date6.includes(date)) {
                   $("#know").html('越聪明的人，脑子就越聪明。');
               } else if (date7.includes(date)) {
-                  $("#know").html('剥开香蕉皮以后，你会发现<br/>里面有一个去皮的香蕉。');
+                  $("#know").html('剥开香蕉皮以后，你会发现<br />里面有一个去皮的香蕉。');
               } else if (date8.includes(date)) {
                   $("#know").html('西红柿吃起来，有番茄的味道。');
               } else {
-                  $("#know").html('研究发现：当你的左脸被打时，<br/>你的右脸就不会痛。');
+                  $("#know").html('研究发现：当你的左脸被打时，<br />你的右脸就不会痛。');
               }
           }
       }, 100)
