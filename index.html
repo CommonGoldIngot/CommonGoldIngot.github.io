@@ -27,6 +27,7 @@
         div.--card-index {width: 418px;}
         div.--card-today {width: 300px;}
         div.--card-know {width: 300px;}
+        div.--card-video {width: 66%;}
       }
     </style>
     <style>
@@ -40,7 +41,7 @@
         font-size: 28px;
       }
       #music {
-        margin: 12px 0px;
+        margin: 15px 0px;
         font-size: 14px;
         color: rgb(var(--main-green));
       }
@@ -52,6 +53,10 @@
         margin: 0px 0px 8px 0px;
         font-size: 12px;
         color: rgb(var(--main-green));
+      }
+      #latest-video {
+        width: 100%;
+        height: 100%;
       }
     </style>
     <title>CommonGoldIngot的网站</title>
@@ -185,23 +190,24 @@
       </div>
       <!-- 页面底部卡片 -->  
       <div class="-index-card-bottom-">
-        <div class="main-card">
+        <div class="main-card --card-video">
           <div class="main-card-header color-purple">
             <p class="main-card-title-text">最新视频</p>
           </div>
           <div class="main-card-body">
-            <iframe src="https://player.bilibili.com/player.html?aid=480829411&bvid=BV15T411y7u5&cid=977724824&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+            <iframe id="latest-video" src="https://player.bilibili.com/player.html?aid=480829411&bvid=BV15T411y7u5&cid=977724824&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
           </div>
         </div>
-        <div class="main-card">
-          <div class="main-card-header color-purple">
+        <div class="main-card --card-pictures">
+          <div class="main-card-header color-cyan">
             <p class="main-card-title-text">画廊</p>
           </div>
           <div class="main-card-body">
-
+            <img class="loading-logo" width="80" height="80" src="" alt="" />
+            <img class="loading-logo" width="80" height="80" src="" alt="" />
+            <img class="loading-logo" width="80" height="80" src="" alt="" />
           </div>
         </div>
-        
       </div>
       <!-- 清除浮动 -->
       <samp></samp>
