@@ -50,6 +50,15 @@ window.onload = function () {
         });
     }, 900)
 }
+//移动端屏幕转动时重载网页
+window.onorientationchange = function () {
+    $("p.loading-text").text('为了您的浏览体验，请不要频繁转动屏幕。');
+    $("div.loading").show(100, function () {
+        setTimeout(function () {
+            location.reload();
+        }, 1000)
+    });
+}
 $(document).ready(function () {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
