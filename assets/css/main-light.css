@@ -10,6 +10,8 @@
   --main-blue: 30,144,255;
   --main-orange: 255,141,30;
   --main-purple: 132,112,255;
+  --main-brown: 165,104,42;
+  --main-cyan: 100,134,134;
 
   --background-light-green: 245,250,245;
   --font-black: 68,74,77;
@@ -392,18 +394,12 @@ p.main-title-text {
   }
 }
 /**** 卡片颜色 ****/
-div.color-green {
-  background-color: rgb(var(--main-green));
-}
-div.color-blue {
-  background-color: rgb(var(--main-blue));
-}
-div.color-orange {
-  background-color: rgb(var(--main-orange));
-}
-div.color-purple {
-  background-color: rgb(var(--main-purple));
-}
+div.color-green {background-color: rgb(var(--main-green));}
+div.color-blue {background-color: rgb(var(--main-blue));}
+div.color-orange {background-color: rgb(var(--main-orange));}
+div.color-purple {background-color: rgb(var(--main-purple));}
+div.color-brown {background-color: rgb(var(--main-brown));}
+div.color-cyan {background-color: rgb(var(--main-cyan));}
 /*****************/
 div.main-card-header {
   position: relative;
