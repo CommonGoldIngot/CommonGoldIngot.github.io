@@ -29,7 +29,6 @@
         div.--card-index {width: 418px;}
         div.--card-today {width: 300px;}
         div.--card-know {width: 300px;}
-        div.--card-video, div.--card-math {width: 50%;}
       }
       /***************** 特殊文本 *****************/
       #ip,
@@ -56,8 +55,13 @@
         color: rgb(var(--main-green));
       }
       #latest-video {
+        position: relative;
         width: 100%;
-        height: 100%;
+        padding-top: 56.25%;
+      }
+      #latest-video-iframe {
+        position: absolute;
+        top: 0;
       }
     </style>
     <title>CommonGoldIngot的网站</title>
@@ -175,17 +179,19 @@
         </table>
       </div>
       <!-- 页面底部卡片 -->  
-      <div class="-index-card-bottom-">
+      <div class="main-card-container">
         <div class="main-card --card-video">
           <div class="main-card-header color-purple">
             <p class="main-card-title-text">最新视频</p>
           </div>
           <div class="main-card-body">
             <div id="latest-video">
-              <iframe src="https://player.bilibili.com/player.html?aid=480829411&bvid=BV15T411y7u5&cid=977724824&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+              <iframe id="latest-video-iframe" src="https://player.bilibili.com/player.html?aid=480829411&bvid=BV15T411y7u5&cid=977724824&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
             </div>
           </div>
         </div>
+      </div>
+      <div class="main-card-container">
         <div class="main-card --card-math">
           <div class="main-card-header color-cyan">
             <p class="main-card-title-text">数学挑战</p>
