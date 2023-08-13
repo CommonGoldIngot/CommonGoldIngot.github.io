@@ -388,6 +388,7 @@ p.main-title-text {
   div.main-card-container-2in1 {
     float: left;
     width: 50%;
+    box-sizing: border-box;
     padding: 16px;
   }
   div.main-card-container-2in1 > div.main-card {
