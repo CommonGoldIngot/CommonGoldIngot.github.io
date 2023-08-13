@@ -8,14 +8,20 @@ setInterval(function () {
     $("img.loading-logo").rotate(logoRotateAngle);
 }, 5);
 setTimeout(function () {
-    $("p.loading-text").text('正在加载背景图片...');
-}, 3000)
+    $("p.loading-text").text('正在加载css...');
+}, 2000)
 setTimeout(function () {
-    $("p.loading-text").text('加载背景图片可能需要较长时间，请耐心等待...');
+    $("p.loading-text").text('正在加载背景图片...');
+}, 5000)
+setTimeout(function () {
+    $("p.loading-text").text('正在加载js...');
 }, 7000)
 setTimeout(function () {
-    $("p.loading-text").text('就快好了，再等我一会儿...');
-}, 12000)
+    $("p.loading-text").text('加载可能需要较长时间，请耐心等待...');
+}, 11000)
+setTimeout(function () {
+    $("p.loading-text").text('就快好了，再等我一会...');
+}, 14000)
 setTimeout(function () {
     $("p.loading-speed-up").css('visibility', 'visible');
 }, 18000)
@@ -53,6 +59,7 @@ window.onload = function () {
 //移动端屏幕转动时重载网页
 window.onorientationchange = function () {
     $("p.loading-text").text('为了您的浏览体验，请不要频繁转动屏幕。');
+    $("p.loading-speed-up").css('visibility', 'hidden');
     $("div.loading").show(100, function () {
         setTimeout(function () {
             location.reload();
