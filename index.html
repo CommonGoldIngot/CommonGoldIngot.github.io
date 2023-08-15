@@ -86,14 +86,14 @@
         <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
         <div class="aside-theme-select">
           <ul class="aside-theme-select-list">
-            <li class="aside-theme-select-list-item --theme-auto">
-              <i class="bi bi-circle-half aside-theme-select-icon --theme-auto"></i><span class="aside-theme-select-text --theme-auto">&ensp;自动</span>
+            <li class="aside-theme-select-list-item theme-auto">
+              <i class="bi bi-circle-half aside-theme-select-icon theme-auto"></i><span class="aside-theme-select-text theme-auto">&ensp;自动</span>
             </li>
-            <li class="aside-theme-select-list-item --theme-light">
-              <i class="bi bi-sun-fill aside-theme-select-icon --theme-light"></i><span class="aside-theme-select-text --theme-light">&ensp;浅色主题</span>
+            <li class="aside-theme-select-list-item theme-light">
+              <i class="bi bi-sun-fill aside-theme-select-icon theme-light"></i><span class="aside-theme-select-text theme-light">&ensp;浅色主题</span>
             </li>
-            <li class="aside-theme-select-list-item --theme-dark">
-              <i class="bi bi-moon-fill aside-theme-select-icon --theme-dark"></i><span class="aside-theme-select-text --theme-dark">&ensp;深色主题</span>
+            <li class="aside-theme-select-list-item theme-dark">
+              <i class="bi bi-moon-fill aside-theme-select-icon theme-dark"></i><span class="aside-theme-select-text theme-dark">&ensp;深色主题</span>
             </li>
           </ul>
         </div>
@@ -131,47 +131,53 @@
         <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
       </div>
       <!-- 页面顶部卡片 -->
-      <div class="-index-card-top-">
-        <table class="-index-card-top-table-">
-          <tr class="-index-card-top-tr-">
-            <td class="-index-card-top-td-" rowspan="2" valign="top">
+      <div class="--index-card-top">
+        <table class="--index-card-top-table">
+          <tr class="--index-card-top-tr">
+            <td class="--index-card-top-td" rowspan="2" valign="top">
               <div class="main-card --card-index">
                 <div class="main-card-header color-green">
                   <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
                 </div>
                 <div class="main-card-body">
-                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span>
-                  <hr class="main-line-dashed" />
-                  <p class="main-card-text" id="saying"></p>
-                  <hr class="main-line-dashed" />
-                  <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
-                  <div id="aplayer"></div>
+                  <div>
+                    <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span>
+                    <hr class="main-line-dashed" />
+                    <p class="main-card-text" id="saying"></p>
+                    <hr class="main-line-dashed" />
+                    <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
+                    <div id="aplayer"></div>
+                  </div>
                 </div>
               </div>
             </td>
-            <td class="-index-card-top-td-" valign="top">
+            <td class="--index-card-top-td" valign="top">
               <div class="main-card --card-today">
                 <div class="main-card-header color-blue">
                   <p class="main-card-title-text">在今天...</p>
                 </div>
                 <div class="main-card-body">
-                  <p class="main-card-text">现在是：</p>
-                  <p class="main-card-text" id="time"></p>
-                  <p class="main-card-text">新闻：</p>
-                  <p class="main-card-text" id="news">啥也没有~</p>
+                  <div>
+                    <p class="main-card-text">现在是：</p>
+                    <p class="main-card-text" id="time"></p>
+                    <p class="main-card-text">新闻：</p>
+                    <p class="main-card-text" id="news">啥也没有~</p>
+                  </div>
                 </div>
               </div>
             </td>
           </tr>
-          <tr class="-index-card-top-tr-">
-            <td class="-index-card-top-td-" valign="top">
+          <tr class="--index-card-top-tr">
+            <td class="--index-card-top-td" valign="top">
               <div class="main-card --card-know">
                 <div class="main-card-header color-orange">
                   <p class="main-card-title-text">你知道吗？</p>
                 </div>
                 <div class="main-card-body">
-                  <p class="main-card-text" id="know"></p>
-                  <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
+                  <div>
+                    <p class="main-card-text" id="know"></p>
+                    <p id="sleep-tip">熬夜伤身，注意休息哦~</p>
+                  </div>
                 </div>
               </div>
             </td>
@@ -198,16 +204,21 @@
               <p class="main-card-title-text">数学挑战</p>
             </div>
             <div class="main-card-body">
-              <p class="main-card-text">
-                解分式方程：<br />
-                \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \]
-              </p>
+              <div>
+                <p class="main-card-text">
+                  解分式方程：<br />
+                  \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \]
+                </p>
+                <form>
+                  <span class="main-card-inline-text">输入答案：</span><input type="text" /><input type="submit" />
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- 清除浮动 -->
-      <samp></samp>
+      <div class="clear"></div>
     </div>
     <!-- 页面主要内容 end -->
     <!-- APlayer -->
