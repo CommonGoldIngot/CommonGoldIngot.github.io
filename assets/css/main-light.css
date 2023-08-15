@@ -221,13 +221,13 @@ span.aside-theme-select-text {
   color: rgb(var(--main-white));
   font-size: 14px;
 }
-li.--theme-auto {
+li.theme-auto {
   background-color: rgb(var(--main-white));
   box-shadow: 9px 0px rgb(var(--main-white)),
               -9px 0px rgb(var(--main-white));
 }
-i.--theme-auto,
-span.--theme-auto {
+i.theme-auto,
+span.theme-auto {
   color: rgb(var(--main-green));
 }
 div.aside-theme-control-tip {
@@ -454,7 +454,7 @@ hr.main-line-dashed {
   margin: 0.8em 0px;
   border-style: dashed;
 }
-samp {
+div.clear {
   display: block;
   clear: both;
 }
