@@ -30,14 +30,13 @@
         div.--card-today {width: 300px;}
         div.--card-know {width: 300px;}
       }
-      /***************** 特殊文本 *****************/
+      /***************** 特殊元素 *****************/
       #ip,
       #ip-before,
       #ip-after {
         font-size: 30px;
       }
-      #saying,
-      #poems {
+      #saying {
         font-size: 28px;
       }
       #music {
@@ -62,6 +61,9 @@
       #latest-video-iframe {
         position: absolute;
         top: 0;
+      }
+      #math-problem {
+        font-size: 20px;
       }
     </style>
     <title>CommonGoldIngot的网站</title>
@@ -205,12 +207,12 @@
             </div>
             <div class="main-card-body">
               <div>
-                <p class="main-card-text">
-                  解分式方程：<br />
-                  \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \]
-                </p>
+                <p class="main-card-text" id="math-problem">解分式方程：</p>
+                <p class="main-card-text"> $$ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} $$ </p>
+                <hr class="main-line-dashed" />
                 <form>
-                  <span class="main-card-inline-text">输入答案：</span><input type="text" /><input type="submit" />
+                  <p class="main-card-text">尝试一下吧！</p>
+                  <span class="main-card-inline-text">输入答案： $$ x = $$ </span><input id="problem1" type="text" /><button type="submit" onclick="checkAnswer1()"></button>
                 </form>
               </div>
             </div>
@@ -242,9 +244,9 @@
     <!-- 页面顶部卡片操作 -->
     <script>
       //（此处内容精简为一行，具体内容参照页面主要内容中的“页面顶部卡片”及下方js）
-      if (window.matchMedia("(orientation: portrait)").matches) {
-          $("div.-index-card-top-").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span><hr class="main-line-dashed" /><p class="main-card-text" id="saying"></p><hr class="main-line-dashed" /><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div>')
-          const ap = new APlayer({container:document.getElementById("aplayer"),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/music/music1.m4a",cover:"/music/cover1.jpg",lrc:"/music/lyrics1.lrc"}]});
+      if (window.matchMedia('(orientation: portrait)').matches) {
+          $("div.--index-card-top").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><div><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span><hr class="main-line-dashed" /><p class="main-card-text" id="saying"></p><hr class="main-line-dashed" /><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><div><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><div><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div></div>')
+          const ap = new APlayer({container:document.getElementById('aplayer'),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/music/music1.m4a",cover:"/music/cover1.jpg",lrc:"/music/lyrics1.lrc"}]});
           function getIP(IPobj){if(IPobj.city!=""){$("#ip").html(IPobj.city);}else{$("#ip").html(IPobj.addr);}}
       }
     </script>
