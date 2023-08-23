@@ -12,19 +12,19 @@ setTimeout(function () {
 }, 2000)
 setTimeout(function () {
     $("p.loading-text").text('正在加载背景图片...');
-}, 5000)
+}, 3500)
 setTimeout(function () {
     $("p.loading-text").text('正在加载js...');
-}, 7000)
+}, 6000)
 setTimeout(function () {
     $("p.loading-text").text('加载可能需要较长时间，请耐心等待...');
-}, 11000)
+}, 9000)
 setTimeout(function () {
     $("p.loading-text").text('就快好了，再等我一会...');
-}, 14000)
+}, 12000)
 setTimeout(function () {
     $("p.loading-speed-up").css('visibility', 'visible');
-}, 18000)
+}, 16000)
 //加载界面淡出 & 主题切换提示
 window.onload = function () {
     setTimeout(function () {
