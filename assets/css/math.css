@@ -10,10 +10,10 @@ div.math-problem1 {
   display: inline-block;
   width: 120px;
 }
-input.math-problem1 {
+input.math-input-text-problem1 {
   width: calc(100% - 200px);
 }
-button.math-problem1 {
+input.math-submit-problem1 {
   float: right;
   width: 60px;
 }
