@@ -11,6 +11,7 @@ div.math-problem1 {
   width: 120px;
 }
 input.math-input-text-problem1 {
+  float: right;
   width: calc(100% - 200px);
 }
 input.math-submit-problem1 {
