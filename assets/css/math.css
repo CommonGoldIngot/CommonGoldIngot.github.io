@@ -1,0 +1,18 @@
+p.math-problem-text {
+  font-size: 20px;
+}
+p.math-text {
+  margin: 8px 0px;
+}
+/* 1 */
+div.math-problem1 {
+  display: inline-block;
+  width: 120px;
+}
+input.math-problem1 {
+  width: calc(100% - 190px);
+}
+button.math-problem1 {
+  float: right;
+  width: 60px;
+}
