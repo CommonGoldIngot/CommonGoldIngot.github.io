@@ -4,7 +4,7 @@ function answerTrue() {
 function answerFalse() {
     alert("答错力（悲"):
 }
-var answer1 = $("input.math-problem1").value;
+var answer1 = $("input.math-input-text-problem1").value;
 function checkAnswer1() {
     if (answer1 = "123/14") {
         answerTrue();
