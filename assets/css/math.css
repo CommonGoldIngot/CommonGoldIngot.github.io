@@ -3,6 +3,7 @@ p.math-problem-text {
 }
 p.math-text {
   margin: 8px 0px;
+  color: rgb(var(--font-black));
 }
 /* 1 */
 div.math-problem1 {
@@ -10,7 +11,7 @@ div.math-problem1 {
   width: 120px;
 }
 input.math-problem1 {
-  width: calc(100% - 190px);
+  width: calc(100% - 200px);
 }
 button.math-problem1 {
   float: right;
