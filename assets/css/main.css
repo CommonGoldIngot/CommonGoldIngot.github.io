@@ -1,0 +1,464 @@
+/*************************************************************
+*************************** 定义区 ****************************
+*************************************************************/
+:root {
+  --main-black: 0,0,0;
+  --main-white: 255,255,255;
+  --main-light-green: 214,241,226;
+  --main-green: 60,179,113;
+  --main-dark-green: 22,65,40;
+  --main-blue: 30,144,255;
+  --main-orange: 255,141,30;
+  --main-purple: 132,112,255;
+  --main-brown: 165,104,42;
+  --main-cyan: 100,134,134;
+
+  --background-light-green: 245,250,245;
+  --font-black: 68,74,77;
+}
+/*************************************************************
+**************************************************************
+*************************************************************/
+/***************** 背景图片 *****************/
+/** 横屏 **/
+@media (orientation: landscape) {
+  /* 800x600 4:3 */
+  @media (max-width: 800px) and (max-height: 600px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-800x600.png");
+    }
+  }
+  /* 1024x768 4:3 */
+  @media (min-width: 801px) and (max-width: 1024px) and (max-height: 768px), (max-width: 1024px) and (min-height: 601px) and (max-height: 768px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-1024x768.png");
+    }
+  }
+  /* 1280x960 4:3 */
+  @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 960px), (max-width: 1280px) and (min-height: 769px) and (max-height: 960px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-1280x960.png");
+    }
+  }
+  /* 1920x1080 16:9 */
+  @media (min-width: 1281px) and (max-width: 1920px) and (max-height: 1080px), (max-width: 1920px) and (min-height: 961px) and (max-height: 1080px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-1920x1080.png");
+    }
+  }
+  /* 1920x1440 4:3 */
+  @media (min-width: 1281px) and (max-width: 1920px) and (min-height: 1080px) and (max-height: 1440px), (max-width: 1920px) and (min-height: 1080px) and (max-height: 1440px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-1920x1440.png");
+    }
+  }
+  /* 2560x1440 16:9 */
+  @media (min-width: 1921px) and (max-width: 2560px) and (max-height: 1440px), (min-width: 1921px) and (max-width: 2560px) and (min-height: 1081px) and (max-height: 1440px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-2560x1440.png");
+    }
+  }
+  /* 2560x1600 8:5 & ++ */
+  @media (min-width: 1921px) and (max-width: 2560px) and (max-height: 1600px), (max-width: 2560px) and (min-height: 1441px) and (max-height: 1600px), (min-width: 2561px), (min-height: 1601px) {
+    body {
+      background-image: url("/assets/images/bg-light-landscape-2560x1600.png");
+    }
+  }
+}
+/** 竖屏 **/
+@media (orientation: portrait) {
+  /* 854x480, 16:9 */
+  @media (max-width: 480px) and (max-height: 854px) {
+    body {
+      background-image: url("/assets/images/bg-light-portrait-854x480.png");
+    }
+  }
+  /* 1920x1080, 16:9 */
+  @media (min-width: 481px) and (max-width: 1080px) and (max-height: 1920px), (max-width: 1080px) and (min-height: 855px) and (max-height: 1920px) {
+    body {
+      background-image: url("/assets/images/bg-light-portrait-1920x1080.png");
+    }
+  }
+  /* 2560x1440, 16:9 */
+  @media (min-width: 1081px) and (max-width: 1440px) and (max-height: 2560px), (max-width: 1440px) and (min-height: 1921px) and (max-height: 2560px) {
+    body {
+      background-image: url("/assets/images/bg-light-portrait-2560x1440.png");
+    }
+  }
+  /* 2560x1600, 16:9 & ++ */
+  @media (min-width: 1441px) and (max-width: 1600px) and (max-height: 2560px), (min-width: 1441px) and (max-width: 1600px) and (min-height: 1921px) and (max-height: 2560px), (min-width: 1601px), (min-height: 2561px) {
+    body {
+      background-image: url("/assets/images/bg-light-portrait-2560x1600.png");
+    }
+  }
+}
+/**********************************/
+body {
+  margin: 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+/***************** 加载动画 *****************/
+div.loading {
+  position: fixed;
+  z-index: 114514; /* 这么臭的z-index还有必要留着吗(恼 [doge] */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--main-white));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+div.loading-round-border {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(var(--main-white));
+  border: 5px solid rgb(var(--main-green));
+  border-top: 5px solid rgb(var(--main-light-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+p.loading-text,
+p.loading-speed-up {
+  color: rgb(var(--font-black));
+  font-size: 20px;
+}
+p.loading-speed-up {
+  visibility: hidden;
+  margin: 0px;
+}
+a.loading-speed-up-link {
+  color: rgb(var(--main-green));
+  font-size: 20px;
+}
+/***************** 导航栏-顶栏 *****************/
+div.aside-topbar {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  background-color: rgba(var(--main-dark-green),0.2);
+  border-bottom: 1px solid rgb(var(--main-green));
+  overflow: visible;
+}
+button.aside-unfold-sidebar {
+  display: inline-block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  background-color: transparent;
+  border-style: none;
+  text-align: center;
+}
+.bi-list {
+  color: rgb(var(--main-white));
+  font-size: 32px;
+  line-height: 40px;
+}
+img.aside-logo {
+  margin: 14px 4px;
+}
+@media (max-width: 600px) {
+  img.aside-logo {
+    display: none;
+  }
+}
+button.aside-theme-control {
+  display: inline-block;
+  float: right;
+  width: 32px;
+  height: 32px;
+  margin: 8px 10px 8px 8px;
+  background-color: transparent;
+  border-style: none;
+  text-align: center;
+}
+.mdi-brightness-6 {
+  color: rgb(var(--main-white));
+  font-size: 22px;
+  line-height: 32px;
+}
+div.aside-theme-select {
+  display: none;
+  float: right;
+  position: relative;
+  top: 48px;
+  right: -50px;
+  z-index: 100;
+  margin: 10px;
+  padding: 8px;
+  background-color: rgba(var(--main-green),0.8);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+}
+div.aside-theme-select::after {
+  content: " ";
+  position: absolute;
+  right: 8px;
+  bottom: calc(100% + 1px);
+  border: 6px solid transparent;
+  border-bottom-color: rgba(var(--main-green),0.8);
+}
+ul.aside-theme-select-list {
+  list-style-type: none;
+  margin: 0px;
+  padding-left: 0px;
+  line-height: 34px;
+}
+.bi-circle-half,
+.bi-sun-fill,
+.bi-moon-fill {
+  color: rgb(var(--main-white));
+  font-size: 16px;
+}
+span.aside-theme-select-text {
+  color: rgb(var(--main-white));
+  font-size: 14px;
+}
+li.theme-auto {
+  background-color: rgb(var(--main-white));
+  box-shadow: 9px 0px rgb(var(--main-white)),
+              -9px 0px rgb(var(--main-white));
+}
+i.theme-auto,
+span.theme-auto {
+  color: rgb(var(--main-green));
+}
+div.aside-theme-control-tip {
+  display: none;
+  float: right;
+  position: relative;
+  top: 48px;
+  right: -52px;
+  z-index: 99;
+  width: 186px;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(var(--main-white));
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+}
+div.aside-theme-control-tip::after {
+  content: " ";
+  position: absolute;
+  right: 8px;
+  bottom: calc(100% + 1px);
+  border: 6px solid transparent;
+  border-bottom-color: white;
+}
+span.aside-theme-control-tip-text {
+  font-size: 14px;
+}
+/***************** 导航栏-侧边栏 *****************/
+div.aside-sidebar {
+  display: none;
+  float: left;
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: -302px;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(var(--main-dark-green),0.2);
+  border-right: 1px solid rgb(var(--main-green));
+}
+/**** 侧边栏头部 ****/
+div.aside-sidebar-header {
+  position: relative;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  background-color: transparent;
+  border-right: 1px solid rgb(var(--main-green));
+  border-bottom: 1px solid rgb(var(--main-green));
+}
+/**** 遮罩层 ****/
+div.aside-mask {
+  display: none;
+  float: left;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--main-dark-green),0.1);
+}
+/**** 侧边栏主要内容 ****/
+div.aside-sidebar-body {
+  position: relative;
+  z-index: 999;
+  width: calc(100% - 50px);
+  padding: 20px 20px 20px 30px;
+  background-color: transparent;
+  border-right: 1px solid rgb(var(--main-green));
+}
+ul.aside-nav,
+ul.aside-subnav {
+  list-style-type: none;
+}
+ul.aside-nav {
+  padding-left: 0px;
+  line-height: 34px;
+}
+ul.aside-subnav {
+  display: none;
+}
+a.aside-sidebar-item-link {
+  color: rgb(var(--main-white));
+  text-decoration: none;
+}
+.mdi-home,
+.bi-images,
+.bi-music-note-beamed,
+.bi-wikipedia {
+  color: rgb(var(--main-white));
+  font-size: 16px;
+}
+span.aside-text {
+  color: rgb(var(--main-white));
+  font-size: 14px;
+  text-decoration: none;
+}
+.mdi-chevron-right,
+.mdi-star {
+  display: inline-block;
+  float: right;
+  margin: 0 32px;
+  color: rgb(var(--main-white));
+  font-size: 10px;
+}
+/**** 侧边栏底部信息 ****/
+div.aside-sidebar-footer {
+  position: relative;
+  z-index: 999;
+  bottom: 0;
+  width: calc(100% - 50px);
+  padding: 20px 20px 20px 30px;
+  background-color: transparent;
+  border-top: 1px solid rgb(var(--main-green));
+  border-right: 1px solid rgb(var(--main-green));
+}
+p.aside-sidebar-footer-text {
+  line-height: 26px;
+  color: rgb(var(--main-white));
+  font-size: 14px;
+}
+a.aside-sidebar-footer-link {
+  line-height: 26px;
+  color: rgb(var(--main-green));
+  font-size: 14px;
+}
+/***************** 页面主要内容 *****************/
+div.main {
+  margin: 74px 24px 24px 24px;
+  padding: 24px;
+  background-color: rgba(var(--background-light-green),0.9);
+  border: 1px solid transparent;
+  border-radius: 16px;
+}
+div.main-title {
+  margin: 16px;
+  padding: 8px;
+  text-align: center;
+  background-color: rgb(var(--main-light-green));
+  border: 1px solid rgb(var(--main-green));
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+}
+p.main-title-text {
+  color: rgb(var(--main-black));
+  font-size: 26px;
+}
+/***************** 卡片 *****************/
+@media (orientation: landscape) {
+  div.main-card {
+    float: left;
+    margin: 16px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+  }
+  div.main-card-container-2in1 {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  div.main-card-container-2in1 > div.main-card {
+    float: none;
+    margin: 0px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+  }
+}
+@media (orientation: portrait) {
+  div.main-card {
+    margin: 16px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+  }
+}
+/**** 卡片颜色 ****/
+div.color-green {background-color: rgb(var(--main-green));}
+div.color-blue {background-color: rgb(var(--main-blue));}
+div.color-orange {background-color: rgb(var(--main-orange));}
+div.color-purple {background-color: rgb(var(--main-purple));}
+div.color-brown {background-color: rgb(var(--main-brown));}
+div.color-cyan {background-color: rgb(var(--main-cyan));}
+/*****************/
+div.main-card-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+p.main-card-title-text {
+  margin: 0px;
+  color: rgb(var(--main-white));
+  font-size: 16px;
+}
+div.main-card-body {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-color: rgb(var(--main-white));
+}
+p.main-card-text,
+span.main-card-inline-text {
+  margin: 8px 0px;
+  line-height: 1.4em;
+  color: rgb(var(--font-black));
+  font-size: 18px;
+}
+a.main-card-link {
+  color: rgb(var(--main-green));
+  font-size: 18px;
+}
+hr.main-line-dashed {
+  margin: 0.8em 0px;
+  border-style: dashed;
+}
+div.clear {
+  display: block;
+  clear: both;
+}
