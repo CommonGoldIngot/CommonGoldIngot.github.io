@@ -6,7 +6,7 @@ p.math-text {
   color: rgb(var(--font-black));
 }
 #disable-form-reload {
-  display:none;
+  display: none;
 }
 /* 1 */
 div.math-problem1 {
