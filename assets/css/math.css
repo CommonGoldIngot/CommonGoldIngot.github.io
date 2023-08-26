@@ -5,16 +5,20 @@ p.math-text {
   margin: 8px 0px;
   color: rgb(var(--font-black));
 }
+#disable-form-reload {
+  display:none;
+}
 /* 1 */
 div.math-problem1 {
   display: inline-block;
   width: 120px;
 }
-input.math-input-text-problem1 {
-  float: right;
-  width: calc(100% - 200px);
-}
 input.math-submit-problem1 {
   float: right;
   width: 60px;
+}
+input.math-input-text-problem1 {
+  float: right;
+  width: calc(100% - 200px);
+  margin-right: 4px;
 }
