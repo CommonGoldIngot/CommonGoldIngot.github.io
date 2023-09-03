@@ -9,15 +9,15 @@ p.math-text {
   display: none;
 }
 /* 1 */
-div.math-problem1 {
+#math-problem1 {
   display: inline-block;
   width: 120px;
 }
-input.math-submit-problem1 {
+#math-submit-problem1 {
   float: right;
   width: 60px;
 }
-input.math-input-text-problem1 {
+#math-text-problem1 {
   float: right;
   width: calc(100% - 200px);
   margin-right: 4px;
