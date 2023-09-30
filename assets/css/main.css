@@ -319,10 +319,10 @@ a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   text-decoration: none;
 }
-.mdi-home,
-.bi-images,
-.bi-music-note-beamed,
-.bi-wikipedia {
+ul.aside-nav .mdi,
+ul.aside-nav .bi,
+ul.aside-subnav .mdi,
+ul.aside-subnav .bi {
   color: rgb(var(--main-white));
   font-size: 16px;
 }
@@ -331,8 +331,7 @@ span.aside-text {
   font-size: 14px;
   text-decoration: none;
 }
-.mdi-chevron-right,
-.mdi-star {
+.mdi-chevron-right {
   display: inline-block;
   float: right;
   margin: 0 32px;
