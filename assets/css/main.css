@@ -93,6 +93,9 @@
   }
 }
 /**********************************/
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+}
 body {
   margin: 0;
   background-size: cover;
@@ -319,10 +322,7 @@ a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   text-decoration: none;
 }
-ul.aside-nav .mdi,
-ul.aside-nav .bi,
-ul.aside-subnav .mdi,
-ul.aside-subnav .bi {
+i.aside-sidebar-item-icon {
   color: rgb(var(--main-white));
   font-size: 16px;
 }
