@@ -2,23 +2,25 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="CommonGoldIngot" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="CommonGoldIngot">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/images/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
   <style id="dark-theme"></style>
-  <link rel="stylesheet" href="/assets/css/math.css" />
+  <link rel="prefetch" href="/assets/images/bg-dark-landscape.png">
+  <link rel="prefetch" href="/assets/images/bg-dark-portrait.png">
+  <link rel="stylesheet" href="/assets/css/math-challenge.css">
   <script src="/assets/js/jquery-3.6.4.min.js"></script>
   <script src="/assets/js/jQueryRotateCompressed.js"></script>
   <script src="/assets/js/mathjax-tex-mml-chtml.js" async></script>
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/math.js"></script>
+  <script src="/assets/js/math-challenge.js"></script>
   <style>
     /***************** 侧边栏当前页面显示 *****************/
     li.--index {
@@ -73,7 +75,7 @@
   <!-- 加载界面 -->
   <div class="loading">
     <div class="loading-round-border">
-      <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="" />
+      <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="">
     </div>
     <p class="loading-text">加载中...</p>
     <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
@@ -87,7 +89,7 @@
     <div class="aside-topbar">
       <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
       <!-- logo -->
-      <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot" /></a>
+      <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"></a>
       <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
       <div class="aside-theme-select">
         <ul class="aside-theme-select-list">
@@ -102,7 +104,7 @@
           </li>
         </ul>
       </div>
-      <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br />您可以在此处切换主题~<br />熬夜伤身，注意休息哦~</span></div>
+      <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br>您可以在此处切换主题~<br>熬夜伤身，注意休息哦~</span></div>
     </div>
 
     <!-- 遮罩层 -->
@@ -125,8 +127,8 @@
         </div>
         <div class="aside-sidebar-footer">
           <p class="aside-sidebar-footer-text">
-            Copyright &copy; 2023. CommonGoldIngot<br />
-            All rights reserved.<br />
+            Copyright &copy; 2023. CommonGoldIngot<br>
+            All rights reserved.<br>
             网站版本：v1.0
           </p>
           <a class="aside-sidebar-footer-link" href="/about.html">关于此网站</a>
@@ -153,10 +155,10 @@
               </div>
               <div class="main-card-body">
                 <div>
-                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span>
-                  <hr class="main-line-dashed" />
+                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br>您好！</span>
+                  <hr class="main-line-dashed">
                   <p class="main-card-text" id="saying"></p>
-                  <hr class="main-line-dashed" />
+                  <hr class="main-line-dashed">
                   <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
                   <div id="aplayer"></div>
                 </div>
@@ -219,10 +221,10 @@
             <div>
               <p class="main-card-text" class="math-problem-text">解分式方程：</p>
               <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
-              <hr class="main-line-dashed" />
+              <hr class="main-line-dashed">
               <form action="" target="disable-form-reload">
                 <p class="main-card-text">尝试一下吧！</p>
-                <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload" /><input id="math-text-problem1" type="text" />
+                <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
               </form>
               <iframe id="disable-form-reload" name="disable-form-reload"></iframe>
             </div>
@@ -236,7 +238,7 @@
   <!-- 页面主要内容 end -->
 
   <!-- APlayer -->
-  <link rel="stylesheet" href="/assets/css/APlayer.min.css" />
+  <link rel="stylesheet" href="/assets/css/APlayer.min.css">
   <script src="/assets/js/APlayer.min.js"></script>
   <script>
     const ap = new APlayer({
@@ -255,11 +257,11 @@
   </script>
   <!-- 页面顶部卡片操作 -->
   <script>
-    //（此处内容精简为一行，具体内容参照页面主要内容中的“页面顶部卡片”及下方js）
     if (window.matchMedia('(orientation: portrait)').matches) {
-        $("div.--index-card-top").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><div><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br />您好！</span><hr class="main-line-dashed" /><p class="main-card-text" id="saying"></p><hr class="main-line-dashed" /><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><div><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><div><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div></div>')
+        $("div.--index-card-top").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><div><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br>您好！</span><hr class="main-line-dashed"><p class="main-card-text" id="saying"></p><hr class="main-line-dashed"><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><div><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><div><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div></div>')
         const ap = new APlayer({container:document.getElementById('aplayer'),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/music/music1.m4a",cover:"/music/cover1.jpg",lrc:"/music/lyrics1.lrc"}]});
         function getIP(IPobj){if(IPobj.city!=""){$("#ip").html(IPobj.city);}else{$("#ip").html(IPobj.addr);}}
+        if($("#ip").html()==""){$("#ip").html('地球')}
     }
   </script>
   <!-- IP属地获取 (Powered by PConline) -->
@@ -299,59 +301,89 @@
         }
         $("#time").html(year + "年" + month + "月" + date + "日" + " " + hour + ":" + minute + ":" + second);
         //名人名言
-        if (day == 0) {
-            $("#saying").html('海内存知己，<br />天涯若比邻。');
-        } else if (day == 1) {
-            $("#saying").html('山重水复疑无路，<br />柳暗花明又一村。');
-        } else if (day == 2) {
-            $("#saying").html('路漫漫其修远兮，<br />吾将上下而求索。');
-        } else if (day == 3) {
-            $("#saying").html('会当凌绝顶，<br />一览众山小。');
-        } else if (day == 4) {
-            $("#saying").html('不畏浮云遮望眼，<br />自缘身在最高层。');
-        } else if (day == 5) {
-            $("#saying").html('天生我材必有用，<br />千金散尽还复来。');
-        } else {
-            $("#saying").html('黑发不知勤学早，<br />白首方悔读书迟。');
+        switch (day) {
+            case 0:
+                $("#saying").html('海内存知己，<br>天涯若比邻。');
+                break;
+            case 1:
+                $("#saying").html('山重水复疑无路，<br>柳暗花明又一村。');
+                break;
+            case 2:
+                $("#saying").html('路漫漫其修远兮，<br>吾将上下而求索。');
+                break;
+            case 3:
+                $("#saying").html('会当凌绝顶，<br>一览众山小。');
+                break;
+            case 4:
+                $("#saying").html('不畏浮云遮望眼，<br>自缘身在最高层。');
+                break;
+            case 5:
+                $("#saying").html('天生我材必有用，<br>千金散尽还复来。');
+                break;
+            case 6:
+                $("#saying").html('黑发不知勤学早，<br>白首方悔读书迟。');
         }
         //废话文学
-        const date1 = [1, 6, 9, 18];
-        const date2 = [2, 11, 15, 30];
-        const date3 = [3, 12, 19, 29];
-        const date4 = [4, 17, 21, 31];
-        const date5 = [5, 20, 24];
-        const date6 = [7, 14, 27];
-        const date7 = [8, 22, 25];
-        const date8 = [10, 13, 26];
         const dateNight = [1, 3, 4, 6, 9, 12, 16, 17, 18, 19, 21, 24, 25, 29, 30, 31];
         if (21 <= hour || hour <= 5) {
             $("#sleep-tip").css('visibility', 'visible');
             if (dateNight.includes(date)) {
-                $("#know").html('睡觉的时候一定要闭上眼，<br />不然会睡不着。');
+                $("#know").html('睡觉的时候一定要闭上眼，<br>不然会睡不着。');
             } else {
                 $("#know").html('这么晚还没睡的人一定还没睡。');
             }
         } else {
             $("#sleep-tip").remove();
             $("#know").css('margin', '12px 0px');
-            if (date1.includes(date)) {
-                $("#know").html('吃面不吃蒜，等于没吃蒜。');
-            } else if (date2.includes(date)) {
-                $("#know").html('螃蟹死之前，是活的。');
-            } else if (date3.includes(date)) {
-                $("#know").html('三人行，必有三人。');
-            } else if (date4.includes(date)) {
-                $("#know").html('能力越大，能力就越大。');
-            } else if (date5.includes(date)) {
-                $("#know").html('每呼吸一分钟，就过去了60秒。');
-            } else if (date6.includes(date)) {
-                $("#know").html('越聪明的人，脑子就越聪明。');
-            } else if (date7.includes(date)) {
-                $("#know").html('剥开香蕉皮以后，你会发现<br />里面有一个去皮的香蕉。');
-            } else if (date8.includes(date)) {
-                $("#know").html('西红柿吃起来，有番茄的味道。');
-            } else {
-                $("#know").html('研究发现：当你的左脸被打时，<br />你的右脸就不会痛。');
+            switch (date) {
+                case 1:
+                case 6:
+                case 9:
+                case 18:
+                    $("#know").html('吃面不吃蒜，等于没吃蒜。');
+                    break;
+                case 2:
+                case 11:
+                case 15:
+                case 30:
+                    $("#know").html('螃蟹死之前，是活的。');
+                    break;
+                case 3:
+                case 12:
+                case 19:
+                case 29:
+                    $("#know").html('三人行，必有三人。');
+                    break;
+                case 4:
+                case 17:
+                case 21:
+                case 31:
+                    $("#know").html('能力越大，能力就越大。');
+                    break;
+                case 5:
+                case 20:
+                case 24:
+                    $("#know").html('每呼吸一分钟，就过去了60秒。');
+                    break;
+                case 7:
+                case 14:
+                case 27:
+                    $("#know").html('越聪明的人，脑子就越聪明。');
+                    break;
+                case 8:
+                case 22:
+                case 25:
+                    $("#know").html('剥开香蕉皮以后，你会发现<br>里面有一个去皮的香蕉。');
+                    break;
+                case 10:
+                case 13:
+                case 26:
+                    $("#know").html('西红柿吃起来，有番茄的味道。');
+                    break;
+                case 16:
+                case 23:
+                case 28:
+                    $("#know").html('研究发现：当你的左脸被打时，<br>你的右脸就不会痛。');
             }
         }
     }, 100)
