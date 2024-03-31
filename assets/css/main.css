@@ -15,6 +15,13 @@
 
   --background-light-green: 245,250,245;
   --font-black: 68,74,77;
+  --background-dark-green:6,17,11;
+  --background-black:40,40,40;
+  
+  --background-light-landscape-url: "/assets/images/bg-light-landscape.png";
+  --background-light-portrait-url: "/assets/images/bg-light-portrait.png";
+  --background-dark-landscape-url: "/assets/images/bg-dark-landscape.png";
+  --background-dark-portrait-url: "/assets/images/bg-dark-portrait.png";
 }
 /*************************************************************
 **************************************************************
@@ -23,13 +30,13 @@
 /** 横屏 **/
 @media (orientation: landscape) {
   html {
-    background-image: url("/assets/images/bg-light-landscape.png");
+    background-image: url(var(--background-light-landscape-url));
   }
 }
 /** 竖屏 **/
 @media (orientation: portrait) {
   html {
-    background-image: url("/assets/images/bg-light-portrait.png");
+    background-image: url(var(--background-light-portrait-url));
   }
 }
 /**********************************/
