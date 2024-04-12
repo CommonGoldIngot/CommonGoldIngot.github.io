@@ -74,7 +74,6 @@ $(document).ready(function () {
     });
     var timeForThemeControl = new Date();
     var hourForThemeControl = timeForThemeControl.getHours();
-    var darkThemeCSSText = ':root{--font-black:255,255,255;}@media (orientation: landscape){html{background-image:var(--background-dark-landscape-url)}}@media (orientation:portrait){html{background-image:var(--background-dark-portrait-url)}}div.loading{background-color:rgb(var(--background-black))}div.loading-round-border{background-color:rgb(var(--background-black));border-top:5px solid rgb(var(--main-dark-green))}a.loading-speed-up-link{color:rgb(var(--main-light-green))}div.main{background-color:rgba(var(--background-dark-green),0.9)}div.main-title{background-color:rgb(var(--main-green));border:1px solid rgb(var(--main-dark-green))}p.main-title-text{color:rgb(var(--main-white))}div.main-card-body{background-color:rgb(var(--background-black))}a.main-card-link{color:rgb(var(--main-light-green))}hr.main-line-dashed{border-color:rgb(var(--main-white))}'
     function showLoadScreen() {
         $("p.loading-text").text('正在切换主题...');
         $("p.loading-speed-up").hide();
@@ -94,7 +93,7 @@ $(document).ready(function () {
         $("li.theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-green))');
         if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
-            $("#dark-theme").html(darkThemeCSSText);
+            $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
         } else {
             $("#dark-theme").html('');
         }
@@ -107,7 +106,7 @@ $(document).ready(function () {
     function darkThemeSelected() {
         $("li.theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-green))');
-        $("#dark-theme").html(darkThemeCSSText);
+        $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
     }
     function autoThemeUnselected() {
         $("li.theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
