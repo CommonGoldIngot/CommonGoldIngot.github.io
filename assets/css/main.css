@@ -404,6 +404,18 @@ a.main-card-link {
   color: rgb(var(--main-green));
   font-size: 18px;
 }
+h1.main-header1,
+h2.main-header2,
+h3.main-header3,
+h4.main-header4,
+h5.main-header5,
+h6.main-header6 {
+  color: rgb(var(--font-black));
+}
+hr.main-line {
+  margin: 0.8em 0px;
+  border-style: solid;
+}
 hr.main-line-dashed {
   margin: 0.8em 0px;
   border-style: dashed;

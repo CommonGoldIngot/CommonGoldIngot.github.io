@@ -37,6 +37,15 @@ div.main-card-body {
 a.main-card-link {
   color: rgb(var(--main-light-green));
 }
+h1.main-header1,
+h2.main-header2,
+h3.main-header3,
+h4.main-header4,
+h5.main-header5,
+h6.main-header6 {
+  color: rgb(var(--main-white));
+}
+hr.main-line,
 hr.main-line-dashed {
   border-color: rgb(var(--main-white));
 }
