@@ -1,3 +1,3 @@
 $(document).ready(function () {
-    $("aside").load("/assets/components/navbar.html");
+    $("aside").load("/assets/modules/navbar.html");
 });
