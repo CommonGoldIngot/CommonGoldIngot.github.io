@@ -54,7 +54,7 @@ body {
   margin: 0;
 }
 /***************** 加载动画 *****************/
-div.loading-frame {
+div.loading {
   position: fixed;
   z-index: 114514; /* 这么臭的z-index还有必要留着吗(恼 [doge] */
   top: 0;
