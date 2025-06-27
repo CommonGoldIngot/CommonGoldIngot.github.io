@@ -58,6 +58,7 @@ window.onload = function () {
 }
 $(document).ready(function () {
     //主题切换
+    if (asideLoadState == true) {
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
         $("div.aside-theme-select").slideToggle(400);
@@ -67,9 +68,7 @@ $(document).ready(function () {
     function showLoadScreen() {
         $("p.loading-text").text('正在切换主题...');
         $("p.loading-speed-up").hide();
-        setTimeout(function () {
-            $("div.loading").show();
-        }, 100)
+        $("div.loading").show();
     }
     function closeLoadScreen() {
         setTimeout(function () {
@@ -77,7 +76,7 @@ $(document).ready(function () {
             $("div.loading").fadeOut(500, function () {
                 $("div.loading").hide();
             });
-        }, 1100)
+        }, 1000)
     }
     function autoThemeSelected() {
         $("li.theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
@@ -110,43 +109,43 @@ $(document).ready(function () {
         $("li.theme-dark").css({'background-color': 'transparent', 'box-shadow': 'none'});
         $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-white))');
     }
-    var currentTheme = 0;
+    var currentTheme = "auto";
     autoThemeSelected();
     $("li.theme-auto").on('click', function () {
-        if (currentTheme != 0) {
+        if (currentTheme != "auto") {
             showLoadScreen();
             autoThemeSelected();
             lightThemeUnselected();
             darkThemeUnselected();
             closeLoadScreen();
-            currentTheme = 0;
+            currentTheme = "auto";
         }
     });
     $("li.theme-light").on('click', function () {
-        if (currentTheme != 1) {
+        if (currentTheme != "light") {
             showLoadScreen();
             lightThemeSelected();
             autoThemeUnselected();
             darkThemeUnselected();
             closeLoadScreen();
-            currentTheme = 1;
+            currentTheme = "light";
         }
     });
     $("li.theme-dark").on('click', function () {
-        if (currentTheme != 2) {
+        if (currentTheme != "dark") {
             showLoadScreen();
             darkThemeSelected();
             autoThemeUnselected();
             lightThemeUnselected();
             closeLoadScreen();
-            currentTheme = 2;
+            currentTheme = "dark";
         }
     });
     $("li.theme-auto").on("mouseenter", function () {
         $("li.theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-green))');
     }).on("mouseleave", function () {
-        if (currentTheme != 0) {
+        if (currentTheme != "auto") {
             $("li.theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
             $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-white))');
         }
@@ -155,7 +154,7 @@ $(document).ready(function () {
         $("li.theme-light").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-green))');
     }).on("mouseleave", function () {
-        if (currentTheme != 1) {
+        if (currentTheme != "light") {
             $("li.theme-light").css({'background-color': 'transparent', 'box-shadow': 'none'});
             $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-white))');
         }
@@ -164,7 +163,7 @@ $(document).ready(function () {
         $("li.theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
         $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-green))');
     }).on("mouseleave", function () {
-        if (currentTheme != 2) {
+        if (currentTheme != "dark") {
             $("li.theme-dark").css({'background-color': 'transparent', 'box-shadow': 'none'});
             $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-white))');
         }
@@ -199,6 +198,7 @@ $(document).ready(function () {
             }
         });
     });
+    }
 });
 //移动端屏幕转动时重载网页
 window.onorientationchange = function () {
