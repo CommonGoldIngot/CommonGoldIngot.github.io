@@ -57,7 +57,7 @@ window.onload = function () {
     }, 900)
 }
 //主题
-Cookies.set('theme', 'auto', {expires: 365, path: '/'});
+Cookies.set('currentTheme', 'auto', {expires: 365, path: '/'});
 function asideCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
@@ -66,13 +66,13 @@ function asideCallback() {
     });
     var timeForThemeControl = new Date();
     var hourForThemeControl = timeForThemeControl.getHours();
-    var currentTheme;
+    var currentThemeCookie = Cookies.get('currentTheme');
     function themeSelect(theme) {
         let themeListSelector = "li.theme-" + theme;
         let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
         $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
         $(themeContentSelector).css('color', 'rgb(var(--main-green))');
-        var currentTheme = theme;
+        Cookies.set('currentTheme', theme, {expires: 365, path: '/'});
     }
     function themeUnselect(theme1, theme2) {
         let themeListSelector = "li.theme-" + theme1 + ", li.theme-" + theme2;
@@ -87,7 +87,7 @@ function asideCallback() {
             $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
             $(themeContentSelector).css('color', 'rgb(var(--main-green))');
         }).on("mouseleave", function () {
-            if (currentTheme != theme) {
+            if (currentThemeCookie != theme) {
                 $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
                 $(themeContentSelector).css('color', 'rgb(var(--main-white))');
             }
@@ -100,7 +100,7 @@ function asideCallback() {
         $("#dark-theme").html('');
     }
     $("li.theme-auto").on('click', function () {
-        if (currentTheme != "auto") {
+        if (currentThemeCookie != "auto") {
             themeSelect("auto");
             if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
                 $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
@@ -111,14 +111,14 @@ function asideCallback() {
         }
     });
     $("li.theme-light").on('click', function () {
-        if (currentTheme != "light") {
+        if (currentThemeCookie != "light") {
             themeSelect("light");
             $("#dark-theme").html('');
             themeUnselect("auto", "dark");
         }
     });
     $("li.theme-dark").on('click', function () {
-        if (currentTheme != "dark") {
+        if (currentThemeCookie != "dark") {
             themeSelect("dark");
             $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
             themeUnselect("auto", "light");
