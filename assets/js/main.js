@@ -70,7 +70,7 @@ function asideCallback() {
         let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
         $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
         $(themeContentSelector).css('color', 'rgb(var(--main-green))');
-        currentTheme = theme;
+        var currentTheme = theme;
     }
     function themeUnselect(theme1, theme2) {
         let themeListSelector = "li.theme-" + theme1 + ", li.theme-" + theme2;
