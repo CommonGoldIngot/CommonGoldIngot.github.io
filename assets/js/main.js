@@ -99,7 +99,7 @@ function asideCallback() {
     }
     $("li.theme-auto").on('click', function () {
         if (currentTheme != "auto") {
-            themeSelected("auto");
+            themeSelect("auto");
             if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
                 $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
             } else {
@@ -110,14 +110,14 @@ function asideCallback() {
     });
     $("li.theme-light").on('click', function () {
         if (currentTheme != "light") {
-            themeSelected("light");
+            themeSelect("light");
             $("#dark-theme").html('');
             themeUnselect("auto", "dark");
         }
     });
     $("li.theme-dark").on('click', function () {
         if (currentTheme != "dark") {
-            themeSelected("dark");
+            themeSelect("dark");
             $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
             themeUnselect("auto", "light");
         }
