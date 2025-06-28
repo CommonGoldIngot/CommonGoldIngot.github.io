@@ -64,120 +64,79 @@ function asideCallback() {
     });
     var timeForThemeControl = new Date();
     var hourForThemeControl = timeForThemeControl.getHours();
-    function showLoadScreen() {
-        $("p.loading-text").text('正在切换主题...');
-        $("p.loading-speed-up").hide();
-        $("div.loading").show();
-    }
-    function closeLoadScreen() {
-        setTimeout(function () {
-            $("p.loading-text").text('加载完成！');
-            $("div.loading").fadeOut(500, function () {
-                $("div.loading").hide();
-            });
-        }, 1000)
-    }
-    function autoThemeSelected() {
-        $("li.theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-green))');
-        if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
-            $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
-        } else {
-            $("#dark-theme").html('');
-        }
-    }
-    function lightThemeSelected() {
-        $("li.theme-light").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-green))');
-        $("#dark-theme").html('');
-    }
-    function darkThemeSelected() {
-        $("li.theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-green))');
-        $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
-    }
-    function autoThemeUnselected() {
-        $("li.theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
-        $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-white))');
-    }
-    function lightThemeUnselected() {
-        $("li.theme-light").css({'background-color': 'transparent', 'box-shadow': 'none'});
-        $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-white))');
-    }
-    function darkThemeUnselected() {
-        $("li.theme-dark").css({'background-color': 'transparent', 'box-shadow': 'none'});
-        $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-white))');
-    }
     var currentTheme = "auto";
-    autoThemeSelected();
+    function themeSelect(theme) {
+        let themeListSelector = "li.theme-" + theme;
+        let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
+        $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
+        $(themeContentSelector).css('color', 'rgb(var(--main-green))');
+        currentTheme = theme;
+    }
+    function themeUnselect(theme1, theme2) {
+        let themeListSelector = "li.theme-" + theme1 + ", li.theme-" + theme2;
+        let themeContentSelector = "i.theme-" + theme1 + ", span.theme-" + theme1 + "i.theme-" + theme2 + ", span.theme-" + theme2;
+        $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
+        $(themeContentSelector).css('color', 'rgb(var(--main-white))');
+    }
+    function themeListMouseResponse(theme) {
+        let themeListSelector = "li.theme-" + theme;
+        let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
+        $(themeListSelector).on("mouseenter", function () {
+            $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
+            $(themeContentSelector).css('color', 'rgb(var(--main-green))');
+        }).on("mouseleave", function () {
+            if (currentTheme != theme) {
+                $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
+                $(themeContentSelector).css('color', 'rgb(var(--main-white))');
+            }
+        });   
+    }
+    themeSelect("auto");
     $("li.theme-auto").on('click', function () {
         if (currentTheme != "auto") {
-            showLoadScreen();
-            autoThemeSelected();
-            lightThemeUnselected();
-            darkThemeUnselected();
-            closeLoadScreen();
-            currentTheme = "auto";
+            themeSelected("auto");
+            if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+                $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+            } else {
+                $("#dark-theme").html('');
+            }
+            themeUnselect("light", "dark");
         }
     });
     $("li.theme-light").on('click', function () {
         if (currentTheme != "light") {
-            showLoadScreen();
-            lightThemeSelected();
-            autoThemeUnselected();
-            darkThemeUnselected();
-            closeLoadScreen();
-            currentTheme = "light";
+            themeSelected("light");
+            $("#dark-theme").html('');
+            themeUnselect("auto", "dark");
         }
     });
     $("li.theme-dark").on('click', function () {
         if (currentTheme != "dark") {
-            showLoadScreen();
-            darkThemeSelected();
-            autoThemeUnselected();
-            lightThemeUnselected();
-            closeLoadScreen();
-            currentTheme = "dark";
+            themeSelected("dark");
+            $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+            themeUnselect("auto", "light");
         }
     });
-    $("li.theme-auto").on("mouseenter", function () {
-        $("li.theme-auto").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-green))');
-    }).on("mouseleave", function () {
-        if (currentTheme != "auto") {
-            $("li.theme-auto").css({'background-color': 'transparent', 'box-shadow': 'none'});
-            $("i.theme-auto, span.theme-auto").css('color', 'rgb(var(--main-white))');
-        }
-    });
-    $("li.theme-light").on("mouseenter", function () {
-        $("li.theme-light").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-green))');
-    }).on("mouseleave", function () {
-        if (currentTheme != "light") {
-            $("li.theme-light").css({'background-color': 'transparent', 'box-shadow': 'none'});
-            $("i.theme-light, span.theme-light").css('color', 'rgb(var(--main-white))');
-        }
-    });
-    $("li.theme-dark").on("mouseenter", function () {
-        $("li.theme-dark").css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)),-9px 0px rgb(var(--main-white))'});
-        $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-green))');
-    }).on("mouseleave", function () {
-        if (currentTheme != "dark") {
-            $("li.theme-dark").css({'background-color': 'transparent', 'box-shadow': 'none'});
-            $("i.theme-dark, span.theme-dark").css('color', 'rgb(var(--main-white))');
-        }
-    });
-    //侧边栏
+    themeListMouseResponse("auto");
+    themeListMouseResponse("light");
+    themeListMouseResponse("dark");
+    //侧边栏动效
     $("button.aside-unfold-sidebar").on('click', function () {
         $("div.aside-mask").show();
-        $("div.aside-sidebar").show().animate({left: "0"}, 200);
+        $("div.aside-sidebar").show().animate({left: '0'}, 200);
     });
     $("div.aside-mask").on('click', function () {
         $("div.aside-mask").hide();
-        $("div.aside-sidebar").animate({left: "-302"}, 200, function () {
+        $("div.aside-sidebar").animate({left: '-302'}, 200, function () {
             $("div.aside-sidebar").hide();
         });
     });
+    //侧边栏项目处理
+    var currentFilePath = location.pathname;
+    var currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+    var currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+    $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
+    $(currentListLinkId).href = 'javascript:void(0);';
     //侧边栏子页面操作
     var wiki = 0;
     $("li.--wiki").on('click', function () {

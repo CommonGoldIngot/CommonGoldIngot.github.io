@@ -24,14 +24,6 @@
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/main-modules.js"></script>
   <style>
-    /***************** 侧边栏当前页面显示 *****************/
-    li.--math {
-      background-color: rgb(var(--main-green));
-      box-shadow: 21px 0px rgb(var(--main-green)),
-                  -30px 0px rgb(var(--main-green));
-    }
-  </style>
-  <style>
     p.math-problem-text {
       font-size: 20px;
     }
@@ -55,7 +47,7 @@
       margin-right: 4px;
     }
   </style>
-  <title>CommonGoldIngot的网站</title>
+  <title>数学挑战</title>
 </head>
 
 <body>
@@ -89,7 +81,7 @@
               <p class="main-card-text">尝试一下吧！</p>
               <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
             </form>
-            <iframe id="disable-form-reload" name="disable-form-reload" style="display:none"></iframe>
+            <iframe id="disable-form-reload" name="disable-form-reload" style="display: none"></iframe>
           </div>
         </div>
       </div>
