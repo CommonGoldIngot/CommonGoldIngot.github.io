@@ -396,7 +396,7 @@ div.main-card-body {
 p.main-card-text,
 span.main-card-inline-text {
   margin: 6px 0px;
-  line-height: 1.2em;
+  line-height: 1.3em;
   color: rgb(var(--font-black));
   font-size: 16px;
 }

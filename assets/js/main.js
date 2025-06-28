@@ -56,6 +56,8 @@ window.onload = function () {
         });
     }, 900)
 }
+//主题
+Cookies.set('theme', 'auto', {expires: 365, path: '/'});
 function asideCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
@@ -64,7 +66,7 @@ function asideCallback() {
     });
     var timeForThemeControl = new Date();
     var hourForThemeControl = timeForThemeControl.getHours();
-    var currentTheme = "auto";
+    var currentTheme;
     function themeSelect(theme) {
         let themeListSelector = "li.theme-" + theme;
         let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
