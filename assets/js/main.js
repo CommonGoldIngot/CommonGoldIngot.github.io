@@ -92,6 +92,11 @@ function asideCallback() {
         });   
     }
     themeSelect("auto");
+    if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+        $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+    } else {
+        $("#dark-theme").html('');
+    }
     $("li.theme-auto").on('click', function () {
         if (currentTheme != "auto") {
             themeSelected("auto");
