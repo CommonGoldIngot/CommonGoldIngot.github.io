@@ -314,7 +314,7 @@ a.aside-sidebar-footer-link {
 div.main {
   margin: 62px 12px 12px 12px;
   padding: 12px;
-  background-color: rgba(var(--background-light-green),0.9);
+  background-color: rgba(var(--background-light-green),0.75);
   border: 1px solid transparent;
   border-radius: 8px;
 }

@@ -21,6 +21,7 @@
   <script src="/assets/js/jQueryRotateCompressed.js"></script>
   <script src="/assets/js/js.cookie.min.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main-modules.js"></script>
   <title>关于此网站</title>
 </head>
 
@@ -37,62 +38,9 @@
   <!-- 加载界面 end -->
 
   <!-- 页面导航 -->
-  <aside>
+  <aside class="navbar"></aside>
 
-    <!-- 顶栏 -->
-    <div class="aside-topbar">
-      <button type="button" class="aside-unfold-sidebar"><i class="bi bi-list"></i></button>
-      <!-- logo -->
-      <a href="/"><img class="aside-logo" width="248" height="20" src="/assets/images/main-logo.png" alt="CommonGoldIngot"></a>
-      <button type="button" class="aside-theme-control"><i class="mdi mdi-brightness-6"></i></button>
-      <div class="aside-theme-select">
-        <ul class="aside-theme-select-list">
-          <li class="aside-theme-select-list-item theme-auto">
-            <i class="bi bi-circle-half aside-theme-select-icon theme-auto"></i><span class="aside-theme-select-text theme-auto">&ensp;自动</span>
-          </li>
-          <li class="aside-theme-select-list-item theme-light">
-            <i class="bi bi-sun-fill aside-theme-select-icon theme-light"></i><span class="aside-theme-select-text theme-light">&ensp;浅色主题</span>
-          </li>
-          <li class="aside-theme-select-list-item theme-dark">
-            <i class="bi bi-moon-fill aside-theme-select-icon theme-dark"></i><span class="aside-theme-select-text theme-dark">&ensp;深色主题</span>
-          </li>
-        </ul>
-      </div>
-      <div class="aside-theme-control-tip"><span class="aside-theme-control-tip-text">夜间已自动调整为深色主题~<br>您可以在此处切换主题~<br>熬夜伤身，注意休息哦~</span></div>
-    </div>
-
-    <!-- 遮罩层 -->
-    <div class="aside-mask"></div>
-
-    <!-- 侧边栏 -->
-    <nav>
-      <div class="aside-sidebar">
-        <div class="aside-sidebar-header">
-        </div>
-        <div class="aside-sidebar-body">
-          <ul class="aside-nav">
-            <li class="aside-sidebar-item --index">
-              <a class="aside-sidebar-item-link" href="/"><i class="mdi mdi-home aside-sidebar-item-icon"></i><span class="aside-text">&emsp;主页</span><i class="mdi mdi-chevron-right"></i></a>
-            </li>
-            <li class="aside-sidebar-item --math">
-              <a class="aside-sidebar-item-link" href="/math-challenge.html"><i class="mdi mdi-pi aside-sidebar-item-icon"></i><span class="aside-text">&emsp;数学</span><i class="mdi mdi-chevron-right"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="aside-sidebar-footer">
-          <p class="aside-sidebar-footer-text">
-            Copyright &copy; 2023. CommonGoldIngot<br>
-            All rights reserved.<br>
-            网站版本：v1.0
-          </p>
-          <a class="aside-sidebar-footer-link" href="javascript:void(0)">关于此网站</a>
-        </div>
-      </div>
-    </nav>
-
-  </aside>
-  <!-- 页面导航 end -->
-
+  <!-- 页面主要内容 -->
   <div class="main">
     <div class="main-card">
       <div class="main-card-header color-green">
