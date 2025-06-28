@@ -56,9 +56,8 @@ window.onload = function () {
         });
     }, 900)
 }
-$(document).ready(function () {
+function asideCallback() {
     //主题切换
-    if (asideLoadState == true) {
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
         $("div.aside-theme-select").slideToggle(400);
@@ -198,8 +197,7 @@ $(document).ready(function () {
             }
         });
     });
-    }
-});
+}
 //移动端屏幕转动时重载网页
 window.onorientationchange = function () {
     $("p.loading-text").text('为了您的浏览体验，请不要频繁转动屏幕。');

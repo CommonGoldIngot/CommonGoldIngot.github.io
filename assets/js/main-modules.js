@@ -1,5 +1,3 @@
-var asideLoadState;
 $(document).ready(function () {
-    $("aside").load("/assets/modules/navbar.html");
-    asideLoadState = true;
+    $("aside").load("/assets/modules/navbar.html", asideCallback);
 });
