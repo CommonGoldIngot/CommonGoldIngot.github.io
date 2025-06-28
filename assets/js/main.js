@@ -85,12 +85,14 @@ function themeListMouseResponse(theme) {
         }
     });   
 }
-Cookies.set('currentTheme', 'auto', {expires: 365, path: '/'});
-themeSelect("auto");
-if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
-    $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
-} else {
-    $("#dark-theme").html('');
+if (Cookies.get('currentTheme') == undefined) {
+    Cookies.set('currentTheme', 'auto', {expires: 365, path: '/'});
+    themeSelect("auto");
+    if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+        $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+    } else {
+        $("#dark-theme").html('');
+    }
 }
 function asideCallback() {
     //主题切换
