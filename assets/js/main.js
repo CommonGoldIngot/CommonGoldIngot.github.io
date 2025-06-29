@@ -139,13 +139,12 @@ function asideCallback() {
     themeListMouseResponse("dark");
     //侧边栏项目处理
     function sidebarItemOperation() {
-        var currentListItemId, currentListLinkId;
         if (currentFilePath.slice(-1) = "/") {
-            currentListItemId = "#li" + currentFilePath.replace(/\//g, '-') + "index";
-            currentListLinkId = "#a" + currentFilePath.replace(/\//g, '-') + "index";
+            var currentListItemId = "#li" + currentFilePath.replace(/\//g, '-') + "index";
+            var currentListLinkId = "#a" + currentFilePath.replace(/\//g, '-') + "index";
         } else {
-            currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
-            currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+            var currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+            var currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
         }
         $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
         document.querySelector(currentListLinkId).href = 'javascript:void(0);';
