@@ -66,7 +66,7 @@ function themeSelect(theme) {
 }
 function themeUnselect(theme1, theme2) {
     let themeListSelector = "li.theme-" + theme1 + ", li.theme-" + theme2;
-    let themeContentSelector = "i.theme-" + theme1 + ", span.theme-" + theme1 + "i.theme-" + theme2 + ", span.theme-" + theme2;
+    let themeContentSelector = "i.theme-" + theme1 + ", span.theme-" + theme1 + ", i.theme-" + theme2 + ", span.theme-" + theme2;
     $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
     $(themeContentSelector).css('color', 'rgb(var(--main-white))');
 }
@@ -145,7 +145,6 @@ function asideCallback() {
         });
     });
     //侧边栏项目处理
-    var currentFilePath = location.pathname;
     var currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
     var currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
     $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
