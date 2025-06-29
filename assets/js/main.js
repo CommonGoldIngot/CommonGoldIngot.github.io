@@ -137,8 +137,22 @@ function asideCallback() {
     themeListMouseResponse("auto");
     themeListMouseResponse("light");
     themeListMouseResponse("dark");
+    //侧边栏项目处理
+    function sidebarItemOperation() {
+        var currentListItemId, currentListLinkId;
+        if (currentFilePath.slice(-1) = "/") {
+            currentListItemId = "#li" + currentFilePath.replace(/\//g, '-') + "index";
+            currentListLinkId = "#a" + currentFilePath.replace(/\//g, '-') + "index";
+        } else {
+            currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+            currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+        }
+        $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
+        document.querySelector(currentListLinkId).href = 'javascript:void(0);';
+    }
     //侧边栏动效
     $("button.aside-unfold-sidebar").on('click', function () {
+        sidebarItemOperation();
         $("div.aside-mask").show();
         $("div.aside-sidebar").show().animate({left: '0'}, 200);
     });
@@ -148,17 +162,6 @@ function asideCallback() {
             $("div.aside-sidebar").hide();
         });
     });
-    //侧边栏项目处理
-    var currentListItemId, currentListLinkId;
-    if (currentFilePath.slice(-1) = "/") {
-        currentListItemId = "#li" + currentFilePath.replace(/\//g, '-') + "index";
-        currentListLinkId = "#a" + currentFilePath.replace(/\//g, '-') + "index";
-    } else {
-        currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
-        currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
-    }
-    $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
-    document.querySelector(currentListLinkId).href = 'javascript:void(0);';
     //侧边栏子页面操作（此段待重构）
     /* var wiki = 0;
     $("li.--wiki").on('click', function () {
