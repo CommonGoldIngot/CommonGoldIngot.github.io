@@ -116,7 +116,8 @@ function asideCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
-        $("div.aside-theme-select").slideToggle(400, themeInitialization);
+        themeInitialization();
+        $("div.aside-theme-select").slideToggle(400);
     });
     $("li.theme-auto").on('click', function () {
         if (Cookies.get('currentTheme') != "auto") {
