@@ -143,12 +143,15 @@ function asideCallback() {
         if (currentFilePath.slice(-1) == "/") {
             currentListItemId = "#li" + currentFilePath.replace(/\//g, '-') + "index";
             currentListLinkId = "#a" + currentFilePath.replace(/\//g, '-') + "index";
+            currentListArrowId = "#i" + currentFilePath.replace(/\//g, '-') + "index";
         } else {
             currentListItemId = "#li" + currentFilePath.slice(0, -5).replace(/\//g, '-');
             currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
+            currentListArrowId = "#i" + currentFilePath.slice(0, -5).replace(/\//g, '-');
         }
         $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
         document.querySelector(currentListLinkId).href = 'javascript:void(0);';
+        $(currentListArrowId).hide();
     }
     //侧边栏动效
     $("button.aside-unfold-sidebar").on('click', function () {
