@@ -83,14 +83,31 @@ function themeListMouseResponse(theme) {
         }
     });   
 }
-if (Cookies.get('currentTheme') == undefined) {
-    Cookies.set('currentTheme', 'auto', {expires: 365, path: '/'});
+function autoTheme() {
     themeSelect("auto");
     if (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
         $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
     } else {
         $("#dark-theme").html('');
     }
+    themeUnselect("light", "dark");  
+}
+function lightTheme() {
+    themeSelect("light");
+    $("#dark-theme").html('');
+    themeUnselect("auto", "dark");
+}
+function darkTheme() {
+    themeSelect("dark");
+    $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+    themeUnselect("auto", "light");
+}
+if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == "auto") {
+    autoTheme();
+} else if (Cookies.get('currentTheme') == "light") {
+    lightTheme();
+} else if (Cookies.get('currentTheme') == "dark") {
+    darkTheme();
 }
 function asideCallback() {
     //主题切换
@@ -100,27 +117,17 @@ function asideCallback() {
     });
     $("li.theme-auto").on('click', function () {
         if (Cookies.get('currentTheme') != "auto") {
-            themeSelect("auto");
-            if (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
-                $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
-            } else {
-                $("#dark-theme").html('');
-            }
-            themeUnselect("light", "dark");
+            autoTheme();
         }
     });
     $("li.theme-light").on('click', function () {
         if (Cookies.get('currentTheme') != "light") {
-            themeSelect("light");
-            $("#dark-theme").html('');
-            themeUnselect("auto", "dark");
+            lightTheme();
         }
     });
     $("li.theme-dark").on('click', function () {
         if (Cookies.get('currentTheme') != "dark") {
-            themeSelect("dark");
-            $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
-            themeUnselect("auto", "light");
+            darkTheme();
         }
     });
     themeListMouseResponse("auto");
