@@ -179,6 +179,7 @@ span.aside-theme-select-text {
   color: rgb(var(--main-white));
   font-size: 14px;
 }
+/* 以下为主题控制列表项css的示例，实际操作均使用js进行
 li.theme-auto {
   background-color: rgb(var(--main-white));
   box-shadow: 9px 0px rgb(var(--main-white)),
@@ -187,7 +188,7 @@ li.theme-auto {
 i.theme-auto,
 span.theme-auto {
   color: rgb(var(--main-green));
-}
+} */
 div.aside-theme-control-tip {
   display: none;
   float: right;

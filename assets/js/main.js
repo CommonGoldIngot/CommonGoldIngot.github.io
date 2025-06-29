@@ -149,8 +149,8 @@ function asideCallback() {
     var currentListLinkId = "#a" + currentFilePath.slice(0, -5).replace(/\//g, '-');
     $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
     $(currentListLinkId).href = 'javascript:void(0);';
-    //侧边栏子页面操作
-    var wiki = 0;
+    //侧边栏子页面操作（此段待重构）
+    /* var wiki = 0;
     $("li.--wiki").on('click', function () {
         $("ul.--wiki").slideToggle(200, function () {
             if (wiki == 0) {
@@ -167,7 +167,7 @@ function asideCallback() {
                 wiki = 0;
             }
         });
-    });
+    }); */
 }
 //移动端屏幕转动时重载网页
 window.onorientationchange = function () {
