@@ -102,18 +102,21 @@ function darkTheme() {
     $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
     themeUnselect("auto", "light");
 }
-if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == "auto") {
-    autoTheme();
-} else if (Cookies.get('currentTheme') == "light") {
-    lightTheme();
-} else if (Cookies.get('currentTheme') == "dark") {
-    darkTheme();
+function themeInitialization() {
+    if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == "auto") {
+        autoTheme();
+    } else if (Cookies.get('currentTheme') == "light") {
+        lightTheme();
+    } else if (Cookies.get('currentTheme') == "dark") {
+        darkTheme();
+    }
 }
+themeInitialization();
 function asideCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
-        $("div.aside-theme-select").slideToggle(400);
+        $("div.aside-theme-select").slideToggle(400, themeInitialization);
     });
     $("li.theme-auto").on('click', function () {
         if (Cookies.get('currentTheme') != "auto") {
