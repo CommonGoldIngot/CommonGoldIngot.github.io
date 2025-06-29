@@ -26,14 +26,14 @@ setTimeout(function () {
     $("p.loading-speed-up").css('visibility', 'visible');
 }, 16000)
 //加载界面淡出 & 主题切换提示
+var currentTime = new Date();
+var currentHour = currentTime.getHours();
 window.onload = function () {
     setTimeout(function () {
         $("p.loading-text").text('加载完成！');
         $("div.loading").fadeOut(500, function () {
             $("div.loading").hide();
-            var timeForThemeControl = new Date();
-            var hourForThemeControl = timeForThemeControl.getHours();
-            if (20 <= hourForThemeControl || hourForThemeControl <= 5) {
+            if (20 <= currentHour || currentHour <= 5) {
                 setTimeout(function () {
                     $("div.aside-theme-control-tip").fadeIn(3500);
                 }, 1400)
@@ -57,8 +57,6 @@ window.onload = function () {
     }, 900)
 }
 //主题
-var timeForThemeControl = new Date();
-var hourForThemeControl = timeForThemeControl.getHours();
 function themeSelect(theme) {
     let themeListSelector = "li.theme-" + theme;
     let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
@@ -88,7 +86,7 @@ function themeListMouseResponse(theme) {
 if (Cookies.get('currentTheme') == undefined) {
     Cookies.set('currentTheme', 'auto', {expires: 365, path: '/'});
     themeSelect("auto");
-    if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+    if (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
         $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
     } else {
         $("#dark-theme").html('');
@@ -103,7 +101,7 @@ function asideCallback() {
     $("li.theme-auto").on('click', function () {
         if (Cookies.get('currentTheme') != "auto") {
             themeSelect("auto");
-            if (20 <= hourForThemeControl || hourForThemeControl <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+            if (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
                 $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
             } else {
                 $("#dark-theme").html('');
