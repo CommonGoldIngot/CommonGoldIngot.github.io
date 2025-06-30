@@ -104,7 +104,6 @@ div.aside-topbar {
   overflow: visible;
 }
 button.aside-unfold-sidebar {
-  display: inline-block;
   float: left;
   width: 40px;
   height: 40px;
@@ -127,7 +126,6 @@ img.aside-logo {
   }
 }
 button.aside-theme-control {
-  display: inline-block;
   float: right;
   width: 32px;
   height: 32px;
@@ -257,6 +255,7 @@ div.aside-sidebar-body {
   padding: 20px 20px 20px 30px;
   background-color: transparent;
   border-right: 1px solid rgb(var(--main-green));
+  overflow: auto;
 }
 ul.aside-nav,
 ul.aside-subnav {
@@ -283,7 +282,6 @@ span.aside-text {
   text-decoration: none;
 }
 .mdi-chevron-right {
-  display: inline-block;
   float: right;
   margin: 0 32px;
   color: rgb(var(--main-white));
@@ -312,6 +310,7 @@ a.aside-sidebar-footer-link {
 }
 /***************** 页面主要内容 *****************/
 div.main {
+  display: grid;
   margin: 62px 12px 12px 12px;
   padding: 12px;
   background-color: rgba(var(--background-light-green),0.75);
@@ -335,7 +334,7 @@ p.main-title-text {
 @media (orientation: landscape) {
   div.main-card {
     float: left;
-    margin: 16px;
+    margin: 10px;
     border-radius: 6px;
     box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
   }
