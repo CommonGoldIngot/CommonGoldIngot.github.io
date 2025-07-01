@@ -1,3 +1,7 @@
+//自定义方法
+String.prototype.insertString = function (str, index) {
+    return this.slice(0, index) + str + this.slice(index);
+};
 //加载动画
 var borderRotateAngle = 0;
 var logoRotateAngle = 0;
@@ -196,32 +200,21 @@ $(document).ready(function () {
     const gridContainerSize = [],
           gridItemSize = [];
     for (i = 0; i < gridContainers.length; i++) {
-        var gridContainerCssText = "";
+        var gridContainerCssText = "grid-template-columns: repeat(num1, 1fr); grid-template-rows: repeat(num2, str2);";
         areaClassNamePos.push(gridContainers[i].className.search(areaClassName));
         gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
-        gridContainerCssText += "grid-template-columns:";
-        for (p = 0; p < gridContainerSize[i][0].valueOf(); p++) {
-            gridContainerCssText += " auto";
-        }
-        gridContainerCssText += "; grid-template-rows:";
-        for (q = 0; q < gridContainerSize[i][1].valueOf(); q++) {
-            gridContainerCssText += " auto";
-        }
-        gridContainerCssText += ";";
+        var gridColumnsWidth = window.getComputedStyle(gridContainers[i]).width.slice(0, this.search('px')).indexOf() / gridContainerSize[i][0].indexOf();
+        gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString());
         gridContainers[i].style.cssText += gridContainerCssText;
     }
     for (j = 0; j < gridItems.length; j++) {
-        var gridItemCssText = "";
+        var gridItemCssText = "grid-column: value1; grid-row: value2;";
         const gridItemSizeSubArray = [];
         columnClassNamePos.push(gridItems[j].className.search(columnClassName));
         rowClassNamePos.push(gridItems[j].className.search(rowClassName));
         gridItemSizeSubArray.push(gridItems[j].className.slice(columnClassNamePos[j] + 4, rowClassNamePos[j] - 1), gridItems[j].className.slice(rowClassNamePos[j] + 4));
         gridItemSize.push(gridItemSizeSubArray);
-        gridItemCssText += "grid-column: ";
-        gridItemCssText += gridItemSize[j][0].replace('/', ' / ');
-        gridItemCssText += "; grid-row: ";
-        gridItemCssText += gridItemSize[j][1].replace('/', ' / ');
-        gridItemCssText += ";";
+        gridItemCssText.replace('value1', gridItemSize[j][0].replace('/', ' / ')).replace('value2', gridItemSize[j][1].replace('/', ' / '));
         gridItems[j].style.cssText += gridItemCssText;
     }
 });
