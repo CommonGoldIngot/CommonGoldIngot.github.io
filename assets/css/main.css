@@ -315,8 +315,8 @@ div.grid-container {
 }
 /***************** 页面主要内容 *****************/
 div.main {
-  margin: 62px 12px 12px 12px;
-  padding: 12px;
+  margin: calc(48px + 0.75em) 0.75em 0.75em 0.75em;
+  padding: 0.8em;
   background-color: rgba(var(--background-light-green),0.75);
   border: 1px solid transparent;
   border-radius: 8px;
