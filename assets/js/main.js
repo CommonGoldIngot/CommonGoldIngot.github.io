@@ -114,7 +114,7 @@ function asideLoadedCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
-        themeInitialization();
+        initializeTheme();
         $("div.aside-theme-select").slideToggle(400);
     });
     $("li.theme-auto").on('click', function () {
@@ -205,7 +205,7 @@ $(document).ready(function () {
         gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
         var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
         var gridColumnsWidth = Number(gridContainerWidth.slice(0, gridContainerWidth.search('px'))) / Number(gridContainerSize[i][0]);
-        gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString());
+        gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString() + 'px');
         gridContainers[i].style.cssText += gridContainerCssText;
     }
     for (j = 0; j < gridItems.length; j++) {
