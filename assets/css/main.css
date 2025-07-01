@@ -308,9 +308,13 @@ a.aside-sidebar-footer-link {
   color: rgb(var(--main-green));
   font-size: 14px;
 }
+/***************** 网格布局 *****************/
+div.grid-container {
+  display: grid;
+  grid-gap: 0;
+}
 /***************** 页面主要内容 *****************/
 div.main {
-  display: grid;
   margin: 62px 12px 12px 12px;
   padding: 12px;
   background-color: rgba(var(--background-light-green),0.75);
@@ -318,7 +322,6 @@ div.main {
   border-radius: 8px;
 }
 div.main-title {
-  margin: 16px;
   padding: 8px;
   text-align: center;
   background-color: rgb(var(--main-light-green));
@@ -331,32 +334,9 @@ p.main-title-text {
   font-size: 26px;
 }
 /***************** 卡片 *****************/
-@media (orientation: landscape) {
-  div.main-card {
-    float: left;
-    margin: 10px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-  }
-  div.main-card-container-2in1 {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    padding: 16px;
-  }
-  div.main-card-container-2in1 > div.main-card {
-    float: none;
-    margin: 0px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-  }
-}
-@media (orientation: portrait) {
-  div.main-card {
-    margin: 16px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
-  }
+div.main-card {
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
 /**** 卡片颜色 ****/
 div.color-green {background-color: rgb(var(--main-green));}

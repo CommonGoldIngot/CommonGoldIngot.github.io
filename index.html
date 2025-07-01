@@ -25,12 +25,6 @@
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/main-modules.js"></script>
   <style>
-    /***************** 卡片尺寸 *****************/
-    @media (orientation: landscape) {
-      div.--card-index {width: 450px;}
-      div.--card-today {width: 440px;}
-      div.--card-know {width: 440px;}
-    }
     /***************** 特殊元素 *****************/
     #ip,
     #ip-before,
@@ -64,6 +58,7 @@
       top: 0;
     }
   </style>
+  <!-- 数学挑战css -->
   <style>
     p.math-problem-text {
       font-size: 20px;
@@ -106,100 +101,76 @@
   <aside class="navbar"></aside>
 
   <!-- 页面主要内容 -->
-  <div class="main">
-    <div class="main-title">
+  <div class="main grid-container area-84x70">
+    <div class="main-title grid-item col-1/85 row-1/8">
       <p class="main-title-text">欢迎来到CommonGoldIngot的网站!</p>
     </div>
-    <!-- 页面顶部卡片 -->
-    <div class="--index-card-top">
-      <table class="--index-card-top-table">
-        <tr class="--index-card-top-tr">
-          <td class="--index-card-top-td" rowspan="2" valign="top">
-            <div class="main-card --card-index">
-              <div class="main-card-header color-green">
-                <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
-              </div>
-              <div class="main-card-body">
-                <div>
-                  <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br>您好！</span>
-                  <hr class="main-line-dashed">
-                  <p class="main-card-text" id="saying"></p>
-                  <hr class="main-line-dashed">
-                  <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
-                  <div id="aplayer"></div>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="--index-card-top-td" valign="top">
-            <div class="main-card --card-today">
-              <div class="main-card-header color-blue">
-                <p class="main-card-title-text">在今天...</p>
-              </div>
-              <div class="main-card-body">
-                <div>
-                  <p class="main-card-text">现在是：</p>
-                  <p class="main-card-text" id="time"></p>
-                  <p class="main-card-text">新闻：</p>
-                  <p class="main-card-text" id="news">郑州市回民初级中学八三班 Wiki正在建设中！<a class="main-card-link" href="https://ghg8c3.fandom.com/zh">点此访问</a><br/>中考结束！此网站将恢复更新[赞]</p>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr class="--index-card-top-tr">
-          <td class="--index-card-top-td" valign="top">
-            <div class="main-card --card-know">
-              <div class="main-card-header color-orange">
-                <p class="main-card-title-text">你知道吗？</p>
-              </div>
-              <div class="main-card-body">
-                <div>
-                  <p class="main-card-text" id="know"></p>
-                  <p id="sleep-tip">晚上好！早点睡觉哦～</p>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <!-- 页面底部卡片 -->
-    <div class="main-card-container-line">
-      <div class="main-card-container-2in1">
-        <div class="main-card --card-video">
-          <div class="main-card-header color-purple">
-            <p class="main-card-title-text">最新视频</p>
-          </div>
-          <div class="main-card-body">
-            <div id="latest-video">
-              <iframe id="latest-video-iframe" width="100%" height="100%" src="https://player.bilibili.com/player.html?aid=448374535&bvid=BV1fj411C72p&cid=1262143534&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-            </div>
-          </div>
-        </div>
+    <div class="main-card grid-item col-1/37 row-10/42">
+      <div class="main-card-header color-green">
+        <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
       </div>
-      <div class="main-card-container-2in1">
-        <div class="main-card --card-math">
-          <div class="main-card-header color-cyan">
-            <p class="main-card-title-text">数学挑战</p>
-          </div>
-          <div class="main-card-body">
-            <div>
-              <p class="main-card-text" class="math-problem-text">解分式方程：</p>
-              <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
-              <hr class="main-line-dashed">
-              <form action="" target="disable-form-reload">
-                <p class="main-card-text">尝试一下吧！</p>
-                <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
-              </form>
-              <iframe id="disable-form-reload" name="disable-form-reload" style="display:none"></iframe>
-            </div>
-          </div>
+      <div class="main-card-body">
+        <div>
+          <span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br>您好！</span>
+          <hr class="main-line-dashed">
+          <p class="main-card-text" id="saying"></p>
+          <hr class="main-line-dashed">
+          <p class="main-card-text" id="music">放松一下，听首歌吧~</p>
+          <div id="aplayer"></div>
         </div>
       </div>
     </div>
-    <!-- 清除浮动 -->
-    <div class="clear"></div>
+    <div class="main-card grid-item col-39/73 row-10/28">
+      <div class="main-card-header color-blue">
+        <p class="main-card-title-text">在今天...</p>
+      </div>
+      <div class="main-card-body">
+        <div>
+          <p class="main-card-text">现在是：</p>
+          <p class="main-card-text" id="time"></p>
+          <p class="main-card-text">新闻：</p>
+          <p class="main-card-text" id="news">郑州市回民初级中学八三班 Wiki正在建设中！<a class="main-card-link" href="https://ghg8c3.fandom.com/zh">点此访问</a><br/>中考结束！此网站将恢复更新[赞]</p>
+        </div>
+      </div>
+    </div>
+    <div class="main-card grid-item col-39/73 row-30/42">
+      <div class="main-card-header color-orange">
+        <p class="main-card-title-text">你知道吗？</p>
+      </div>
+      <div class="main-card-body">
+        <div>
+          <p class="main-card-text" id="know"></p>
+          <p id="sleep-tip">晚上好！早点睡觉哦～</p>
+        </div>
+      </div>
+    </div>
+    <div class="main-card grid-item col-1/42 row-44/71">
+      <div class="main-card-header color-purple">
+        <p class="main-card-title-text">最新视频</p>
+      </div>
+      <div class="main-card-body">
+        <div id="latest-video">
+          <iframe id="latest-video-iframe" width="100%" height="100%" src="https://player.bilibili.com/player.html?aid=448374535&bvid=BV1fj411C72p&cid=1262143534&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        </div>
+      </div>
+    </div>
+    <div class="main-card grid-item col-44/85 row-44/71">
+      <div class="main-card-header color-cyan">
+        <p class="main-card-title-text">数学挑战</p>
+      </div>
+      <div class="main-card-body">
+        <div>
+          <p class="main-card-text" class="math-problem-text">解分式方程：</p>
+          <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
+          <hr class="main-line-dashed">
+          <form action="" target="disable-form-reload">
+            <p class="main-card-text">尝试一下吧！</p>
+            <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
+          </form>
+          <iframe id="disable-form-reload" name="disable-form-reload" style="display:none"></iframe>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- 页面主要内容 end -->
 
@@ -220,15 +191,6 @@
             }
         ]
     });
-  </script>
-  <!-- 页面顶部卡片操作 -->
-  <script>
-    if (window.matchMedia('(orientation: portrait)').matches) {
-        $("div.--index-card-top").html('<div class="main-card --card-index"><div class="main-card-header color-green"><p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p></div><div class="main-card-body"><div><span class="main-card-inline-text" id="ip-before">来自</span><span class="main-card-inline-text" id="ip"></span><span class="main-card-inline-text" id="ip-after">的访客，<br>您好！</span><hr class="main-line-dashed"><p class="main-card-text" id="saying"></p><hr class="main-line-dashed"><p class="main-card-text" id="music">放松一下，听首歌吧~</p><div id="aplayer"></div></div></div></div><div class="main-card --card-today"><div class="main-card-header color-blue"><p class="main-card-title-text">在今天...</p></div><div class="main-card-body"><div><p class="main-card-text">现在是：</p><p class="main-card-text" id="time"></p><p class="main-card-text">新闻：</p><p class="main-card-text" id="news">啥也没有~</p></div></div></div><div class="main-card --card-know"><div class="main-card-header color-orange"><p class="main-card-title-text">你知道吗？</p></div><div class="main-card-body"><div><p class="main-card-text" id="know"></p><p id="sleep-tip">熬夜伤身，注意休息哦~</p></div></div></div>')
-        const ap = new APlayer({container:document.getElementById('aplayer'),lrcType:3,audio:[{name:"Never Gonna Give You Up",artist:"Rick Astley",url:"/music/music1.m4a",cover:"/music/cover1.jpg",lrc:"/music/lyrics1.lrc"}]});
-        function getIP(IPobj){if(IPobj.city!=""){$("#ip").html(IPobj.city);}else{$("#ip").html(IPobj.addr);}}
-        if($("#ip").html()==""){$("#ip").html('地球')}
-    }
   </script>
   <!-- IP属地获取 (Powered by PConline) -->
   <script>
@@ -354,6 +316,7 @@
         }
     }, 100)
   </script>
+  <!-- 数学挑战js -->
   <script>
     //1
     function checkAnswer1() {

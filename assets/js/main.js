@@ -25,38 +25,16 @@ setTimeout(function () {
 setTimeout(function () {
     $("p.loading-speed-up").css('visibility', 'visible');
 }, 16000)
-//加载界面淡出 & 主题切换提示
-var currentTime = new Date();
-var currentHour = currentTime.getHours();
+//加载界面淡出
 window.onload = function () {
     setTimeout(function () {
         $("p.loading-text").text('加载完成！');
         $("div.loading").fadeOut(500, function () {
             $("div.loading").hide();
-            if (20 <= currentHour || currentHour <= 5) {
-                setTimeout(function () {
-                    $("div.aside-theme-control-tip").fadeIn(3500);
-                }, 1400)
-                setTimeout(function () {
-                    $("div.aside-theme-control-tip").fadeOut(3500, function () {
-                        $("div.aside-theme-control-tip").remove();
-                    });
-                }, 3600)
-            } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
-                $("span.aside-theme-control-tip-text").html('检测到您的浏览器设置为<br />深色主题，已自动同步~<br />您可以在此处切换主题~');
-                setTimeout(function () {
-                    $("div.aside-theme-control-tip").fadeIn(3500);
-                }, 1400)
-                setTimeout(function () {
-                    $("div.aside-theme-control-tip").fadeOut(3500, function () {
-                        $("div.aside-theme-control-tip").remove();
-                    });
-                }, 3600)
-            }
         });
     }, 900)
 }
-//主题
+//导航栏项目（主题切换控件 & 侧边栏项目处理）
 function themeSelect(theme) {
     let themeListSelector = "li.theme-" + theme;
     let themeContentSelector = "i.theme-" + theme + ", span.theme-" + theme;
@@ -83,10 +61,26 @@ function themeListMouseResponse(theme) {
         }
     });   
 }
+function showTip() {
+    setTimeout(function () {
+        $("div.aside-theme-control-tip").fadeIn(3500);
+    }, 1400)
+    setTimeout(function () {
+        $("div.aside-theme-control-tip").fadeOut(3500, function () {
+             $("div.aside-theme-control-tip").remove();
+        });
+    }, 3600)
+}
+var currentTime = new Date();
+var currentHour = currentTime.getHours();
 function autoTheme() {
     themeSelect("auto");
-    if (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) {
+    if (20 <= currentHour || currentHour <= 5) {
         $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
+        showTip();
+    } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
+        $("span.aside-theme-control-tip-text").html('检测到您的浏览器设置为<br />深色模式，已自动同步～<br />您可以在此处切换主题～');
+        showTip();
     } else {
         $("#dark-theme").html('');
     }
@@ -102,7 +96,7 @@ function darkTheme() {
     $("#dark-theme").html('@import url("/assets/css/main-dark.css");');
     themeUnselect("auto", "light");
 }
-function themeInitialization() {
+function initializeTheme() {
     if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == "auto") {
         autoTheme();
     } else if (Cookies.get('currentTheme') == "light") {
@@ -111,8 +105,8 @@ function themeInitialization() {
         darkTheme();
     }
 }
-themeInitialization();
-function asideCallback() {
+initializeTheme();
+function asideLoadedCallback() {
     //主题切换
     $("button.aside-theme-control").on('click', function () {
         $("div.aside-theme-control-tip").remove();
@@ -154,7 +148,7 @@ function asideCallback() {
             document.querySelector(currentListLinkId).href = 'javascript:void(0);';
             $(currentListArrowId).hide();
         } else {
-            document.querySelector(".aside-sidebar-footer-link").href = 'javascript:void(0);';
+            document.querySelector("a.aside-sidebar-footer-link").href = 'javascript:void(0);';
         }
     }
     //侧边栏动效
@@ -189,6 +183,48 @@ function asideCallback() {
         });
     }); */
 }
+$(document).ready(function () {
+    //网格布局
+    var areaClassName = /area-\d+x\d+/,
+        columnClassName = /col-\d+\/\d+/,
+        rowClassName = /row-\d+\/\d+/;
+    var gridContainers = document.getElementsByClassName("grid-container"),
+        gridItems = document.getElementsByClassName("grid-item");
+    const areaClassNamePos = [],
+          columnClassNamePos = [],
+          rowClassNamePos = [];
+    const gridContainerSize = [],
+          gridItemSize = [];
+    for (i = 0; i < gridContainers.length; i++) {
+        var gridContainerCssText = "";
+        areaClassNamePos.push(gridContainers[i].className.search(areaClassName));
+        gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
+        gridContainerCssText += "grid-template-columns:";
+        for (p = 0; p < gridContainerSize[i][0].valueOf(); p++) {
+            gridContainerCssText += " auto";
+        }
+        gridContainerCssText += "; grid-template-rows:";
+        for (q = 0; q < gridContainerSize[i][1].valueOf(); q++) {
+            gridContainerCssText += " auto";
+        }
+        gridContainerCssText += ";";
+        gridContainers[i].style.cssText += gridContainerCssText;
+    }
+    for (j = 0; j < gridItems.length; j++) {
+        var gridItemCssText = "";
+        const gridItemSizeSubArray = [];
+        columnClassNamePos.push(gridItems[j].className.search(columnClassName));
+        rowClassNamePos.push(gridItems[j].className.search(rowClassName));
+        gridItemSizeSubArray.push(gridItems[j].className.slice(columnClassNamePos[j] + 4, rowClassNamePos[j] - 1), gridItems[j].className.slice(rowClassNamePos[j] + 4));
+        gridItemSize.push(gridItemSizeSubArray);
+        gridItemCssText += "grid-column: ";
+        gridItemCssText += gridItemSize[j][0].replace('/', ' / ');
+        gridItemCssText += "; grid-row: ";
+        gridItemCssText += gridItemSize[j][1].replace('/', ' / ');
+        gridItemCssText += ";";
+        gridItems[j].style.cssText += gridItemCssText;
+    }
+});
 //移动端屏幕转动时重载网页
 window.onorientationchange = function () {
     $("p.loading-text").text('为了您的浏览体验，请不要频繁转动屏幕。');
