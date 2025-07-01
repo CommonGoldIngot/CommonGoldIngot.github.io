@@ -205,7 +205,7 @@ $(document).ready(function () {
         gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
         var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
         var gridColumnsWidth = Number(gridContainerWidth.slice(0, gridContainerWidth.search('px'))) / Number(gridContainerSize[i][0]);
-        gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString() + 'px');
+        gridContainerCssText = gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString() + 'px');
         gridContainers[i].style.cssText += gridContainerCssText;
     }
     for (j = 0; j < gridItems.length; j++) {
@@ -215,7 +215,7 @@ $(document).ready(function () {
         rowClassNamePos.push(gridItems[j].className.search(rowClassName));
         gridItemSizeSubArray.push(gridItems[j].className.slice(columnClassNamePos[j] + 4, rowClassNamePos[j] - 1), gridItems[j].className.slice(rowClassNamePos[j] + 4));
         gridItemSize.push(gridItemSizeSubArray);
-        gridItemCssText.replace('value1', gridItemSize[j][0].replace('/', ' / ')).replace('value2', gridItemSize[j][1].replace('/', ' / '));
+        gridItemCssText = gridItemCssText.replace('value1', gridItemSize[j][0].replace('/', ' / ')).replace('value2', gridItemSize[j][1].replace('/', ' / '));
         gridItems[j].style.cssText += gridItemCssText;
     }
 });
