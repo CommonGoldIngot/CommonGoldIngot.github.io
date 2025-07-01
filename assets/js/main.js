@@ -203,7 +203,8 @@ $(document).ready(function () {
         var gridContainerCssText = "grid-template-columns: repeat(num1, 1fr); grid-template-rows: repeat(num2, str2);";
         areaClassNamePos.push(gridContainers[i].className.search(areaClassName));
         gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
-        var gridColumnsWidth = window.getComputedStyle(gridContainers[i]).width.slice(0, this.search('px')).indexOf() / gridContainerSize[i][0].indexOf();
+        var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
+        var gridColumnsWidth = Number(gridContainerWidth.slice(0, gridContainerWidth.search('px'))) / Number(gridContainerSize[i][0]);
         gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString());
         gridContainers[i].style.cssText += gridContainerCssText;
     }
