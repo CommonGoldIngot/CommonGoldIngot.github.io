@@ -199,8 +199,7 @@ $(document).ready(function () {
     const gridContainerCssText = [],
           gridItemCssText = [];
     for (i = 0; i < gridContainers.length; i++) {
-        areaClassNamePos.push(gridContainers[i].className.search(areaClassName));
-        gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
+        gridContainerSize.push(gridContainers[i].className.match(areaClassName).replace('area-', '').split('x'));
         var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
         var gridColumnsWidth = (Number(gridContainerWidth.replace('px', '')) / Number(gridContainerSize[i][0])).toString() + 'px';
         gridContainerCssText.push(`grid-template-columns: repeat(${gridContainerSize[i][0]}, 1fr); grid-template-rows: repeat(${gridContainerSize[i][1]}, ${gridColumnsWidth});`);
@@ -208,7 +207,7 @@ $(document).ready(function () {
     }
     for (j = 0; j < gridItems.length; j++) {
         const gridItemSizeSubArray = [];
-        gridItemSizeSubArray.push(gridItems[j].className.match(columnClassName), gridItems[j].className.match(rowClassName));
+        gridItemSizeSubArray.push(gridItems[j].className.match(columnClassName).replace('col-', ''), gridItems[j].className.match(rowClassName).replace('row-', ''));
         gridItemSize.push(gridItemSizeSubArray);
         gridItemCssText.push(`grid-column: ${gridItemSize[j][0].replace('/', ' / ')}; grid-row: gridItemSize[j][1].replace('/', ' / ');`);
         gridItems[j].style.cssText += gridItemCssText[j];
