@@ -194,29 +194,24 @@ $(document).ready(function () {
         rowClassName = /row-\d+\/\d+/;
     var gridContainers = document.getElementsByClassName("grid-container"),
         gridItems = document.getElementsByClassName("grid-item");
-    const areaClassNamePos = [],
-          columnClassNamePos = [],
-          rowClassNamePos = [];
     const gridContainerSize = [],
           gridItemSize = [];
+    const gridContainerCssText = [],
+          gridItemCssText = [];
     for (i = 0; i < gridContainers.length; i++) {
-        var gridContainerCssText = "grid-template-columns: repeat(num1, 1fr); grid-template-rows: repeat(num2, str2);";
         areaClassNamePos.push(gridContainers[i].className.search(areaClassName));
         gridContainerSize.push(gridContainers[i].className.slice(areaClassNamePos[i] + 5).split("x"));
         var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
-        var gridColumnsWidth = Number(gridContainerWidth.slice(0, gridContainerWidth.search('px'))) / Number(gridContainerSize[i][0]);
-        gridContainerCssText = gridContainerCssText.replace('num1', gridContainerSize[i][0]).replace('num2', gridContainerSize[i][1]).replace('str2', gridColumnsWidth.toString() + 'px');
-        gridContainers[i].style.cssText += gridContainerCssText;
+        var gridColumnsWidth = (Number(gridContainerWidth.replace('px', '')) / Number(gridContainerSize[i][0])).toString() + 'px';
+        gridContainerCssText.push(`grid-template-columns: repeat(${gridContainerSize[i][0]}, 1fr); grid-template-rows: repeat(${gridContainerSize[i][1]}, ${gridColumnsWidth});`);
+        gridContainers[i].style.cssText += gridContainerCssText[i];
     }
     for (j = 0; j < gridItems.length; j++) {
-        var gridItemCssText = "grid-column: value1; grid-row: value2;";
         const gridItemSizeSubArray = [];
-        columnClassNamePos.push(gridItems[j].className.search(columnClassName));
-        rowClassNamePos.push(gridItems[j].className.search(rowClassName));
-        gridItemSizeSubArray.push(gridItems[j].className.slice(columnClassNamePos[j] + 4, rowClassNamePos[j] - 1), gridItems[j].className.slice(rowClassNamePos[j] + 4));
+        gridItemSizeSubArray.push(gridItems[j].className.match(columnClassName), gridItems[j].className.match(rowClassName));
         gridItemSize.push(gridItemSizeSubArray);
-        gridItemCssText = gridItemCssText.replace('value1', gridItemSize[j][0].replace('/', ' / ')).replace('value2', gridItemSize[j][1].replace('/', ' / '));
-        gridItems[j].style.cssText += gridItemCssText;
+        gridItemCssText.push(`grid-column: ${gridItemSize[j][0].replace('/', ' / ')}; grid-row: gridItemSize[j][1].replace('/', ' / ');`);
+        gridItems[j].style.cssText += gridItemCssText[j];
     }
 });
 //移动端屏幕转动时重载网页
