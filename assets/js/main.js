@@ -209,7 +209,7 @@ $(document).ready(function () {
         const gridItemSizeSubArray = [];
         gridItemSizeSubArray.push(gridItems[j].className.match(columnClassName).replace('col-', ''), gridItems[j].className.match(rowClassName).replace('row-', ''));
         gridItemSize.push(gridItemSizeSubArray);
-        gridItemCssText.push(`grid-column: ${gridItemSize[j][0].replace('/', ' / ')}; grid-row: gridItemSize[j][1].replace('/', ' / ');`);
+        gridItemCssText.push(`grid-column: ${gridItemSize[j][0].replace('/', ' / ')}; grid-row: ${gridItemSize[j][1].replace('/', ' / ')};`);
         gridItems[j].style.cssText += gridItemCssText[j];
     }
 });
