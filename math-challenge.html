@@ -2,106 +2,102 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="CommonGoldIngot">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/assets/images/favicon.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-  <link rel="prefetch" href="/assets/images/bg-light-landscape.png">
-  <link rel="prefetch" href="/assets/images/bg-light-portrait.png">
-  <link rel="prefetch" href="/assets/images/bg-dark-landscape.png">
-  <link rel="prefetch" href="/assets/images/bg-dark-portrait.png">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <style id="dark-theme"></style>
-  <script src="/assets/js/jquery-3.6.4.min.js"></script>
-  <script src="/assets/js/jQueryRotateCompressed.js"></script>
-  <script src="/assets/js/mathjax-tex-mml-chtml.js"></script>
-  <script src="/assets/js/js.cookie.min.js"></script>
-  <script>var currentFilePath = location.pathname;</script>
-  <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/main-modules.js"></script>
-  <style>
-    p.math-problem-text {
-      font-size: 20px;
-    }
-    p.math-text {
-      font-family: serif;
-      margin: 8px 0px;
-      color: rgb(var(--font-black))!important;
-    }
-    /* 1 */
-    #math-problem1 {
-      display: inline-block;
-      width: 120px;
-    }
-    #math-submit-problem1 {
-      float: right;
-      width: 60px;
-    }
-    #math-text-problem1 {
-      float: right;
-      width: calc(100% - 200px);
-      margin-right: 4px;
-    }
-  </style>
-  <title>数学挑战</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="CommonGoldIngot">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/assets/images/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<link rel="prefetch" href="/assets/images/bg-light-landscape.png">
+<link rel="prefetch" href="/assets/images/bg-light-portrait.png">
+<link rel="prefetch" href="/assets/images/bg-dark-landscape.png">
+<link rel="prefetch" href="/assets/images/bg-dark-portrait.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/jquery-3.6.4.min.js"></script>
+<script src="/assets/js/jQueryRotateCompressed.js"></script>
+<script src="/assets/js/mathjax-tex-mml-chtml.js"></script>
+<script src="/assets/js/js.cookie.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main-modules.js"></script>
+<!-- 数学挑战css -->
+<style>
+p.math-problem-text {
+  font-size: 20px;
+}
+p.math-text {
+  font-family: serif;
+  margin: 8px 0;
+  color: rgb(var(--font-black)) !important;
+}
+/* 1 */
+#math-problem1 {
+  display: inline-block;
+  width: 120px;
+}
+#math-submit-problem1 {
+  float: right;
+  width: 60px;
+}
+#math-text-problem1 {
+  float: right;
+  width: calc(100% - 200px);
+  margin-right: 4px;
+}
+</style>
+<title>数学挑战</title>
 </head>
 
 <body>
 
-  <!-- 加载界面 -->
-  <div class="loading">
-    <div class="loading-round-border">
-      <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="">
-    </div>
-    <p class="loading-text">加载中...</p>
-    <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
+<!-- 加载界面 -->
+<div class="loading">
+  <div class="loading-round-border">
+    <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="">
   </div>
-  <!-- 加载界面 end -->
+  <p class="loading-text">加载中...</p>
+  <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
+</div>
 
-  <!-- 页面导航 -->
-  <aside class="navbar"></aside>
+<!-- 页面导航 -->
+<aside class="navbar"></aside>
 
-  <!-- 页面主要内容 -->
-  <div class="main">
-    <div class="main-card-container-2in1">
-      <div class="main-card --card-math">
-        <div class="main-card-header color-cyan">
-          <p class="main-card-title-text">最新题目</p>
-        </div>
-        <div class="main-card-body">
-          <div>
-            <p class="main-card-text" class="math-problem-text">解分式方程：</p>
-            <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
-            <hr class="main-line-dashed">
-            <form action="" target="disable-form-reload">
-              <p class="main-card-text">尝试一下吧！</p>
-              <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
-            </form>
-            <iframe id="disable-form-reload" name="disable-form-reload" style="display: none"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 清除浮动 -->
-    <div class="clear"></div>
+<!-- 页面主要内容 -->
+<main class="type-card">
+<div class="main">
+<div class="main-card">
+  <div class="main-card-header color-cyan">
+    <p class="main-card-title-text">最新题目</p>
   </div>
-  <!-- 页面主要内容 end -->
+  <div class="main-card-body">
+    <div>
+      <p class="main-card-text" class="math-problem-text">解分式方程：</p>
+      <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
+      <hr class="main-line-dashed">
+      <form action="" target="disable-form-reload">
+        <p class="main-card-text">尝试一下吧！</p>
+        <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
+      </form>
+      <iframe id="disable-form-reload" name="disable-form-reload" style="display: none"></iframe>
+    </div>
+  </div>
+</div>
+</div>
+</main>
 
-  <script>
-    //1
-    function checkAnswer1() {
-        if (document.querySelector("#math-text-problem1").value == "123/14") {
-            alert("答对力（喜");
-        } else {
-            alert("答错力（悲");
-        }
+<!-- 数学挑战js -->
+<script>
+//1
+function checkAnswer1() {
+    if (document.querySelector('#math-text-problem1').value == '123/14') {
+        alert('答对力（喜');
+    } else {
+        alert('答错力（悲');
     }
-  </script>
+}
+</script>
 
 </body>
 

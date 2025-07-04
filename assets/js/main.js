@@ -3,8 +3,8 @@ String.prototype.insertString = function (str, index) {
     return this.slice(0, index) + str + this.slice(index);
 };
 //加载动画
-var borderRotateAngle = 0;
-var logoRotateAngle = 0;
+var borderRotateAngle = 0,
+    logoRotateAngle = 0;
 setInterval(function () {
     borderRotateAngle += 1;
     logoRotateAngle -= 1;
