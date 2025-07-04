@@ -351,7 +351,7 @@ p.main-title-text {
 }
 /***************** 卡片 *****************/
 div.main-card {
-  margin: 0.8em 0;
+  margin-top: 0.8em;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
