@@ -33,7 +33,7 @@
   font-size: 24px;
 }
 #music {
-  margin: 15px 0px;
+  margin: 15px 0;
   font-size: 14px;
   color: rgb(var(--main-green));
 }
@@ -42,7 +42,7 @@
 }
 #sleep-tip {
   visibility: hidden;
-  margin: 0px 0px 8px 0px;
+  margin: 0 0 8px 0;
   font-size: 12px;
   color: rgb(var(--main-green));
 }
@@ -63,7 +63,7 @@ p.math-problem-text {
 }
 p.math-text {
   font-family: serif;
-  margin: 8px 0px;
+  margin: 8px 0;
   color: rgb(var(--font-black)) !important;
 }
 /* 1 */
@@ -219,7 +219,7 @@ setInterval(function () {
         day = time.getDay(),
         hour = time.getHours(),
         minute = time.getMinutes(),
-        second = time.getSeconds(),
+        second = time.getSeconds();
     if (hour < 10) {
         hour = '0' + hour;
     }
@@ -264,7 +264,7 @@ setInterval(function () {
         }
     } else {
         $('#sleep-tip').remove();
-        $('#know').css('margin', '12px 0px');
+        $('#know').css('margin', '12px 0');
         switch (date) {
             case 1:
             case 6:

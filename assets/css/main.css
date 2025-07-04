@@ -86,7 +86,7 @@ p.loading-speed-up {
 }
 p.loading-speed-up {
   visibility: hidden;
-  margin: 0px;
+  margin: 0;
 }
 a.loading-speed-up-link {
   color: rgb(var(--main-green));
@@ -163,8 +163,8 @@ div.aside-theme-select::after {
 }
 ul.aside-theme-select-list {
   list-style-type: none;
-  margin: 0px;
-  padding-left: 0px;
+  margin: 0;
+  padding-left: 0;
   line-height: 34px;
 }
 .bi-circle-half,
@@ -179,8 +179,8 @@ span.aside-theme-select-text {
 }
 li.theme-auto {
   background-color: rgb(var(--main-white));
-  box-shadow: 9px 0px rgb(var(--main-white)),
-              -9px 0px rgb(var(--main-white));
+  box-shadow: 9px 0 rgb(var(--main-white)),
+              -9px 0 rgb(var(--main-white));
 }
 i.theme-auto,
 span.theme-auto {
@@ -262,7 +262,7 @@ ul.aside-subnav {
   list-style-type: none;
 }
 ul.aside-nav {
-  padding-left: 0px;
+  padding-left: 0;
   line-height: 34px;
 }
 ul.aside-subnav {
@@ -337,6 +337,7 @@ div.main {
 }
 div.main-title {
   column-span: all;
+  margin-bottom: 0.8em;
   padding: 8px;
   text-align: center;
   background-color: rgb(var(--main-light-green));
@@ -350,7 +351,7 @@ p.main-title-text {
 }
 /***************** 卡片 *****************/
 div.main-card {
-  margin: 0.8em;
+  margin: 0.8em 0;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
@@ -373,7 +374,7 @@ div.main-card-header {
   border-top-left-radius: 4px;
 }
 p.main-card-title-text {
-  margin: 0px;
+  margin: 0;
   color: rgb(var(--main-white));
   font-size: 14px;
 }
@@ -390,7 +391,7 @@ div.main-card-body {
 }
 p.main-card-text,
 span.main-card-inline-text {
-  margin: 6px 0px;
+  margin: 6px 0;
   line-height: 1.3em;
   color: rgb(var(--font-black));
   font-size: 16px;
@@ -408,11 +409,11 @@ h6.main-header6 {
   color: rgb(var(--font-black));
 }
 hr.main-line {
-  margin: 0.75em 0px;
+  margin: 0.75em 0;
   border-style: solid;
 }
 hr.main-line-dashed {
-  margin: 0.75em 0px;
+  margin: 0.75em 0;
   border-style: dashed;
 }
 div.clear {
