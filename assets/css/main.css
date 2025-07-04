@@ -308,11 +308,12 @@ a.aside-sidebar-footer-link {
   color: rgb(var(--main-green));
   font-size: 14px;
 }
-/***************** 网格布局 *****************/
+/* 网格布局，但暂时没什么用，等有用了再放出来吧（
 div.grid-container {
   display: grid;
   grid-gap: 0;
 }
+*/
 /***************** 页面主要内容 *****************/
 div.main {
   margin: calc(48px + 0.75em) 0.75em 0.75em 0.75em;
@@ -320,8 +321,22 @@ div.main {
   background-color: rgba(var(--background-light-green),0.75);
   border: 1px solid transparent;
   border-radius: 8px;
+  break-after: avoid;
+}
+@media (orientation: landscape) {
+  @media (min-width: 1281px) {
+    main.type-card > div.main {
+      column-count: 3;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 1280px) {
+    main.type-card > div.main {
+      column-count: 2;
+    }
+  }
 }
 div.main-title {
+  column-span: all;
   padding: 8px;
   text-align: center;
   background-color: rgb(var(--main-light-green));
@@ -335,6 +350,7 @@ p.main-title-text {
 }
 /***************** 卡片 *****************/
 div.main-card {
+  margin: 0.8em;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
 }
