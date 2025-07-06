@@ -36,13 +36,13 @@ window.onload = function () {
         $('div.loading').fadeOut(500, function () {
             $('div.loading').hide();
         });
-    }, 900)
+    }, 1400)
 }
 //导航栏项目（主题切换控件 & 侧边栏项目处理）
 function themeSelect(theme) {
     let themeListSelector = 'li.theme-' + theme;
     let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
-    $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
+    $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
     $(themeContentSelector).css('color', 'rgb(var(--main-green))');
     Cookies.set('currentTheme', theme, {expires: 365, path: '/'});
 }
@@ -56,7 +56,7 @@ function themeListMouseResponse(theme) {
     let themeListSelector = 'li.theme-' + theme;
     let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
     $(themeListSelector).on('mouseenter', function () {
-        $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0px rgb(var(--main-white)), -9px 0px rgb(var(--main-white))'});
+        $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
         $(themeContentSelector).css('color', 'rgb(var(--main-green))');
     }).on('mouseleave', function () {
         if (Cookies.get('currentTheme') != theme) {
@@ -149,7 +149,7 @@ function asideLoadedCallback() {
             currentListArrowId = '#i' + currentFilePath.slice(0, -5).replace(/\//g, '-');
         }
         if (currentFilePath != '/about.html') {
-            $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0px rgb(var(--main-green)), -30px 0px rgb(var(--main-green))'});
+            $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0 rgb(var(--main-green)), -30px 0 rgb(var(--main-green))'});
             document.querySelector(currentListLinkId).href = 'javascript:void(0);';
             $(currentListArrowId).hide();
         } else {

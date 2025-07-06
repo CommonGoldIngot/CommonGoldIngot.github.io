@@ -140,7 +140,7 @@ p.math-text {
       <p class="main-card-text">新闻：</p>
       <p class="main-card-text" id="news">
         郑州市回民初级中学八三班 Wiki正在建设中！<a class="main-card-link" href="https://ghg8c3.fandom.com/zh/">点此访问</a><br/>
-        中考结束！此网站将恢复更新[赞]
+        郑州中考出分，语文似乎压分很严重...........
       </p>
     </div>
   </div>
@@ -233,32 +233,32 @@ setInterval(function () {
     //古诗
     switch (day) {
         case 0:
-            $('#saying').html('海内存知己，<br>天涯若比邻。');
+            $('#saying').html('海内存知己，天涯若比邻。');
             break;
         case 1:
-            $('#saying').html('山重水复疑无路，<br>柳暗花明又一村。');
+            $('#saying').html('山重水复疑无路，柳暗花明又一村。');
             break;
         case 2:
-            $('#saying').html('路漫漫其修远兮，<br>吾将上下而求索。');
+            $('#saying').html('路漫漫其修远兮，吾将上下而求索。');
             break;
         case 3:
-            $('#saying').html('会当凌绝顶，<br>一览众山小。');
+            $('#saying').html('会当凌绝顶，一览众山小。');
             break;
         case 4:
-            $('#saying').html('不畏浮云遮望眼，<br>自缘身在最高层。');
+            $('#saying').html('不畏浮云遮望眼，自缘身在最高层。');
             break;
         case 5:
-            $('#saying').html('天生我材必有用，<br>千金散尽还复来。');
+            $('#saying').html('天生我材必有用，千金散尽还复来。');
             break;
         case 6:
-            $('#saying').html('黑发不知勤学早，<br>白首方悔读书迟。');
+            $('#saying').html('黑发不知勤学早，白首方悔读书迟。');
     }
     //废话文学
     const dateNight = [1, 3, 4, 6, 9, 12, 16, 17, 18, 19, 21, 24, 25, 29, 30, 31];
     if (21 <= hour || hour <= 5) {
         $('#sleep-tip').css('visibility', 'visible');
         if (dateNight.includes(date)) {
-            $('#know').html('睡觉的时候一定要闭上眼，<br>不然会睡不着。');
+            $('#know').html('睡觉的时候一定要闭上眼，不然会睡不着。');
         } else {
             $('#know').html('这么晚还没睡的人一定还没睡。');
         }
@@ -303,7 +303,7 @@ setInterval(function () {
             case 8:
             case 22:
             case 25:
-                $('#know').html('剥开香蕉皮以后，你会发现<br>里面有一个去皮的香蕉。');
+                $('#know').html('剥开香蕉皮以后，你会发现里面有一个去皮的香蕉。');
                 break;
             case 10:
             case 13:
@@ -313,7 +313,7 @@ setInterval(function () {
             case 16:
             case 23:
             case 28:
-                $('#know').html('研究发现：当你的左脸被打时，<br>你的右脸就不会痛。');
+                $('#know').html('研究发现：当你的左脸被打时，你的右脸就不会痛。');
         }
     }
 }, 100)
