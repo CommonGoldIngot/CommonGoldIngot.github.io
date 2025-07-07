@@ -322,7 +322,6 @@ div.main {
   background-color: rgba(var(--background-light-green),0.75);
   border: 0 hidden transparent;
   border-radius: 8px;
-  break-after: avoid;
 }
 @media (orientation: landscape) {
   @media (min-width: 1281px) {
@@ -355,6 +354,7 @@ div.main-card {
   margin-bottom: 0.8em;
   border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(var(--main-black),0.3);
+  break-inside: avoid;
 }
 div.main-card:last-child {
   margin-bottom: 0;
