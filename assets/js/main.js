@@ -138,23 +138,37 @@ function asideLoadedCallback() {
     //侧边栏项目处理
     function sidebarItemOperation() {
         $('script[src="/assets/js/main.js"]').before('<script>var currentFilePath = location.pathname;</script>');
-        var currentListItemId, currentListLinkId;
-        if (currentFilePath.slice(-1) == '/') {
-            currentListItemId = '#li' + currentFilePath.replace(/\//g, '-') + 'index';
-            currentListLinkId = '#a' + currentFilePath.replace(/\//g, '-') + 'index';
-            currentListArrowId = '#i' + currentFilePath.replace(/\//g, '-') + 'index';
-        } else {
-            currentListItemId = '#li' + currentFilePath.slice(0, -5).replace(/\//g, '-');
-            currentListLinkId = '#a' + currentFilePath.slice(0, -5).replace(/\//g, '-');
-            currentListArrowId = '#i' + currentFilePath.slice(0, -5).replace(/\//g, '-');
+        var isCurrentFilePathSpecial = false;
+        var currentListItemId = '#li',
+            currentListLinkId = '#a',
+            currentListArrowId = '#i';
+        var idAddition;
+        function specialFilePathOperation(mainFilePath) {
+            if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
+                isCurrentFilePathSpecial = true;
+                idAddition = mainFilePath.replace(/\//g, '-');
+            }
         }
+        specialFilePathOperation('/math-challenge');
+        if (isCurrentFilePathSpecial == false) {
+            if (currentFilePath.endsWith('/')) {
+                idAddition = currentFilePath.replace(/\//g, '-') + 'index';
+            } else if (currentFilePath.lastIndexOf('.') == -1) {
+                idAddition = currentFilePath.replace(/\//g, '-');
+            } else {
+                idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
+            }
+        }
+        currentListItemId += idAddition;
+        currentListLinkId += idAddition;
+        currentListArrowId += idAddition;
         if (currentFilePath != '/about.html') {
             $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0 rgb(var(--main-green)), -30px 0 rgb(var(--main-green))'});
             document.querySelector(currentListLinkId).href = 'javascript:void(0);';
             $(currentListArrowId).hide();
         } else {
             document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
-        }
+        } 
     }
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', function () {
