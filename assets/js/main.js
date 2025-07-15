@@ -155,6 +155,7 @@ var sidebarSublistSlide = (sublistName) => {
     });
 }
 var asideLoadedCallback = () => {
+    sidebarItemOperation();
     //主题切换
     $('button.aside-theme-control').on('click', () => {
         $('div.aside-theme-control-tip').remove();
@@ -181,7 +182,6 @@ var asideLoadedCallback = () => {
     themeListMouseResponse('dark');
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
-        sidebarItemOperation();
         $('div.aside-mask').show();
         $('div.aside-sidebar').show().animate({left: '0'}, 200);
     });
