@@ -12,23 +12,14 @@ setInterval(function () {
     $('img.loading-logo').rotate(logoRotateAngle);
 }, 5);
 setTimeout(function () {
-    $('p.loading-text').text('正在加载css...');
-}, 2000)
-setTimeout(function () {
-    $('p.loading-text').text('正在加载背景图片...');
-}, 3500)
-setTimeout(function () {
-    $('p.loading-text').text('正在加载js...');
-}, 6000)
-setTimeout(function () {
-    $('p.loading-text').text('加载可能需要较长时间，请耐心等待...');
-}, 9000)
+    $('p.loading-text').text('加载可能花费较长时间，请耐心等待...');
+}, 5000)
 setTimeout(function () {
     $('p.loading-text').text('就快好了，再等我一会...');
-}, 12000)
+}, 10000)
 setTimeout(function () {
     $('p.loading-speed-up').css('visibility', 'visible');
-}, 16000)
+}, 15000)
 //加载界面淡出
 window.onload = function () {
     setTimeout(function () {
@@ -36,7 +27,7 @@ window.onload = function () {
         $('div.loading').fadeOut(500, function () {
             $('div.loading').hide();
         });
-    }, 1400)
+    }, 1500)
 }
 //导航栏项目（主题切换控件 & 侧边栏项目处理）
 function themeSelect(theme) {
@@ -183,26 +174,27 @@ function asideLoadedCallback() {
         });
     });
     //侧边栏子项目操作
-    /* 此段待重构，而且目前侧边栏没有子项目（
-    var wiki = 0;
-    $('li.--wiki').on('click', function () {
-        $('ul.--wiki').slideToggle(200, function () {
-            if (wiki == 0) {
-                $('i.--wiki').rotate({
-                    duration: 300,
-                    animateTo: 90
-                });
-                wiki = 1;
-            } else {
-                $('i.--wiki').rotate({
-                    duration: 300,
-                    animateTo: 0
-                });
-                wiki = 0;
-            }
+    var listItemId = '#li',
+        sublistId = '#ul',
+        sublistArrowId = '#i';
+    function sidebarSublistSlide(sublistName) {
+        sublistName = 0;
+        listItemId += '-' + sublistName;
+        sublistId += '-' + sublistName;
+        sublistArrowId += '-' + sublistName;
+        $(listItemId).on('click', function () {
+            $(sublistId).slideToggle(200, function () {
+                if (sublistName == 0) {
+                    $(sublistArrowId).rotate({duration: 300, animateTo: 90});
+                    sublistName = 1;
+                } else {
+                    $(sublistArrowId).rotate({duration: 300, animateTo: 0});
+                    sublistName = 0;
+                }
+            });
         });
-    });
-    */
+    }
+    sidebarSublistSlide('wiki');
 }
 /*
 $(document).ready(function () {

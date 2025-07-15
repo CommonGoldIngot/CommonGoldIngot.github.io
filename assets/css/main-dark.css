@@ -16,17 +16,17 @@ div.loading {
 }
 div.loading-round-border {
   background-color: rgb(var(--background-black));
-  border-top: 5px solid rgb(var(--main-dark-green));
+  border-top-color: rgb(var(--main-dark-green));
 }
 a.loading-speed-up-link {
   color: rgb(var(--main-light-green));
 }
 div.main {
-  background-color: rgba(var(--background-dark-green),0.9);
+  background-color: rgba(var(--background-dark-green),0.75);
 }
 div.main-title {
   background-color: rgb(var(--main-green));
-  border: 1px solid rgb(var(--main-dark-green));
+  border-color: rgb(var(--main-dark-green));
 }
 p.main-title-text {
   color: rgb(var(--main-white));

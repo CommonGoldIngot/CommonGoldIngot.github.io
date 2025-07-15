@@ -257,15 +257,13 @@ div.aside-sidebar-body {
   border-right: 1px solid rgb(var(--main-green));
   overflow: auto;
 }
-ul.aside-nav,
-ul.aside-subnav {
+ul.aside-sidebar-list {
   list-style-type: none;
-}
-ul.aside-nav {
   padding-left: 0;
   line-height: 34px;
 }
-ul.aside-subnav {
+ul.aside-sidebar-sublist {
+  list-style-type: none;
   display: none;
 }
 a.aside-sidebar-item-link {
