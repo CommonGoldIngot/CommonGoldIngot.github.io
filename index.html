@@ -11,10 +11,6 @@
 <link rel="shortcut icon" href="/assets/images/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-<link rel="prefetch" href="/assets/images/bg-light-landscape.png">
-<link rel="prefetch" href="/assets/images/bg-light-portrait.png">
-<link rel="prefetch" href="/assets/images/bg-dark-landscape.png">
-<link rel="prefetch" href="/assets/images/bg-dark-portrait.png">
 <link rel="stylesheet" href="/assets/css/main.css">
 <script src="/assets/js/jquery-3.6.4.min.js"></script>
 <script src="/assets/js/jQueryRotateCompressed.js"></script>
@@ -195,7 +191,7 @@ const ap = new APlayer({
 </script>
 <!-- IP属地获取 (Powered by PConline) -->
 <script>
-function getIP(IPobj) {
+var getIP = (IPobj) => {
     if (IPobj.city != '') {
         $('#ip').html(IPobj.city);
     } else {
@@ -209,7 +205,7 @@ if ($('#ip').html() == '') {
 <script src="http://whois.pconline.com.cn/ipJson.jsp?callback=getIP"></script>
 <!-- 页面其它js -->
 <script>
-setInterval(function () {
+setInterval(() => {
     //当前时间
     var time = new Date();
     var year = time.getFullYear(),
