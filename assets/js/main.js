@@ -1,5 +1,5 @@
 //自定义方法
-String.prototype.insertString = (str, index) => {
+String.prototype.insertString = function (str, index) {
     return this.slice(0, index) + str + this.slice(index);
 };
 //加载动画
@@ -30,20 +30,20 @@ window.onload = () => {
     }, 1500)
 }
 //导航栏项目（主题切换控件 & 侧边栏项目处理）
-function themeSelect(theme) {
+var themeSelect = (theme) => {
     let themeListSelector = 'li.theme-' + theme;
     let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
     $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
     $(themeContentSelector).css('color', 'rgb(var(--main-green))');
     Cookies.set('currentTheme', theme, {expires: 365, path: '/'});
 }
-function themeUnselect(theme1, theme2) {
+var themeUnselect = (theme1, theme2) => {
     let themeListSelector = 'li.theme-' + theme1 + ', li.theme-' + theme2;
     let themeContentSelector = 'i.theme-' + theme1 + ', span.theme-' + theme1 + ', i.theme-' + theme2 + ', span.theme-' + theme2;
     $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
     $(themeContentSelector).css('color', 'rgb(var(--main-white))');
 }
-function themeListMouseResponse(theme) {
+var themeListMouseResponse = (theme) => {
     let themeListSelector = 'li.theme-' + theme;
     let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
     $(themeListSelector).on('mouseenter', () => {
@@ -56,7 +56,7 @@ function themeListMouseResponse(theme) {
         }
     });   
 }
-function showTip() {
+var showTip = () => {
     setTimeout(() => {
         $('div.aside-theme-control-tip').fadeIn(3500);
     }, 1400)
@@ -66,9 +66,8 @@ function showTip() {
         });
     }, 3600)
 }
-var currentTime = new Date();
-var currentHour = currentTime.getHours();
-function autoTheme() {
+var currentHour = new Date().getHours();
+var autoTheme = () => {
     themeSelect('auto');
     if (20 <= currentHour || currentHour <= 5) {
         $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
@@ -81,17 +80,17 @@ function autoTheme() {
     }
     themeUnselect('light', 'dark');  
 }
-function lightTheme() {
+var lightTheme = () => {
     themeSelect('light');
     $('link[href="/assets/css/main-dark.css"]').remove();
     themeUnselect('auto', 'dark');
 }
-function darkTheme() {
+var darkTheme = () => {
     themeSelect('dark');
     $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
     themeUnselect('auto', 'light');
 }
-function initializeTheme() {
+var initializeTheme = () => {
     if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == 'auto') {
         autoTheme();
     } else if (Cookies.get('currentTheme') == 'light') {
@@ -101,7 +100,61 @@ function initializeTheme() {
     }
 }
 initializeTheme();
-function asideLoadedCallback() {
+$('script[src="/assets/js/main.js"]').before('<script>var currentFilePath = location.pathname;</script>');
+var isCurrentFilePathSpecial = false;
+var currentListItemId = '#li',
+    currentListLinkId = '#a',
+    currentListArrowId = '#i';
+var idAddition;
+var specialFilePathOperation = (mainFilePath) => {
+    if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
+        isCurrentFilePathSpecial = true;
+        idAddition = mainFilePath.replace(/\//g, '-');
+    }
+}
+var sidebarItemOperation = () => {
+    specialFilePathOperation('/math-challenge');
+    if (isCurrentFilePathSpecial == false) {
+        if (currentFilePath.endsWith('/')) {
+            idAddition = currentFilePath.replace(/\//g, '-') + 'index';
+        } else if (currentFilePath.lastIndexOf('.') == -1) {
+            idAddition = currentFilePath.replace(/\//g, '-');
+        } else {
+            idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
+        }
+    }
+    currentListItemId += idAddition;
+    currentListLinkId += idAddition;
+    currentListArrowId += idAddition;
+    if (currentFilePath != '/about.html') {
+        $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0 rgb(var(--main-green)), -30px 0 rgb(var(--main-green))'});
+        document.querySelector(currentListLinkId).href = 'javascript:void(0);';
+        $(currentListArrowId).hide();
+    } else {
+        document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
+    } 
+}
+var listItemId = '#li',
+    sublistId = '#ul',
+    sublistArrowId = '#i';
+var sidebarSublistSlide = (sublistName) => {
+    sublistName = 0;
+    listItemId += '-' + sublistName;
+    sublistId += '-' + sublistName;
+    sublistArrowId += '-' + sublistName;
+    $(listItemId).on('click', () => {
+        $(sublistId).slideToggle(200, () => {
+            if (sublistName == 0) {
+                $(sublistArrowId).rotate({duration: 300, animateTo: 90});
+                sublistName = 1;
+            } else {
+                $(sublistArrowId).rotate({duration: 300, animateTo: 0});
+                sublistName = 0;
+            }
+        });
+    });
+}
+var asideLoadedCallback = () => {
     //主题切换
     $('button.aside-theme-control').on('click', () => {
         $('div.aside-theme-control-tip').remove();
@@ -126,41 +179,6 @@ function asideLoadedCallback() {
     themeListMouseResponse('auto');
     themeListMouseResponse('light');
     themeListMouseResponse('dark');
-    //侧边栏项目处理
-    function sidebarItemOperation() {
-        $('script[src="/assets/js/main.js"]').before('<script>var currentFilePath = location.pathname;</script>');
-        var isCurrentFilePathSpecial = false;
-        var currentListItemId = '#li',
-            currentListLinkId = '#a',
-            currentListArrowId = '#i';
-        var idAddition;
-        function specialFilePathOperation(mainFilePath) {
-            if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
-                isCurrentFilePathSpecial = true;
-                idAddition = mainFilePath.replace(/\//g, '-');
-            }
-        }
-        specialFilePathOperation('/math-challenge');
-        if (isCurrentFilePathSpecial == false) {
-            if (currentFilePath.endsWith('/')) {
-                idAddition = currentFilePath.replace(/\//g, '-') + 'index';
-            } else if (currentFilePath.lastIndexOf('.') == -1) {
-                idAddition = currentFilePath.replace(/\//g, '-');
-            } else {
-                idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
-            }
-        }
-        currentListItemId += idAddition;
-        currentListLinkId += idAddition;
-        currentListArrowId += idAddition;
-        if (currentFilePath != '/about.html') {
-            $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0 rgb(var(--main-green)), -30px 0 rgb(var(--main-green))'});
-            document.querySelector(currentListLinkId).href = 'javascript:void(0);';
-            $(currentListArrowId).hide();
-        } else {
-            document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
-        } 
-    }
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
         sidebarItemOperation();
@@ -174,26 +192,6 @@ function asideLoadedCallback() {
         });
     });
     //侧边栏子项目操作
-    var listItemId = '#li',
-        sublistId = '#ul',
-        sublistArrowId = '#i';
-    function sidebarSublistSlide(sublistName) {
-        sublistName = 0;
-        listItemId += '-' + sublistName;
-        sublistId += '-' + sublistName;
-        sublistArrowId += '-' + sublistName;
-        $(listItemId).on('click', () => {
-            $(sublistId).slideToggle(200, () => {
-                if (sublistName == 0) {
-                    $(sublistArrowId).rotate({duration: 300, animateTo: 90});
-                    sublistName = 1;
-                } else {
-                    $(sublistArrowId).rotate({duration: 300, animateTo: 0});
-                    sublistName = 0;
-                }
-            });
-        });
-    }
     sidebarSublistSlide('wiki');
 }
 /*
