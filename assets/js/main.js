@@ -1,30 +1,30 @@
 //自定义方法
-String.prototype.insertString = function (str, index) {
+String.prototype.insertString = (str, index) => {
     return this.slice(0, index) + str + this.slice(index);
 };
 //加载动画
 var borderRotateAngle = 0,
     logoRotateAngle = 0;
-setInterval(function () {
+setInterval(() => {
     borderRotateAngle += 1;
     logoRotateAngle -= 1;
     $('div.loading-round-border').rotate(borderRotateAngle);
     $('img.loading-logo').rotate(logoRotateAngle);
 }, 5);
-setTimeout(function () {
+setTimeout(() => {
     $('p.loading-text').text('加载可能花费较长时间，请耐心等待...');
 }, 5000)
-setTimeout(function () {
+setTimeout(() => {
     $('p.loading-text').text('就快好了，再等我一会...');
 }, 10000)
-setTimeout(function () {
+setTimeout(() => {
     $('p.loading-speed-up').css('visibility', 'visible');
 }, 15000)
 //加载界面淡出
-window.onload = function () {
-    setTimeout(function () {
+window.onload = () => {
+    setTimeout(() => {
         $('p.loading-text').text('加载完成！');
-        $('div.loading').fadeOut(500, function () {
+        $('div.loading').fadeOut(500, () => {
             $('div.loading').hide();
         });
     }, 1500)
@@ -46,10 +46,10 @@ function themeUnselect(theme1, theme2) {
 function themeListMouseResponse(theme) {
     let themeListSelector = 'li.theme-' + theme;
     let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
-    $(themeListSelector).on('mouseenter', function () {
+    $(themeListSelector).on('mouseenter', () => {
         $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
         $(themeContentSelector).css('color', 'rgb(var(--main-green))');
-    }).on('mouseleave', function () {
+    }).on('mouseleave', () => {
         if (Cookies.get('currentTheme') != theme) {
             $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
             $(themeContentSelector).css('color', 'rgb(var(--main-white))');
@@ -57,11 +57,11 @@ function themeListMouseResponse(theme) {
     });   
 }
 function showTip() {
-    setTimeout(function () {
+    setTimeout(() => {
         $('div.aside-theme-control-tip').fadeIn(3500);
     }, 1400)
-    setTimeout(function () {
-        $('div.aside-theme-control-tip').fadeOut(3500, function () {
+    setTimeout(() => {
+        $('div.aside-theme-control-tip').fadeOut(3500, () => {
              $('div.aside-theme-control-tip').remove();
         });
     }, 3600)
@@ -103,22 +103,22 @@ function initializeTheme() {
 initializeTheme();
 function asideLoadedCallback() {
     //主题切换
-    $('button.aside-theme-control').on('click', function () {
+    $('button.aside-theme-control').on('click', () => {
         $('div.aside-theme-control-tip').remove();
         initializeTheme();
         $('div.aside-theme-select').slideToggle(400);
     });
-    $('li.theme-auto').on('click', function () {
+    $('li.theme-auto').on('click', () => {
         if (Cookies.get('currentTheme') != 'auto') {
             autoTheme();
         }
     });
-    $('li.theme-light').on('click', function () {
+    $('li.theme-light').on('click', () => {
         if (Cookies.get('currentTheme') != 'light') {
             lightTheme();
         }
     });
-    $('li.theme-dark').on('click', function () {
+    $('li.theme-dark').on('click', () => {
         if (Cookies.get('currentTheme') != 'dark') {
             darkTheme();
         }
@@ -162,14 +162,14 @@ function asideLoadedCallback() {
         } 
     }
     //侧边栏动效
-    $('button.aside-unfold-sidebar').on('click', function () {
+    $('button.aside-unfold-sidebar').on('click', () => {
         sidebarItemOperation();
         $('div.aside-mask').show();
         $('div.aside-sidebar').show().animate({left: '0'}, 200);
     });
-    $('div.aside-mask').on('click', function () {
+    $('div.aside-mask').on('click', () => {
         $('div.aside-mask').hide();
-        $('div.aside-sidebar').animate({left: '-302'}, 200, function () {
+        $('div.aside-sidebar').animate({left: '-302'}, 200, () => {
             $('div.aside-sidebar').hide();
         });
     });
@@ -182,8 +182,8 @@ function asideLoadedCallback() {
         listItemId += '-' + sublistName;
         sublistId += '-' + sublistName;
         sublistArrowId += '-' + sublistName;
-        $(listItemId).on('click', function () {
-            $(sublistId).slideToggle(200, function () {
+        $(listItemId).on('click', () => {
+            $(sublistId).slideToggle(200, () => {
                 if (sublistName == 0) {
                     $(sublistArrowId).rotate({duration: 300, animateTo: 90});
                     sublistName = 1;
@@ -197,7 +197,7 @@ function asideLoadedCallback() {
     sidebarSublistSlide('wiki');
 }
 /*
-$(document).ready(function () {
+$(document).ready(() => {
     //网格布局
     //特别神秘的布局逻辑，什么时候有用了再放出来吧（
     var areaClassName = /area-\d+x\d+/,
