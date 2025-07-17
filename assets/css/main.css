@@ -266,6 +266,10 @@ ul.aside-sidebar-sublist {
   list-style-type: none;
   display: none;
 }
+li.aside-sidebar-item {
+  background-color: transparent;
+  box-shadow: none;
+}
 li.aside-sidebar-current-page-item {
   background-color: rgb(var(--main-green);
   box-shadow: 21px 0 rgb(var(--main-green)),
