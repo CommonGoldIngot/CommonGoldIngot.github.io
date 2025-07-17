@@ -112,7 +112,7 @@ button.aside-unfold-sidebar {
   border-style: none;
   text-align: center;
 }
-.bi-list {
+button.aside-unfold-sidebar > .bi-list {
   color: rgb(var(--main-white));
   font-size: 32px;
   line-height: 40px;
@@ -134,7 +134,7 @@ button.aside-theme-control {
   border-style: none;
   text-align: center;
 }
-.mdi-brightness-6 {
+button.aside-theme-control > .mdi-brightness-6 {
   color: rgb(var(--main-white));
   font-size: 22px;
   line-height: 32px;
@@ -167,14 +167,23 @@ ul.aside-theme-select-list {
   padding-left: 0;
   line-height: 34px;
 }
-.bi-circle-half,
-.bi-sun-fill,
-.bi-moon-fill {
+li.aside-theme-select-list-item {
+  background-color: transparent;
+  box-shadow: none;
   color: rgb(var(--main-white));
+}
+li.aside-theme-select-list-item-active {
+  background-color: rgb(var(--main-white));
+  box-shadow: 9px 0 rgb(var(--main-white)),
+              -9px 0 rgb(var(--main-white));
+  color: rgb(var(--main-green));
+}
+i.theme-auto,
+i.theme-light,
+i.theme-dark {
   font-size: 16px;
 }
 span.aside-theme-select-text {
-  color: rgb(var(--main-white));
   font-size: 14px;
 }
 li.theme-auto {
@@ -266,6 +275,11 @@ ul.aside-sidebar-sublist {
   list-style-type: none;
   display: none;
 }
+li.aside-sidebar-current-page-item {
+  background-color: rgb(var(--main-green);
+  box-shadow: 21px 0 rgb(var(--main-green)),
+              -30px 0 rgb(var(--main-green));
+}
 a.aside-sidebar-item-link {
   color: rgb(var(--main-white));
   text-decoration: none;
@@ -279,7 +293,7 @@ span.aside-text {
   font-size: 14px;
   text-decoration: none;
 }
-.mdi-chevron-right {
+li.aside-sidebar-item > .mdi-chevron-right {
   float: right;
   margin: 0 32px;
   color: rgb(var(--main-white));

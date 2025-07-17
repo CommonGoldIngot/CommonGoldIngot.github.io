@@ -30,33 +30,28 @@ window.onload = () => {
     }, 1500)
 }
 //导航栏项目（主题切换控件 & 侧边栏项目处理）
-var themeSelect = (theme) => {
+let themeSelect = (theme) => {
     let themeListSelector = 'li.theme-' + theme;
-    let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
-    $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
-    $(themeContentSelector).css('color', 'rgb(var(--main-green))');
+    $(themeListSelector).addClass('aside-theme-select-list-item-active');
     Cookies.set('currentTheme', theme, {expires: 365, path: '/'});
 }
-var themeUnselect = (theme1, theme2) => {
+let themeUnselect = (theme1, theme2) => {
     let themeListSelector = 'li.theme-' + theme1 + ', li.theme-' + theme2;
-    let themeContentSelector = 'i.theme-' + theme1 + ', span.theme-' + theme1 + ', i.theme-' + theme2 + ', span.theme-' + theme2;
-    $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
-    $(themeContentSelector).css('color', 'rgb(var(--main-white))');
+    $(themeListSelector).removeClass('aside-theme-select-list-item-active');
 }
-var themeListMouseResponse = (theme) => {
+let themeListMouseResponse = (theme) => {
     let themeListSelector = 'li.theme-' + theme;
-    let themeContentSelector = 'i.theme-' + theme + ', span.theme-' + theme;
-    $(themeListSelector).on('mouseenter', () => {
-        $(themeListSelector).css({'background-color': 'rgb(var(--main-white))', 'box-shadow': '9px 0 rgb(var(--main-white)), -9px 0 rgb(var(--main-white))'});
-        $(themeContentSelector).css('color', 'rgb(var(--main-green))');
-    }).on('mouseleave', () => {
-        if (Cookies.get('currentTheme') != theme) {
-            $(themeListSelector).css({'background-color': 'transparent', 'box-shadow': 'none'});
-            $(themeContentSelector).css('color', 'rgb(var(--main-white))');
+    $(themeListSelector).on({
+        mouseenter: () => {
+            $(themeListSelector).addClass('aside-theme-select-list-item-active');
+        }, mouseleave: () => {
+            if (Cookies.get('currentTheme') != theme) {
+                $(themeListSelector).removeClass('aside-theme-select-list-item-active');
+            }
         }
     });   
 }
-var showTip = () => {
+let showTip = () => {
     setTimeout(() => {
         $('div.aside-theme-control-tip').fadeIn(3500);
     }, 1400)
@@ -66,8 +61,8 @@ var showTip = () => {
         });
     }, 3600)
 }
-var currentHour = new Date().getHours();
-var autoTheme = () => {
+let currentHour = new Date().getHours();
+let autoTheme = () => {
     themeSelect('auto');
     if (20 <= currentHour || currentHour <= 5) {
         $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
@@ -80,17 +75,17 @@ var autoTheme = () => {
     }
     themeUnselect('light', 'dark');  
 }
-var lightTheme = () => {
+let lightTheme = () => {
     themeSelect('light');
     $('link[href="/assets/css/main-dark.css"]').remove();
     themeUnselect('auto', 'dark');
 }
-var darkTheme = () => {
+let darkTheme = () => {
     themeSelect('dark');
     $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
     themeUnselect('auto', 'light');
 }
-var initializeTheme = () => {
+let initializeTheme = () => {
     if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == 'auto') {
         autoTheme();
     } else if (Cookies.get('currentTheme') == 'light') {
@@ -106,13 +101,13 @@ var currentListItemId = '#li',
     currentListLinkId = '#a',
     currentListArrowId = '#i';
 var idAddition;
-var specialFilePathOperation = (mainFilePath) => {
+let specialFilePathOperation = (mainFilePath) => {
     if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
         isCurrentFilePathSpecial = true;
         idAddition = mainFilePath.replace(/\//g, '-');
     }
 }
-var sidebarItemOperation = () => {
+let sidebarItemOperation = () => {
     specialFilePathOperation('/math-challenge');
     if (isCurrentFilePathSpecial == false) {
         if (currentFilePath.endsWith('/')) {
@@ -127,7 +122,7 @@ var sidebarItemOperation = () => {
     currentListLinkId += idAddition;
     currentListArrowId += idAddition;
     if (currentFilePath != '/about.html') {
-        $(currentListItemId).css({'background-color': 'rgb(var(--main-green)', 'box-shadow': '21px 0 rgb(var(--main-green)), -30px 0 rgb(var(--main-green))'});
+        $(currentListItemId).addClass('aside-sidebar-current-page-item');
         document.querySelector(currentListLinkId).href = 'javascript:void(0);';
         $(currentListArrowId).hide();
     } else {
@@ -137,7 +132,7 @@ var sidebarItemOperation = () => {
 var listItemId = '#li',
     sublistId = '#ul',
     sublistArrowId = '#i';
-var sidebarSublistSlide = (sublistName) => {
+let sidebarSublistSlide = (sublistName) => {
     sublistName = 0;
     listItemId += '-' + sublistName;
     sublistId += '-' + sublistName;
@@ -154,7 +149,7 @@ var sidebarSublistSlide = (sublistName) => {
         });
     });
 }
-var asideLoadedCallback = () => {
+let asideLoadedCallback = () => {
     sidebarItemOperation();
     //主题切换
     $('button.aside-theme-control').on('click', () => {
