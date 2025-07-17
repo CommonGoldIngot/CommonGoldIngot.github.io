@@ -186,15 +186,6 @@ i.theme-dark {
 span.aside-theme-select-text {
   font-size: 14px;
 }
-li.theme-auto {
-  background-color: rgb(var(--main-white));
-  box-shadow: 9px 0 rgb(var(--main-white)),
-              -9px 0 rgb(var(--main-white));
-}
-i.theme-auto,
-span.theme-auto {
-  color: rgb(var(--main-green));
-}
 div.aside-theme-control-tip {
   display: none;
   float: right;
