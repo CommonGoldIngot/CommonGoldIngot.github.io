@@ -13,13 +13,13 @@ setInterval(() => {
 }, 5);
 setTimeout(() => {
     $('p.loading-text').text('加载可能花费较长时间，请耐心等待...');
-}, 5000)
+}, 5000);
 setTimeout(() => {
     $('p.loading-text').text('就快好了，再等我一会...');
-}, 10000)
+}, 10000);
 setTimeout(() => {
     $('p.loading-speed-up').css('visibility', 'visible');
-}, 15000)
+}, 15000);
 //加载界面淡出
 window.onload = () => {
     setTimeout(() => {
@@ -38,18 +38,6 @@ let themeSelect = (theme) => {
 let themeUnselect = (theme1, theme2) => {
     let themeListSelector = 'li.theme-' + theme1 + ', li.theme-' + theme2;
     $(themeListSelector).removeClass('aside-theme-select-list-item-active');
-}
-let themeListMouseResponse = (theme) => {
-    let themeListSelector = 'li.theme-' + theme;
-    $(themeListSelector).on({
-        mouseenter: () => {
-            $(themeListSelector).addClass('aside-theme-select-list-item-active');
-        }, mouseleave: () => {
-            if (Cookies.get('currentTheme') != theme) {
-                $(themeListSelector).removeClass('aside-theme-select-list-item-active');
-            }
-        }
-    });   
 }
 let showTip = () => {
     setTimeout(() => {
@@ -95,11 +83,10 @@ let initializeTheme = () => {
     }
 }
 initializeTheme();
-$('script[src="/assets/js/main.js"]').before('<script>var currentFilePath = location.pathname;</script>');
+$('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
+console.log(currentFilePath);
 var isCurrentFilePathSpecial = false;
-var currentListItemId = '#li',
-    currentListLinkId = '#a',
-    currentListArrowId = '#i';
+var currentPageId = '#';
 var idAddition;
 let specialFilePathOperation = (mainFilePath) => {
     if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
@@ -118,25 +105,19 @@ let sidebarItemOperation = () => {
             idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
         }
     }
-    currentListItemId += idAddition;
-    currentListLinkId += idAddition;
-    currentListArrowId += idAddition;
+    currentPageId = (currentPageId + idAddition).replace('-', '');
     if (currentFilePath != '/about.html') {
-        $(currentListItemId).addClass('aside-sidebar-current-page-item');
-        document.querySelector(currentListLinkId).href = 'javascript:void(0);';
-        $(currentListArrowId).hide();
+        $(currentPageId + ' li.aside-sidebar-item').addClass('aside-sidebar-current-page-item');
+        document.querySelector(currentPageId).href = 'javascript:void(0);';
+        $(currentPageId + ' .mdi-chevron-right').hide();
     } else {
         document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
     } 
 }
-var listItemId = '#li',
-    sublistId = '#ul',
-    sublistArrowId = '#i';
+/* var listItemId = '#';
 let sidebarSublistSlide = (sublistName) => {
     sublistName = 0;
-    listItemId += '-' + sublistName;
-    sublistId += '-' + sublistName;
-    sublistArrowId += '-' + sublistName;
+    listItemId += sublistName;
     $(listItemId).on('click', () => {
         $(sublistId).slideToggle(200, () => {
             if (sublistName == 0) {
@@ -148,7 +129,7 @@ let sidebarSublistSlide = (sublistName) => {
             }
         });
     });
-}
+} */
 let asideLoadedCallback = () => {
     sidebarItemOperation();
     //主题切换
@@ -172,9 +153,6 @@ let asideLoadedCallback = () => {
             darkTheme();
         }
     });
-    themeListMouseResponse('auto');
-    themeListMouseResponse('light');
-    themeListMouseResponse('dark');
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
         $('div.aside-mask').show();
@@ -187,7 +165,7 @@ let asideLoadedCallback = () => {
         });
     });
     //侧边栏子项目操作
-    sidebarSublistSlide('wiki');
+    //sidebarSublistSlide('');
 }
 /*
 $(document).ready(() => {
