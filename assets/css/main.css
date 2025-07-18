@@ -174,15 +174,15 @@ li.aside-theme-select-list-item {
   color: rgb(var(--main-white));
 }
 li.aside-theme-select-list-item:hover {
-  background-color: rgb(var(--main-white));
-  box-shadow: 9px 0 rgb(var(--main-white)),
-              -9px 0 rgb(var(--main-white));
+  background-color: rgb(var(--main-light-green));
+  box-shadow: 9px 0 rgb(var(--main-light-green)),
+              -9px 0 rgb(var(--main-light-green));
   color: rgb(var(--main-green));
 }
 li.aside-theme-select-list-item-active {
-  background-color: rgb(var(--main-light-green)) !important;
-  box-shadow: 9px 0 rgb(var(--main-light-green)),
-              -9px 0 rgb(var(--main-light-green)) !important;
+  background-color: rgb(var(--main-white)) !important;
+  box-shadow: 9px 0 rgb(var(--main-white)),
+              -9px 0 rgb(var(--main-white)) !important;
   color: rgb(var(--main-green)) !important;
 }
 i.theme-auto,
