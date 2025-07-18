@@ -271,7 +271,7 @@ li.aside-sidebar-item {
   box-shadow: none;
 }
 li.aside-sidebar-current-page-item {
-  background-color: rgb(var(--main-green);
+  background-color: rgb(var(--main-green));
   box-shadow: 21px 0 rgb(var(--main-green)),
               -30px 0 rgb(var(--main-green));
 }
