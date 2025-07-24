@@ -340,12 +340,12 @@ div.main {
   border-radius: 8px;
 }
 @media (orientation: landscape) {
-  @media (min-width: 1281px) {
+  @media (min-width: 1921px) {
     main.type-card > div.main {
       column-count: 3;
     }
   }
-  @media (min-width: 601px) and (max-width: 1280px) {
+  @media (min-width: 601px) and (max-width: 1920px) {
     main.type-card > div.main {
       column-count: 2;
     }
