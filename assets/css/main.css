@@ -445,7 +445,7 @@ pre, code {
 p.math-text {
   margin: 0 0 8px 0;
   color: rgb(var(--font-black)) !important;
-  font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 img.math-image {
   display: block;
