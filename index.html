@@ -14,10 +14,11 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <script src="/assets/js/jquery-3.7.1.min.js"></script>
 <script src="/assets/js/jQueryRotateCompressed.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 <script src="/assets/js/js.cookie.min.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/main-modules.js"></script>
+<script defer src="/assets/js/mathjax-config.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>
 /***************** 特殊元素 *****************/
 #ip,
@@ -26,6 +27,7 @@
   font-size: 24px;
 }
 #saying {
+  text-wrap: balance;
   font-size: 24px;
 }
 #music {
@@ -50,31 +52,6 @@
 #latest-video-iframe {
   position: absolute;
   top: 0;
-}
-</style>
-<!-- 数学挑战css -->
-<style>
-p.math-problem-text {
-  font-size: 20px;
-}
-p.math-text {
-  font-family: serif;
-  margin: 8px 0;
-  color: rgb(var(--font-black)) !important;
-}
-/* 1 */
-#math-problem1 {
-  display: inline-block;
-  width: 120px;
-}
-#math-submit-problem1 {
-  float: right;
-  width: 60px;
-}
-#math-text-problem1 {
-  float: right;
-  width: calc(100% - 200px);
-  margin-right: 4px;
 }
 </style>
 <title>CommonGoldIngot的网站</title>
@@ -148,14 +125,15 @@ p.math-text {
     <p class="main-card-title-text">数学挑战</p>
   </div>
   <div class="main-card-body">
-    <p class="main-card-text" class="math-problem-text">解分式方程：</p>
-    <p class="math-text"> \[ \frac {5x-96}{x-19} + \frac {x-8}{x-9} = \frac {4x-19}{x-6} + \frac {2x-21}{x-8} \] </p>
-    <hr class="main-line-dashed">
-    <form action="" target="disable-form-reload">
-      <p class="main-card-text">尝试一下吧！</p>
-      <div id="math-problem1"><span class="main-card-inline-text">输入答案：x = </span></div><input id="math-submit-problem1" type="button" value="提交" onclick="checkAnswer1()" formtarget="disable-form-reload"><input id="math-text-problem1" type="text">
-    </form>
-    <iframe id="disable-form-reload" name="disable-form-reload" style="display: none;"></iframe>
+    <p class="math-text">
+    如图所示，抛物线$ y = ax^{2} + bx + c $与$ x $轴交于$ A $，$ B $两点，与$ y $轴交于点$ C $，顶点为点$ P $，直线$ PH $是抛物线的对称轴.
+    过点$ C $作$ CD /\kern -0.25em/ x $轴交抛物线于点$ D $，连接$ AC $，$ AP $，$ PC $，$ PD $，$ AD $.
+    过点$ A $作$ AM \perp AP $交抛物线对称轴于点$ M $，点$ M $的纵坐标为$ -\frac{1}{2} $.
+    已知$ \angle CPD = 90^{\circ} $，$ S_{\triangle ACD} = \frac{17}{12} $. 求抛物线的解析式.
+    </p>
+    <img class="math-image" src="/math-challenge/images/20250706.svg">
+    <p class="main-card-text"><a class="main-card-link" href="/math-challenge/20250706.html">点击查看答案&解析→</a></p>
+    <p class="main-card-text"><a class="main-card-link" href="/math-challenge/">点击查看更多题目→</a></p>
   </div>
 </div>
 </div>
