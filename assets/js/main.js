@@ -54,23 +54,27 @@ let autoTheme = () => {
     themeSelect('auto');
     if (20 <= currentHour || currentHour <= 5) {
         $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
+        $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css');
         showTip();
     } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
         $('span.aside-theme-control-tip-text').html('检测到您的浏览器设置为<br />深色模式，已自动同步～<br />您可以在此处切换主题～');
         showTip();
     } else {
         $('link[href="/assets/css/main-dark.css"]').remove();
+        $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
     }
     themeUnselect('light', 'dark');  
 }
 let lightTheme = () => {
     themeSelect('light');
     $('link[href="/assets/css/main-dark.css"]').remove();
+    $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
     themeUnselect('auto', 'dark');
 }
 let darkTheme = () => {
     themeSelect('dark');
     $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
+    $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
     themeUnselect('auto', 'light');
 }
 let initializeTheme = () => {
@@ -84,7 +88,6 @@ let initializeTheme = () => {
 }
 initializeTheme();
 $('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
-console.log(currentFilePath);
 var isCurrentFilePathSpecial = false;
 var currentPageId = '#';
 var idAddition;
@@ -167,32 +170,3 @@ let asideLoadedCallback = () => {
     //侧边栏子项目操作
     //sidebarSublistSlide('');
 }
-/*
-$(document).ready(() => {
-    //网格布局
-    //特别神秘的布局逻辑，什么时候有用了再放出来吧（
-    var areaClassName = /area-\d+x\d+/,
-        columnClassName = /col-\d+\/\d+/,
-        rowClassName = /row-\d+\/\d+/;
-    var gridContainers = document.getElementsByClassName('grid-container'),
-        gridItems = document.getElementsByClassName('grid-item');
-    const gridContainerSize = [],
-          gridItemSize = [];
-    const gridContainerCssText = [],
-          gridItemCssText = [];
-    for (i = 0; i < gridContainers.length; i++) {
-        gridContainerSize.push(gridContainers[i].className.match(areaClassName)[0].replace('area-', '').split('x'));
-        var gridContainerWidth = window.getComputedStyle(gridContainers[i]).width;
-        var gridColumnsWidth = (Number(gridContainerWidth.replace('px', '')) / Number(gridContainerSize[i][0])).toString() + 'px';
-        gridContainerCssText.push(`grid-template-columns: repeat(${gridContainerSize[i][0]}, 1fr); grid-template-rows: repeat(${gridContainerSize[i][1]}, ${gridColumnsWidth});`);
-        gridContainers[i].style.cssText += gridContainerCssText[i];
-    }
-    for (j = 0; j < gridItems.length; j++) {
-        const gridItemSizeSubArray = [];
-        gridItemSizeSubArray.push(gridItems[j].className.match(columnClassName)[0].replace('col-', ''), gridItems[j].className.match(rowClassName)[0].replace('row-', ''));
-        gridItemSize.push(gridItemSizeSubArray);
-        gridItemCssText.push(`grid-column: ${gridItemSize[j][0].replace('/', ' / ')}; grid-row: ${gridItemSize[j][1].replace('/', ' / ')};`);
-        gridItems[j].style.cssText += gridItemCssText[j];
-    }
-});
-*/

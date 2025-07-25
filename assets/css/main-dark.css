@@ -49,3 +49,6 @@ hr.main-line,
 hr.main-line-dashed {
   border-color: rgb(var(--main-white));
 }
+img.math-image {
+  filter: invert(84.5%);
+}

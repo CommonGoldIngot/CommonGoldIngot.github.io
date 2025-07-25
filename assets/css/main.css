@@ -15,8 +15,8 @@
 
   --background-light-green: 245,250,245;
   --font-black: 56,61,63;
-  --background-dark-green:6,17,11;
-  --background-black:40,40,40;
+  --background-dark-green: 6,17,11;
+  --background-black: 40,40,40;
   
   --background-light-landscape-url: url("/assets/images/bg-light-landscape.png");
   --background-light-portrait-url: url("/assets/images/bg-light-portrait.png");
@@ -40,18 +40,15 @@
   }
 }
 /**********************************/
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
-}
 html {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-
 }
 body {
   margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 /***************** 加载动画 *****************/
 div.loading {
@@ -439,4 +436,18 @@ hr.main-line-dashed {
 div.clear {
   display: block;
   clear: both;
+}
+pre, code {
+  margin: 0;
+  font-family: Consolas, monospace;
+}
+/***************** 数学 *****************/
+p.math-text {
+  margin: 0 0 8px 0;
+  color: rgb(var(--font-black)) !important;
+  font-family:'Times New Roman', Times, serif;
+}
+img.math-image {
+  display: block;
+  width: 25%;
 }
