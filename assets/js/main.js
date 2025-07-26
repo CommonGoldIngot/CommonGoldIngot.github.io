@@ -1,7 +1,19 @@
-//自定义方法
-String.prototype.insertString = function (str, index) {
-    return this.slice(0, index) + str + this.slice(index);
-};
+//根元素font-size属性设置（用于不支持css clamp()函数的浏览器）
+if (!CSS.supports('font-size', 'clamp(12.8px, 1.25vw, 20px)')) {
+    var adjustFontSize = () => {
+        let currentWidth = document.documentElement.clientWidth;
+        var newFontSize = currentWidth / 80;
+        if (newFontSize <= 12.8) {
+            newFontSize = 12.8;
+        } else if (newFontSize >= 20) {
+            newFontSize = 20;
+        }
+        newFontSize = newFontSize.toString() + 'px';
+        $('html').css('font-size', newFontSize);
+    }
+    adjustFontSize();
+    $(window).on('resize', adjustFontSize);
+}
 //加载动画
 var borderRotateAngle = 0,
     logoRotateAngle = 0;

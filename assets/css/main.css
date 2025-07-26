@@ -45,6 +45,7 @@ html {
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
+  font-size: clamp(12.8px, 1.25vw, 20px);
 }
 body {
   margin: 0;
@@ -79,7 +80,7 @@ div.loading-round-border {
 p.loading-text,
 p.loading-speed-up {
   color: rgb(var(--font-black));
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 p.loading-speed-up {
   visibility: hidden;
@@ -87,7 +88,7 @@ p.loading-speed-up {
 }
 a.loading-speed-up-link {
   color: rgb(var(--main-green));
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 /***************** 导航栏-顶栏 *****************/
 div.aside-topbar {
@@ -172,14 +173,14 @@ li.aside-theme-select-list-item {
 }
 li.aside-theme-select-list-item:hover {
   background-color: rgb(var(--main-light-green));
-  box-shadow: 9px 0 rgb(var(--main-light-green)),
-              -9px 0 rgb(var(--main-light-green));
+  box-shadow: 8px 0 rgb(var(--main-light-green)),
+              -8px 0 rgb(var(--main-light-green));
   color: rgb(var(--main-green));
 }
 li.aside-theme-select-list-item-active {
   background-color: rgb(var(--main-white)) !important;
-  box-shadow: 9px 0 rgb(var(--main-white)),
-              -9px 0 rgb(var(--main-white)) !important;
+  box-shadow: 8px 0 rgb(var(--main-white)),
+              -8px 0 rgb(var(--main-white)) !important;
   color: rgb(var(--main-green)) !important;
 }
 i.theme-auto,
@@ -337,12 +338,7 @@ div.main {
   border-radius: 8px;
 }
 @media (orientation: landscape) {
-  @media (min-width: 1921px) {
-    main.type-card > div.main {
-      column-count: 3;
-    }
-  }
-  @media (min-width: 601px) and (max-width: 1920px) {
+  @media (min-width: 601px) {
     main.type-card > div.main {
       column-count: 2;
     }
@@ -360,7 +356,7 @@ div.main-title {
 }
 p.main-title-text {
   color: rgb(var(--main-black));
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 /***************** 卡片 *****************/
 div.main-card {
@@ -385,7 +381,7 @@ div.main-card-header {
   top: 0;
   left: 0;
   right: 0;
-  padding: 12px;
+  padding: 0.75em;
   border: 0 hidden transparent;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -393,11 +389,11 @@ div.main-card-header {
 p.main-card-title-text {
   margin: 0;
   color: rgb(var(--main-white));
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 div.main-card-body {
   position: relative;
-  bottom: 0 !important;
+  bottom: 0;
   left: 0;
   right: 0;
   padding: 12px;
@@ -411,11 +407,11 @@ span.main-card-inline-text {
   margin: 6px 0;
   line-height: 1.3em;
   color: rgb(var(--font-black));
-  font-size: 16px;
+  font-size: 1rem;
 }
 a.main-card-link {
   color: rgb(var(--main-green));
-  font-size: 16px;
+  font-size: 1rem;
 }
 h1.main-header1,
 h2.main-header2,
@@ -446,6 +442,8 @@ p.math-text {
   margin: 0 0 8px 0;
   color: rgb(var(--font-black)) !important;
   font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 img.math-image {
   display: block;
