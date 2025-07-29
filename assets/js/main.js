@@ -1,7 +1,7 @@
 //根元素font-size属性设置（用于不支持css clamp()函数的浏览器）
 if (!CSS.supports('font-size', 'clamp(12.8px, 1.25vw, 20px)')) {
     var adjustFontSize = () => {
-        let currentWidth = document.documentElement.clientWidth;
+        let currentWidth = window.innerWidth;
         var newFontSize = currentWidth / 80;
         if (newFontSize <= 12.8) {
             newFontSize = 12.8;
@@ -62,39 +62,44 @@ let showTip = () => {
     }, 3600)
 }
 let currentHour = new Date().getHours();
+let useDarkCSS = () => {
+    $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
+    $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
+}
+let removeDarkCSS = () => {
+    $('link[href="/assets/css/main-dark.css"]').remove();
+    $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
+}
 let autoTheme = () => {
     themeSelect('auto');
     if (20 <= currentHour || currentHour <= 5) {
-        $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
-        $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css');
+        useDarkCSS();
         showTip();
     } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
-        $('span.aside-theme-control-tip-text').html('检测到您的浏览器设置为<br />深色模式，已自动同步～<br />您可以在此处切换主题～');
+        $('span.aside-theme-control-tip-text').html('检测到你的浏览器设置为<br>深色模式，已自动同步～<br>你可以在此处切换主题～');
+        useDarkCSS();
         showTip();
     } else {
-        $('link[href="/assets/css/main-dark.css"]').remove();
-        $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
+        removeDarkCSS();
     }
     themeUnselect('light', 'dark');  
 }
 let lightTheme = () => {
     themeSelect('light');
-    $('link[href="/assets/css/main-dark.css"]').remove();
-    $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
+    removeDarkCSS();
     themeUnselect('auto', 'dark');
 }
 let darkTheme = () => {
     themeSelect('dark');
-    $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
-    $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
+    useDarkCSS();
     themeUnselect('auto', 'light');
 }
 let initializeTheme = () => {
-    if (Cookies.get('currentTheme') == undefined || Cookies.get('currentTheme') == 'auto') {
+    if (Cookies.get('currentTheme') === undefined || Cookies.get('currentTheme') === 'auto') {
         autoTheme();
-    } else if (Cookies.get('currentTheme') == 'light') {
+    } else if (Cookies.get('currentTheme') === 'light') {
         lightTheme();
-    } else if (Cookies.get('currentTheme') == 'dark') {
+    } else if (Cookies.get('currentTheme') === 'dark') {
         darkTheme();
     }
 }
@@ -104,24 +109,24 @@ var isCurrentFilePathSpecial = false;
 var currentPageId = '#';
 var idAddition;
 let specialFilePathOperation = (mainFilePath) => {
-    if (currentFilePath.slice(0, mainFilePath.length) == mainFilePath) {
+    if (currentFilePath.slice(0, mainFilePath.length) === mainFilePath) {
         isCurrentFilePathSpecial = true;
         idAddition = mainFilePath.replace(/\//g, '-');
     }
 }
 let sidebarItemOperation = () => {
     specialFilePathOperation('/math-challenge');
-    if (isCurrentFilePathSpecial == false) {
+    if (!isCurrentFilePathSpecial) {
         if (currentFilePath.endsWith('/')) {
             idAddition = currentFilePath.replace(/\//g, '-') + 'index';
-        } else if (currentFilePath.lastIndexOf('.') == -1) {
+        } else if (currentFilePath.lastIndexOf('.') === -1) {
             idAddition = currentFilePath.replace(/\//g, '-');
         } else {
             idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
         }
     }
     currentPageId = (currentPageId + idAddition).replace('-', '');
-    if (currentFilePath != '/about.html') {
+    if (currentFilePath !== '/about.html') {
         $(currentPageId + ' li.aside-sidebar-item').addClass('aside-sidebar-current-page-item');
         document.querySelector(currentPageId).href = 'javascript:void(0);';
         $(currentPageId + ' .mdi-chevron-right').hide();
@@ -135,7 +140,7 @@ let sidebarSublistSlide = (sublistName) => {
     listItemId += sublistName;
     $(listItemId).on('click', () => {
         $(sublistId).slideToggle(200, () => {
-            if (sublistName == 0) {
+            if (sublistName === 0) {
                 $(sublistArrowId).rotate({duration: 300, animateTo: 90});
                 sublistName = 1;
             } else {
@@ -154,19 +159,13 @@ let asideLoadedCallback = () => {
         $('div.aside-theme-select').slideToggle(400);
     });
     $('li.theme-auto').on('click', () => {
-        if (Cookies.get('currentTheme') != 'auto') {
-            autoTheme();
-        }
+        (Cookies.get('currentTheme') !== 'auto') && autoTheme();
     });
     $('li.theme-light').on('click', () => {
-        if (Cookies.get('currentTheme') != 'light') {
-            lightTheme();
-        }
+        (Cookies.get('currentTheme') !== 'light') && lightTheme();
     });
     $('li.theme-dark').on('click', () => {
-        if (Cookies.get('currentTheme') != 'dark') {
-            darkTheme();
-        }
+        (Cookies.get('currentTheme') !== 'dark') && darkTheme();
     });
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
