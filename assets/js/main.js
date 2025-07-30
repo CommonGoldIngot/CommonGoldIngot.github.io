@@ -17,7 +17,7 @@ if (!CSS.supports('font-size', 'clamp(12.8px, 1.25vw, 20px)')) {
 //加载动画
 var borderRotateAngle = 0,
     logoRotateAngle = 0;
-setInterval(() => {
+var borderRotate = setInterval(() => {
     borderRotateAngle += 1;
     logoRotateAngle -= 1;
     $('div.loading-round-border').rotate(borderRotateAngle);
@@ -38,8 +38,9 @@ window.onload = () => {
         $('p.loading-text').text('加载完成！');
         $('div.loading').fadeOut(500, () => {
             $('div.loading').hide();
+            clearInterval(borderRotate);
         });
-    }, 1500)
+    }, 700)
 }
 //导航栏项目（主题切换控件 & 侧边栏项目处理）
 let themeSelect = (theme) => {
@@ -65,10 +66,12 @@ let currentHour = new Date().getHours();
 let useDarkCSS = () => {
     $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
     $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
+    $('link[href="/assets/css/APlayer.min.css"]').after('<link rel="stylesheet" href="/assets/css/APlayer-dark.min.css">');
 }
 let removeDarkCSS = () => {
     $('link[href="/assets/css/main-dark.css"]').remove();
     $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
+    $('link[href="/assets/css/APlayer-dark.min.css"]').remove()
 }
 let autoTheme = () => {
     themeSelect('auto');
@@ -95,13 +98,9 @@ let darkTheme = () => {
     themeUnselect('auto', 'light');
 }
 let initializeTheme = () => {
-    if (Cookies.get('currentTheme') === undefined || Cookies.get('currentTheme') === 'auto') {
-        autoTheme();
-    } else if (Cookies.get('currentTheme') === 'light') {
-        lightTheme();
-    } else if (Cookies.get('currentTheme') === 'dark') {
-        darkTheme();
-    }
+    (Cookies.get('currentTheme') === undefined || Cookies.get('currentTheme') === 'auto') && autoTheme();
+    (Cookies.get('currentTheme') === 'light') && lightTheme();
+    (Cookies.get('currentTheme') === 'dark') && darkTheme();
 }
 initializeTheme();
 $('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
@@ -127,8 +126,8 @@ let sidebarItemOperation = () => {
     }
     currentPageId = (currentPageId + idAddition).replace('-', '');
     if (currentFilePath !== '/about.html') {
-        $(currentPageId + ' li.aside-sidebar-item').addClass('aside-sidebar-current-page-item');
-        document.querySelector(currentPageId).href = 'javascript:void(0);';
+        $(currentPageId).addClass('aside-sidebar-current-page-item');
+        document.querySelector(currentPageId + ' a.aside-sidebar-item-link').href = 'javascript:void(0);';
         $(currentPageId + ' .mdi-chevron-right').hide();
     } else {
         document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
@@ -170,12 +169,12 @@ let asideLoadedCallback = () => {
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
         $('div.aside-mask').show();
-        $('div.aside-sidebar').show().animate({left: '0'}, 200);
+        $('div.aside-sidebar-header, div.aside-sidebar').show().animate({left: '0'}, 150);
     });
     $('div.aside-mask').on('click', () => {
         $('div.aside-mask').hide();
-        $('div.aside-sidebar').animate({left: '-302'}, 200, () => {
-            $('div.aside-sidebar').hide();
+        $('div.aside-sidebar-header, div.aside-sidebar').animate({left: '-301'}, 150, () => {
+            $('div.aside-sidebar-header, div.aside-sidebar').hide();
         });
     });
     //侧边栏子项目操作

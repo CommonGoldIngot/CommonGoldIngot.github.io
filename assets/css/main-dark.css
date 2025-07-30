@@ -21,8 +21,11 @@ div.loading-round-border {
 a.loading-speed-up-link {
   color: rgb(var(--main-light-green));
 }
-div.main {
-  background-color: rgba(var(--background-dark-green),0.75);
+main.type-card > div.main {
+  background-color: rgba(var(--background-dark-green), 0.6);
+}
+main.type-article > div.main {
+  background-color: rgba(var(--background-dark-green), 0.85);
 }
 div.main-title {
   background-color: rgb(var(--main-green));

@@ -13,19 +13,25 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css">
+<link rel="stylesheet" href="/assets/css/APlayer.min.css">
 <script src="/assets/js/jquery-3.7.1.min.js"></script>
 <script src="/assets/js/jQueryRotateCompressed.js"></script>
 <script src="/assets/js/js.cookie.min.js"></script>
 <script src="/assets/js/highlight-11.11.1.min.js"></script>
+<script src="/assets/js/APlayer.min.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/main-modules.js"></script>
 <script defer src="/assets/js/mathjax-config.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script>hljs.highlightAll();</script>
 <style>
-#welcome, #saying {
+#welcome {
   text-wrap: balance;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+#saying {
+  text-wrap: balance;
+  font-size: 1.4rem;
 }
 #music {
   margin: 15px 0;
@@ -82,8 +88,8 @@
     <p class="main-card-title-text">这是网站的主页。你可以将此网站分享给你的朋友们！</p>
   </div>
   <div class="main-card-body">
-    <p class="main-card-text" id="welcome">滴～你已获得访客权限！这是你的专属欢迎词：</p>
-    <pre><code class="language-javascript">'你好！'</code></pre>
+    <p class="main-card-text" id="welcome">你已获得访客权限，这是你的专属欢迎词：</p>
+    <pre><code class="language-javascript">'你好！' //其实只有这一个[doge]</code></pre>
     <hr class="main-line-dashed">
     <p class="main-card-text" id="saying"></p>
     <hr class="main-line-dashed">
@@ -141,8 +147,6 @@
 </main>
 
 <!-- APlayer -->
-<link rel="stylesheet" href="/assets/css/APlayer.min.css">
-<script src="/assets/js/APlayer.min.js"></script>
 <script>
 const ap = new APlayer({
     container: document.querySelector('div.aplayer'),
@@ -204,7 +208,7 @@ if (21 <= hour || hour <= 5) {
     [4, 17, 21, 31].includes(date) && know.html('能力越大，能力就越大。');
     [5, 20, 24].includes(date) && know.html('每呼吸一分钟，就过去了60秒。');
     [7, 14, 27].includes(date) && know.html('越聪明的人，脑子就越聪明。');
-    [8, 22, 25].include(date) && know.html('剥开香蕉皮以后，你会发现里面有一个去皮的香蕉。');
+    [8, 22, 25].includes(date) && know.html('剥开香蕉皮以后，你会发现里面有一个去皮的香蕉。');
     [10, 13, 26].includes(date) && know.html('西红柿吃起来，有番茄的味道。');
     [16, 23, 28].includes(date) && know.html('研究发现：当你的左脸被打时，你的右脸就不会痛。');
 }
