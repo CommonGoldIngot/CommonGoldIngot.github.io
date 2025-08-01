@@ -247,10 +247,16 @@ div.aside-sidebar {
   font-weight: 500;
   overflow: hidden auto;
 }
-@media (max-width: 666px) {
+@media (min-width: 481px) and (max-width: 666px) {
   div.aside-sidebar-header,
   div.aside-sidebar {
     width: 45vw;
+  }
+}
+@media (max-width: 480px) {
+  div.aside-sidebar-header,
+  div.aside-sidebar {
+    width: 216px; /* 只是为了防止打开控制台可以把窗口宽度调的很小时显示出问题而已.. */
   }
 }
 /**** 遮罩层 ****/
@@ -273,20 +279,17 @@ div.aside-sidebar-body {
   width: 100%;
   padding: 14px 0;
 }
-ul.aside-sidebar-list {
+ul.aside-sidebar-list,
+ul.aside-sidebar-sublist {
   list-style-type: none;
   padding-left: 0;
   line-height: 36px;
 }
 ul.aside-sidebar-sublist {
-  list-style-type: none;
   display: none;
 }
 li.aside-sidebar-item {
   background-color: transparent;
-}
-li.aside-sidebar-current-page-item {
-  background-color: rgba(var(--main-green), 0.8);
 }
 a.aside-sidebar-item-link {
   display: block;
@@ -294,7 +297,13 @@ a.aside-sidebar-item-link {
   text-decoration: none;
   color: rgb(var(--main-white));
 }
-li.aside-sidebar-item:not(li.aside-sidebar-current-page-item):hover a.aside-sidebar-item-link {
+ul.aside-sidebar-sublist > li.aside-sidebar-item > a.aside-sidebar-item-link {
+  padding-left: 38px;
+}
+li.aside-sidebar-current-page-item > a.aside-sidebar-item-link {
+  background-color: rgba(var(--main-green), 0.8);
+}
+li.aside-sidebar-item:not(li.aside-sidebar-current-page-item):hover > a.aside-sidebar-item-link {
   text-shadow: 0 0 4px rgb(var(--main-green)), 0 0 4px rgb(var(--main-green));
 }
 i.aside-sidebar-item-icon {
@@ -304,7 +313,7 @@ span.aside-text {
   font-size: 14px;
   text-decoration: none;
 }
-li.aside-sidebar-item .mdi-chevron-right {
+i.aside-sidebar-arrow {
   float: right;
   margin: 0 14px;
   font-size: 12px;

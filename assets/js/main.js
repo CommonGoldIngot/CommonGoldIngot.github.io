@@ -3,12 +3,9 @@ if (!CSS.supports('font-size', 'clamp(12.8px, 1.25vw, 20px)')) {
     var adjustFontSize = () => {
         let currentWidth = window.innerWidth;
         var newFontSize = currentWidth / 80;
-        if (newFontSize <= 12.8) {
-            newFontSize = 12.8;
-        } else if (newFontSize >= 20) {
-            newFontSize = 20;
-        }
-        newFontSize = newFontSize.toString() + 'px';
+        (newFontSize <= 12.8) && (newFontSize = 12.8);
+        (newFontSize >= 20) && (newFontSize = 20);
+        newFontSize = newFontSize + 'px';
         $('html').css('font-size', newFontSize);
     }
     adjustFontSize();
@@ -40,9 +37,9 @@ window.onload = () => {
             $('div.loading').hide();
             clearInterval(borderRotate);
         });
-    }, 700)
+    }, 700);
 }
-//导航栏项目（主题切换控件 & 侧边栏项目处理）
+//主题切换控件
 let themeSelect = (theme) => {
     let themeListSelector = 'li.theme-' + theme;
     $(themeListSelector).addClass('aside-theme-select-list-item-active');
@@ -55,12 +52,12 @@ let themeUnselect = (theme1, theme2) => {
 let showTip = () => {
     setTimeout(() => {
         $('div.aside-theme-control-tip').fadeIn(3500);
-    }, 1400)
+    }, 1400);
     setTimeout(() => {
         $('div.aside-theme-control-tip').fadeOut(3500, () => {
              $('div.aside-theme-control-tip').remove();
         });
-    }, 3600)
+    }, 3600);
 }
 let currentHour = new Date().getHours();
 let useDarkCSS = () => {
@@ -103,54 +100,70 @@ let initializeTheme = () => {
     (Cookies.get('currentTheme') === 'dark') && darkTheme();
 }
 initializeTheme();
+//侧边栏项目处理
 $('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
-var isCurrentFilePathSpecial = false;
 var currentPageId = '#';
-var idAddition;
-let specialFilePathOperation = (mainFilePath) => {
-    if (currentFilePath.slice(0, mainFilePath.length) === mainFilePath) {
-        isCurrentFilePathSpecial = true;
-        idAddition = mainFilePath.replace(/\//g, '-');
+var idAddition = '';
+let isCurrentFilePathSpecial = {
+    'type': 'without_sublist',
+    'value': false
+};
+let operateSpecialFilePath = (mainFilePath) => {
+    if (currentFilePath.slice(0, mainFilePath.length - 1) === mainFilePath.slice(0, -1)) {
+        isCurrentFilePathSpecial.value = true;
+        idAddition = mainFilePath.slice(0, -1).replace(/\//g, '-');
+        ($(`li#${idAddition.replace('-', '')}.aside-sidebar-item-with-sublist`).length) && (isCurrentFilePathSpecial.type = 'with_sublist');
     }
 }
-let sidebarItemOperation = () => {
-    specialFilePathOperation('/math-challenge');
-    if (!isCurrentFilePathSpecial) {
-        if (currentFilePath.endsWith('/')) {
-            idAddition = currentFilePath.replace(/\//g, '-') + 'index';
-        } else if (currentFilePath.lastIndexOf('.') === -1) {
-            idAddition = currentFilePath.replace(/\//g, '-');
-        } else {
-            idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
-        }
-    }
-    currentPageId = (currentPageId + idAddition).replace('-', '');
-    if (currentFilePath !== '/about.html') {
-        $(currentPageId).addClass('aside-sidebar-current-page-item');
-        document.querySelector(currentPageId + ' a.aside-sidebar-item-link').href = 'javascript:void(0);';
-        $(currentPageId + ' .mdi-chevron-right').hide();
+let modifyIdAddition = () => {
+    if (currentFilePath.endsWith('/')) {
+        idAddition = currentFilePath.replace(/\//g, '-') + 'index';
+    } else if (currentFilePath.lastIndexOf('.') === -1) {
+        idAddition = currentFilePath.replace(/\//g, '-');
     } else {
-        document.querySelector('a.aside-sidebar-footer-link').href = 'javascript:void(0);';
-    } 
+        idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
+    }
 }
-/* var listItemId = '#';
-let sidebarSublistSlide = (sublistName) => {
-    sublistName = 0;
-    listItemId += sublistName;
-    $(listItemId).on('click', () => {
-        $(sublistId).slideToggle(200, () => {
-            if (sublistName === 0) {
-                $(sublistArrowId).rotate({duration: 300, animateTo: 90});
-                sublistName = 1;
+let operateSidebarItem = () => {
+    $(currentPageId).addClass('aside-sidebar-current-page-item');
+    $(currentPageId + ' > a.aside-sidebar-item-link').attr('href', 'javascript:void(0);');
+    (!$(currentPageId + ' > ul.aside-sidebar-sublist').length) && $(currentPageId + ' > a.aside-sidebar-item-link > i.aside-sidebar-arrow').hide();
+}
+let sidebarCurrentItemOperation = () => {
+    operateSpecialFilePath('/math-challenge/');
+    !isCurrentFilePathSpecial.value && modifyIdAddition();
+    currentPageId = currentPageId + idAddition.replace('-', '');
+    (currentFilePath !== '/about.html') ? operateSidebarItem() : $('a.aside-sidebar-footer-link').attr('href', 'javascript:void(0);');
+    (isCurrentFilePathSpecial.type === 'with_sublist') && modifyIdAddition();
+    currentPageId = '#' + idAddition.replace('-', '');
+    operateSidebarItem();
+}
+//侧边栏子列表展开
+let isSublistFolded = {};
+let sidebarSublistUnfold = (sublistName) => {
+    let listItemId = `#${sublistName}`;
+    let listItemArrow = $(listItemId + ' > a.aside-sidebar-item-link > i.aside-sidebar-arrow');
+    if (isCurrentFilePathSpecial.value && isCurrentFilePathSpecial.type === 'with_sublist') {
+        isSublistFolded[sublistName] = false;
+        $('ul.aside-sidebar-sublist').css('display', 'block');
+        listItemArrow.rotate(90);
+    } else {
+        isSublistFolded[sublistName] = true;
+    }
+    $(listItemId + ' > a.aside-sidebar-item-link').on('click', () => {
+        $(listItemId + ' > ul.aside-sidebar-sublist').slideToggle(200, () => {
+            if (isSublistFolded[sublistName]) {
+                listItemArrow.rotate({duration: 300, animateTo: 90});
+                isSublistFolded[sublistName] = false;
             } else {
-                $(sublistArrowId).rotate({duration: 300, animateTo: 0});
-                sublistName = 0;
+                listItemArrow.rotate({duration: 300, animateTo: 0});
+                isSublistFolded[sublistName] = true;
             }
         });
     });
-} */
+}
 let asideLoadedCallback = () => {
-    sidebarItemOperation();
+    sidebarCurrentItemOperation();
     //主题切换
     $('button.aside-theme-control').on('click', () => {
         $('div.aside-theme-control-tip').remove();
@@ -177,6 +190,6 @@ let asideLoadedCallback = () => {
             $('div.aside-sidebar-header, div.aside-sidebar').hide();
         });
     });
-    //侧边栏子项目操作
-    //sidebarSublistSlide('');
+    //侧边栏子列表展开
+    sidebarSublistUnfold('math-challenge');
 }
