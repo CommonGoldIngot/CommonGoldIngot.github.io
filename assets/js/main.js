@@ -191,5 +191,5 @@ let asideLoadedCallback = () => {
         });
     });
     //侧边栏子列表展开
-    sidebarSublistUnfold('math-challenge');
+    //sidebarSublistUnfold('');
 }
