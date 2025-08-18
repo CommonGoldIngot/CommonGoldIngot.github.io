@@ -51,13 +51,13 @@ let themeUnselect = (theme1, theme2) => {
 }
 let showTip = () => {
     setTimeout(() => {
-        $('div.aside-theme-control-tip').fadeIn(3500);
+        $('div.aside-theme-control-tip').fadeIn(2000);
     }, 1400);
     setTimeout(() => {
-        $('div.aside-theme-control-tip').fadeOut(3500, () => {
+        $('div.aside-theme-control-tip').fadeOut(2000, () => {
              $('div.aside-theme-control-tip').remove();
         });
-    }, 3600);
+    }, 4400);
 }
 let currentHour = new Date().getHours();
 let useDarkCSS = () => {
@@ -76,7 +76,7 @@ let autoTheme = () => {
         useDarkCSS();
         showTip();
     } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
-        $('span.aside-theme-control-tip-text').html('检测到你的浏览器设置为<br>深色模式，已自动同步～<br>你可以在此处切换主题～');
+        $('span.aside-theme-control-tip-text').html('检测到你的浏览器设置为深色模式，已自动同步～你可以在此处切换主题～');
         useDarkCSS();
         showTip();
     } else {
@@ -184,12 +184,48 @@ let asideLoadedCallback = () => {
         $('div.aside-mask').show();
         $('div.aside-sidebar-header, div.aside-sidebar').show().animate({left: '0'}, 150);
     });
-    $('div.aside-mask').on('click', () => {
-        $('div.aside-mask').hide();
-        $('div.aside-sidebar-header, div.aside-sidebar').animate({left: '-301'}, 150, () => {
-            $('div.aside-sidebar-header, div.aside-sidebar').hide();
+    $('div.aside-mask').on('click', function () {
+        $(this).hide();
+        $('div.aside-sidebar-header, div.aside-sidebar').animate({left: '-301'}, 150, function () {
+            $(this).hide();
         });
     });
     //侧边栏子列表展开
     //sidebarSublistUnfold('');
+}
+//弹窗动画
+let usePopUp = () => {
+    let viewportWidth = window.innerWidth,
+        viewportHeight = window.innerHeight;
+    var isPopUpOpened = false;
+    $('div.main-popup').prepend('<button class="main-popup-x" type="button"><i class="bi bi-x"></i></button>');
+    $('.main-open-popup').on('click', function (event) {
+        let popUpId = '#' + $(this).attr('id').match(/open-popup-.+/)[0].replace('open-', '');
+        (!isPopUpOpened) && $(popUpId).css({
+            'top': event.clientY,
+            'bottom': viewportHeight - event.clientY,
+            'left': event.clientX,
+            'right': viewportWidth - event.clientX,
+            'padding': '0.7em',
+            'overflow': 'auto'
+        }).show().animate({
+            top: 48 + 2.5 * parseFloat($('html').css('font-size')), //calc(48px + 2.5em)
+            bottom: '2.5em',
+            left: '3.5em',
+            right: '3.5em'
+        }, 200);
+       isPopUpOpened = true;
+    });
+    $('button.main-popup-x').on('click', function (event) {
+        $(this).parent().css('overflow', 'hidden').animate({
+            top: event.clientY,
+            bottom: viewportHeight - event.clientY,
+            left: event.clientX,
+            right: viewportWidth - event.clientX,
+            padding: 0
+        }, 200, function () {
+            $(this).hide();
+        });
+        isPopUpOpened = false;
+    });
 }

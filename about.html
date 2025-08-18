@@ -17,9 +17,10 @@
 <script src="/assets/js/jQueryRotateCompressed.js"></script>
 <script src="/assets/js/js.cookie.min.js"></script>
 <script src="/assets/js/highlight-11.11.1.min.js"></script>
+<script src="/assets/js/highlightjs-line-numbers-2.9.0.min.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/main-modules.js"></script>
-<script>hljs.highlightAll();</script>
+<script>hljs.highlightAll();hljs.initLineNumbersOnLoad();</script>
 <title>关于此网站</title>
 </head>
 
@@ -45,7 +46,7 @@
     <p class="main-card-title-text">关于作者</p>
   </div>
   <div class="main-card-body">
-<pre><code class="language-json">{
+<pre class="main-block-code"><code class="language-json">{
     "nickname": "CommonGoldIngot",
     "gender": "male",
     "age": 15,
