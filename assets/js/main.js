@@ -70,34 +70,41 @@ let removeDarkCSS = () => {
     $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
     $('link[href="/assets/css/APlayer-dark.min.css"]').remove()
 }
-let autoTheme = () => {
-    themeSelect('auto');
-    if (20 <= currentHour || currentHour <= 5) {
-        useDarkCSS();
-        showTip();
-    } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
-        $('span.aside-theme-control-tip-text').html('检测到你的浏览器设置为深色模式，已自动同步～你可以在此处切换主题～');
-        useDarkCSS();
-        showTip();
-    } else {
+let useTheme = {
+    'auto': () => {
+        themeSelect('auto');
+        if (20 <= currentHour || currentHour <= 5) {
+            useDarkCSS();
+            showTip();
+        } else if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
+            $('span.aside-theme-control-tip-text').html('检测到你的浏览器设置为深色模式，已自动同步～你可以在此处切换主题～');
+            useDarkCSS();
+            showTip();
+        } else {
+            removeDarkCSS();
+        }
+        themeUnselect('light', 'dark');  
+    },
+    'light': () => {
+        themeSelect('light');
         removeDarkCSS();
+        themeUnselect('auto', 'dark');
+    },
+    'dark': () => {
+        themeSelect('dark');
+        useDarkCSS();
+        themeUnselect('auto', 'light');
     }
-    themeUnselect('light', 'dark');  
-}
-let lightTheme = () => {
-    themeSelect('light');
-    removeDarkCSS();
-    themeUnselect('auto', 'dark');
-}
-let darkTheme = () => {
-    themeSelect('dark');
-    useDarkCSS();
-    themeUnselect('auto', 'light');
+};
+let applyTheme = (theme) => { 
+    $('li.theme-' + theme).on('click', () => {
+        (document.startViewTransition) ? document.startViewTransition(useTheme[theme]) : useTheme[theme]();
+    });
 }
 let initializeTheme = () => {
-    (Cookies.get('currentTheme') === undefined || Cookies.get('currentTheme') === 'auto') && autoTheme();
-    (Cookies.get('currentTheme') === 'light') && lightTheme();
-    (Cookies.get('currentTheme') === 'dark') && darkTheme();
+    (Cookies.get('currentTheme') === undefined || Cookies.get('currentTheme') === 'auto') && useTheme['auto']();
+    (Cookies.get('currentTheme') === 'light') && useTheme['light']();
+    (Cookies.get('currentTheme') === 'dark') && useTheme['dark']();
 }
 initializeTheme();
 //侧边栏项目处理
@@ -170,15 +177,9 @@ let asideLoadedCallback = () => {
         initializeTheme();
         $('div.aside-theme-select').slideToggle(400);
     });
-    $('li.theme-auto').on('click', () => {
-        (Cookies.get('currentTheme') !== 'auto') && autoTheme();
-    });
-    $('li.theme-light').on('click', () => {
-        (Cookies.get('currentTheme') !== 'light') && lightTheme();
-    });
-    $('li.theme-dark').on('click', () => {
-        (Cookies.get('currentTheme') !== 'dark') && darkTheme();
-    });
+    applyTheme('auto');
+    applyTheme('light');
+    applyTheme('dark');
     //侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
         $('div.aside-mask').show();

@@ -3,11 +3,13 @@
 }
 @media (orientation: landscape) {
   html  {
+    background-color: rgb(var(--background-black));
     background-image: var(--background-dark-landscape-url);
   }
 }
 @media (orientation: portrait) {
   html {
+    background-color: rgb(var(--background-black));
     background-image: var(--background-dark-portrait-url);
   }
 }
