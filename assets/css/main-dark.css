@@ -1,33 +1,33 @@
-:root  {
+:root {
   --font-black: 255,255,255;
 }
 @media (orientation: landscape) {
-  html  {
-    background-color: rgb(var(--background-black));
-    background-image: var(--background-dark-landscape-url);
+  html {
+    background-color: rgb(var(--bg-black));
+    background-image: var(--bg-dark-landscape-url);
   }
 }
 @media (orientation: portrait) {
   html {
-    background-color: rgb(var(--background-black));
-    background-image: var(--background-dark-portrait-url);
+    background-color: rgb(var(--bg-black));
+    background-image: var(--bg-dark-portrait-url);
   }
 }
 div.loading {
-  background-color: rgb(var(--background-black));
+  background-color: rgb(var(--bg-black));
 }
 div.loading-round-border {
-  background-color: rgb(var(--background-black));
+  background-color: rgb(var(--bg-black));
   border-top-color: rgb(var(--main-dark-green));
 }
 a.loading-speed-up-link {
   color: rgb(var(--main-light-green));
 }
 main.type-card > div.main {
-  background-color: rgba(var(--background-dark-green), 0.6);
+  background-color: rgba(var(--bg-dark-green), 0.6);
 }
 main.type-article > div.main {
-  background-color: rgba(var(--background-dark-green), 0.85);
+  background-color: rgba(var(--bg-dark-green), 0.85);
 }
 div.main-title {
   background-color: rgb(var(--main-green));
@@ -37,7 +37,7 @@ p.main-title-text {
   color: rgb(var(--main-white));
 }
 div.main-card-body {
-  background-color: rgb(var(--background-black));
+  background-color: rgb(var(--bg-black));
 }
 a.main-card-link {
   color: rgb(var(--main-light-green));
@@ -55,7 +55,7 @@ hr.main-line-dashed {
   border-color: rgb(var(--main-white));
 }
 div.main-popup {
-  background-color: rgba(var(--background-dark-green), 0.9);
+  background-color: rgba(var(--bg-dark-green), 0.9);
 }
 button.main-popup-x > .bi-x {
   color: rgb(var(--main-white));

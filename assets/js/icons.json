@@ -1,0 +1,19 @@
+{
+    "bootstrap-icons": [
+        "bi-circle-half",
+        "bi-list",
+        "bi-moon-fill",
+        "bi-stack",
+        "bi-sun-fill",
+        "bi-zoom-in",
+        "bi-zoom-out"
+    ],
+    "material-design-icons": [
+        "mdi-archive",
+        "mdi-brightness-6",
+        "mdi-chevron-right",
+        "mdi-home",
+        "mdi-island-variant",
+        "mdi-pi"
+    ]
+}

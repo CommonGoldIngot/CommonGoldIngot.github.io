@@ -1,0 +1,28 @@
+html {
+  background-color: rgb(var(--dark-green));
+}
+main {
+  color: rgb(var(--light-green));
+}
+#start-link, #explore-link {
+  background-color: rgb(var(--button-light-green));
+  color: rgb(var(--dark-green));
+}
+#start-link:hover, #explore-link:hover {
+  box-shadow: 0.1em 0.1em 0.75em rgba(var(--light-green), 0.6);
+}
+#text-between-link {
+  color: rgb(var(--light-green));
+}
+#map {
+  border-color: rgb(var(--light-green));
+}
+#map-controls button {
+  border-color: rgb(var(--button-light-green));
+}
+#map-controls button:hover {
+  box-shadow: 0.1em 0.1em 0.75em rgba(var(--light-green), 0.6);
+}
+#map-controls button i svg {
+  fill: rgb(var(--button-light-green));
+}

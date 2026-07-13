@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="CommonGoldIngot">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap&subset=chinese-simplified">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap&subset=chinese-simplified">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="./assets/openlayers-10.9.0.css">
+<script src="/assets/js/jquery-3.7.1.min.js"></script>
+<script src="/assets/js/jQueryRotateCompressed.js"></script>
+<script src="/assets/js/js.cookie.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="./assets/openlayers-10.9.0.min.js"></script>
+<link rel="preload" href="./assets/images/map-standard-16.png" as="image">
+<link rel="preload" href="./assets/images/map-standard-17.png" as="image">
+<link rel="preload" href="./assets/images/map-satellite-16.png" as="image">
+<link rel="preload" href="./assets/images/map-satellite-17.png" as="image">
+<title>三山岛石头记——从石头中看历史</title>
+</head>
+
+<body>
+
+<!-- 加载界面 -->
+<div class="loading">
+  <div class="loading-round-border">
+    <img class="loading-logo" width="80" height="80" src="/assets/images/loading-logo.png" alt="">
+  </div>
+  <p class="loading-text">加载中...</p>
+  <p class="loading-speed-up">加载太慢？使用<a class="loading-speed-up-link" href="https://steampp.net/" target="_blank">Watt Tookit</a>加速访问!</p>
+</div>
+
+<!-- 页面导航 -->
+<aside class="navbar"></aside>
+
+<main>
+<h1 id="title">三山岛石头记</h1>
+<h4 id="subtitle">从石头中看历史</h4>
+<p id="description">一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话一段话</p>
+<div id="links">
+  <a id="start-link" href="javascript:void(0);">跟随我们的脚步走</a>
+  <span id="text-between-link">或者</span>
+  <a id="explore-link" href="#map-controls">探索地图</a>
+</div>
+<div id="map"></div>
+<div id="map-controls">
+  <button id="zoom-in"><i class="bi bi-zoom-in"></i></button>
+  <button id="zoom-out"><i class="bi bi-zoom-out"></i></button>
+  <button id="toggle-layer"><i class="bi bi-stack"></i></button>
+</div>
+</main>
+
+<script>
+$(document).ready(() => {
+
+const mapExtent = [120.279672145844, 31.0179454754893, 120.299456119537, 31.0386128657008];
+const mapExtent3857 = ol.proj.transformExtent(mapExtent, 'EPSG:4326', 'EPSG:3857');
+const mapCenter3857 = ol.proj.fromLonLat([(mapExtent[0] + mapExtent[2]) / 2, (mapExtent[1] + mapExtent[3]) / 2]);
+const extentWidth = mapExtent3857[2] - mapExtent3857[0];
+const extentHeight = mapExtent3857[3] - mapExtent3857[1];
+$('main').css('--map-aspect-ratio', `${extentWidth} / ${extentHeight}`);
+const satelliteMap16 = new ol.layer.Image({
+    source: new ol.source.ImageStatic({
+        url: './assets/images/map-satellite-16.png',
+        imageExtent: mapExtent3857
+    }),
+    maxZoom: 17
+});
+const satelliteMap17 = new ol.layer.Image({
+    source: new ol.source.ImageStatic({
+        url: './assets/images/map-satellite-17.png',
+        imageExtent: mapExtent3857
+    }),
+    minZoom: 17,
+    maxZoom: 20
+});
+const standardMap16 = new ol.layer.Image({
+    source: new ol.source.ImageStatic({
+        url: './assets/images/map-standard-16.png',
+        imageExtent: mapExtent3857
+    }),
+    maxZoom: 17
+});
+const standardMap17 = new ol.layer.Image({
+    source: new ol.source.ImageStatic({
+        url: './assets/images/map-standard-17.png',
+        imageExtent: mapExtent3857
+    }),
+    minZoom: 17,
+    maxZoom: 20
+});
+const satelliteMaps = new ol.layer.Group({
+  title: '卫星地图',
+  layers: [satelliteMap16, satelliteMap17]
+});
+const standardMaps = new ol.layer.Group({
+  title: '标准地图',
+  layers: [standardMap16, standardMap17]
+});
+const map = new ol.Map({
+    target: 'map',
+    layers: [satelliteMaps, standardMaps],
+    view: new ol.View({
+        center: mapCenter3857,
+        zoom: 18,
+        maxZoom: 20,
+        extent: mapExtent3857,
+        smoothExtentConstraint: false
+    }),
+    controls: []
+});
+const mapView = map.getView();
+const fitMap = () => {
+    map.updateSize();
+    mapView.setMinZoom(1);
+    mapView.fit(mapExtent3857, {size: map.getSize()});
+    mapView.setMinZoom(mapView.getZoom());
+};
+let resizeTimer;
+$(window).on('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fitMap, 150);
+});
+let useSatelliteMap = () => {
+    satelliteMaps.setVisible(true);
+    standardMaps.setVisible(false);
+    Cookies.set('mapType', 'satellite', {expires: 365, path: './'});
+}
+let useStandardMap = () => {
+    satelliteMaps.setVisible(false);
+    standardMaps.setVisible(true);
+    Cookies.set('mapType', 'standard', {expires: 365, path: './'});
+}
+$('#zoom-in').on('click', () => {
+    const currentZoom = mapView.getZoom();
+    mapView.animate({zoom: Math.min(currentZoom + 1, mapView.getMaxZoom()), duration: 250});
+});
+$('#zoom-out').on('click', () => {
+    const currentZoom = mapView.getZoom();
+    mapView.animate({zoom: Math.max(currentZoom - 1, mapView.getMinZoom()), duration: 250});
+});
+$('#toggle-layer').on('click', () => {
+    (Cookies.get('mapType') === 'satellite') ? useStandardMap() : useSatelliteMap();
+});
+map.once('loadend', () => {
+    if (Cookies.get('mapType') === undefined) {
+        (Cookies.get('currentTheme') === 'light') ? useStandardMap()
+            : (Cookies.get('currentTheme') === 'dark') ? useSatelliteMap()
+            : (20 <= currentHour || currentHour <= 5 || window.matchMedia('(prefer-color-scheme: dark)').matches) ? useSatelliteMap()
+            : useStandardMap();
+    } else {
+        (Cookies.get('mapType') === 'satellite') && useSatelliteMap();
+        (Cookies.get('mapType') === 'standard') && useStandardMap();
+    }
+    const previousSatelliteVisible = satelliteMaps.getVisible();
+    const previousStandardVisible = standardMaps.getVisible();
+    satelliteMaps.setVisible(false);
+    standardMaps.setVisible(true);
+    mapView.setZoom(18);
+    setTimeout(() => {
+        satelliteMaps.setVisible(previousSatelliteVisible);
+        standardMaps.setVisible(previousStandardVisible);
+        fitMap();
+    }, 100);
+});
+
+});
+</script>
+
+</body>
+
+</html>

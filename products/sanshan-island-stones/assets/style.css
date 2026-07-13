@@ -1,0 +1,104 @@
+:root {
+  --light-green: 234, 246, 234;
+  --dark-green: 26, 42, 26;
+  --button-light-green: 224, 242, 224;
+  --button-dark-green: 37, 88, 37;
+  --desaturated-lime: 163, 186, 107;
+}
+html {
+  background-image: none;
+  background-color: rgb(var(--light-green));
+}
+main {
+  padding: calc(48px + 5rem) 0 0 0;
+  color: rgb(var(--dark-green));
+  font-family: 'Times New Roman', 'Noto Serif SC', serif;
+  text-align: center;
+}
+#title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 4rem;
+}
+#subtitle {
+  margin: 0.3em;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+#description {
+  margin: 2em auto;  
+  width: 60%;
+}
+#links {
+  margin: 2em auto;
+}
+#start-link, #explore-link {
+  display: inline-block;
+  margin: 0 1em;
+  padding: 0.75em 1.5em;
+  background-color: rgb(var(--button-dark-green));
+  border: none;
+  border-radius: 1.5em;
+  font-size: 0.85rem;
+  font-family: 'Noto Sans SC', sans-serif;
+  color: rgb(var(--light-green));
+  text-decoration: none;
+}
+#start-link::after {
+  content: " →";
+}
+#explore-link::after {
+  content: " ↓";
+}
+#start-link:hover, #explore-link:hover {
+  transform: translateY(-0.1em);
+  background-color: rgb(var(--desaturated-lime));
+  box-shadow: 0.1em 0.1em 0.75em rgba(var(--dark-green), 0.6);
+  transition: all 0.2s ease;
+}
+#text-between-link {
+  display: inline-block;
+  font-size: 1rem;
+}
+#map {
+  position: relative;
+  width: min(calc(85vh * var(--map-aspect-ratio, 920 / 1122)), 90vw);
+  height: auto;
+  aspect-ratio: var(--map-aspect-ratio, 920 / 1122);
+  margin: 2.5em auto 0 auto;
+  border: 1px solid rgb(var(--dark-green));
+}
+#map-controls {
+  width: min(calc(85vh * var(--map-aspect-ratio, 920 / 1122)), 90vw);
+  margin: 0.5em auto;
+}
+#map-controls button {
+  display: inline-flex;
+  margin: 0 0.5em;
+  width: 2.75em;
+  height: 2.75em;
+  background-color: transparent;
+  border: 0.1em solid rgb(var(--button-dark-green));
+  border-radius: 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+#map-controls button:hover {
+  transform: translateY(-0.1em);
+  background-color: rgb(var(--desaturated-lime));
+  box-shadow: 0.1em 0.1em 0.75em rgba(var(--dark-green), 0.6);
+  transition: all 0.2s ease;
+}
+#map-controls button i {
+  display: flex;
+  height: 2.75em;
+  margin: auto;
+  align-items: center;
+}
+#map-controls button i svg {
+  transform: translateY(-0.1em);
+  width: 1.5em;
+  height: 1.5em;
+  fill: rgb(var(--button-dark-green));
+}

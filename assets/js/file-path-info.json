@@ -1,0 +1,45 @@
+{
+    "index": {
+        "sidebar": {
+            "icon": "mdi-home",
+            "text": "首页",
+            "hasSublist": false
+        },
+        "structure": {
+            "type": "page"
+        }
+    },
+    "products": {
+        "sidebar": {
+            "icon": "mdi-archive",
+            "text": "作品",
+            "hasSublist": true,
+            "sublist": {
+                "sanshan-island-stones": {
+                    "icon": "mdi-island-variant",
+                    "text": "三山岛石头记"
+                }
+            }
+        },
+        "structure": {
+            "type": "folder",
+            "hasSubFolder": true,
+            "subFolder": {
+                "sanshan-island-stones": {
+                    "hasSpecificCSS": true
+                }
+            }
+        }
+    },
+    "math-challenge": {
+        "sidebar": {
+            "icon": "mdi-pi",
+            "text": "数学挑战",
+            "hasSublist": false
+        },
+        "structure": {
+            "type": "folder",
+            "hasSubFolder": false
+        }
+    }
+}

@@ -1,17 +1,34 @@
-//根元素font-size属性设置（用于不支持css clamp()函数的浏览器）
+// 获取当前页面的路径信息
+$('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
+(currentFilePath.endsWith('/')) && (currentFilePath = currentFilePath.replace(/(.*)\/$/, '$1/index'));
+(currentFilePath.endsWith('.html')) && (currentFilePath = currentFilePath.replace(/(.*).html$/, '$1'));
+currentFilePath = currentFilePath.split('/');
+currentFilePath.shift();
+let loadFilePathInfo = async () => {
+    let response = await fetch('/assets/js/file-path-info.json');
+    let data = await response.json();
+    return data;
+}
+let loadIcons = async () => {
+    let response = await fetch('/assets/js/icons.json');
+    let data = await response.json();
+    return data;
+}
+// 根元素font-size属性设置（用于不支持css clamp()函数的浏览器）
 if (!CSS.supports('font-size', 'clamp(12.8px, 1.25vw, 20px)')) {
     var adjustFontSize = () => {
         let currentWidth = window.innerWidth;
         var newFontSize = currentWidth / 80;
         (newFontSize <= 12.8) && (newFontSize = 12.8);
         (newFontSize >= 20) && (newFontSize = 20);
-        newFontSize = newFontSize + 'px';
+        newFontSize = `${newFontSize}px`;
         $('html').css('font-size', newFontSize);
     }
     adjustFontSize();
     $(window).on('resize', adjustFontSize);
 }
-//加载动画
+
+// 加载动画
 var borderRotateAngle = 0,
     logoRotateAngle = 0;
 var borderRotate = setInterval(() => {
@@ -29,7 +46,7 @@ setTimeout(() => {
 setTimeout(() => {
     $('p.loading-speed-up').css('visibility', 'visible');
 }, 15000);
-//加载界面淡出
+// 加载界面淡出
 window.onload = () => {
     setTimeout(() => {
         $('p.loading-text').text('加载完成！');
@@ -39,15 +56,14 @@ window.onload = () => {
         });
     }, 700);
 }
-//主题切换控件
+
+// 主题切换
 let themeSelect = (theme) => {
-    let themeListSelector = 'li.theme-' + theme;
-    $(themeListSelector).addClass('aside-theme-select-list-item-active');
+    $(`li.theme-${theme}`).addClass('aside-theme-select-list-item-active');
     Cookies.set('currentTheme', theme, {expires: 365, path: '/'});
 }
 let themeUnselect = (theme1, theme2) => {
-    let themeListSelector = 'li.theme-' + theme1 + ', li.theme-' + theme2;
-    $(themeListSelector).removeClass('aside-theme-select-list-item-active');
+    $(`li.theme-${theme1}, li.theme-${theme2}`).removeClass('aside-theme-select-list-item-active');
 }
 let showTip = () => {
     setTimeout(() => {
@@ -60,15 +76,40 @@ let showTip = () => {
     }, 4400);
 }
 let currentHour = new Date().getHours();
+// 部分页面可以应用特定的CSS文件
+let checkSpecificCSSFiles = () => {
+    specificCSSDir = (filePathInfo?.[currentFilePath[0]]?.structure?.subFolder?.[currentFilePath[1]]?.hasSpecificCSS) && `/${currentFilePath[0]}/${currentFilePath[1]}/assets/`;
+    if (!specificCSSDir) {
+        return false;
+    }
+    let checkFile = (path) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('HEAD', path, false);
+        try {
+            xhr.send();
+            return xhr.status >= 200 && xhr.status < 300;
+        } catch (e) {
+            return false;
+        }
+    }
+    if (checkFile(`${specificCSSDir}style.css`) && checkFile(`${specificCSSDir}style-dark.css`)) {
+        specificCSSPath = './assets/style.css';
+        specificDarkCSSPath = './assets/style-dark.css';
+        return true;
+    }
+    return false;
+}
 let useDarkCSS = () => {
-    $('link[href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
-    $('link[href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
-    $('link[href="/assets/css/APlayer.min.css"]').after('<link rel="stylesheet" href="/assets/css/APlayer-dark.min.css">');
+    $('link[rel="stylesheet"][href="/assets/css/main.css"]').after('<link rel="stylesheet" href="/assets/css/main-dark.css">');
+    $('link[rel="stylesheet"][href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css"]').after('<link rel="stylesheet" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">');
+    $('link[rel="stylesheet"][href="/assets/css/APlayer.min.css"]').after('<link rel="stylesheet" href="/assets/css/APlayer-dark.min.css">');
+    checkSpecificCSSFiles() && $(`link[rel="stylesheet"][href="${specificCSSPath}"]`).after(`<link rel="stylesheet" href="${specificDarkCSSPath}">`);
 }
 let removeDarkCSS = () => {
-    $('link[href="/assets/css/main-dark.css"]').remove();
-    $('link[href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
-    $('link[href="/assets/css/APlayer-dark.min.css"]').remove()
+    $('link[rel="stylesheet"][href="/assets/css/main-dark.css"]').remove();
+    $('link[rel="stylesheet"][href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css"]').remove();
+    $('link[rel="stylesheet"][href="/assets/css/APlayer-dark.min.css"]').remove();
+    checkSpecificCSSFiles() && $(`link[rel="stylesheet"][href="${specificDarkCSSPath}"]`).remove();
 }
 let useTheme = {
     'auto': () => {
@@ -97,7 +138,7 @@ let useTheme = {
     }
 };
 let applyTheme = (theme) => { 
-    $('li.theme-' + theme).on('click', () => {
+    $(`li.theme-${theme}`).on('click', () => {
         (document.startViewTransition) ? document.startViewTransition(useTheme[theme]) : useTheme[theme]();
     });
 }
@@ -106,81 +147,120 @@ let initializeTheme = () => {
     (Cookies.get('currentTheme') === 'light') && useTheme['light']();
     (Cookies.get('currentTheme') === 'dark') && useTheme['dark']();
 }
-initializeTheme();
-//侧边栏项目处理
-$('script[src="/assets/js/main.js"]').before('<script>let currentFilePath = location.pathname;</script>');
-var currentPageId = '#';
-var idAddition = '';
-let isCurrentFilePathSpecial = {
-    'type': 'without_sublist',
-    'value': false
-};
-let operateSpecialFilePath = (mainFilePath) => {
-    if (currentFilePath.slice(0, mainFilePath.length - 1) === mainFilePath.slice(0, -1)) {
-        isCurrentFilePathSpecial.value = true;
-        idAddition = mainFilePath.slice(0, -1).replace(/\//g, '-');
-        ($(`li#${idAddition.replace('-', '')}.aside-sidebar-item-with-sublist`).length) && (isCurrentFilePathSpecial.type = 'with_sublist');
+
+// 侧边栏项目构建
+let buildSidebarList = () => {
+    for (let pathName in filePathInfo) {
+        $('ul.aside-sidebar-list').append(`<li class="aside-sidebar-item" id="${pathName}"></li>`);
+        let path = (pathName === 'index') ? '/'
+            : (filePathInfo[pathName].sidebar.hasSublist) ? 'javascript:void(0);'
+            : `/${pathName}`;
+        $(`li#${pathName}`).append(`<a class="aside-sidebar-item-link" href="${path}"></a>`);
+        let iconClass = `${filePathInfo[pathName].sidebar.icon.split('-')[0]} ${filePathInfo[pathName].sidebar.icon}`;
+        $(`li#${pathName} > a.aside-sidebar-item-link`).append(`<i class="aside-sidebar-item-icon ${iconClass}"></i>`)
+            .append(`<span class="aside-sidebar-item-text">${filePathInfo[pathName].sidebar.text}</span>`)
+            .append('<i class="mdi mdi-chevron-right aside-sidebar-arrow"></i>');
+        if (filePathInfo[pathName].sidebar.hasSublist) {
+            $(`li#${pathName}`).append(`<ul class="aside-sidebar-sublist"></ul>`);
+            for (let sublistName in filePathInfo[pathName].sidebar.sublist) {
+                $(`li#${pathName} > ul.aside-sidebar-sublist`).append(`<li class="aside-sidebar-item" id="${sublistName}"></li>`);
+                let sublistPath = `/${pathName}/${sublistName}/`;
+                $(`li#${sublistName}`).append(`<a class="aside-sidebar-item-link" href="${sublistPath}"></a>`);
+                let sublistIconClass = `${filePathInfo[pathName].sidebar.sublist[sublistName].icon.split('-')[0]} ${filePathInfo[pathName].sidebar.sublist[sublistName].icon}`;
+                $(`li#${sublistName} > a.aside-sidebar-item-link`).append(`<i class="aside-sidebar-item-icon ${sublistIconClass}"></i>`)
+                    .append(`<span class="aside-sidebar-item-text">${filePathInfo[pathName].sidebar.sublist[sublistName].text}</span>`)
+                    .append('<i class="mdi mdi-chevron-right aside-sidebar-arrow"></i>');
+            }
+        }
     }
 }
-let modifyIdAddition = () => {
-    if (currentFilePath.endsWith('/')) {
-        idAddition = currentFilePath.replace(/\//g, '-') + 'index';
-    } else if (currentFilePath.lastIndexOf('.') === -1) {
-        idAddition = currentFilePath.replace(/\//g, '-');
+// 当前页面项目设定
+let setCurrentSidebarItem = () => {
+    if (currentFilePath[0] === 'about') {
+        $('a.aside-sidebar-footer-link').attr('href', 'javascript:void(0);');
     } else {
-        idAddition = currentFilePath.replace(/\//g, '-').slice(0, currentFilePath.lastIndexOf('.'));
+        $(`li#${currentFilePath[0]}`).addClass('aside-sidebar-current-page-item');
+        $(`li#${currentFilePath[0]} > a.aside-sidebar-item-link`).attr('href', 'javascript:void(0);');
+        if (filePathInfo[currentFilePath[0]].sidebar.hasSublist && currentFilePath[1] !== undefined) {
+            $(`li#${currentFilePath[1]}`).addClass('aside-sidebar-current-page-item');
+            $(`li#${currentFilePath[1]} > a.aside-sidebar-item-link`).attr('href', 'javascript:void(0);');
+            $(`li#${currentFilePath[1]} > a.aside-sidebar-item-link > i.aside-sidebar-arrow`).hide();
+        } else {
+            $(`li#${currentFilePath[0]} > a.aside-sidebar-item-link > i.aside-sidebar-arrow`).hide();
+        }
     }
 }
-let operateSidebarItem = () => {
-    $(currentPageId).addClass('aside-sidebar-current-page-item');
-    $(currentPageId + ' > a.aside-sidebar-item-link').attr('href', 'javascript:void(0);');
-    (!$(currentPageId + ' > ul.aside-sidebar-sublist').length) && $(currentPageId + ' > a.aside-sidebar-item-link > i.aside-sidebar-arrow').hide();
-}
-let sidebarCurrentItemOperation = () => {
-    operateSpecialFilePath('/math-challenge/');
-    !isCurrentFilePathSpecial.value && modifyIdAddition();
-    currentPageId = currentPageId + idAddition.replace('-', '');
-    (currentFilePath !== '/about.html') ? operateSidebarItem() : $('a.aside-sidebar-footer-link').attr('href', 'javascript:void(0);');
-    (isCurrentFilePathSpecial.type === 'with_sublist') && modifyIdAddition();
-    currentPageId = '#' + idAddition.replace('-', '');
-    operateSidebarItem();
-}
-//侧边栏子列表展开
-let isSublistFolded = {};
-let sidebarSublistUnfold = (sublistName) => {
-    let listItemId = `#${sublistName}`;
-    let listItemArrow = $(listItemId + ' > a.aside-sidebar-item-link > i.aside-sidebar-arrow');
-    if (isCurrentFilePathSpecial.value && isCurrentFilePathSpecial.type === 'with_sublist') {
-        isSublistFolded[sublistName] = false;
-        $('ul.aside-sidebar-sublist').css('display', 'block');
-        listItemArrow.rotate(90);
-    } else {
-        isSublistFolded[sublistName] = true;
+// 侧边栏子列表
+let applySidebarSublist = () => {
+    const pathNameWithSublist = Object.keys(filePathInfo).filter(key => filePathInfo[key]?.sidebar?.hasSublist === true);
+    let isSublistFolded = Object.fromEntries(pathNameWithSublist.map(key => [key, true]));
+    if (pathNameWithSublist.includes(currentFilePath[0])) {
+        isSublistFolded[currentFilePath[0]] = false;
+        $(`li#${currentFilePath[0]} > ul.aside-sidebar-sublist`).css('display', 'block');
+        $(`li#${currentFilePath[0]} > a.aside-sidebar-item-link > i.aside-sidebar-arrow`).rotate(90);
     }
-    $(listItemId + ' > a.aside-sidebar-item-link').on('click', () => {
-        $(listItemId + ' > ul.aside-sidebar-sublist').slideToggle(200, () => {
-            if (isSublistFolded[sublistName]) {
-                listItemArrow.rotate({duration: 300, animateTo: 90});
-                isSublistFolded[sublistName] = false;
-            } else {
-                listItemArrow.rotate({duration: 300, animateTo: 0});
-                isSublistFolded[sublistName] = true;
+    for (let pathName of pathNameWithSublist) {
+        let arrowSelector = `li#${pathName} > a.aside-sidebar-item-link > i.aside-sidebar-arrow`;
+        $(`li#${pathName} > a.aside-sidebar-item-link`).on('click', () => {
+            $(`li#${pathName} > ul.aside-sidebar-sublist`).slideToggle(200, () => {
+                if (isSublistFolded[pathName]) {
+                    $(arrowSelector).rotate({duration: 300, animateTo: 90});
+                    isSublistFolded[pathName] = false;
+                } else {
+                    $(arrowSelector).rotate({duration: 300, animateTo: 0});
+                    isSublistFolded[pathName] = true;
+                }
+            });
+        });
+    }
+}
+
+$(document).ready(() => {
+
+// 头部预提取文件
+var prefetchLinkContent = `
+<link rel="prefetch" href="/assets/images/bg-light-landscape.png">
+<link rel="prefetch" href="/assets/images/bg-light-portrait.png">
+<link rel="prefetch" href="/assets/images/bg-dark-landscape.png">
+<link rel="prefetch" href="/assets/images/bg-dark-portrait.png">
+<link rel="prefetch" href="/assets/css/main.css">
+<link rel="prefetch" href="/assets/css/main-dark.css">
+`;
+$('script[src="/assets/js/highlight-11.11.1.min.js"]').length && (prefetchLinkContent += `
+<link rel="prefetch" href="/assets/css/highlight-11.11.1-stackoverflow-light.min.css">
+<link rel="prefetch" href="/assets/css/highlight-11.11.1-tokyo-night-dark.min.css">
+<link rel="prefetch" href="/assets/js/highlightjs-line-numbers-2.9.0.min.js">
+`);
+$('script[src="/assets/js/APlayer.min.js"]').length && (prefetchLinkContent += `
+<link rel="prefetch" href="/assets/css/APlayer.min.css">
+<link rel="prefetch" href="/assets/css/APlayer-dark.min.css">
+`);
+$('link[rel="stylesheet"][href="/assets/css/main.css"]').before(prefetchLinkContent);
+
+// 导航栏控件应用
+$('aside.navbar').load('/assets/components/navbar.html', () => {
+    loadFilePathInfo().then((data) => {
+        filePathInfo = data;
+        initializeTheme();
+        buildSidebarList();
+        setCurrentSidebarItem();
+        applySidebarSublist();
+        loadIcons().then((data) => {
+            icons = data;
+            for (let iconName of Object.values(icons).flat()) {
+                $(`i.${iconName}`).load(`/assets/icons/${iconName}.svg`);
             }
         });
     });
-}
-let asideLoadedCallback = () => {
-    sidebarCurrentItemOperation();
-    //主题切换
+    // 主题切换
     $('button.aside-theme-control').on('click', () => {
         $('div.aside-theme-control-tip').remove();
-        initializeTheme();
         $('div.aside-theme-select').slideToggle(400);
     });
     applyTheme('auto');
     applyTheme('light');
     applyTheme('dark');
-    //侧边栏动效
+    // 侧边栏动效
     $('button.aside-unfold-sidebar').on('click', () => {
         $('div.aside-mask').show();
         $('div.aside-sidebar-header, div.aside-sidebar').show().animate({left: '0'}, 150);
@@ -191,42 +271,6 @@ let asideLoadedCallback = () => {
             $(this).hide();
         });
     });
-    //侧边栏子列表展开
-    //sidebarSublistUnfold('');
-}
-//弹窗动画
-let usePopUp = () => {
-    let viewportWidth = window.innerWidth,
-        viewportHeight = window.innerHeight;
-    var isPopUpOpened = false;
-    $('div.main-popup').prepend('<button class="main-popup-x" type="button"><i class="bi bi-x"></i></button>');
-    $('.main-open-popup').on('click', function (event) {
-        let popUpId = '#' + $(this).attr('id').match(/open-popup-.+/)[0].replace('open-', '');
-        (!isPopUpOpened) && $(popUpId).css({
-            'top': event.clientY,
-            'bottom': viewportHeight - event.clientY,
-            'left': event.clientX,
-            'right': viewportWidth - event.clientX,
-            'padding': '0.7em',
-            'overflow': 'auto'
-        }).show().animate({
-            top: 48 + 2.5 * parseFloat($('html').css('font-size')), //calc(48px + 2.5em)
-            bottom: '2.5em',
-            left: '3.5em',
-            right: '3.5em'
-        }, 200);
-       isPopUpOpened = true;
-    });
-    $('button.main-popup-x').on('click', function (event) {
-        $(this).parent().css('overflow', 'hidden').animate({
-            top: event.clientY,
-            bottom: viewportHeight - event.clientY,
-            left: event.clientX,
-            right: viewportWidth - event.clientX,
-            padding: 0
-        }, 200, function () {
-            $(this).hide();
-        });
-        isPopUpOpened = false;
-    });
-}
+});
+
+});
